@@ -1,0 +1,68 @@
+
+  {% if usertype == 0 %}
+
+             {% set role = "Candidat" %}
+             {% set action = "recover-customer" %}
+
+        {% else %}
+
+             {% set role = "Recruteur" %}
+             {% set action = "recover-recruiter" %}
+
+        {% endif %}
+        
+
+
+
+    <div id="{{action}}" class="stepform dataform" data-action="{{action}}">
+
+        <h2>Vous êtes un
+
+            {{role}}    
+        
+        </h2>
+
+        <h2>Veuillez renseigner votre email ou votre login pour récupérer votre mot de passe</h2>
+
+                
+            {% if message != NULL %}
+
+            {% if error == 1 %}
+
+
+            {% set class = "errormessage" %}
+
+            {% else %}
+
+            {% set class = "validmessage" %}
+
+            {% endif %}
+
+                <p class="{{class}}">{{ message }}</p>
+
+            {% endif %}
+
+            
+            <form method="POST" id="recover-form">
+
+                <div><label>Votre adresse email ou votre login</label><input type="text" required="required" name="recover"/></div>
+
+                <input type="hidden" value="{{usertype}}"/>
+
+                <input type="submit" value="Renvoyer le lien" />
+
+            </form>
+
+
+
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+                         {% include '/forms/scripts-form.html.twig' %}
+
+
+
+
+
+
+             

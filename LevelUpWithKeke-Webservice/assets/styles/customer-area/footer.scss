@@ -1,0 +1,52 @@
+footer {
+    background-color: #260e07;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+    margin-top: 130px;
+    font-size: 15px;
+    z-index: 1;
+    position: relative;
+
+    #newsletter {
+        width: 360px;
+    }
+
+    h3{
+
+        font-size: 20px!important;
+        margin-bottom: 20px;
+
+    }
+
+    div#footer-content {
+        margin: auto;
+        width: fit-content;
+
+        ul{
+
+            padding:30px;
+
+            li{
+
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    p{
+
+        padding-top:50px;
+        text-align: center;
+    }
+
+    
+    a{
+
+        color:white;
+        text-decoration: none;
+    }
+
+}
+
+

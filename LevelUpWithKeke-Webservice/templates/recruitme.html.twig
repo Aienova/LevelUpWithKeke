@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="full-h">
+    <head>
+
+                    
+
+                    {% block javascripts %}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            {{ encore_entry_link_tags("connection-styles") }}
+            {{ encore_entry_script_tags("connection-scripts") }}
+                    {% endblock %}
+
+                    <title>Recruiter moi</title>
+    </head>
+
+    
+    <body class="full-h">
+
+       <!-- 
+
+                    DISCONNECT BUTTON   
+
+        <form id="disconnection" method="POST">
+                <input type="hidden" name="disconnection" value="1" />
+                <input type=  
+                "submit" value="Disconnect">
+
+
+        </form> -->
+
+        <main class="full-h">
+
+        <a href="{{ path('cuid_home') }}"><nav class="return-button" >Revenir au site web</nav></a>
+
+          <div id="connection-form">
+
+
+      <div id="connection-title" class="flexible">
+        <h1>Recruiter moi</h1>
+      </div>
+
+      <p>Il s'agit d'une démarche assez original comme candidature mais il fallait que je vous montre via ce mini site, un aperçu des compétences que je pourrais apporter à votre entreprise. J'utilise mon propre framework pour faire des sites web côté FRONT, côté BACK je travaille sur SYMFONY. J'espère que cette aperçu vous à plu. Et ce n'est que le début. Je peux faire plus encore et je veux faire plus pour votre société. Votre projet est l'occasion idéale pour moi de perfectionner mes compétences en modernisant votre site web et en vous fournissant des outils pour votre service. SI vous êtes intéressez contacter moi au :</p>
+      <h3>06 99 07 30 11</h3>
+
+
+        
+
+
+        
+                <footer>
+
+            <p>Copyright 2023 by <a href="https://aienova.com/">Aienova</a> - Nothing to Something</p>
+
+        </footer>
+        </main>
+
+
+
+    </body>
+
+    
+</html>
+
+      

@@ -1,0 +1,111 @@
+
+<div id='popup'>
+<h2>Reservierung {{booking.code}}</h2>
+
+        <h3>Allgemeine Information</h3>
+            <ul>
+                <li>¨Vorname : {{booking.customer.firstname}}</li>
+                <li>Name: {{booking.customer.surname}}</li>
+                <li>Adresse :{{booking.location}}</li>
+                <li>Datum und Stunde: {{booking.bookingDate|date("d/m/Y h:i:s")}}</li>
+            </ul>
+
+        <h3>Dienstleistungen enthalten</h3>
+
+            <ul>
+            {% for performance in booking.performances %}
+
+                <li>{{performance.name}}</li>
+
+            {% endfor %}
+            </ul>
+
+            {% if booking.cost is empty %}
+
+            <h3>Menge</h3>
+
+            <form method="POST">
+
+            <label>HT -Betrag in Euro € </label>
+
+                        <input type="hidden" name="bookingId" value="{{booking.id}}" placeholder=""/>
+
+            <p><label>Kosten</label><input type="number" name="hourlyRate" name="hour" placeholder=""/></p>
+
+            <fieldset>
+
+            <legend>Ist es eine Teppichreinigung im Gebäude?</legend>
+
+            <label for="yes-carpet">Ja
+            <input type="radio" id="yes-carpet" name="carpet" value="1" checked></label>
+
+            
+            <label for="no-carpet">Nein
+            <input type="radio" id="no-carpet" name="carpet" value="0"></label>
+
+            <p id="unit1" class="hidden"><label>Aufwand (h)</label><input id="unitinput1" type="number" name="hour" placeholder="" /></p>
+            <p id="unit2" ><label>Aufwand (m²)</label><input id="unitinput2" type="number" name="surface" placeholder=""/></p>
+
+            </fieldset>
+
+            <input type="submit" value="validieren Sie den Betrag"/>
+
+            </form>
+
+            <br>
+
+            {% else %}
+
+            <h3> Betrag des Dienstes: {{booking.cost}}€ </h3>
+
+            {% endif %}
+
+                <button id="close-popup">Fermer</button>
+</div>
+
+
+
+    <script>
+
+        $("#popup").removeClass("hidden");
+        $("#popup").addClass("showing");
+
+
+        $("#close-popup").click(function(){
+
+            $("#popup").removeClass("showing");
+            $("#popup").addClass("hidden");
+
+        });
+
+                $("#yes-carpet").click(function(){
+
+            $("#unit2").removeClass("hidden");
+            $("#unit1").addClass("hidden");
+            $('#unitinput1').val("");
+
+        });
+
+                        $("#no-carpet").click(function(){
+
+            $("#unit1").removeClass("hidden");
+            $("#unit2").addClass("hidden");
+            $('#unitinput2').val("");
+
+        });
+
+                /*
+
+                setTimeout(function() {
+
+            $("#popup").removeClass("showing");
+
+                    },2000);
+
+
+            setTimeout(function() {
+
+            $("#popup").addClass("hidden");
+
+                    },3000);  */
+    </script>

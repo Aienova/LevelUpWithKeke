@@ -1,0 +1,25 @@
+
+    <input type="hidden" name="form_{{setting.Form.Id}}_field_{{count}}_type" value="{{setting.FormItem.name}}">
+    
+    <p>
+    
+    
+    <label>
+    
+    {{setting.title}}
+    
+
+        <select name="form_{{setting.Form.Id}}_field_{{count}}">
+
+            {% for list in setting.FormItemListSettings.FormItemListOptionSettings %}
+
+                <option value="{{list.value}}">{{list.value}}</option>
+
+            {% endfor %}
+
+        </select>
+    
+    </label>
+    
+    
+    </p>

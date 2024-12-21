@@ -1,0 +1,29 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="fonctionnal">
+
+            <div id="page-banner">
+            <h1>Créer une offre d'emploi</h1>
+
+            </div>
+
+            <div id="page-content">
+            <h2>Une nouvelle offre d'emploi simple et rapide </h2>
+            <p>Veuillez remplir les informations sur le moteur de recherche</p>
+
+              <a href="{{ path('cuid_recruiter_area_job_offers') }}"><div class="addbutton" id="add-jobOffer">Consulter la liste de vos offres d'emploi <span class="material-symbols-outlined">list</span></div></a>
+            <div id="new-job-offer" class="square" data-route="create-job-offer"></div>
+
+            </div>
+            
+
+        </section>
+        {% endblock %}
+
+             

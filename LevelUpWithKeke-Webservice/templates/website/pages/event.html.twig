@@ -1,0 +1,101 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+
+
+        {% block content %}
+
+               <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v16.0" nonce="your-nonce-value"></script>
+                <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: fr_FR</script>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <section id="page-body">
+
+            <div id="page-banner" class="white-text">
+            <h1>{{article.title}}</h1>
+
+            </div>
+
+            <div id="page-content">
+            
+
+
+            {#
+
+            <div class="flexible">
+
+                <div class="content">
+                TEXT TEXT
+                </div>
+
+
+                <div class="content">
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                </div>
+
+            </div>
+
+            #}
+
+            <div class="flexible">
+
+            <article>
+
+            {{article.content|raw}}
+
+            </article>
+
+
+
+                <ul id="article-info" class="square">
+                    <li><strong>Organisateur : </strong> Ambassade du Congo à Berlin</li>
+                    <li><strong>Date de l'évènement : </strong> {{article.eventDate|date("d/m/Y à h:i:s")}}</li>
+                    <li><strong>Partager sur vos réseaux sociaux : </strong><br><br>
+                                <div class="fb-share-button" 
+                        data-href="https://{{website.domain}}/article/{{article.tag}}" 
+                        data-layout="button_count">
+                            </div>
+                            <br>
+                            <br>
+                            <script type="IN/Share" data-url="https://{{website.domain}}/article/{{article.tag}}"></script>
+                            <br><br>
+                            <a class="twitter-share-button" 
+                                href="https://twitter.com/intent/tweet"
+                                data-text="Check this out!"
+                                data-url="https://{{website.domain}}/article/{{article.tag}}"
+                                data-via="your-twitter-handle"
+                                data-hashtags="example,hashtag"
+                                data-related="related-account">
+                                Tweet
+                            </a>
+                                        
+                    </li>
+                </ul>
+
+
+            </div>
+
+
+
+
+
+{#
+
+        {% for section in sections %}
+
+
+                 {% include '/website/items/'~ section.item.name ~ '.html.twig' %}
+
+        {% endfor %}
+
+        #}
+
+
+
+            </div>
+
+        </section>
+        {% endblock %}

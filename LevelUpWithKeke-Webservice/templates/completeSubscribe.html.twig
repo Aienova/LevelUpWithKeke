@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html class="full-h">
+    <head>
+
+                    
+
+                    {% block javascripts %}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            {{ encore_entry_link_tags("connection-styles") }}
+            {{ encore_entry_script_tags("connection-scripts") }}
+                    {% endblock %}
+
+                    <title>Melden Sie sich in Ihrem speziellen Bereich an</title>
+    </head>
+
+    
+    <body class="full-h">
+            <a href="{{ path('cuid_home') }}"><nav class="return-button" >Zurück zur Website</nav></a>
+
+       <!-- 
+
+                    DISCONNECT BUTTON   
+
+        <form id="disconnection" method="POST">
+                <input type="hidden" name="disconnection" value="1" />
+                <input type=  
+                "submit" value="Disconnect">
+
+
+        </form> -->
+
+        <main class="full-h white-text">
+
+          <div id="customer-subscribe">
+
+                        <div id="connection-title" class="central-text">
+                                <img class="logo invert" src="/build/media/image/icons/logo-main.png"/>
+                                <h1>Registrieren Sie sich für den Kundenbereich</h1>
+                        </div>
+
+
+
+                        <div id="subscribe" class="theform">
+
+                                                 
+      <div id="message-form"></div>
+    <div id="create-customer" class="stepform dataform">
+
+            
+            <form id="subscribe-form" data-route="/weiter-registrierung/{{customer.tempCode}}" method="POST">
+
+            <div id="step1" class="step">
+                <h3>deine Identität</h3>
+                
+                <div><label>Vorname</label><input type="text" name="firstname" value="{{customer.firstname}}"/></div>
+                <div><label>Name</label><input type="text" name="surname" value="{{customer.surname}}"/></div>
+                <div><label>Email</label><input type="text" name="email" value="{{customer.email}}"/></div>
+                <div><label>Telefon</label><input type="text" name="telephone" value="{{customer.telephone}}"/></div>       
+                <nav class="movestep" data-step="2">nächster Schritt</nav>
+
+            </div>
+
+            <div id="step2" class="step hidden" >
+                <h3>Ihr Passwort</h3>
+
+                 <div><label>Login</label><input type="text" name="login" required/></div>
+                 <div><label>Ihr Passwort</label><input type="password" name="password" required/></div>
+                <div><label>Bestätigen Sie Ihr Passwort</label><input type="password" name="confirm_password" required/></div>
+
+
+                <div class="flexible">
+                <nav class="movestep" data-step="1">Vorheriger Schritt</nav>
+
+                <div><input type="submit" value="Registrieren"></div>  
+                </div>
+            
+            </div>
+
+            </form>
+
+       
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+                         {% include '/forms/scripts-form.html.twig' %}
+                                          
+                        </div>
+
+        </div>
+
+        <br>
+        <h3 class="central-text">Sie haben bereits ein Konto, bitte melden Sie sich unten an:<a href="{{ path('cuid_connection') }}"><br><strong>Einloggen</strong></a></h3>
+
+                    
+
+                <footer>
+
+            <p>Copyright 2023 by <a href="https://aienova.com/">Aienova</a> - Nothing to Something</p>
+
+        </footer>
+        </main>
+
+
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+
+
+    </body>
+
+    
+</html>
+
+      

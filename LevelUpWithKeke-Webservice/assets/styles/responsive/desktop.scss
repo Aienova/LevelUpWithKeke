@@ -1,0 +1,78 @@
+    #tablet-menu {
+        width: fit-content;
+        margin-left: auto;
+        display:none;
+    }
+
+    #smartphone-menu{
+        width: fit-content;
+        margin-left: auto;
+        display:none;
+    }
+
+    #more-options{
+
+        display:none;
+    }
+
+
+       
+    
+    @media (max-height: 900px) {
+
+
+    .hiddenforsmallscreen{
+
+        display:none;
+    }
+
+    #more-options{
+
+        display:flex;
+    }
+
+    }
+    
+    
+    @media (max-width: 1366px) {
+
+
+
+        #tablet-menu {
+            width: fit-content;
+            margin-left: auto;
+            display:flex;
+        }
+
+        .asset-logo {
+            height: 77px;
+        }
+
+        div#promotion {
+            width: 77%!important; 
+            margin: auto;
+        }
+    
+
+        .slide{
+
+            .logo-company{
+
+                display:none;
+            }
+        }
+
+
+        #profile{
+
+
+            #skills{
+
+                display: none;
+            }
+        }
+
+
+
+
+    }

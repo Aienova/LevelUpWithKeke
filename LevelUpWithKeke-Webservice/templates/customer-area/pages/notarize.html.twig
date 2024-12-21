@@ -1,0 +1,197 @@
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}    
+
+
+                    <div id="page-banner">
+            <h1>Demander un acte consulaire</h1>
+
+            </div>  
+
+     <section id="fonctionnal">
+
+
+
+            <div id="page-content" class="centralizer">
+
+            
+                        <div class="flexible mobileblock">
+                                <a href="../service-en-ligne/suivis-des-demandes">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos demandes</div>
+                                </a>
+
+                                <a href="{{ path('cuid_document', { 'pagename': 'checking' }) }}">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                zoom_in
+                                </span>Authentifier un acte consulaire</div>
+                                </a>
+
+                                <a href="../service-en-ligne">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                home
+                                </span>Retourner à l'accueil</div>
+                                </a>
+                            </div>
+
+            {% if sent == 1 %}
+
+                <div id="message-form">
+                
+                
+                {% include "popup.html.twig" %}
+
+                
+                
+                
+                </div>
+
+                          {% endif %}
+
+                          {% if customer.person.complete == 1 %}
+                            
+
+
+                <div class="flexible mobileblock">
+                    <form id="notarize-form" method="POST" enctype="multipart/form-data">
+                                    <h2>Choisir votre acte consulaire et envoyer les documents requis pour sa demande :</h2>
+
+                                    {% if customer.Person.consularCard != 1 %}
+
+                                    <h3 class="orange-text">Vous êtes enregistré mais vous n'avez pas de carte consulaire, veuillez la commander çi-dessous : </h3>
+                                      
+                                    {% endif %}
+                                   
+                                  
+                                    <label>Actes consulaires
+                                    
+                                    <select id="details" name="notarizeType" >
+
+                                    {% if customer.Person.consularCard == 1 %}
+
+                                    {% for notarizeType in notarizeTypes|sort((a, b) => a.frName <=> b.frName) %}
+
+                                    {% if notarizeType.id != 2 and  notarizeType.id != 1 and  notarizeType.id != 7 %}                    
+                                      <option value="{{notarizeType.id}}">{{notarizeType.frName}}</option>
+                                      {% endif %}
+
+                                    {% endfor %}
+
+                                    {% endif %}
+
+                                    
+
+                                    {% if customer.Person.consularCard != 1  %}
+
+                                     {% for notarizeType in notarizeTypes|sort((a, b) => a.frName <=> b.frName) %}
+
+                                    {% if notarizeType.id == 7 %}    
+                                    <option value="{{notarizeType.id}}">{{notarizeType.frName}}</option>
+                                      {% endif %}
+                                    {% endfor %}
+
+                                    {% endif %}
+
+
+                                    </select>
+
+
+                                    <label>Importez votre document çi-dessous :
+
+                                    <input type="file" name="notarizeFile[]" id="notarizeFile" multiple/>
+                                    
+                                    </label>
+                                    
+                                    
+                                    </label>
+                                    
+                                    <p>Avez vous des remarques sur votre document ?</p>
+
+                          {#   <h3>Estimation</h3>
+
+                            <p><strong>Temps de trajet :</strong> 30 min </p>
+                            <p><strong>Temps total de la prestation :</strong> 1h </p>
+
+                            <strong>Prix</strong>
+                            <strong>120€</strong>  #}
+
+
+                            <textarea id="comment" name="comment" placeholder="Avez-vous un commentaire ?"></textarea>
+
+                            <p><input type="submit" name="booking" value="Faire votre demande" /></p>
+
+                  </form>
+
+                                                     <div id="document-info">
+
+                            {% set i = 1 %}
+                            {% for notarizeType in notarizeTypes %}
+
+
+                              {% if i > 1 %}
+
+                              {% set hidden = "hidden" %}
+
+                              {% else %}
+
+                              
+                              {% set hidden = "" %}
+
+                              {% endif %}
+
+
+                          <div id="details-{{notarizeType.id}}" class="details {{hidden}}">                        
+                          <h2>Les documents supplémentaires à envoyer pour la demande suivante : {{notarizeType.frName}} ({{notarizeType.price}}€)</h2>
+                        <br>
+                        {% if notarizeType.details == NULL %}
+
+                                <p>Aucun documents supplémentaires nécessaires à envoyer</p>
+
+                            {% else %}
+                              {{notarizeType.details|raw}}                        
+                        {% endif %}
+
+                          </div>
+
+                          {% set i = i + 1 %}
+
+                         {% endfor %}
+
+                        
+
+                    </div>
+
+                </div>
+
+                {% else %}
+
+                  <h2>Vous devez finaliser votre enregistrement pour demander des documents aux services consulaires</h2>
+
+                  <a href=""><button>Finaliser votre enregistrement</button></a>
+
+                          {% endif %}
+
+
+                    
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+                        <script>
+
+                        
+
+
+
+
+                        </script>
+
+    </section>
+
+
+        {% endblock %}

@@ -1,0 +1,36 @@
+                                       
+                                        
+                                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                        
+                                        <form id="yourPreviousJob" method="POST" data-candidateid="{{candidate.id}}">
+                                            
+                                            <h3>Votre précédent emploi</h3>
+                                        
+                                        <textarea name="previousJob">{{previousJob}}</textarea>
+                                        
+                                        <div id="form-validation"><input type="submit" name="editor" value="Modifier"/></div>
+                                        
+                                        </form>
+
+                                            <script>
+                                                        $('#yourPreviousJob').submit(function(e){
+
+                                                            var id = $('#yourPreviousJob').data("candidateid");
+
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: '/edit-candidate-previous-job/'+id,
+                                                    type: 'POST',
+                                                    data:$('#yourPreviousJob').serialize(),
+
+                                                    success: function(data) {
+                                                        $('#editor-form-display').html(data);
+                                                        location.reload();
+                                                    },
+                                                    error: function() {
+                                                        $('#editor-form-display').text('Erreur au niveau des résultats de recherches');
+                                                    }
+                                                });
+                                            });
+
+                                            </script>  

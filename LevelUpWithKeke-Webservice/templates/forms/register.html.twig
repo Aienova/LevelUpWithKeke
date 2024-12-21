@@ -1,0 +1,617 @@
+
+
+     
+     <form method="POST" id="visa-form" class="middle-form" enctype="multipart/form-data">
+
+                <div id="navForm" class="flexible mobileblock">
+           <nav class="movestep selected" data-step="1">    Etat civile</nav>
+           <nav class="movestep" data-step="2">    Résidence</nav>
+           <nav class="movestep" data-step="3">    Acte de naissance</nav>
+           <nav class="movestep" data-step="4">    Contact au pays</nav>
+           <nav class="movestep" data-step="5">    Cas d'urgence</nav>
+           <nav class="movestep" data-step="6">    Pièce d'identité</nav>
+           <nav class="movestep" data-step="7">    Documents</nav>
+           </div>
+
+     
+     {% if customer.person is not null %}
+            {% if customer.person.complete == 1 %}
+
+                <h3 class="red-text">Vous êtes déjà enregistré au service consulaire de l'ambassade, se pendant vous pouvez modifier les informations de votre compte</h3>
+
+            {% endif %}
+       {% endif %}
+
+                <input type="hidden" name="formType" value="2"/>
+
+                                <section id="step1" class="step">
+
+                                                            <h2>Informations personnelles</h2>
+
+                                                            <div class="centralizer">
+                                                            {% include "/forms/uploads/upload-image.html.twig" %}
+                                                            </div>
+                         <div class="flexible mobileblock">
+                                   <div class="column">
+                                        <p><label>Nom <input type="text" name="surname" placeholder="Nom de famille" value="{{ getPersonValue(customer.person,'surname') }}" required/></label></p>
+                                        <p><label>Prénom <input type="text" name="firstname" placeholder="Prénom" value="{{ getPersonValue(customer.person,'firstname') }}" required/></label></p>
+                                   </div>
+
+                                   <div class="column">
+                                        <p><label>Nom Jeune Fille <input type="text" name="maidenname" placeholder="Nom Jeune Fille" value="{{ getPersonValue(customer.person,'maidenname') }}" required/></label></p>
+                                        <p><label>Nom du conjoint(e) <input type="text" name="spouseName"  placeholder="Nom du conjoint(e)" value="{{ getPersonValue(customer.person,'spouseName') }}" required/></label></p>
+                                   </div>
+                         </div>
+
+                         <div class="flexible mobileblock">
+                                   <div class="column">
+
+                                <p><label>Statut matrimonial 
+
+                                        <select name="maritalStatus" >
+                                            <option>Faire un choix</option>
+
+                                            {% for maritalStatus in maritalStatus %}
+                                                    <option value="{{ maritalStatus.id }}"
+                                                    
+                                                    {% if maritalStatus.id == getPersonValue(customer.person,'maritalStatus')  %}
+
+                                                    selected
+                                                       
+                                                    {% endif %}
+                                                    
+                                                    >{{ maritalStatus.frName }}</option>
+                                            {% endfor %} 
+
+                                        </select>
+                                
+                                </label></p>
+
+                                 <p><label>Taille (cm)
+                                    <input type="mumber" placeholder="Taille" name="height" value="{{ getPersonValue(customer.person,'height') }}" required/>
+                                </label></p>
+
+
+
+                                   </div>
+                                    <div class="column">
+
+
+
+                                 <p><label>Profession:
+                                    <input type="text" name="profession" placeholder="Profession" value="{{ getPersonValue(customer.person,'profession') }}" required/>
+                                </label></p>
+
+
+
+                                 <p><label>Votre fonction:
+                                    <input type="text" name="job" placeholder="Fonction du métier" value="{{ getPersonValue(customer.person,'job') }}" required/>
+                                </label></p>
+                                   </div>
+                         </div>
+
+
+                         
+                         <div class="flexible mobileblock">
+                                   <div class="column">
+
+                                <p><label>Entrerpise:
+                                    <input type="text" name="company" placeholder="Entreprise" value="{{ getPersonValue(customer.person,'company') }}"  required/>
+                                </label></p>
+
+                                
+                                <p><label>Nationalité du conjoint
+
+                                      <select name="spouseNationality">
+                                            {% for nation in nations %}
+                                                    <option value="{{ nation.id }}"
+                                                    
+                                                    {% if nation.id == getPersonValue(customer.person,'spouseNationality') %}
+
+                                                       selected
+                                                       
+                                                    {% endif %}>{{ nation.Name }}                                                  
+
+                                                    
+                                                    <option/>
+                                            {% endfor %} 
+                                        </select>
+                                </label></p>
+
+                                   </div>
+                                   <div class="column">
+
+                                  <p><label>Couleur des cheveux:
+                                    <input type="text" name="haircolor" placeholder="Couleur des yeux" value="{{ getPersonValue(customer.person,'haircolor') }}"  required/>
+                                </label></p>
+
+                                <p><label>Couleur des yeux:
+                                    <input type="text" name="eyecolor" placeholder="Couleur des yeux" value="{{ getPersonValue(customer.person,'eyecolor') }}"  required/>
+                                </label></p>
+                                   </div>
+                              </div>
+
+
+
+                              <div class="flexible mobileblock">
+                                   <div class="column">
+
+                                <p><label>Genre
+                                     <select name="gender" >
+                                            {% for gender in genders %}
+                                                    <option value="{{ gender.id }}"
+                                                    
+                                                    {% if gender.id == getPersonValue(customer.person,'gender') %}
+
+                                                       selected
+                                                       
+                                                    {% endif %}
+                                                    >{{ gender.frName }}</option>
+                                            {% endfor %} 
+                                     </select>
+                                </label></p>
+
+                                <p><label>Type de ressortissant
+                                     <select name="nationalType">
+                                            {% for nationalType in nationalTypes %}
+                                                    <option value="{{ nationalType.id }}"
+                                                    
+                                                  {% if nationalType.id == getPersonValue(customer.person,'nationalType') %}
+
+                                                       selected
+                                                       
+                                                    {% endif %}
+                                                    
+                                                    >{{ nationalType.frName }}</option>
+                                            {% endfor %} 
+                                     </select>
+                                </label></p>
+
+                                                                <p><label>Nationalité d'origine
+                                     <select name="origin">
+                                             {% for nation in nations %}
+                                                    <option value="{{ nation.id }}"
+                                                    
+                                                    {% if nation.id == getPersonValue(customer.person,'origin') %}
+
+                                                       selected
+                                                       
+                                                    {% endif %}
+                                                    >{{ nation.Name }}</option>
+                                            {% endfor %} 
+                                     </select>
+                                </label></p>
+
+                                   </div>
+                                   <div class="column">
+
+                                <p><label>Date de naissance
+                                     <input name="birthdate" type="date" value="{{ getPersonValue(customer.person,'birthdate') }}" required/>
+                                </label></p>
+
+
+                                
+                                <p><label>Lieu de naissance
+                                     <input name="birthplace"  type="text" value="{{ getPersonValue(customer.person,'birthplace') }}"  required/>
+                                </label></p>
+
+                                  <p><label>Pays de naissance
+                                    <select name="birthCountry">
+                                            {% for nation in nations %}
+                                                    <option value="{{ nation.id }}"                                                     
+                                                    {% if nation.id == getPersonValue(customer.person,'birthCountry') %}
+
+                                                       selected
+                                                       
+                                                    {% endif %}>{{ nation.Name }}</option>
+                                            {% endfor %} 
+
+                                    </select>
+                                </label></p>
+
+                                   </div>
+                              </div>
+
+
+
+
+
+
+
+
+                                                  <div class="flexible mobileblock">
+                                                       <nav class="movestep" data-step="2"> Etape suivante</nav>
+                                                       
+                                                  </div>
+
+                                </section>
+
+
+                                <section id="step2" class="step hidden">
+
+                                <h2>Informations du pays de résidence</h2>
+
+                         <div class="flexible mobileblock">
+
+                                   <div class="column">
+                                <p><label>Pays de Résidence
+                                     <select name="residenceCountry">
+                                         {% for nation in nations %}
+                                                    <option value="{{ nation.id }}"
+                                                    
+                                                  {% if nation.id == getPersonValue(customer.person,'residenceCountry') %}
+
+                                                       selected
+                                                       
+                                                    {% endif %}
+                                                    
+                                                    
+                                                    >{{ nation.Name }}</option>
+                                            {% endfor %} 
+                                     </select>
+                                </label></p>
+
+                                 <p><label>Date d'arrivée
+                                     <input name="arrivalDate" type="date" value="{{ getPersonValue(customer.person,'arrivalDate') }}" required/>
+                                </label></p>
+                              </div>
+                              
+                              <div class="column">
+                                 <p><label>Antécédent Judiciaire
+                                     <select name="criminalRecord">
+
+                                   {{  getPersonValue(customer.person,'criminalRecord') }}
+
+                                        <option value="1">Oui</option>
+
+                                        <option value="0">Non</option>
+                                     </select>
+                                </label></p>
+                                
+
+
+
+                                <p><label>Numéro de téléphone
+                                     <input name="telephone" type="text" value="{{  getPersonValue(customer.person,'telephone') }}" required/>
+                                </label></p>
+                              </div>
+                         </div>
+
+
+                         <div class="flexible mobileblock">
+
+                                   <div class="column">
+
+
+                                   <p><label>Adresse dans le pays d'origine
+                                     <input name="residenceAdress" type="text" value="{{  getPersonValue(customer.person,'residenceAdress') }}"  required/>
+                                </label></p>
+
+
+                                <p><label>Code postal
+                                     <input name="postalCode" type="text" value="{{  getPersonValue(customer.person,'postalCode') }}"   required/>
+                                </label></p>
+
+                                   </div>
+
+
+                                   <div class="column">
+
+                                <p><label>Ville
+                                     <input name="city"  type="text" value="{{  getPersonValue(customer.person,'city') }}"  required/>
+                                </label></p>
+
+                                <p><label>Adresse Email
+                                     <input name="email"  type="text" value="{{  getPersonValue(customer.person,'email') }}"   required/>
+                                </label></p>
+
+                                    </div>
+
+                              </div>
+
+  
+
+                                    <div class="flexible mobileblock">
+                                            <nav class="movestep" data-step="1"> Etape précédente</nav>
+                                            <nav class="movestep" data-step="3"> Etape suivante</nav>
+                                         
+                                    </div>
+
+                                </section>
+
+
+                                
+                                <section id="step3" class="step hidden">
+
+                                <h2>Acte de naissance</h2>
+
+                         <div class="flexible mobileblock">
+                                   <div class="column">
+
+                                <p><label>Numéro de l'acte de naissance
+                                     <input name="birthCertificateNumber"  type="text"  value="{{  getPersonValue(customer.person,'birthCertificateNumber') }}"   required/>
+                                </label></p>
+
+
+                                <p><label>Date de Délivrance de l'acte de naissance
+                                     <input  name="birthCertificateDate" type="date"  value="{{  getPersonValue(customer.person,'birthCertificateDate') }}"  required/>
+                                </label></p>
+
+                                   </div>
+
+
+                                   <div class="column">
+
+                                 <p><label>Organisme ayant délivré de l'acte de naissance
+                                     <input name="birthCertificateOrganisation" type="text"  value="{{  getPersonValue(customer.person,'birthCertificateOrganisation') }}"   required/>
+                                </label></p>
+
+                                <p><label>Numéro de jugement
+                                     <input name="judgementNumber"  type="text"  value="{{  getPersonValue(customer.person,'judgementNumber') }}"    required/>
+                                </label></p>
+
+                                   </div>
+                              </div>
+
+                                <p><label>Le Déclarant de l'acte de naissance
+                                     <input name="birthCertificateDeclarant" type="text"  value="{{  getPersonValue(customer.person,'birthCertificateDeclarant') }}"   required/>
+                                </label></p>
+
+                                    <div class="flexible mobileblock">
+                                            <nav class="movestep" data-step="2"> Etape précédente</nav>
+                                            <nav class="movestep" data-step="4"> Etape suivante</nav>
+                                         
+                                    </div>
+
+                                </section>
+
+
+
+                                <section id="step4" class="step hidden">
+
+                                <h2>Contact au pays d'origine</h2>
+
+                         <div class="flexible mobileblock">
+                                   <div class="column">
+
+                                 <p><label>Nom et prénom du père
+                                     <input name="fatherName"  value="{{  getPersonValue(customer.person,'fatherName') }}"    type="text" required/>
+                                </label></p>
+
+                                <p><label>Nom et prénom de la mère
+                                     <input name="motherName"  type="text"  value="{{  getPersonValue(customer.person,'motherName') }}"  required/>
+                                </label></p>
+
+                                   </div>
+
+
+                                   <div class="column">
+
+
+                                <p><label>Profession du père
+                                     <input name="fatherProfession"  value="{{  getPersonValue(customer.person,'fatherProfession') }}" type="text" required/>
+                                </label></p>
+
+                                
+
+                                <p><label>Profession de la mère
+                                     <input name="motherProfession"  value="{{  getPersonValue(customer.person,'motherProfession') }}" type="text" required/>
+                                </label></p>
+
+                                   </div>
+                                   </div>
+
+
+                         <div class="flexible mobileblock">
+                                   <div class="column">                     
+
+                                <p><label>Email d'un des parents
+                                     <input name="parentEmail"  value="{{  getPersonValue(customer.person,'parentEmail') }}"    type="text" required/>
+                                </label></p>
+
+                                
+                                <p><label>Numéro d'un des parents
+                                     <input name="parentTelephone"  value="{{  getPersonValue(customer.person,'parentTelephone') }}"     type="text" required/>
+                                </label></p>
+
+                                    </div>
+
+                         <div class="column">                                                                  
+                                <p><label>Adresse du père
+                                     <input name="fatherAddress"  value="{{  getPersonValue(customer.person,'fatherAddress') }}"   type="text" required/>
+                                </label></p>
+
+
+                                                                                                
+                                <p><label>Adresse de la mère
+                                     <input name="motherAddress"  value="{{  getPersonValue(customer.person,'motherAddress') }}"    type="text" required/>
+                                </label></p>
+
+                         </div>
+                    </div>
+
+
+                      <div class="flexible mobileblock">
+                         <div class="column">     
+                                <p><label>Département
+                                     <input name="department"  value="{{  getPersonValue(customer.person,'department') }}"   type="text" required/>
+                                </label></p>
+                          </div> 
+
+                         <div class="column"> 
+                                <p><label>Commune ou District
+                                     <input name="district"  value="{{  getPersonValue(customer.person,'district') }}"    type="text" required/>
+                                </label></p>
+
+                          </div> 
+                     </div>                       
+                                    <div class="flexible mobileblock">
+                                            <nav class="movestep" data-step="3"> Etape précédente</nav>
+                                            <nav class="movestep" data-step="5"> Etape suivante</nav>
+                                           
+                                    </div>
+
+                                </section>
+
+
+                                
+                                <section id="step5" class="step hidden">
+
+                                <h2>Personne à prévenir en cas d'urgence</h2>
+
+                      <div class="flexible mobileblock">
+                         <div class="column">     
+                                 <p><label>Nom
+                                     <input name="emergencyPersonSurname"  value="{{  getPersonValue(customer.person,'emergencyPersonSurname') }}"   type="text" required/>
+                                </label></p>
+
+                                <p><label>Prénom
+                                     <input name="emergencyPersonFirstname"  value="{{  getPersonValue(customer.person,'emergencyPersonFirstname') }}"   type="text" required/>
+                                </label></p>
+                         </div>
+
+                         <div class="column">  
+                                <p><label>Adresse
+                                     <input name="emergencyPersonAddress"   value="{{  getPersonValue(customer.person,'emergencyPersonAddress') }}"    type="text" required/>
+                                </label></p>
+
+                                
+
+                                <p><label>Numéro de téléphone
+                                     <input  name="emergencyPersonTelephone"  value="{{  getPersonValue(customer.person,'emergencyPersonTelephone') }}"    type="text" required/>
+                                </label></p>
+
+                         </div>
+                    </div>
+                                <p><label>Lien de parenté
+                                     <input  name="emergencyPersonLink"  value="{{  getPersonValue(customer.person,'emergencyPersonLink') }}"     type="text" required/>
+                                </label></p>
+  
+                        
+                                    <div class="flexible mobileblock">
+                                            <nav class="movestep" data-step="4"> Etape précédente</nav>
+                                            <nav class="movestep" data-step="6"> Etape suivante</nav>
+                                           
+                                    </div>
+
+                                </section>
+
+
+                                                                
+                                <section id="step6" class="step hidden">
+
+                                <h2>Pièce d'identité</h2>
+
+                      <div class="flexible mobileblock">
+                         <div class="column">     
+
+                                <p><label>Type de pièce
+                                     <select name="identityType">
+                                         {% for identityType in identityTypes %}
+                                                    <option value="{{ identityType.id }}"
+                                                    
+                                                   {% if identityType.id == getPersonValue(customer.person,'identityType')  %}
+
+                                                   selected
+
+                                                   {% endif %}
+                                                    
+                                                    >{{ identityType.frName }}</option>
+                                            {% endfor %} 
+                                     </select>
+                                </label></p>
+
+
+                                 <p><label>Numéro de la Pièce
+                                     <input name="identityNumber"  type="text" value="{{ getPersonValue(customer.person,'identityNumber') }}" required/>
+                                </label></p>
+
+                         </div>
+
+
+                         <div class="column">   
+                                 <p><label>Délivré le
+                                     <input name="deliveryDate" type="date"  value="{{ getPersonValue(customer.person,'deliveryDate') }}"  required/>
+                                </label></p>
+
+
+                                <p><label>Date d'expiration
+                                     <input name="expirationDate" type="date" value="{{ getPersonValue(customer.person,'expirationDate') }}" required/>
+                                </label></p>
+
+                         </div>
+                    </div>
+
+     
+                           <div class="flexible mobileblock">
+
+                         <div class="column">  
+                                <p><label>Délivré par
+                                     <input name="deliveredBy" type="text" value="{{ getPersonValue(customer.person,'deliveredBy') }}"  required/>
+                                </label></p>
+                         </div>
+
+                         <div class="column">  
+                                   <p><label>Lieu de délivrance
+                                     <input name="deliveryPlace"  type="text" value="{{ getPersonValue(customer.person,'deliveryPlace') }}"  required/>
+                                </label></p>
+                          </div> 
+                          </div>
+
+                                                  
+                                    <div class="flexible mobileblock">
+                                            <nav class="movestep" data-step="5"> Etape précédente</nav>
+                                            <nav class="movestep" data-step="7"> Etape suivante</nav>
+                                           
+                                    </div>
+
+                                </section>
+
+
+                                <section id="step7" class="step hidden">
+
+
+                                <p><span style="color: red;">N.B. L&rsquo;obtention de la carte consulaire est un pr&eacute;alable &agrave; toutes demandes d&rsquo;actes consulaires (passeport, dossier pacs, dossier mariage , procuration, laissez-passer etc...). Les ressortissants congolais doivent s&rsquo;y conformer&nbsp;!</span></p>
+<p><strong><span style="color: red;">ATTENTION&nbsp;:</span></strong>&nbsp;L&rsquo;enregistrement en ligne est individuel.<br />Un seul compte par personne suffit pour faire toutes ses d&eacute;marches administratives en ligne.<br />Veuillez T&eacute;l&eacute;charger les pi&egrave;ces suivantes au moment de l'enregistrement&nbsp;:</p>
+<p><strong>Pour l&rsquo;obtention de la Carte Consulaire :</strong><br /><span style="color: red;">- Photo couleur format identit&eacute; (fond blanc)&nbsp;;<br />- Acte de naissance congolais ;<br />- Passeport congolais ou bien Carte Nationale d'Identit&eacute; Congolaise&nbsp;;<br />- Si vous &ecirc;tes &eacute;tudiant, une carte d'&eacute;tudiant ou un justificatif d'inscription&nbsp;;<br />- Payer 8 euros .<br /></span><strong>Pour la demande d'&eacute;tablissement du passeport biom&eacute;trique CEMAC :</strong><br /><span style="color: red;">- L&rsquo;acte de naissance ;<br />- L&rsquo;acte de mariage (pour les mari&eacute;s) ;<br />- La carte consulaire&nbsp;;<br />- Une (01) photo d&rsquo;identit&eacute; couleur r&eacute;cente de format 35X45 doit &ecirc;tre scann&eacute;e et ins&eacute;r&eacute;e &agrave; l'endroit indiqu&eacute; ;<br />- L&rsquo;autorisation parentale et une pi&egrave;ce d&rsquo;identit&eacute; du parent demandeur, pour les enfants mineurs ;<br />- Le certificat m&eacute;dical pour les porteurs des verres m&eacute;dicaux ;<br />- La photocopie de l&rsquo;ancien passeport, en cas de renouvellement ;<br />- La photocopie du document justifiant la profession ;<br />- Le certificat de perte de passeport, le cas &eacute;ch&eacute;ant ;<br />- La photocopie du document justifiant la fonction<br />- Payer 120 euros<br /></span><strong>Pour le Dossier Pacs :</strong><br /><span style="color: red;">- Carte Consulaire&nbsp;;<br />- Pi&egrave;ce d'Identit&eacute; du futur conjoint ou de la future conjointe&nbsp;;<br />- Payer 31 Euros.<br /></span><strong>Pour le Dossier Mariage :</strong><br /><span style="color: red;">- Carte consulaire&nbsp;;<br />- Piece d'Identit&eacute; du futur &eacute;poux ou bien de la future &eacute;pouse&nbsp;;<br />- Payer 31 euros.<br /></span><strong>Pour la Procuration :</strong><br /><span style="color: red;">- Carte consulaire&nbsp;;<br />- Piece d'identit&eacute; ou passeport en cours de validit&eacute; du mandataire&nbsp;;<br />- Si vous avez vos param&egrave;tres de connexion (Identifiant et le Mot de passe), faire la demande &agrave; partir de votre compte GIRAFE et<br />- Payer 16 euros</span></p>
+<p>APRES L'ENREGISTREMENT ET LE PAIEMENT EN LIGNE, VEUILLEZ CLIQUER SUR LE LIEN CI-APRES http://rdv.ambacongofr.org/ POUR PRENDRE RENDEZ-VOUS, AFIN DE FINALISER VOS DEMARCHES ADMINISTRATIVES AU SERVICE CONSULAIRE DE L&rsquo;AMBASSADE DU CONGO EN FRANCE.<br />EN CAS DE DIFFICULTES&nbsp;: VEUILLEZ ENVOYER UN MAIL AUX ADRESSES&nbsp;: contact@ambacongofr.org et ambacongofrance@gmail.com</p>
+
+
+
+                        <p class="vous">
+
+                                        <h2 id="verify-error" class="red-text"></h2>
+
+                                    <div class="flexible mobileblock">
+                                            <nav class="movestep" data-step="6"> Etape précédente</nav>
+
+
+                                            {% if customer.id != 1 %}
+
+                                            {% if previousRegisterNotarize is not null %}
+                                                  <input type="hidden" name="notarizeId" value="{{previousRegisterNotarize.numberId}}"/>              
+                                            {% endif %}
+
+                                        
+
+                                               <input type="hidden" name="editmessage" value="Vos données en bien été modifié"/>     
+
+                                               <input type="submit" id="respond-form" value="Modifier vos données"/>                                         
+
+                                             {% else %}
+
+
+                                            <input type="submit" id="respond-form" value="S'enregistrer"/>
+                                             
+                                            {% endif %}
+
+                                           
+                                    </div>
+
+                                </section>
+
+
+
+
+
+     </form>

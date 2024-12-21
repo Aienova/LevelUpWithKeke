@@ -1,0 +1,56 @@
+
+        
+        <h2>Détails du service d'enregistrement</h2>
+<ul id="details-list">
+    <li><strong>Nom :</strong> {{ service.person.surname }}</li>
+    <li><strong>Prénom :</strong> {{ service.person.firstname }}</li>
+    <li><strong>Nom Jeune Fille :</strong> {{ service.person.maidenname }}</li>
+    <li><strong>Nom du conjoint(e) :</strong> {{ service.person.spouseName }}</li>
+    <li><strong>Statut matrimonial :</strong> {{ service.person.maritalStatus.FRname }}</li>
+    <li><strong>Taille (cm) :</strong> {{ service.person.height }}</li>
+    <li><strong>Profession :</strong> {{ service.person.profession }}</li>
+    <li><strong>Votre fonction :</strong> {{ service.person.job }}</li>
+    <li><strong>Entrerpise :</strong> {{ service.person.company }}</li>
+    <li><strong>Nationalité du conjoint :</strong> {{ service.person.spouseNationality.name }}</li>
+    <li><strong>Couleur des cheveux :</strong> {{ service.person.haircolor }}</li>
+    <li><strong>Couleur des yeux :</strong> {{ service.person.eyecolor }}</li>
+    <li><strong>Genre :</strong> {{ service.person.gender.FRname }}</li>
+    <li><strong>Type de ressortissant :</strong> {{ service.person.nationalType.FRname }}</li>
+    <li><strong>Date de naissance :</strong> {{ service.person.birthdate|date("d/m/Y") }}</li>
+    <li><strong>Lieu de naissance :</strong> {{ service.person.birthplace }}</li>
+    <li><strong>Nationalité d'origine :</strong> {{ service.person.origin.name }}</li>
+    <li><strong>Pays de Résidence :</strong> {{ service.person.residenceCountry.name }}</li>
+    <li><strong>Date d'arrivée :</strong> {{ service.person.arrivalDate|date("d/m/Y") }}</li>
+    <li><strong>Antécédent Judiciaire :</strong> {{ service.person.criminalRecord }}</li>
+    <li><strong>Numéro de téléphone :</strong> {{ service.person.telephone }}</li>
+    <li><strong>Adresse dans le pays d'origine :</strong> {{ service.person.residenceAdress }}</li>
+    <li><strong>Code postal :</strong> {{ service.person.postalCode }}</li>
+    <li><strong>Ville :</strong> {{ service.person.city }}</li>
+    <li><strong>Adresse Email :</strong> {{ service.person.email }}</li>
+    <li><strong>Numéro de l'acte de naissance :</strong> {{ service.person.birthCertificateNumber }}</li>
+    <li><strong>Date de Délivrance de l'acte de naissance :</strong> {{ service.person.birthCertificateDate|date("d/m/Y") }}</li>
+    <li><strong>Organisme ayant délivré de l'acte de naissance :</strong> {{ service.person.birthCertificateOrganisation }}</li>
+    <li><strong>Numéro de jugement :</strong> {{ service.person.judgementNumber }}</li>
+    <li><strong>Le Déclarant de l'acte de naissance :</strong> {{ service.person.birthCertificateDeclarant }}</li>
+    <li><strong>Nom et prénom du père :</strong> {{ service.person.fatherName }}</li>
+    <li><strong>Nom et prénom de la mère :</strong> {{ service.person.motherName }}</li>
+    <li><strong>Profession du père :</strong> {{ service.person.fatherProfession }}</li>
+    <li><strong>Profession de la mère :</strong> {{ service.person.motherProfession }}</li>
+    <li><strong>Email d'un des parents :</strong> {{ service.person.parentEmail }}</li>
+    <li><strong>Numéro d'un des parents :</strong> {{ service.person.parentTelephone }}</li>
+    <li><strong>Adresse du père :</strong> {{ service.person.fatherAddress }}</li>
+    <li><strong>Adresse de la mère :</strong> {{ service.person.motherAddress }}</li>
+    <li><strong>Département :</strong> {{ service.person.department }}</li>
+    <li><strong>Commune ou District :</strong> {{ service.person.district }}</li>
+    <li><strong>Nom (Personne à prévenir en cas d'urgence) :</strong> {{ service.person.emergencyPersonSurname }}</li>
+    <li><strong>Prénom (Personne à prévenir en cas d'urgence) :</strong> {{ service.person.emergencyPersonFirstname }}</li>
+    <li><strong>Adresse (Personne à prévenir en cas d'urgence) :</strong> {{ service.person.emergencyPersonAddress }}</li>
+    <li><strong>Numéro de téléphone (Personne à prévenir en cas d'urgence) :</strong> {{ service.person.emergencyPersonTelephone }}</li>
+    <li><strong>Lien de parenté (Personne à prévenir en cas d'urgence) :</strong> {{ service.person.emergencyPersonLink }}</li>
+    <li><strong>Type de pièce (Pièce d'identité) :</strong> {{ service.person.identityType.FRname }}</li>
+    <li><strong>Numéro de la Pièce :</strong> {{ service.person.identityNumber }}</li>
+    <li><strong>Délivré le :</strong> {{ service.person.deliveryDate|date("d/m/Y") }}</li>
+    <li><strong>Date d'expiration :</strong> {{ service.person.expirationDate|date("d/m/Y") }}</li>
+    <li><strong>Délivré par :</strong> {{ service.person.deliveredBy }}</li>
+    <li><strong>Lieu de délivrance :</strong> {{ service.person.deliveryPlace }}</li>
+</ul>

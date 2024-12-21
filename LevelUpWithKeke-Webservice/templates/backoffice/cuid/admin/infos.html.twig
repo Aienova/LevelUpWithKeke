@@ -1,0 +1,117 @@
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Informations générales de votre site Web</h1>
+                    </div>
+
+                    <div id="square-menu">
+
+                                <div class="square flexible">
+
+                                    <div id="form-creator">
+                                  
+                                    <form  method="POST" enctype="multipart/form-data">
+
+                                    <h2>Informations générales de votre site Web</h2>
+
+
+                                    <input type="hidden" name="infos_data" value="1" />
+                                            
+                                            <p><h3>Titre de votre site Web</h3>
+                                            <input type="text" name="title" value="{{website.homepage.title}}" />
+                                            </p>
+                                            
+
+                                            <p>
+                                            <h3>Description de votre site Web :</h3>
+                                            <textarea name="description">{{website.homepage.description}}</textarea>
+                                            </p>
+
+                                            <p>
+                                            <h3>Logo de votre site web :</h3>
+                                            <img class="logo" src="{{website.logo.link}}" />
+                                                {% include "backoffice/cuid/admin/blocks/plugins/logo-image-selector/plugin.html.twig" %}
+                                            </p>
+
+
+                                            <p><h3>Nom de l'établissement</h3>
+                                            <input type="text" name="companyName" value="{{website.companyName}}" />
+                                            </p>
+
+                                            
+                                            <p><h3>Nom du gérant</h3>
+                                            <input type="text" name="owner" value="{{website.owner}}" />
+                                            </p>
+
+
+                                            <p><h3>Nom de domaine</h3>
+                                            <input type="text" name="domain" value="{{website.domain}}" />
+                                            </p>
+
+                                            
+                                            <p><h3>Lien du site web</h3>
+                                            <input type="text" name="link" value="{{website.link}}" />
+                                            </p>
+
+                                            <p><h3>Email de contact</h3>
+                                            <input type="text" name="email" value="{{website.email}}" />
+                                            </p>
+
+                                            <p><h3>Téléphone pour vous contacter</h3>
+                                            <input type="text" name="telephone" value="{{website.telephone}}" />
+                                            </p>
+
+                                            <p><h3>Votre adresse physique</h3>
+                                            <input type="text" name="location" value="{{website.location}}" />
+                                            </p>
+
+                                            <p><h3>Votre identifiant légal de votre société (ex : Numéro SIRET) </h3>
+                                            <input type="text" name="companyId" value="{{website.companyId}}" />
+                                            </p>
+
+
+                                            <p><h3>Votre métier</h3>
+                                                <select name="activity">
+                                                {% for activity in activities %}
+
+                                                    <option value="{{activity.id}}">{{activity.frName}}</option>
+                                                    
+                                                {% endfor %}
+                                                </select>
+                                            </p>
+
+                                            <p><h3>Votre pays</h3>
+                                                <select name="country">
+                                                {% for country in countries|sort((a, b) => a.name <=> b.name) %}
+
+                                                    <option value="{{country.id}}">{{country.name}}</option>
+                                                    
+                                                {% endfor %}
+                                                </select>
+                                            </p>
+
+
+
+
+
+                                       {#     {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}  #}
+
+
+
+                                    <input type="submit"  value="Modifier les informations générales" />
+                                    </form>
+
+                                    </div>
+                                    </div>
+
+
+            </section>
+
+
+        {% endblock %}

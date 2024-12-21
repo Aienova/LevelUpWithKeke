@@ -1,0 +1,528 @@
+#square-menu {
+
+
+    .left-side {
+
+        margin-right: 20px;
+        width: 50%;
+    }
+
+
+    .right-side {
+        width: 40%;
+        margin-left: 3em;
+
+        
+    }
+
+
+
+    
+    #decision-notification {
+        /* padding: 5px; */
+        width: fit-content;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        /* padding-top: 0px; */
+        padding-right: 10px;
+    }
+
+    
+    .square{
+
+        .optionbutton{
+
+            padding: 10px;
+            background-color: #1a1a1a;
+            color: white;
+            width: fit-content;
+            margin-bottom: 10px;
+            margin-right: 20px;
+            cursor:pointer;
+        
+
+            span{
+
+                padding: 10px;
+                transform: translateY(5px);
+            }
+
+
+        }
+
+        .optionsearch {
+            margin: 20px;
+            background-color: black;
+            padding: 25px;
+            width: 220px;
+        }
+
+        .optionbutton:hover{
+
+            background-color: white;
+            color:black!important;
+
+        }
+
+        input[type=submit] {
+            background-color: rgb(0, 0, 0);
+        }
+
+
+        input[type=submit]:hover {
+            background-color: rgb(255, 255, 255);
+        }
+
+        #details-documents {
+            padding: 10px;
+            background-color: #f6b74d;
+            max-height:300px;
+            overflow-y: scroll;
+
+
+            a{
+                color:black!important;
+            }
+
+        }
+
+
+
+        #company-responses {
+            background-color: #786e6e;
+            padding: 10px;
+        }
+
+        #initial-prize {
+            padding: 10px;
+            background-color: black;
+            margin-bottom: 20px;
+        }
+    
+
+            color: white;
+            height: 100%;
+            width: 100%;
+            margin: 10px;
+
+
+            h2 {
+                margin-top: 0px;
+                font-size: 22px;
+                width:100%;
+                padding-bottom: 25px;
+            }
+
+
+            .rating {
+                margin-top: -5px;
+                padding-left: 10px;
+                }
+
+            a{
+
+                text-decoration: none;
+                color:white;
+            }
+
+            #previousorder,#nextorder{
+
+                cursor: pointer;
+            }
+                
+
+        }
+
+}
+
+
+.stat-info {
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    height: 125px;
+    padding: 20px;
+    background-color: #00000059;
+    margin-bottom: 25px;
+    border-radius: 100%;
+    padding-top: 100px;
+    border: solid;
+    /* color: black; */
+
+    h2{
+
+        margin-bottom:10px;
+        padding-bottom: 0px!important;
+    }
+
+    .stat-value{
+
+        font-size: 50px;
+
+    }
+    
+    span#stat-value-7 {
+        font-size: 17px;
+    }
+
+    #stat-value-5 {
+        font-size: 30px;
+    }
+}
+
+.addbutton{
+
+    padding:10px;
+    background-color: black;
+    color:white;
+    width:fit-content;
+    margin-left:auto;
+    cursor: pointer;
+
+
+    
+}
+
+#its-done{
+
+    padding-bottom:50px;
+}
+
+#confirm-form {
+    text-align: center;
+    padding: 25px;
+
+    button{
+
+        margin:10px;
+    }
+}
+
+.image-card {
+    width: fit-content;
+    /* padding: 20px; */
+    background-color: #777474;
+    margin:20px;
+
+
+
+
+
+    .image{
+
+        width:100%;
+        height:250px;
+        padding-top:10px;
+
+        h2{
+
+            margin: 10px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            width: fit-content !important;
+        }
+
+        .colorbar {
+            width: 70px;
+            height: 15px;
+            margin: 15px;
+            margin-top: 0px;
+        }
+    }
+
+    .info{
+
+        padding:25px;
+    }
+}
+
+    .addbutton:hover{
+
+        background-color:rgb(252, 228, 17);
+        color:black;
+
+        
+    }
+
+
+    div#card {
+        color: white;
+        width: 230px;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        padding: 5px;
+        width: 100%;
+        text-align: center;
+        background-color: black;
+        margin: 0px;
+        z-index:11;
+
+        a{
+
+            color:white;
+        }
+
+        a:hover{
+
+            color:rgb(38, 250, 232);
+        }
+
+
+
+        input[type=submit] {
+
+            padding: 6px;
+        }
+
+
+        #searchbar {
+            margin: auto;
+            width: 70%;
+        }
+    
+    
+    
+    nav {
+
+        margin: 3px;
+        margin-left: 20px;
+        
+    }
+
+    img {
+        height: 35px;
+        padding:10px;
+    }
+
+    #user{
+
+        padding-top: 20px;
+    }
+
+    .closed{
+            
+        display:none;
+        
+    }
+
+    .open{
+            
+        display:block;
+        
+    }
+
+
+
+
+}
+
+
+#close-panel-button{
+
+    margin-left:auto;
+    padding:20px;
+
+    span {
+        background-color: #ff00008a;
+        padding: 10px;
+        border-radius: 40px;
+        }
+        
+
+}
+
+
+.panel-activated{
+
+    width:777px!important;
+
+    #panel-info{
+
+        padding-top:10px;
+            padding-left:30px;
+
+        
+    }
+    
+
+}
+
+
+.panel-option-count {
+    padding-top: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-bottom: 3px;
+    background-color: #d1357d;
+    border-radius: 20px;
+    margin-top: 0px;
+    }
+
+
+    .navbutton {
+        padding: 20px;
+        background-color: #534848;
+        color: white;
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+
+    #fontTitlePreview {
+        padding-top:50px;
+        padding-bottom:50px;
+        width: 100%;
+        background-color: black;
+        background-repeat: repeat;
+        text-align: center;
+
+        h2{
+
+            font-size: 40px!important;
+
+        }
+    }
+
+
+    #fontTextPreview {
+        background-color: black;
+        padding-top:50px;
+        padding-bottom:50px;
+        width: 100%;
+        font-size: 20px;
+
+
+    }
+
+
+#panel-display {
+    background-color: #00000061;
+
+
+    .closed{
+
+        opacity:0;
+        height:0px;
+    }
+
+    .open{
+
+        opacity:1;
+        padding-bottom:30px;
+
+    }
+
+    }
+    
+
+    #popup {
+        position: fixed;
+        z-index: 1111111111111;
+        background-color: #1a1a1a;
+        color: white;
+        padding: 50px;
+        /* left: 0px; */
+        margin: auto;
+        width: fit-content;
+        top: 50%;
+        left: 50%;
+        transition-duration: 1s;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        h3 {
+            padding-bottom: 20px !important;
+            margin-top: 10px;
+        }
+    }
+
+
+    #editor {
+        background-color: #000000bd;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 1;
+    }
+
+    #editor-form {
+        position: fixed;
+        z-index: 1111111;
+        width: fit-content;
+        background-color: black;
+        color: white;
+        padding: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        div#men {
+            height: 300px;
+            overflow-y: scroll;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .avatar-mini {
+            height: 93px;
+        }
+
+        div#women {
+            height: 300px;
+            overflow-y: scroll;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+    }
+
+    #panel-editor {
+        text-align: right;
+    }
+
+    div#form-validation {
+        padding: 10px;
+        text-align: center;
+    }
+
+    form#yourAssets {
+        overflow-y: scroll;
+        height: 450px;
+        width: fit-content;
+    }
+
+    #yourDream {
+        width: 400px;
+    }
+
+    #yourDescription {
+        width: 400px;
+    }
+
+    #yourPreviousJob {
+        width: 400px;
+    }
+
+    div#alert-square {
+        padding: 20px;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+
+    #details-info {
+        background-color: #0000008f;
+
+        #details-list{
+
+            height: 400px;
+            overflow-y: scroll;
+
+            li{
+                margin:20px;
+            }
+
+        }
+
+    }

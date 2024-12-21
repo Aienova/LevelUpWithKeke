@@ -1,0 +1,38 @@
+           
+           
+            <section class="full-h" id="services">
+
+                        
+
+                        <div  class="flexible full">
+
+
+                        <div class="content central-text">
+                        <h2>{{section.mainTitle}}</h2>
+
+                        <div class="centralizer flexible">
+
+                        {% for service in section.CMSitemServiceSettings %}
+
+                          <nav class="bigpoint"><div class="circle"><img src="{{ service.icon }}"/></div><h3>{{ service.name }}</h3></nav>
+                                          
+                     {% endfor %}
+
+                        </div>
+
+                        <br>
+
+                        {% for service in section.CMSitemServiceSettings %}
+
+                        <p>{{ service.description }}</p>
+                        
+                        {% endfor %}
+
+                       
+                        
+                        
+                        
+                        </div>
+
+                        
+            </section>

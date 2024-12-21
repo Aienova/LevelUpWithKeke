@@ -1,0 +1,71 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Bibliothèque d'image & vidéos</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                                <h2>Ajouter ou supprimer vos images & vidéos</h2>
+
+                                    <form id="uploader-multi" method="POST" enctype="multipart/form-data">
+
+                                    <input type="hidden" name="media_data" value="1" />
+                                    
+
+                                   
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                    
+                                    <input type="submit"  value="Ajouter à la bibliothèque" />
+                                    </form>
+
+                                <div id="media-gallery">
+
+                                <nav class="flexible">
+
+                                {% set count = 0 %}
+
+
+                                {% for media in media|sort((a, b) => b.id <=> a.id) %}
+
+
+                                    <div class="media-block">
+                                        <div style="background-image:url('{{media.link}}')" class="media-thumbnail"></div>
+                                        <span>{{media.name}}</span><br>
+                                        <a href="{{media.link}}"><span class="material-symbols-outlined">visibility</span></a>
+                                        <span class="open-editor material-symbols-outlined"  data-action="delete" data-section="media" data-id="{{media.id}}">delete</span>
+                                    </div></a>
+
+                                     {% set count = count + 1 %}
+
+                                {% endfor %}
+
+
+
+                                </nav>
+
+
+
+                                </div>
+                                
+                                </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}

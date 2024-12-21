@@ -1,0 +1,62 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="page-body">
+
+            <div id="page-banner" class="white-text">
+            <h1>{{page.title}}</h1>
+
+            </div>
+
+            <div id="page-content">
+            
+
+
+            {#
+
+            <div class="flexible">
+
+                <div class="content">
+                TEXT TEXT
+                </div>
+
+
+                <div class="content">
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                </div>
+
+            </div>
+
+            #}
+
+
+
+            {{page.content|raw}}
+
+
+        {% for section in sections %}
+
+
+                 {% include '/website/items/'~ section.item.name ~ '.html.twig' %}
+
+        {% endfor %}
+
+
+                        <div id="customer-area">
+                        <div class="flexible">
+                        <h2>VENEZ FAIRE VOTRE DEMANDE DE VISA SUR LE SERVICE EN LIGNE DE L'AMBASSADE</h2><a href="../document/visa"><button>Demande de visa</button></a>
+                        </div>
+                        </div>
+
+
+
+            </div>
+
+        </section>
+        {% endblock %}

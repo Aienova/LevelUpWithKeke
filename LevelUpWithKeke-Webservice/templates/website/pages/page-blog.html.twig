@@ -1,0 +1,80 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="page-body">
+
+            <div id="page-banner" class="white-text">
+            <h1>{{page.title}}</h1>
+
+            </div>
+
+            <div id="page-content">
+            
+
+
+            {#
+
+            <div class="flexible">
+
+                <div class="content">
+                TEXT TEXT
+                </div>
+
+
+                <div class="content">
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                </div>
+
+            </div>
+
+            #}
+
+
+                                    <h2>Toutes nos actualités</h2>
+  
+                                            <div  class="flexible mobileblock organizer">
+
+                                            {% set count = 1 %}
+
+                                            {% for article in articles %}
+                                            {% if article.publishDate|date("Y-m-d") <= "now"|date("Y-m-d") and article.statement == 0 %}
+
+                                                <div id="article-{{article.id}}" class="article card">
+                                                 <div class="image" style="background-image:url('{{article.image}}')"></div>
+                                                <h3>{{article.title}}</h3>
+                                                <h4>Publié : {{article.publishDate|date("d/m/Y")}}</h4>
+                                                <p>{{article.description|raw}}</p>
+                                                <a href="/article/{{article.name}}"><button>Lire la suite</button></a>
+                                                </div>
+                                                {% if count is divisible by(3) %}
+
+                                                </div>
+                                                <div class="flexible mobileblock organizer">
+
+                                                {% endif %}
+                                               {% set count = count + 1 %}
+                                            {% endif %}
+                                            {% endfor %}
+
+                                            </div>
+
+
+        {% for section in sections %}
+
+
+                 {% include '/website/items/'~ section.item.name ~ '.html.twig' %}
+
+        {% endfor %}
+
+
+
+            </div>
+
+        </section>
+        {% endblock %}

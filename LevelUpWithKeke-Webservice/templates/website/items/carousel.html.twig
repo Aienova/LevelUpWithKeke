@@ -1,0 +1,59 @@
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Slick Carousel CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+
+<!-- Slick Carousel Theme CSS (optional) -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+
+<!-- Slick Carousel JS -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+              <section id="gallery">
+
+            <h2>Überzeugen Sie sich selbst vom Ergebnis</h2>
+
+
+
+
+
+           
+           <div id="carrousel-container">
+            <div id="carrousel">
+
+
+              {% for carousel in section.CMSitemCarouselSettings %}
+
+ 
+              <img class="carousel-item" src="{{carousel.image1}}" />
+              <img class="carousel-item" src="{{carousel.image2}}" />
+              <img class="carousel-item" src="{{carousel.image3}}" />
+              <img class="carousel-item" src="{{carousel.image4}}" />
+              <img class="carousel-item" src="{{carousel.image5}}" />
+                                                                                  
+
+         {% endfor %}
+
+
+            </div>
+        </div>
+
+            </section>
+
+<script>
+  $(document).ready(function(){
+    $('#carrousel').slick({
+      // Slick options and settings go here
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1000,
+      centerMode: true,
+      dots: true,
+      variableWidth: true
+      // Add more options as needed
+    });
+  });
+</script>
+    

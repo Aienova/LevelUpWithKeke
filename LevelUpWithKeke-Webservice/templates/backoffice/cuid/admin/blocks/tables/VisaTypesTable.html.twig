@@ -1,0 +1,52 @@
+
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Intitulé du Visa</th>
+            <th>Prix</th>
+            <th>Jour(s)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if visas is defined %}
+        {% if visas is not empty  %}
+
+        {% for visa in visas |sort((a, b) => b.id <=> a.id) %}
+
+        {% if visa.id !=1 %}
+            
+
+
+        <tr>
+            <td>{{visa.frName}}</td>
+            <td>{{visa.price}}€</td>
+            <td>{{visa.day}}</td>
+      
+            <td>
+
+                {% set decision = '
+                
+                <a href="./edit-visa/'~ visa.id ~'"><span class="material-symbols-outlined decision-button">edit</span></a>
+                
+                <span data-action="delete" data-section="visa" data-id="'~ visa.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                %}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+                {% endif %}
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

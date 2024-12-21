@@ -1,0 +1,12 @@
+
+<div>
+    <label>Votre métier</span>
+        <select id="jobs" name="job">
+
+            {% for job in jobs|sort((a, b) => a.frname > b.frname) %}
+            <option value="{{job.id}}">{{job.FRname}}</option>
+            {% endfor %}
+
+        </select>
+
+</div>

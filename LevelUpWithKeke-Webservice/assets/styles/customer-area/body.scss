@@ -1,0 +1,263 @@
+
+
+main {
+
+
+    #toptitle {
+        padding-top: 120px;
+        padding-bottom: 120px;
+
+        h1{
+
+            font-size: 60px;
+        }
+    }
+
+
+    h1 {
+        font-size: 40px;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left:10px;
+    }
+    h2{ 
+        font-size: 30px;
+        padding: 0px;
+        margin-bottom: 20px;
+        
+       }
+    h3{ font-size :15px;    }
+
+    #visaImage{
+
+        background-image: url('/public/cuid/media/image/03-25-2024/visa.webp');
+    }
+
+
+    #registerImage{
+
+        background-image: url('/public/cuid/media/image/03-25-2024/service.webp');
+    }
+
+
+
+    #page-banner {
+        padding: 20px;
+        padding-bottom: 100px;
+        background-color: #d3bcb1;
+        color:white;
+        background-image: url('/public/cuid/media/image/02-19-2024/background2-190014.jpg');
+
+        
+        h1{
+
+            padding-top:2em;
+        }
+    }
+
+    #page-body{
+
+        height:fit-content;
+    }
+
+
+    #banner{
+
+        background-size: cover;
+        color:white;
+        background-position-x: center;
+        padding-bottom: 170px;
+
+        form{
+
+            margin-top:25px;
+        }
+
+        #main-title {
+            margin: auto;
+            width: 60%;
+            padding-top: 120px;
+            text-align: left;
+            z-index: 1;
+            position: relative;
+        }
+
+        #candidate-button {
+            background-color: #1b82d5;
+
+        }
+
+        #recruiter-button {
+            background-color: #d32266;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+    }
+
+
+    #search-partners {
+
+
+        width: fit-content;
+        margin:auto;
+
+
+        h3 {
+            margin-right: 20px;
+            font-size: 20px;
+        }
+
+
+    }
+    
+ 
+}
+
+
+
+
+
+        div#promotion {
+            width: 50%;
+            margin: auto;
+                z-index: 1;
+                position: relative;
+            
+        }
+
+        #text-title{
+
+            color:rgb(255, 255, 255);
+ 
+            img{
+
+                height:300px;
+            }
+
+
+        }
+
+
+        #promtion-product-list {
+            background-color: #353941;
+            width:50%;
+
+
+            a{
+
+                color:white;
+            }
+
+            .selected{
+
+                background-color: #972829;
+                color:white;
+            }
+
+
+
+            li{
+
+                padding:20px;
+                border-bottom: solid 2px #ffffff47;
+            }
+        }
+
+        #promtion-product-shower {
+            background-color: #972829;
+            width: 50%;
+            padding: 20px;
+        }
+
+        div#promtion-product-shower-images {
+            background-color: white;
+            height: 100%;
+            width: 85%;
+        }
+
+        div#promtion-product-shower-panel {
+            width: 20%;
+            overflow: hidden;
+            background-color: white;
+
+            img{
+
+                height: 25px;
+            }
+            
+
+            ul{
+
+                width:100%;
+
+                li{
+
+                    padding:16px;
+                    text-align: center;
+                    color: #353941;
+                }
+            }
+        }
+
+
+        #promtion-product-shower-image {
+            width: 100%;
+            margin-top: 0px;
+            height: fit-content;
+            text-align: center;
+
+            img{
+
+                height:150px;
+            }
+        }
+
+        #promtion-product-shower-price {
+            width: 100%;
+            color: black;
+
+            img{
+
+                height:77px;
+            }
+
+            .price-number {
+                color: black;
+                font-weight: bolder;
+                font-size: 25px;
+            }
+
+            .price-number-digit {
+                font-size: 15px;
+                margin-top:2px;
+            }
+        }
+
+        #crossed-price{
+
+                color: red;
+                margin-left: auto;
+
+            .price-number {
+            text-decoration:line-through;
+            color: red;
+
+            }
+        }
+
+        div#estimation {
+            font-size: 20px;
+
+            div{
+
+                margin-top:40px;
+                margin-bottom:40px;
+            }
+            
+        }
+
+        .booking-now.central-text {
+            margin-top: 70px;
+        }

@@ -1,0 +1,61 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Fermuture exceptionnel</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if events is defined %}
+        {% if events is not empty  %}
+
+
+
+        {% for event in events |sort((a, b) => b.id <=> a.id) %}
+
+ 
+                                        {% set decision = '
+
+                                <a href="./edit-event/'~ event.id ~'"><span class="material-symbols-outlined decision-button">edit</span></a>
+
+                <span data-action="delete" data-section="event" data-id="'~ event.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                                %}
+
+
+        <tr>
+            <td>{{event.title}}</td>
+            <td>{{event.eventDate|date("d/m/Y")}}</td>
+            <td>{{event.description}}</td>
+            <td>
+            
+            {% if event.exceptionalClosure == 1 %}
+
+                Oui
+
+            {% else %}
+
+            Non
+                
+            {% endif %}
+            
+            </td>
+            <td>
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

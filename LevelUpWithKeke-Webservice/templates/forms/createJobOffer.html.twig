@@ -1,0 +1,54 @@
+
+    <h3>Création de votre offre d'emploi</h3>
+                {{ form_start(form) }}
+                {{ form_row(form.title) }}
+                {{ form_row(form.job) }}
+                {% include '/forms/searchInputs/searchCity.html.twig' %}
+                {{ form_row(form.licence) }}
+                {{ form_row(form.contract) }}
+
+                <div>
+                
+
+                <label>Salaire proposé</label>
+                <input type="number" name="wage"/>
+                <select name="wageCurrency">
+                    <option value="€">€(Euro/EUR)</option>
+                    <option value="$">$(Dollar/USD)</option>
+                    <option value="£">£(Livre Sterling/GBP)</option>
+                    <option value="¥">¥(Yen/JPY)</option>
+                </select>
+                <select name="wageType">
+                    <option value="/mois">Par mois (BRUT)</option>
+                    <option value="/an">Par an (BRUT)</option>
+                    <option value="(TJM)">Par jour (TJM)</option>
+                    <option value="(Taux hoiraire)">Par heure</option>
+                </select>
+
+                {{ form_row(form.description) }}
+
+                
+
+                </div>
+                {{ form_end(form) }}
+
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+                         <script>
+                        $('#new-job-offer form').submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    url: '/create-job-offer',
+                    type: 'POST',
+                    data:$('#new-job-offer form').serialize(),
+                    success: function(data) {
+                        $('#new-job-offer').html(data);
+                       },
+                       error: function() {
+                        $('#new-job-offer').text('Erreur au niveau des résultats de recherches');
+                       }
+                });
+            });
+
+            </script>

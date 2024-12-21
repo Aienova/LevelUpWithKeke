@@ -1,0 +1,39 @@
+<table id="table-resa2" class="table-resa hidden">
+    <thead>
+        <tr>
+            <th>Numéro de demande</th>
+            <th class="hiddenformobile">Date de validation</th>
+            <th>Type de demande</th>
+            <th class="hiddenformobile">Etat de la demande</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+        {% if  paidNotarizes is defined %}
+        {% if paidNotarizes is not empty  %}
+        {% for paidNotarize in paidNotarizes %}
+
+
+
+        <tr>
+            <td>{{paidNotarize.numberId}}</td>
+            <td class="hiddenformobile">{{paidNotarize.dateDecision|date("d/m/Y h:i:s")}}</td>
+            <td>{{paidNotarize.type.frName}}</td>
+            <td class="hiddenformobile"><span class="green-text">Payée</span></td>
+            <td><span data-action="/notarize-preview/1/{{paidNotarize.id}}" class="material-symbols-outlined decision-button">print</span></td>
+  
+        </tr>
+
+        {% endfor %}
+        {% else %}
+        <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+        <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

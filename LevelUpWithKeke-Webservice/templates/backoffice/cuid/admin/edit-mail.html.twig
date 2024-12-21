@@ -1,0 +1,94 @@
+      {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifer ce mail automatique</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+
+
+                                <div class="flexible">
+                                <a href="../mails">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos mails</div>
+                                </a><br>
+                            </div>
+
+                                <h2>{{mail.mailType.description}}</h2>
+
+
+
+
+
+                                    <form id="mail-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="mail_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+                                            <p>
+                                            <h2>Titre de votre mail :</h2>
+                                            <input type="text" value="{{mail.title}}" name="title" />
+                                            </p>
+
+                                            <p>
+                                            <h2>En tête du mail :</h2>
+                                             
+                                             
+                                              {% set content = mail.header %}
+                                                {% set id = "header-mail-editor" %}
+                                                {% set name = "header" %}
+
+                                            {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}
+
+                                            </p>
+
+
+                                           <p>
+                                            <h2>Corps du mail :</h2>
+
+                                            {% set content = mail.body %}
+                                           {% set id = "body-mail-editor" %}
+                                            {% set name = "body" %}
+
+                                            {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}
+
+                                            </p>
+
+
+                                            
+                                           <p>
+                                            <h2>Pied de page :</h2>
+                                              {% set content = mail.footer %}
+                                           {% set id = "footer-mail-editor" %}
+                                            {% set name = "footer" %}
+                                                          {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}
+                                            </p>
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+
+                                    <input type="submit"  value="Modifier cet mail" />
+                                    </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

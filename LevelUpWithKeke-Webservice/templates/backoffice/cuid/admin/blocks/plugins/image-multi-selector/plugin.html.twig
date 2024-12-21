@@ -1,0 +1,85 @@
+<div id="image-selector">
+
+{% if media is not empty %}
+
+                                <div id="media-gallery">
+
+                                <nav class="flexible">
+
+                                {% set count = 0 %}
+
+
+                                {% for media in media|sort((a, b) => b.id <=> a.id) %}
+
+
+                                    <div class="media-block">
+                                        <label for="picture{{media.id}}">
+                                        <div  style="background-image:url('{{media.link}}')" class="media-thumbnail"></div>
+                                        <span>{{media.name}}</span>
+                                        <a href="{{media.link}}"><span class="material-symbols-outlined">visibility</span></a><br>
+                                        <br><input type="checkbox" id="picture{{media.id}}" name="picture-{{media.id}}" value="{{media.id}}"
+                                        
+                                        {% if setting is defined %}
+                                        {% if media.link == setting.image %}
+
+                                        checked
+
+
+                                        {% endif %}
+                                        {% endif %}
+
+                                        {% if article is defined %}
+                                        {% if media.link == article.image %}
+
+                                        checked
+
+
+                                        {% endif %}
+                                        {% endif %}
+
+                                        {% if event is defined %}
+                                        {% if media.link == event.image %}
+
+                                        checked
+
+
+                                        {% endif %}
+                                        {% endif %}
+
+
+                                        {% if gallery is defined %}
+
+                                        {% if isStockedInThisgallery(gallery, media.id) == TRUE %}
+
+                                        checked
+
+
+                                        {% endif %}
+                                        {% endif %}
+                                        
+                                        />
+                                        </label>
+                                    </div>
+
+                                     {% set count = count + 1 %}
+
+                                {% endfor %}
+
+
+
+                                </nav>
+
+
+
+                                </div><br>
+
+
+
+{% else %}
+
+<h2>Vous n'avez aucune nouvelle image dans votre bibliothèque média</h2>
+
+{% endif %}
+
+<a href="/cuid/dashboard/media"><nav>Ajouter une nouvelle image dans la galerie</nav></a>
+</div>

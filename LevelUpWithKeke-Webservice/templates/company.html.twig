@@ -1,0 +1,118 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="fonctionnal">
+
+            <div id="page-banner">
+            <h1>Votre entreprise</h1>
+
+            </div>
+
+            
+
+            <div id="page-content">
+            <h2>Consulter l'avancé de vos candidatures</h2>
+            <p>Veuillez remplir les informations sur le moteur de recherche</p>
+            
+            <a href="{{ path('cuid_candidate_area_companies') }}"><div class="addbutton" id="add-jobOffer">Rechercher d'autres sociétés <span class="material-symbols-outlined">search</span></div></a>
+            <div id="company" class="square white-text">
+
+                <div class="flexible">
+
+                    <div id="identity" class="item column flexible">
+                                                <img class="logo-company" src="{{ app.request.getSchemeAndHttpHost() }}\{{company.logo}}">
+                                                <ul class="info-item-list"> 
+                                                        <li><h2>{{company.name}}</h2></li>
+                                                        <li>Activité : {{company.activity}}</li>
+                                                        <li>SIRET : {{company.siret}}</li>
+                                                        <li>Nombres d'employé : {{company.workforce}}</li>
+                                                                           
+                                                </ul>
+                    </div>
+
+                    <div id="description" class="item column">
+
+                                                <h3>Description:</h3>
+
+                                                <p>{{company.description}}</p>
+
+                                                <h3>Valeurs :</h3>
+
+                                                     <div class="flexible">
+
+                                {% if values is not empty %}
+                                {% for value in values %}
+                                    <div class="asset"><img class="asset-logo" src="/build/media/image/icons/value/{{value.name}}.png" /><br><strong>{{value.FRname}}</strong> </div>
+                                {% endfor %}
+                                {% else %}
+                                        <p>Aucune valeurs renseignées</p>
+                                        {% endif %}
+                                </div>
+                                        
+                                                
+
+                    </div>
+
+         
+
+    
+    
+
+                                <div id="Statistic" class="item">
+                                        <h3>Statistiques</h3>
+
+                                                <div class="flexible">
+                                                        <ul class="info-item-list column"> 
+                                                                <li><strong>Taux d'embauche :</strong> N/C</li>
+                                                                <li><strong>Taux de licenciement :</strong> N/C</li>
+                                                                <li><strong>Nombres de d'employé :</strong>N/C</li>
+                                                                <li><strong>Moyenne d'âge :</strong>N/C</li>
+                                                                <li><strong>Taux de réactivité :</strong> N/C</li>                    
+                                                        </ul>                
+                                                </div>
+
+                                </div>
+
+
+                        {# PLUS ATRD
+                                <div id="Testimonials" class="item">
+
+                                                        <h3 class="flexible">Avis : (31) 
+                                                          
+                                                          <div class="rating">
+                                                                <span class="material-icons">star</span>
+                                                                <span class="material-icons">star</span>
+                                                                <span class="material-icons">star</span>
+                                                                <span class="material-icons">star_half</span>
+                                                                <span class="material-icons">star_outline</span>
+                                                          <div>
+
+                                                                                                                                                                 
+                                                
+                                                        </h3>
+
+                                                                <div id="advices" data-route="worker-advices" data-id="1"></div>
+                                                
+                                </div>
+                        #}
+                
+                
+                
+                
+            
+            
+            </div>
+             
+            </div>
+
+            
+
+        </section>
+        {% endblock %}
+
+             

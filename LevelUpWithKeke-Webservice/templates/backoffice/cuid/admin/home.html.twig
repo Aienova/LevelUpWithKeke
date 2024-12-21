@@ -1,0 +1,136 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Bonjour {{user.firstname}},<br> Que souhaitez vous faire aujourd'hui?</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                            <div class="left-side">
+
+                                <nav id="profile" class="square">
+                                        <h2>Votre profil</h2>
+                                        <div class="flexible info-item">
+                                                <img class="avatar" src="{{website.logo.link}}" />
+                                                    <ul class="info-item-list">
+                                                            <li><h3>{{website.homepage.title}}</h3></li>
+                                                          
+                                                            <li><strong>Propriétaire : </strong>{{website.owner}}</li>
+                                                            <li><strong>Activité : </strong>{{website.activity}}</li>
+                                                            <li><strong>Pays : </strong>{{website.country}}</li>
+                                                            <li><strong>Site web : </strong><a href="{{website.link}}">{{website.domain}}</a></li>
+                                                          {# PLUS TARD  <li><strong>A la recherche d'un : </strong>{{candidate.location}}</li> #}
+                                                          <li><a href="{{ path('cuid_admin_user_dashboard', {'section': 'infos'})  }}"><button>Modifier les informations générales de votre site web</button></a></li>
+                                                        </ul>
+
+                                         </div>
+
+                                         <div class="info-item">
+
+                                         
+                                            <h2>Vos statistiques</h2>
+
+                                            <div class="flexible">
+
+
+                                                <div class="stats blockable central-text">
+                                                <strong>Nombres d'utilisateur</strong>
+                                                <h3>{{stat.customerNumber}}</h3>                                                
+                                                </div>
+
+                                                <div class="stats blockable central-text">
+                                                <strong>Chiffre d'affaire</strong>
+                                                <h3>{{stat.turnover}}€</h3>                                                
+                                                </div>
+
+                                                <div class="stats blockable central-text">
+                                                <strong>Nombre de demandes en cours</strong>
+                                                <h3>{{stat.servicesInProgressNumber}}</h3>                                                
+                                                </div>
+
+
+                                            </div>
+
+                                         </div>
+                                </nav>
+                            
+                            </div>
+                            
+
+
+                            <div class="right-side">
+
+                                    <nav class="flexible">
+                                         <div id="search-job" class="square">
+                                            <a href="{{ path('cuid_admin_user_dashboard', {'section': 'pages'})  }}"><h2>Gérer vos <br>pages web</h2></a>
+                                        </div>
+
+                                        <div id="edit-apply" class="square">
+                                            <a href="{{ path('cuid_admin_user_dashboard', {'section': 'graphics'}) }}"><h2>Modifier l'apparence<br>de votre site web</h2></a>
+                                             
+                                        </div>
+                                    </nav>
+
+                                         <nav class="flexible">
+
+                                         <div class="square">
+                                            <div class="flexible">
+                                                <a href="{{ path('cuid_admin_user_dashboard', {'section': 'articles'}) }}"><h2>Gérer vos articles<br>de Blog</h2></a>   
+                                            {#     {% if suggestions is not empty %}
+                                                        <div class="arrow-nav">
+                                                                <span id="previousorder" class="material-symbols-outlined">arrow_back_ios</span> 
+                                                                <span id="order" data-maxorder="{{maxcount}}" data-currentorder="1" >1</span>/<sapn>{{maxcount}}</span>
+                                                                <span id="nextorder" class="material-symbols-outlined">arrow_forward_ios</span>
+                                                        </div>
+                                                    {% endif %}   #}
+                                            </div>                                        
+                                        </div>
+
+
+                                        <div class="square">
+                                            <div class="flexible">
+                                                <a href="{{path('cuid_admin_user_dashboard', {'section': 'services'})}}"><h2>Gérer vos services en ligne</h2></a>  
+                                            {#     {% if suggestions is not empty %}
+                                                        <div class="arrow-nav">
+                                                                <span id="previousorder" class="material-symbols-outlined">arrow_back_ios</span> 
+                                                                <span id="order" data-maxorder="{{maxcount}}" data-currentorder="1" >1</span>/<sapn>{{maxcount}}</span>
+                                                                <span id="nextorder" class="material-symbols-outlined">arrow_forward_ios</span>
+                                                        </div>
+                                                    {% endif %}   #}
+                                            </div>                                        
+                                        </div>
+
+                                      
+                                    </nav>
+
+                                    <nav class="flexible">
+                                    
+                                    <div id="job-offers-subjection" class="square">
+                                    <h2>A propos de CUID :</h2><br>
+                                    <h3>Cuid v.Bêta</h3>
+                                    <p>Conçu par Aienova , Cuid est un CMS expérimentale composé d'un CRM qui s'adapte à votre secteur d'activité </p>
+                                  {#  <span>Nom de l'expéditeur : Eudes </span><br>
+                                    <span>date : 13/04/2024 - 14h55 </span> #}
+
+                                    <p></p>
+                                    </div>
+
+                                    </nav>
+
+                            </div>
+
+                    </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}

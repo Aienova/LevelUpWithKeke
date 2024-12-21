@@ -1,0 +1,52 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Les candidatures pour le poste de :<br>
+                        {{job.title}}
+                        </h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                                                                <a href="../jobs">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos offres d'emploi</div>
+                                </a>
+                        {#
+                                 <div class="flexible">
+
+                                 {% include "backoffice/cuid/admin/blocks/plugins/filter/plugin.html.twig" %}
+                                
+                                </div>     
+                        
+
+                                <a href="./addpage">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                add_circle
+                                </span>Ajouter une page</div>
+                                </a>
+                        #}
+
+                                 {% include "backoffice/cuid/admin/blocks/tables/CandidatesList.html.twig" %}
+
+                                
+                                </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}

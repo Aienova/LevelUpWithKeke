@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="full-h">
+    <head>
+
+                    
+
+                    {% block javascripts %}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            {{ encore_entry_link_tags("paypal-styles") }}
+            {{ encore_entry_script_tags("paypal-scripts") }}
+                    {% endblock %}
+
+                    <title>Paiement Paypal</title>
+    </head>  
+
+    
+    <body class="full-h">
+
+
+            <a href="{{ path('cuid_customer_area_home') }}"><nav class="return-button" >Revenir à votre espace client</nav></a>
+
+       <!-- 
+
+                    DISCONNECT BUTTON   
+
+        <form id="disconnection" method="POST">
+                <input type="hidden" name="disconnection" value="1" />
+                <input type=  
+                "submit" value="Disconnect">
+
+
+        </form> -->
+
+        <main class="full-h">
+
+                    <div id="paypal-form">
+
+                            <img class="logo" src="/build/media/image/icons/logo-main.png"/>
+
+                  <h1>Paiement en ligne via Paypal </h1>
+
+                  <script src="https://www.paypal.com/sdk/js?client-id=AUxiEMWpIUUAtAaj6rpQHfK9FX2Uoo5-GhHawYOCBCXOmWJt-nZ24gyT53otB7Y1glO5sTnUoWJYZQLJ&currency=EUR"></script>
+
+      <div id="paypal-button-container"></div>
+
+      <script>
+        paypal.Buttons({
+          createOrder: function(data, actions) {
+            return actions.order.create({
+              purchase_units: [{
+                amount: {
+                  value: {{price}}  // Replace with the price of your product
+                  
+                }
+              }]
+            });
+          },
+          onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+
+              {% if bill.paymentCode is defined %}
+
+                            window.location.replace("/paiement-valide/{{type}}/{{bill.paymentCode}}");
+
+                            {% else %}
+     
+                            window.location.replace("/paiement-valide/{{type}}/{{bill.code}}");           
+              {% endif %}
+
+
+
+              // Call your server to save the transaction
+            });
+          }
+        }).render('#paypal-button-container');
+      </script>
+
+      </div>
+
+
+                <footer>
+
+                    <p>Copyright 2023 by <a href="https://aienova.com/">Aienova</a> - Nothing to Something</p>
+
+                </footer>
+        </main>
+
+
+
+    </body>
+
+    
+</html>
+
+      
+    <!-- Add this script to the body of your HTML document, after including the PayPal SDK -->
+
+

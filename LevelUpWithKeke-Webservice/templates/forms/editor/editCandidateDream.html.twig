@@ -1,0 +1,36 @@
+                                       
+                                        
+                                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                        
+                                        <form id="yourDream" method="POST" data-candidateid="{{candidate.id}}">
+                                            
+                                            <h3>Modifer votre Job Idéale</h3>
+
+                                         <textarea name="dream" >{{candidate.dream}}</textarea>
+                                        
+                                        <div id="form-validation"><input type="submit" name="editor" value="Modifier"/></div>
+                                        
+                                        </form>
+
+                                            <script>
+                                                        $('#yourDream').submit(function(e){
+
+                                                            var id = $('#yourDream').data("candidateid");
+
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: '/edit-candidate-dream/'+id,
+                                                    type: 'POST',
+                                                    data:$('#yourDream').serialize(),
+
+                                                    success: function(data) {
+                                                        $('#editor-form-display').html(data);
+                                                        location.reload();
+                                                    },
+                                                    error: function() {
+                                                        $('#editor-form-display').text('Erreur au niveau des résultats de recherches');
+                                                    }
+                                                });
+                                            });
+
+                                            </script>  

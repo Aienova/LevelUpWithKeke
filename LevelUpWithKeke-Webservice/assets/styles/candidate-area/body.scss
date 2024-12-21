@@ -1,0 +1,61 @@
+main {
+    padding-left: 190px;
+
+    h1{ font-size:60px;    }
+    h2{ font-size :30px;    }
+    h3{ font-size :15px;    }
+
+    
+
+    #page-body{
+
+        height:fit-content;
+        padding-bottom:200px;
+    }
+
+
+    #banner{
+
+        background-size: cover;
+        color:white;
+
+        form{
+
+            margin-top:25px;
+        }
+
+        #main-title {
+            margin: auto;
+            width: fit-content;
+            padding-top: 300px;
+            text-align: left;
+        }
+
+        #candidate-button {
+            background-color: #1b82d5;
+
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+    }
+
+    #search-partners {
+
+
+        width: fit-content;
+        margin:auto;
+
+
+        h3 {
+            margin-right: 20px;
+            font-size: 20px;
+        }
+
+
+    }
+    
+ 
+}
+

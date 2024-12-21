@@ -1,0 +1,50 @@
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}    
+
+
+                    <div id="page-banner">
+            <h1>Suivi de mes demandes</h1>
+
+            </div>  
+
+     <section id="fonctionnal">
+
+
+
+            <div id="page-content">
+                <div id="message-form"></div>
+
+                                        <div class="flexible">
+
+                                <a href="../service-en-ligne">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                home
+                                </span>Retourner à l'accueil</div>
+                                </a>
+                            </div>
+
+                            <div id="booking-panel" class="padder">
+
+                                    <h3>Vos demandes en attente de paiement </h3>
+                            
+                            </div>
+                            
+                            {% include "customer-area/blocks/tables/paymentNotarizesTable.html.twig" %}
+
+                </div>
+
+
+
+
+                    
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    </section>
+
+
+        {% endblock %}

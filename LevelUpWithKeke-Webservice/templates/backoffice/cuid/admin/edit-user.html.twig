@@ -1,0 +1,96 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifier ce compte utilisateur</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                                                        <div class="flexible">
+                                <a href="../users">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste des utilisateurs</div>
+                                </a>
+
+                                <a href="../adduser">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                add_circle
+                                </span>Ajouter un nouvel utilisateur</div>
+                                </a>
+                            </div>
+
+
+                                    <form id="page-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="user_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+                                            <p>
+                                            <h2>Prénom :</h2>
+                                            <input type="text" name="firstname" value="{{cuiduser.firstname}}" required/>
+                                            </p>
+
+                                            <p>
+                                            <h2>Nom :</h2>
+                                            <input type="text" name="surname" value="{{cuiduser.surname}}"  required/>
+                                            </p>
+
+                                            <p>
+                                            <h2>Email :</h2>
+                                            <input type="text" name="email" value="{{cuiduser.email}}"  required/>
+                                            </p>
+
+
+                                            <p>
+                                            <h2>Login :</h2>
+                                            <input type="text" name="login" value="{{cuiduser.login}}"  required/>
+                                            </p>
+
+                                            <p>
+                                            <h2>Mot de passe :</h2>
+                                            <input type="password" name="password" value=""  required/>
+                                            </p>
+
+
+                                            <p>
+                                            <h2>Niveau de privilège :</h2>
+                                            <select name="level">
+                                            {% for level in levels %}
+
+                                                <option value="{{level.id}}">{{level.frName}}</option>
+
+                                            {% endfor %}
+                                             </select>
+                                            </p>
+
+
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+
+                                    <input type="submit"  value="Modifier cet utilisateur" />
+                                    </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

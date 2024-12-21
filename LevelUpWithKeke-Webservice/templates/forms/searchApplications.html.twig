@@ -1,0 +1,110 @@
+
+{% block searchengine %}
+
+    <div id="search-engine-applications">
+
+                {{ form_start(form) }}
+                {{ form_end(form) }}
+    
+            <ul>
+
+             {% if sortby == 1 %}
+                {% if orderby == 1 %}
+        {% set applicationsSorted = applications|sort((a, b) => b.compatibility <=> a.compatibility) %}
+        {% else %}
+        {% set applicationsSorted = applications|sort((a, b) => a.compatibility <=> b.compatibility) %}
+        {% endif %}
+        {% endif %}
+
+
+        {% if sortby == 2 %}
+         {% if orderby == 1 %}
+        {% set applicationsSorted = applications|sort((a, b) => b.jobOffer.title <=> a.jobOffer.title) %}
+        {% else %}
+        {% set applicationsSorted = applications|sort((a, b) => a.jobOffer.title <=> b.jobOffer.title) %}
+        {% endif %}
+        {% endif %}
+
+        {% if sortby == 3 %}
+        {% if orderby == 1 %}
+        {% set applicationsSorted = applications|sort((a, b) => b.candidate.licence.FRname <=> a.candidate.licence.FRname) %}
+        {% else %}
+        {% set applicationsSorted = applications|sort((a, b) => a.candidate.licence.FRname <=> b.candidate.licence.FRname) %}
+        {% endif %}
+        {% endif %}
+
+
+            {% for application in applicationsSorted %}
+
+                    <li id="applcation-{{application.id}}" class="search-item flexible">
+                    
+                    <div id="identity" class="item flexible">
+                    <img class="thumbnail" src="/build/media/image/photos/job/{{ application.candidate.job.name }}.png">
+                        <ul class="info-item-list"> 
+                                <li><h3>{{application.jobOffer.title}}</h3></li>
+                                <li>Métier : {{application.candidate.job.FRname}}</li>
+                                <li>Niveau d'étude : {{application.candidate.licence.FRname}}</li>
+                                <li>type de contrat : {{application.jobOffer.contract.FRname}}</li>
+                                <li>Rémunération : {{application.jobOffer.wage}}{{application.jobOffer.wageCurrency}}{{application.jobOffer.wageType}}</li>
+                                <li><a href="{{ path('cuid_job_offer',{id: application.jobOffer.id})}}"><button>Consulter le profil complet</button></a></li>                   
+                        </ul>
+                    </div>
+
+                    <div id="description" class="item">
+
+                                    <h3>Description :</h3>
+
+                                    <p>{{application.candidate.description}}</p>
+
+                                                <div class="skill">
+                                                        <h3>Avancée de la demande : 
+                                                        
+                                                        <span style="color:orange">En cours de traitement</span>
+                                                        
+                                                        
+                                                        </h3>
+                                                        
+                     </div>
+                            </div>
+
+                            
+              
+                    <div id="compatibility">
+                           <h3>Compatibilité</h3>
+                            <strong class="percent">{{application.compatibility}}%</strong>
+                    </div>
+
+                  
+
+                        
+                    </li>
+
+
+            {% endfor %}
+            </ul>
+            </div>
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+            <script>
+                        $('#search-engine form').submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    url: '/search-engine-applications',
+                    type: 'post',
+                    data:$('#search-engine form').serialize(),
+                    success: function(data) {
+                        $('#search-engine').html(data);
+                       },
+                       error: function() {
+                        $('#search-engine').text('Erreur au niveau des résultats de recherches');
+                       }
+                });
+            });
+
+            </script>
+
+
+{% endblock %}
+
+             

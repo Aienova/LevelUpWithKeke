@@ -1,0 +1,124 @@
+
+
+       {% extends "base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Bonjour {{candidate.firstname}},<br> que souhaitez-vous faire aujourd'hui</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                            <div class="left-side">
+
+                                <nav id="profile" class="square">
+                                        <h2>Votre profil</h2>
+                                        <div class="flexible info-item">
+                                            <img class="avatar" src="/build/media/image/icons/avatar/{{candidate.avatar.gender}}/{{candidate.avatar.picture}}.png" />
+                                                    <ul class="info-item-list">
+                                                            <li><h3>{{candidate.firstname}} {{candidate.surname}}</h3></li>
+                                                            <li><h4>{{candidate.jobTitle}}</h4></li>
+                                                            <li><strong>Niveau d'étude : </strong>{{candidate.licence.FRname}}</li>
+                                                            <li><strong>Disponibilité </strong>ASAP</li>
+                                                            <li><strong>Localisation : </strong>{{candidate.location}}</li>
+                                                          {# PLUS TARD  <li><strong>A la recherche d'un : </strong>{{candidate.location}}</li> #}
+                                                            <li><strong>Prétention : </strong>{{candidate.wage}}{{candidate.wageCurrency}}{{candidate.wageType}}</li>
+                                                            <li><a href="{{ path('cuid_candidate_area_profile') }}"><button>Consulter ou Modifier votre profil complet</button></a></li>
+                                                        </ul>
+                                         </div>
+                                </nav>
+                            
+                            </div>
+                            
+
+
+                            <div class="right-side">
+
+                                    <nav class="flexible">
+                                         <div id="search-job" class="square">
+                                            <a href="{{ path('cuid_candidate_area_job_offers') }}"><h2>Chercher <br>des offres d'emploi</h2></a>
+                                        </div>
+
+                                        <div id="edit-apply" class="square">
+                                            <a href="{{ path('cuid_candidate_area_applications') }}"><h2>Consulter <br>vos candidatures</h2></a>
+                                             
+                                        </div>
+                                    </nav>
+
+                                         <nav class="flexible">
+
+                                         <div id="job-offers-subjection" class="square">
+
+                                        <div class="flexible">
+                                            <h2>Suggestions d'offres d'emploi </h2>   
+                                                {% if suggestions is not empty %}
+                                                    <div class="arrow-nav">
+                                                            <span id="previousorder" class="material-symbols-outlined">arrow_back_ios</span> 
+                                                            <span id="order" data-maxorder="{{maxcount}}" data-currentorder="1" >1</span>/<sapn>{{maxcount}}</span>
+                                                            <span id="nextorder" class="material-symbols-outlined">arrow_forward_ios</span>
+                                                    </div>
+                                                 {% endif %}   
+                                        </div>
+
+                                        {% set i = 1 %} 
+                                        {% set hidden = "" %} 
+                                        {% if suggestions is not empty %}
+                                        {% for suggestion in suggestions %}
+                                         
+                                         {% if i > 1 %}
+
+                                         {% set hidden = "hidden" %} 
+
+                                         {% endif %}
+
+                                            <div id="slide-{{i}}" class="flexible info-item slide {{hidden}}">
+                                                <img class="logo-company" src="{{suggestion.company.logo}}">
+                                                <ul class="info-item-list">
+                                                    <li><strong>Société : </strong>{{suggestion.company.name}}</li>
+                                                    <li><strong>Métier : </strong>{{suggestion.title}}</li>
+                                                    <li><strong>Type de contrat : </strong>{{suggestion.contract.FRname}}</li>
+                                                    <li><strong>Localisation : </strong>{{suggestion.location}}</li>
+                                                    <li><strong>Rémunération : </strong>{{suggestion.wage}}{{suggestion.wageCurrency}}{{suggestion.wageType}}</li>
+                                                    <li><a href="{{ path('cuid_job_offer',{id: suggestion.id})}}"><button>Consulter les détails de l'offre</button></a></li>
+                                                </ul>
+                                                <div id="compatibility">
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+
+                                            {% set i = i + 1 %} 
+
+                                        {% endfor %}
+                                        {% else %}
+
+                                            <h3>Il y a aucune offres dans votre secteurs d'activités pour le moment</h3>
+
+                                        {% endif %}
+
+
+
+
+                                        
+                                        </div>
+
+                                      
+                                    </nav>
+
+                            </div>
+
+                    </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}
+
+             

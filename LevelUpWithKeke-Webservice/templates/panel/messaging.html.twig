@@ -1,0 +1,66 @@
+                
+        <div id="messaging" >
+                <div id="conversation" data-candidateid="1" data-recruiterid="1">
+
+        {% set color = null %}
+
+                {% if messagescount > 0 %}
+                
+                    {% for message in messages %}
+
+
+                            {% if message.senderType == 0 %}
+                            {% set color = "blue" %}
+                            {% else %}
+                            {% set color = "red" %}
+                            {% endif %}
+
+                            <div style="color:{{color}}">{{message.messageText}}</div>
+
+                    {% endfor %}
+
+                    {% else %}
+
+                    <div>Send him a message</div>
+
+                {% endif %}
+             
+                        
+                </div>
+                
+
+                <form id="texting-message" data-conversationid="{{conversationId}}" >
+
+                    <textarea name="textmessage"></textarea>
+                    <input type="hidden" name="senderid" value="1"/>
+                    <input type="hidden" name="sendertype" value="0"/>
+
+                    <input type="submit" value="envoyer" />
+
+                </form>
+        </div>
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+
+                    
+
+                    <script>
+                        $('#texting-message').submit(function(e){
+
+                            var conversationid = $("#conversation").attr("data-candidateid");
+                e.preventDefault();
+                $.ajax({
+                    url: '/messaging/'+conversationid,
+                    type: 'POST',
+                    data:$('#texting-message').serialize(),
+                    success: function(data) {
+                        $('#messaging').html(data);
+                       },
+                       error: function() {
+                        $('#messaging').text('Erreur au niveau des résultats de recherches');
+                       }
+                });
+            });
+
+            </script>

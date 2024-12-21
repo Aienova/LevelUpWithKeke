@@ -1,0 +1,74 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="page-body">
+
+            <div id="page-banner" class="white-text">
+            <h1>{{gallery.title}}</h1>
+
+            </div>
+
+            <div id="page-content">
+
+            <div id="gallery">
+
+            <div class="flexible mobileblock organizer">
+            {% for picture in gallery.pictures %}
+
+            <div id="picture{{picture.id}}" class="gallery-preview hidden side" >
+            <div class="closegallery clearsider">
+                    <span class="material-symbols-outlined">close</span>
+            </div>
+
+            <img src="{{picture.link}}"/>
+
+            </div>
+
+                <div class="image-gallery sider" data-side="picture{{picture.id}}" style="background-image:url('{{picture.link}}'); background-size:cover;"></div>
+                
+            {% endfor %}
+            </div>
+
+
+            </div>
+
+
+
+
+            {#
+
+            <div class="flexible">
+
+                <div class="content">
+                TEXT TEXT
+                </div>
+
+
+                <div class="content">
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                </div>
+
+            </div>
+
+            #}
+
+
+
+                                <div id="customer-area">
+                        <div class="flexible mobileblock">
+                        <h2>PROCEDURE DE COLLECTE, DE PRODUCTION ET DE RESTITUTION DE PASSEPORTS CEMAC AUX CONGOLAIS DE L’ETRANGER</h2><a href="/service-en-ligne"><button>Vos services en lignes</button></a>
+                        </div>
+                        </div>
+
+
+
+            </div>
+
+        </section>
+        {% endblock %}

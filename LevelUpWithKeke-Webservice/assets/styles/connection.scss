@@ -1,0 +1,142 @@
+@import "default";
+@import "customer-area/header";
+@import "customer-area/footer";
+
+html{
+
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    height: 100%;
+    font-family: "Verdana";
+    background-image: url('/assets/media/image/photos/background2.jpg');
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+
+    h1{
+
+        margin-top:0px;
+        text-align: center;
+    }
+
+    #connection-title{
+
+        margin-bottom:10px;
+        margin-top: 50px;
+
+        .logo{
+
+            filter: sepia(1);
+        }
+
+        h1 {
+            padding-top: 10px;
+            font-size: 50px;
+            width: 100%;
+        }
+
+        h3{
+            padding-top: 10px;
+            font-size: 20px;
+        }
+
+    }
+
+
+
+    .return-button{
+
+        background-color: black;
+        padding:10px;
+        color:white;
+        text-align: center;
+    }
+
+    .return-button:hover{
+
+        background-color: rgb(245, 203, 16);
+        padding:10px;
+        color:black;
+    }
+    
+
+
+
+    #connection-form {
+        width: 400px;
+        margin: auto;
+        padding-top: 10px;
+        text-align: center;
+    }
+
+
+    #subscribe-form {
+        width: 400px;
+        margin: auto;
+    }
+
+
+    p {
+        text-align: center;
+    }
+
+    h1,h2,h3{
+
+        font-family: nothingtosomething;
+        font-size: 30px;
+    }
+
+   input[type=submit] {
+        background-color: rgb(0, 0, 0);
+        margin-top: 15px;
+        margin-left: 15px;
+        width: 160px;
+    }
+}
+
+#service-menu{
+
+    position: fixed;
+}
+
+#customer-area-infos{
+
+
+
+    section{
+
+        width: 100%;
+        text-align: left;
+        margin: auto;
+        /* margin-left: 15em !important; */
+        min-height: 600px;
+    }
+
+}
+
+#service-menu li {
+    margin-bottom: 35px;
+}
+
+cards {
+    width: 70%;
+    margin: auto;
+
+    .card{
+
+        .image{
+
+            height:200px!important;
+        }
+
+        .card-content{
+
+            height:70px!important;    
+        }
+    }
+
+
+    
+}

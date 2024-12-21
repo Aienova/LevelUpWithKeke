@@ -1,0 +1,91 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifier une prestation</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                            <div class="flexible">
+                                <a href="../performances">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos prestations</div>
+                                </a>
+
+                            </div>
+
+
+
+                                    <form id="page-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="performance_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+                                            <p>
+                                            <h2>Intitulé de la prestation :</h2>
+                                            <input type="text" name="name" value="{{performance.name}}" required/>
+                                            </p>
+
+                                             <p>
+                                            <h2>Description de la prestation :</h2>
+                                            <textarea name="description" >{{performance.description}}</textarea>
+                                            </p>
+
+                                            <p>
+                                            <h2>Temps estimé pour le service (en minutes) :</h2>
+                                            <input type="number" name="totaltime" value="{{performance.totaltime}}" required/>
+                                            </p>
+
+                                            <p>
+                                            <h2>Prix du service (en Euro) :</h2>
+                                            <input type="number" name="price" value="{{performance.price}}" required/>
+                                            </p>
+
+                                            <p>
+                                            <h2>Logo représentant le service :</h2>
+
+                                            {% include "backoffice/cuid/admin/blocks/plugins/logo-image-selector/plugin.html.twig" %}
+
+                                            </p>
+
+                                            <p>
+                                            <h2>Contenu page web du service :</h2>
+
+                                             {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}
+
+                                            </p>
+
+
+
+                                            
+
+
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+
+                                    <input type="submit"  value="Modifier une prestation" />
+                                    </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

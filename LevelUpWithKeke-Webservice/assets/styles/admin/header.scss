@@ -1,0 +1,97 @@
+header {
+    background-color: #00dfff;
+    padding: 10px;
+    height: 1000px;
+    color: white;
+    position: fixed;
+    background-image: linear-gradient(orange, rgb(255, 123, 0));
+    z-index:1111111;
+
+    a{
+
+        color:white;
+        text-decoration: none;
+        display: flex;
+    }
+
+
+#menu li {
+    margin-top: 17px;
+    padding-left: 10px;
+    font-size: 13px;
+    border-bottom: solid 1px #ffffff52;
+    padding-bottom: 3px;
+    width:100%;
+}
+
+#disconnect-button {
+    background-color: #292727;
+    border-radius: 25px;
+    padding-top: 5px;
+}
+
+
+#menu li:hover {
+    list-style: none;
+    background-color: rgb(38, 250, 232);
+    color:black;
+
+    .sub-menu{
+
+        display:flex;
+    }
+}
+
+#aienova-logo{
+
+    height:50px;
+}
+
+
+div#bottom-header {
+
+    padding-top: 25px;
+    text-align: center;
+
+    span{
+
+        font-size: 13px;
+
+    }
+}
+
+}
+
+.menuname {
+    height: fit-content;
+    margin: auto;
+    margin-left: 5px;
+}
+
+.sub-menu {
+    position: fixed;
+    display: none;
+    height: 1000px;
+    width: 300px;
+    background-color: #85d0eb;
+    left: 170px;
+    z-index: 111;
+    padding: 25px;
+    top: 0px;
+
+
+    a{
+
+        color: black!important;
+    }
+
+}
+
+.submenu-list{
+
+    li{
+
+        width:100%;
+        padding:15px;
+    }
+}

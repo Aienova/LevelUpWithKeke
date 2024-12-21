@@ -1,0 +1,54 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Titre de l'offre d'emploi</th>
+            <th>Lien</th>
+            <th>Date de début</th>
+            <th>Diplôme(s)/Qualification(s)</th>
+            <th>Salaire (BRUT)</th>
+            <th>Candidature(s)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if jobs is defined %}
+        {% if jobs is not empty  %}
+
+        {% for job in jobs |sort((a, b) => b.id <=> a.id) %}
+
+        <tr>
+            <td>{{job.title}}</td>
+            <td><a target="_blank" href="/emploi/{{job.tag}}">./emploi/{{job.tag}}</a></td>
+            <td>{{job.startDate|date("d/m/Y h:i:s")}}</td>
+            <td>{{job.diploma}}</td>
+             <td>{{job.wage}}€</td>
+             <td><a href="/cuid/dashboard/job-candidates/{{job.id}}">{{job.CMSjobOfferCandidates|length}} candidat(s)</a></td>
+
+            <td>
+
+            
+
+                {% set decision = '
+                
+                <a href="./edit-job/'~ job.id ~'"><span class="material-symbols-outlined decision-button">edit</span></a>
+                
+                <span data-action="delete" data-section="job" data-id="'~ job.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                
+                %}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

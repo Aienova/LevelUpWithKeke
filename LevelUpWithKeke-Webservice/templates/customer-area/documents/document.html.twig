@@ -1,0 +1,62 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="page-body">
+
+            {% if sent == 1 %}
+
+                <div id="message-form">
+                
+                
+                {% include "popup.html.twig" %}
+
+                
+                
+                
+                </div>
+
+                          {% endif %}
+
+
+
+
+            <div id="page-content">
+            
+
+
+            {#
+
+            <div class="flexible">
+
+                <div class="content">
+                TEXT TEXT
+                </div>
+
+
+                <div class="content">
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                </div>
+
+            </div>
+
+            #}
+
+            {% include "forms/creator/form.html.twig" %}
+
+
+
+
+
+
+
+
+            </div>
+
+        </section>
+        {% endblock %}

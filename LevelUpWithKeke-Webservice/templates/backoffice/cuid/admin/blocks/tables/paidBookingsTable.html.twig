@@ -1,0 +1,37 @@
+<table id="table-resa2" class="table-resa hidden">
+    <thead>
+        <tr>
+            <th>Buchungsnummer</th>
+            <th>Buchungsdatum</th>
+            <th>Adresse</th>
+            <th>Gesamtkosten</th>
+             <th>Aktion</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        {% if  paidBookings is defined %}
+        {% if paidBookings is not empty  %}
+        {% for paidBooking in paidBookings %}
+
+        <tr>
+            <td>{{paidBooking.code}}</td>
+            <td>{{paidBooking.bookingDate|date("d/m/Y h:i:s")}}</td>
+            <td>{{paidBooking.location}}</td>
+            <td>{{paidBooking.cost}}</td>
+            <td><span data-action="/booking-preview/{{paidBooking.id}}" class="material-symbols-outlined decision-button">print</span></td>
+  
+        </tr>
+
+        {% endfor %}
+        {% else %}
+        <tr><td colspan="7">Kein Ergebnis</td></tr>
+        {% endif %}
+        {% else %}
+        <tr><td colspan="7">Kein Ergebnis</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

@@ -1,0 +1,33 @@
+
+<div>
+    <label>Vos disponibilités</span>
+        <select id="availabilities" name="availability">
+
+            {% for availability in availabilities %}
+            <option value="{{availability.id}}">{{availability.FRname}}</option>
+            {% endfor %}
+
+        </select>
+
+        <input type="date" id="availability_date" class="hidden" name="availability_date"/>
+</div>
+
+  <script>
+    $(document).ready(function() {
+
+      $("#availabilities").change(function() {
+
+        var selectedOption = $(this).find("option:selected").val();
+        
+        if (selectedOption === "3") {
+
+            $("#availability_date").removeClass("hidden");
+            
+        }else{
+
+            $("#availability_date").addClass("hidden");
+
+        }
+      });
+    });
+  </script>

@@ -1,0 +1,79 @@
+                                       
+                                        
+                                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                        
+                                        <form id="yourIdentity" method="POST" data-candidateid="{{candidate.id}}">
+                                            
+                                            <h3>Modifer vos informations personnelles</h3>
+
+                                        <ul>
+                                            <li><label>Prénom<label> <input type="text" name="firstname" value="{{candidate.firstname}}" /></li>
+                                            <li><label>Nom<label> <input type="text" name="surname" value="{{candidate.surname}}" /></li>
+                                            <li><label>Intitulé du poste<label> <input type="text" name="jobTitle" value="{{candidate.jobTitle}}" /></li>
+                                            <li><label>Métier<label> 
+                                            
+                                                    <select name="job">
+                                                    {% for job in jobs|sort((a, b) => a.frname > b.frname)  %}
+                                                        <option value="{{job.id}}"  {% if job.id == candidate.job.id %} selected  {% endif %}>{{job.FRname}}</option>
+                                                    {% endfor %}
+                                                    </select>                                                                                                   
+                            
+                                            </li>
+                                            <li><label>Niveau d'étude<label> 
+                                            
+                                                    <select name="licence">
+                                                    {% for licence in licences %}
+                                                        <option value="{{licence.id}}"  {% if licence.id == candidate.licence.id %} selected  {% endif %}>{{licence.FRname}}</option>
+                                                    {% endfor %}
+                                                    </select>                                                                                                   
+                            
+                                            </li>
+                                            <li><label>Localisation<label> <input type="text" name="location" value="{{candidate.location}}"/></li>
+                                            <li><label>Numéro de téléphone<label> <input type="text" name="telephone" value="{{candidate.telephone}}"/></li>
+                                            <li><label>Date de disponibilité<label> <input type="date" name="availabilityDate" value="{{candidate.availabilityDate|date("Y-m-d")}}" /></li>
+                                            <li><label>Prétention<label> 
+                                            
+                                            <input type="number" name="wage" value="{{candidate.wage}}" />
+                                            
+                                                <select name="wageCurrency">
+                                                    <option value="€" {% if candidate.wageCurrency == "€" %} selected  {% endif %}>€(Euro/EUR)</option>
+                                                    <option value="$" {% if candidate.wageCurrency == "$" %} selected  {% endif %}>$(Dollar/USD)</option>
+                                                    <option value="£" {% if candidate.wageCurrency == "£" %} selected  {% endif %}>£(Livre Sterling/GBP)</option>
+                                                    <option value="¥" {% if candidate.wageCurrency == "¥" %} selected  {% endif %}>¥(Yen/JPY)</option>
+                                                </select>
+
+                                                <select name="wageType">
+                                                    <option value="/mois" {% if candidate.wageType == "/mois" %} selected  {% endif %}>Par mois (BRUT)</option>
+                                                    <option value="/an" {% if candidate.wageType == "/an" %} selected  {% endif %}>Par an (BRUT)</option>
+                                                    <option value="(TJM)" {% if candidate.wageType == "(TJM)" %} selected  {% endif %}>Par jour (TJM)</option>
+                                                    <option value="(Taux hoiraire)" {% if candidate.wageType == "(Taux hoiraire)" %} selected  {% endif %}>Par heure</option>
+                                                </select>
+
+                                            </li>
+                                        
+                                        <div id="form-validation"><input type="submit" name="editor" value="Modifier"/></div>
+                                        
+                                        </form>
+
+                                            <script>
+                                                        $('#yourIdentity').submit(function(e){
+
+                                                            var id = $('#yourIdentity').data("candidateid");
+
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: '/edit-candidate-identity/'+id,
+                                                    type: 'POST',
+                                                    data:$('#yourIdentity').serialize(),
+
+                                                    success: function(data) {
+                                                        $('#editor-form-display').html(data);
+                                                        location.reload();
+                                                    },
+                                                    error: function() {
+                                                        $('#editor-form-display').text('Erreur au niveau des résultats de recherches');
+                                                    }
+                                                });
+                                            });
+
+                                            </script>  

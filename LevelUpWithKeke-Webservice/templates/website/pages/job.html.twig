@@ -1,0 +1,89 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="page-body">
+
+                            {% if sent == 1 %}
+
+                <div id="message-form">
+                
+                
+                {% include "popup.html.twig" %}
+
+                
+                
+                
+                </div>
+
+                          {% endif %}
+
+
+            <div id="page-banner" class="white-text">
+            <h1>{{job.title}}</h1>
+
+            </div>
+
+            <div id="page-content">
+            
+
+
+            {#
+
+            <div class="flexible">
+
+                <div class="content">
+                TEXT TEXT
+                </div>
+
+
+                <div class="content">
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                </div>
+
+            </div>
+
+            #}
+
+            <div class="flexible">
+
+                <form id="candidate-form" method="POST" enctype="multipart/form-data">
+
+                <h3>Postulez à cette offre</h3>
+
+                <p>Nom : <input type="text" name="firstname" value="" required/></p>
+                <p>Prénom : <input type="text" name="surname" value="" required/></p>   
+                <p>E-mail : <input type="text" name="email" value="" required/></p>                   
+                <p>Telephone : <input type="text" name="telephone" value="" required/></p> 
+                <p>Votre CV : <input type="file" name="cv"/></p>
+                <p>Lettre de motivation :<br>
+                <input type="hidden" name="job" value="1"/>
+                <textarea name="motivation"></textarea></p>
+
+                <p><input type="submit" value="Postuler à cette offre"></p>    
+
+                </form>
+
+                <div class="jobOffer-content">{{job.content|raw}}</div>
+            </div>
+
+            
+
+
+                                <div id="customer-area">
+                        <div class="flexible mobileblock">
+                        <h2>PROCEDURE DE COLLECTE, DE PRODUCTION ET DE RESTITUTION DE PASSEPORTS CEMAC AUX CONGOLAIS DE L’ETRANGER</h2><a href="/service-en-ligne"><button>Vos services en lignes</button></a>
+                        </div>
+                        </div>
+
+
+
+            </div>
+
+        </section>
+        {% endblock %}

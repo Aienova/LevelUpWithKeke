@@ -1,0 +1,310 @@
+
+                <div class="flexible">
+                    <div class="column"><div class="image"></div></div>
+
+                    <div class="column">
+
+                            <form method="POST" enctype="multipart/form-data">
+
+                                <div id="step1" class="step">
+
+                                    <h1>Cher(e) Candidat(e), merci d'avoir choisi Oneted, nous allons vous accompagner afin de compléter votre profil</h1>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quam sem, vehicula nec est id, mollis dictum mi. Proin fermentum convallis dignissim. In viverra, magna vel laoreet iaculis, massa magna rhoncus arcu, tincidunt venenatis dolor risus quis est. Duis dapibus eros diam, quis ultrices nisi posuere id. Integer tincidunt risus in pulvinar consectetur. <br>Êtes-vous près ?</p>
+                                    
+                                    <div class="flexible">
+                                            <nav class="movestep" data-step="2"> Oui, complèter mon profil tout de suite</nav>
+                                            <a href="{{ path('cuid_candidate_area_home') }}"><nav> Non, complèter mon profil plus tard</nav></a>
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <div id="step2" class="step hidden">
+
+                                
+                                    <h1>Décrivez votre profil et votre parcours en quelques mots</h1>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quam sem, vehicula nec est id, mollis dictum mi. Proin fermentum convallis dignissim. In viverra, magna vel laoreet iaculis, massa magna rhoncus arcu, tincidunt venenatis dolor risus quis est.</p>
+                                    
+                                    
+                                    <label>Décrivez vous en quelques phrases</label>
+                                    <textarea name="description"></textarea>
+
+                                    <label>Décrivez votre job idéale</label>
+                                    <textarea name="dream"></textarea>
+
+                                    <label>Votre précédent emploi</label>
+                                   
+                                        <input type="text" name="previousJobTitle" placeholder="Votre ancien poste" /><span>chez<span>
+                                        <input type="text" name="previousCompany" placeholder="Votre ancienne entreprise" /><span>entre le</span>
+                                        <input type="date" name="previousJobDatestart" /><span>-</span>
+                                        <input type="date" name="previousJobDateEnd" />
+
+                                    
+                                    <h3>Vos prétentions salariales ou TJM </h3>
+
+                                    <label>Salaire proposé</label>
+
+
+                                    <input type="number" name="wage"/>
+
+                                    <select name="wageCurrency">
+                                        <option value="€">€(Euro/EUR)</option>
+                                        <option value="$">$(Dollar/USD)</option>
+                                        <option value="£">£(Livre Sterling/GBP)</option>
+                                        <option value="¥">¥(Yen/JPY)</option>
+                                    </select>
+
+                                    <select name="wageType">
+                                        <option value="/mois">Par mois (BRUT)</option>
+                                        <option value="/an">Par an (BRUT)</option>
+                                        <option value="(TJM)">Par jour (TJM)</option>
+                                        <option value="(Taux hoiraire)">Par heure</option>
+                                    </select>
+                                                    
+
+                                    <h3>Vos réseaux sociaux ou site(s) web</h3>
+
+                                
+                                    <ul>
+                                        {% for y in 1..4 %}
+
+                                        <li>
+                                            <select name="socialName{{y}}">
+                                                <option value="">Choisir un média</option>
+                                                <option value="website">Votre site web</option>
+                                                <option value="facebook">Votre Facebook</option>
+                                                <option value="linkedin">Votre Linkedin</option>
+                                                <option value="twitter">Votre Twitter</option>
+                                                <option value="instagram">Votre Instagram</option>
+                                                <option value="github">Votre Github</option>
+                                                <option value="pinterest">Votre Pinterest</option>
+                                                <option value="behance">Votre Behance</option>
+                                                <option value="viadeo">Votre Viadeo</option>
+                                            </select>
+
+                                            <input type="text" name="socialUrl{{y}}" placeholder="Renseigner son Lien , URL ici" />
+                                        </li>
+
+                                        {% endfor %}
+                                    </ul>
+                                 
+                                            
+                                    
+
+                                    <div class="flexible">
+                                            <nav class="movestep" data-step="1"> Revenir à l'étape précédente</nav>
+                                            <nav class="movestep" data-step="3"> Aller à l'étape suivante</nav>
+                                    </div>
+
+                                    <a href="{{ path('cuid_candidate_area_home') }}"><nav> Annuler, complèter mon profil plus tard</nav></a>
+
+                                </div>
+
+
+
+
+                                <div id="step3" class="step hidden">
+
+                                
+                                    <h1>Enumérer vos compétences</h1>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quam sem, vehicula nec est id, mollis dictum mi. Proin fermentum convallis dignissim. In viverra, magna vel laoreet iaculis, massa magna rhoncus arcu, tincidunt venenatis dolor risus quis est.</p>
+
+                                        <ul id="skills-list">
+
+                                        {% for i in 1..10 %}
+
+                                            <li class="flexible">  <div><label>Intitulé de la compétences<label><br><input type="text" name="skillName{{i}}"></div>  
+                                            
+                                            
+                                            <div><label>Année d'expérience(s) :</label>
+                                            <br>
+                                                            <select name="skillExp{{i}}">
+                                                          {% for y in 1..7 %}
+                                                                <option value="{{y}}">{{y}} année(s) d'exp</option>
+                                                            {% endfor %}
+                                                            </select>                                            
+                
+                                            </div>   
+                                            
+                                            
+                                            </li>
+
+
+
+                                        {% endfor %}
+
+                                        </ul>
+
+                                        <ul id="langue-list">
+                                        {% for i in 1..5 %}
+                                                 <li class="flexible">  
+                                                 
+                                                 
+                                        <div><label>Langue<label><br><select name="languageName{{i}}">
+                                                                
+                                                                <option value="0">Choisir une langue</option>
+                                                                <option value="1">Anglais</option>
+                                                                <option value="2">Mandarin</option>
+                                                                <option value="3">Espagnole</option>
+                                                                <option value="4">Français</option>
+                                                                <option value="5">Allemand</option>
+                                                                <option value="6">Italien</option>
+                                                                <option value="7">Portuguais</option> 
+                                                                <option value="8">Japonnais</option>
+                                                                <option value="9">Néerlandais</option> 
+
+                                                            </select> </div>  
+                                            
+                                            
+                                            <div><label>Niveau :</label>
+                                            <br>
+                                                            <select name="languageLevel{{i}}">
+
+                                                                <option value="1">Native</option>
+                                                                <option value="2">Notion</option>
+                                                                <option value="3">Intermédiaire</option>
+                                                                <option value="4">Professionnelle</option>
+                                                                <option value="5">Couramment</option>  
+
+                                                            </select>                                           
+            
+                                            </div>      
+                                            </li>
+                                        {% endfor %}
+
+                                        </ul>
+                                    
+                                    <nav class="movestep" data-step="2"> Revenir à l'étape présente</nav>
+                                    <nav class="movestep" data-step="4"> Aller à l'étape suivante</nav>
+
+                                    <a href="{{ path('cuid_candidate_area_home') }}"><nav> Non, complèter mon profil plus tard</nav></a>
+
+                                </div>
+
+
+                                <div id="step4" class="step hidden">
+
+                                    <h1>Définisez vos 4 atouts</h1>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quam sem, vehicula nec est id, mollis dictum mi. Proin fermentum convallis dignissim. In viverra, magna vel laoreet iaculis, massa magna rhoncus arcu, tincidunt venenatis dolor risus quis est.</p>
+                                    
+                                            <fieldset>
+                                            <legend>Quels sont vos 4 atouts:</legend>
+
+                                            <h4><span id="assetcount" data-count="0">0</span> Atout(s) sélectionné(s) </h4>
+
+ 
+
+                                            <div id="assets" class="flexible centralizer">
+                                                
+                                                {% set i = 0 %}
+                                                {% for asset in asset|sort((a, b) => a.frname > b.frname) %}
+
+                                                    <div id="asset-order-{{i}}" class="asset unselected" data-assetid="{{asset.id}}">
+                                                        <label for="asset-{{asset.id}}">
+                                                            <img class="asset-logo" src="{{asset.image}}" />
+                                                            <br><strong>{{asset.frname}}</strong> 
+                                                        </label>
+                                                        <input type="checkbox" class="checkasset" data-checked="0" value="{{asset.id}}"  id="asset-{{asset.id}}" name="asset{{i}}"/>
+                                                        
+                                                    </div>
+                                                
+                                                {% set i = i + 1 %}
+
+                                                {% if i % 4 == 0 %}
+                                                
+
+                                                </div>
+                                                <div id="assets" class="flexible centralizer">
+
+                                                {% endif %}
+                        
+                                                {% endfor %}
+
+
+                                            </div>
+
+
+                                            </fieldset>
+                                    
+                                    
+
+                                    <div class="flexible">
+                                            <nav class="movestep" data-step="3"> Revenir à l'étape précédente</nav>
+                                            <nav class="movestep" data-step="5"> Aller à l'étape suivante</nav>
+                                    </div>
+
+                                    <a href="{{ path('cuid_candidate_area_home') }}"><nav> Annuler, complèter mon profil plus tard</nav></a>
+
+                                </div>
+
+                                        <div id="step5" class="step hidden">
+
+                                    <h1>Dernière étape : Choisir votre avatar et déposer votre CV </h1>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quam sem, vehicula nec est id, mollis dictum mi. Proin fermentum convallis dignissim. In viverra, magna vel laoreet iaculis, massa magna rhoncus arcu, tincidunt venenatis dolor risus quis est.</p>
+
+
+                                        <div id="yourAvatar">
+                                            
+                                            <h3>Créer votre avatar</h3>
+
+                                                <p>Vous êtes : </p>
+                                                <label id="men-selection">Homme<input type="radio" name="gender" value="men" checked></label>
+                                                <label id="women-selection">Femme<input type="radio" name="gender" value="women"></label>
+
+
+                                                    <div id="men">{% include '/forms/selects/avatarMen.html.twig' %}</div>
+                                                    <div id="women" class="hidden">{% include '/forms/selects/avatarWomen.html.twig' %}</div>
+                                        
+                                        </div>
+
+
+                                        
+                                         <div id="uploaderUnique">{% include '/forms/uploadUniqueDocument.html.twig' %}</div>
+                                                            
+                                     {#  FAIRE UPLOAD MULTIPLE POUR LA VERSION ALPHA  <div id="uploaderMulti">{% include '/forms/uploadMultiDocument.html.twig' %}</div>  #}
+
+                                           
+                                    
+
+                                    <div class="flexible">
+                                            <nav class="movestep" data-step="4"> Revenir à l'étape précédente</nav>
+                                            <input type="submit" name="finish" value="Finaliser votre profil">
+                                    </div>
+
+                                    <a href="{{ path('cuid_candidate_area_home') }}"><nav> Annuler, complèter mon profil plus tard</nav></a>
+
+                                </div>
+
+                            </form>   
+
+
+                    </div>
+
+                </div>
+                    
+                    <script>
+
+                         $('#men-selection').click(function() {
+
+                            $('#men').removeClass("hidden");
+                             $('#women').addClass("hidden");
+
+                         });
+
+                          $('#women-selection').click(function() {
+
+                            $('#men').addClass("hidden");
+                             $('#women').removeClass("hidden");
+
+                         });
+
+                    </script>
+
+

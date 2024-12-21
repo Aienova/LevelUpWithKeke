@@ -1,0 +1,130 @@
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}    
+
+
+                    <div id="page-banner">
+            <h1>Prendre rendez-vous</h1>
+
+            </div>  
+
+     <section id="fonctionnal">
+
+
+
+            <div id="page-content" class="centralizer">
+                <div id="message-form"></div>
+
+                                        <div class="flexible mobileblock">
+                                <a href="../service-en-ligne/mes-rendez-vous">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de mes rendez-vous </div>
+                                </a>
+
+                                <a href="../service-en-ligne">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                home
+                                </span>Retourner à l'accueil</div>
+                                </a>
+                            </div>
+
+                <div class="flexible  mobileblock">
+                    <form id="booking-form" method="POST">
+                                    <h3>Veuiller remplir ce formularie pour rpendre rendez-vous :</h3>
+
+                                    {% if customer.id == 1 %}
+                                    
+                                    <ul>
+                                    <li><label>Prénom<input type="text" id="firstname" name="firstname" /></label></li>          
+                                    <li><label>Nom<input type="text" id="surname" name="surname" /></label></li>
+                                    <li><label>Email<input type="text" id="email" name="email" /></label></li> 
+                                    </ul>                                          
+                                    {% endif %}
+                                   
+                                    <p><label>Date de rendez-vous<input type="date" id="bookingDate" name="bookingDate" value="{{ "now"|date("Y-m-d") }}" /></label></p>
+                            <div id="bookingAlert"></div>
+                                    <p>
+
+                                    <fieldset id="hours">
+                                            <legend>Choisissez votre heure :</legend>
+                                            <ul>
+                                                        <li><label for="9AM"><input type="radio" id="9AM" name="hour" value="09:00">09 h 00</label></li>
+                                                        <li><label for="9.30AM"><input type="radio" id="9.30AM" name="hour" value="09:30">09 h 30</label></li>
+                                                        <li><label for="10AM"><input type="radio" id="10AM" name="hour" value="10:00">10 h 00</label></li>
+                                                        <li><label for="10.30AM"><input type="radio" id="10.30AM" name="hour" value="10:30">10 h 30</label></li>
+                                    </fieldset>
+
+
+                                                                        
+                                    <p id="subject">Quel est la nature de votre rendez-vous ?
+
+                                    <input type="text" name="subject" placeholder="Le sujet de votre visite"
+                                    
+                                    {% if docname is not null %}
+
+                                    value=" Retirer mon document consulaire - {{docname}}"
+                                        
+                                    {% endif %}
+                                    
+                                     />
+
+                                    </p>
+
+
+
+                          {#   <h3>Estimation</h3>
+
+                            <p><strong>Temps de trajet :</strong> 30 min </p>
+                            <p><strong>Temps total de la prestation :</strong> 1h </p>
+
+                            <strong>Prix</strong>
+                            <strong>120€</strong>  #}
+
+                            <input type="hidden" name="booking" value="ok"  />
+
+                            <textarea id="comment" name="comment" placeholder="Avez-vous un commentaire ?">     
+                            {% if docname is not null %}
+
+Bonjour,
+
+Je souhaiterai retirer mon document consulaire suivant : {{docname}} à votre ambassade.
+
+Son numéro de référence est  le : {{reference}}
+
+J'attend votre confirmation pour m'y rendre.
+
+Cordialement, {{customername}}             
+                            {% endif %}
+                            </textarea>
+
+
+
+                            <p><input type="submit" id="submitBooking" name="booking" value="Demander un rendez-vous" /></p>
+
+                  </form>
+
+                                                     <div id="booking-info">
+                        <div id="calendar"></div>
+                        <h3>L'ambassade se trouve à Wallstrasse 69, 10179 Berlin</h3>
+                        
+                        <div id="map"><img src="/build/media/image/photos/zoning.jpg"/></div>
+                    </div>
+
+                </div>
+
+
+
+
+                    
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    </section>
+
+
+        {% endblock %}

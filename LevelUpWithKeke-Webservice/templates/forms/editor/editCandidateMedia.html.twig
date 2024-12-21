@@ -1,0 +1,66 @@
+                                       
+                                        
+                                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                        
+                                        <form id="yourMedia" method="POST" data-candidateid="{{candidate.id}}">
+                                            
+                                            <h3>Modifer vos informations personnelles</h3>
+
+                                         <ul>
+                                        {% for y in 1..4 %}
+
+
+                                        
+                                        {% if media[y - 1].url is defined %}
+                                        {% set mediaUrl = media[y - 1].url %}
+                                        {% set mediaName = media[y - 1].name %}
+                                        {% else %}
+                                        {% set mediaUrl = "" %}
+                                        {% endif %}
+
+                                        <li>
+                                            <select name="socialName{{y}}">
+                                                <option value="">Choisir un média</option>
+                                                <option value="website" {% if mediaName == "website" %}selected{% endif %}>Votre site web</option>
+                                                <option value="facebook" {% if mediaName == "facebook" %}selected{% endif %}>Votre Facebook</option>
+                                                <option value="linkedin" {% if mediaName == "linkedin" %}selected{% endif %}>Votre Linkedin</option>
+                                                <option value="twitter" {% if mediaName == "twitter" %}selected{% endif %}>Votre Twitter</option>
+                                                <option value="instagram" {% if mediaName == "instagram" %}selected{% endif %}>Votre Instagram</option>
+                                                <option value="github" {% if mediaName == "github" %}selected{% endif %}>Votre Github</option>
+                                                <option value="pinterest" {% if mediaName == "pinterest" %}selected{% endif %}>Votre Pinterest</option>
+                                                <option value="behance" {% if mediaName == "behance" %}selected{% endif %}>Votre Behance</option>
+                                                <option value="viadeo" {% if mediaName == "viadeo" %}selected{% endif %}>Votre Viadeo</option>
+                                            </select>
+
+                                            <input type="text" name="socialUrl{{y}}" value="{{mediaUrl}}" />
+                                        </li>
+
+                                        {% endfor %}
+                                    </ul>
+                                        
+                                        <div id="form-validation"><input type="submit" name="editor" value="Modifier"/></div>
+                                        
+                                        </form>
+
+                                            <script>
+                                                        $('#yourMedia').submit(function(e){
+
+                                                            var id = $('#yourMedia').data("candidateid");
+
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: '/edit-candidate-media/'+id,
+                                                    type: 'POST',
+                                                    data:$('#yourMedia').serialize(),
+
+                                                    success: function(data) {
+                                                        $('#editor-form-display').html(data);
+                                                        location.reload();
+                                                    },
+                                                    error: function() {
+                                                        $('#editor-form-display').text('Erreur au niveau des résultats de recherches');
+                                                    }
+                                                });
+                                            });
+
+                                            </script>  

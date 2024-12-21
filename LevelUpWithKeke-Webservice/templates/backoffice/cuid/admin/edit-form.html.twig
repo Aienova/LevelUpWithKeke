@@ -1,0 +1,143 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifier un formulaire</h1>
+                    </div>
+
+                    <div id="square-menu">
+
+
+                                <div class="square">
+
+                                
+                        <div class="flexible">
+                                <a href="../forms">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos formulaires</div>
+                                </a>
+
+                                <a href="../addform">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                add_circle
+                                </span>Ajouter une nouveau formulaire</div>
+                                </a>
+                            </div>
+
+                                    <div class="flexible">
+                                    <div id="form-creator">
+                                    <div id="form-menu" class="flexible"> <div class="optionbutton sider" data-side="form-infos" >Information générales</div><div class="optionbutton sider" data-side="form-settings">Structure du formulaire</div></div>
+                                    <form id="form-infos" class="side" method="POST" enctype="multipart/form-data">
+
+                                    <h2>Informations générales de votre formulaire</h2>
+
+
+                                    <input type="hidden" name="form_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+                                            
+                                            <p><h3>Titre de votre formulaire</h3>
+                                            <input type="text" name="title" value="{{form.title}}" />
+                                            </p>
+                                            
+                                            
+                                            <p>
+                                            <h3>Service lié à votre formulaire :</h3>
+                                            <select name="notarizeType">
+                                            {% for notarizeType in notarizetypes %}
+
+
+                                                <option value="{{notarizeType.id}}" {% if form.notarizeType.id == notarizeType.id %} selected {% endif %}>{{notarizeType.frName}}</option>
+                                            {% endfor %}
+                                            </select>
+                                            </p>
+
+                                            <p>
+                                            <h3>Description de votre formulaire:</h3>
+                                            <textarea name="description">{{form.description}}</textarea>
+                                            </p>
+
+
+
+                                       {#     {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}  #}
+
+
+
+                                    <input type="submit"  value="Créer le formulaire" />
+                                    </form>
+
+                                     <div id="form-settings" class="hidden side">
+
+                                            <div id="form-settings-fields">
+                                            <h2>Configurer votre formulaire</h2>
+
+                                            {% if form.FormItemSettings is not empty %}
+                                            
+                                            {% for setting in form.FormItemSettings %}
+                                                {% include "forms/creator/fields-editor/"~ setting.FormItem.name ~".html.twig" %}
+                                            {% endfor %}
+
+                                            {% endif %}
+
+                                                <form method="POST" id="form-settings-new-field" enctype="multipart/form-data">
+                                               <input type="hidden" name="form_data" value="1" />
+                                               <input type="hidden" name="addNewFormItem" value="1" />
+                                                    <h3>Ajouter un champ à votre formulaire</h3>
+                                                    <input type="text" name="title" placeholder="Titre du champs" value="" require/><br><br>
+                                                    <select name="formItem">
+                                                    {% for formItem in formItems %}
+                                                        <option value="{{formItem.id}}">{{formItem.frName}}</option>
+                                                    {% endfor %}
+                                                    </select>
+                                                    <input type="hidden" name="addfield" value="1" />
+                                                    <input type="submit" value="Ajouter"/>
+                                                
+                                                </form>
+
+
+                                                    <form method="POST" id="form-settings-new-step">
+                                               <input type="hidden" name="form_data" value="1" />
+                                               <input type="hidden" name="addNewStep" value="1" />
+                                               
+                                                    <h3>Ajouter une nouvelle étape</h3>
+
+
+                                                    <input type="text" name="title" placeholder="Ajouter une étape" value="" />
+                                                    <input type="hidden" name="addstep" value="1" />
+
+                                                    <input type="submit" value="Ajouter"/>
+                                                
+                                                </form>
+
+
+                                            </div>
+
+
+                                    </div>
+
+
+                                    </div>
+
+                                    <div id="form-render">
+                                    <h2>Mode pré-rendu :</h2>
+
+                                    {% include "forms/creator/render.html.twig" %}
+
+
+                                    </div>
+
+                     </div>
+                  </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

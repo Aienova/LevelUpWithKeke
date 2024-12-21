@@ -1,0 +1,39 @@
+
+<div id="avatar-men">
+            <fieldset>
+  <legend>Votre avatar :</legend>
+
+
+            {% set checked = "" %}
+
+            {% for i in 1..99 %}
+
+            
+            {% if candidate.avatar is defined %}
+            {% if candidate.avatar.gender == "men" %}
+
+            {% set picture = candidate.avatar.picture %}
+
+            {% if i == picture %}
+
+           {% set checked = "checked" %}
+
+           {% else %}
+
+            {% set checked = "" %}
+
+            {% endif %}
+
+
+
+            {% endif %}
+            {% endif %}
+                            <label>
+                
+                <img class="avatar-mini" src="/build/media/image/icons/avatar/men/{{i}}.png" alt="Option 2"><input type="radio" name="men-avatar" value="{{i}}" {{checked}}>
+                </label>
+            {% endfor %}
+
+        </fieldset>
+
+</div>

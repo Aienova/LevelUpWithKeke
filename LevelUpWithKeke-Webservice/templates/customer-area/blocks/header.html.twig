@@ -1,0 +1,220 @@
+
+            {% extends "assets.twig" %}
+
+
+        
+        {% block asset %}
+
+        
+                    <div id="space-bar"></div>
+        <header>
+
+        <section id="top-bar" class="flexible">
+            <div id="contact-info">
+            
+            <div id="contact-info" class="flexible">
+
+                            <a href="tel:+493012378546"><nav class="flexible">
+                    <div class="material-symbols-outlined">call</div><div class="navName">+49 3012378546</div>
+                </nav></a>
+
+
+                    <a href="mailto:contact@ambacongo.de"><nav class="flexible">
+                    <div class="material-symbols-outlined">mail</div><div class="navName">contact@ambacongo.de</div>
+                </nav></a>
+
+
+                                    <a href="{{website.link}}"><nav id="account" class="flexible">
+                    <div class="material-symbols-outlined">public</div><div class="navName">retourner sur le site web</div>
+                </nav></a>
+            
+            </div>
+            
+            
+            </div>
+
+            <div id="connection-menu" class="flexible">
+
+                <a href="{{ path('cuid_customer_area_new_booking') }}"><nav id="rendez-vous" class="flexible">
+                    <div class="material-symbols-outlined">calendar_month</div><div class="navName">Prendre rendez-vous</div>
+                </nav></a>
+                    {% if user is defined and user is not empty %} {% set account = user %} {% endif %}
+                    {% if customer is defined and customer is not empty %} {% set account = customer %}  {% endif %}
+
+                    {% if account.firstname is empty %}
+
+                    {% set accountname = "Visiteur" %}
+                    <a href="{{ path('cuid_connection') }}">
+
+                    {% else %}
+
+                    {% set accountname = account.firstname ~" "~ account.surname %}
+
+                    <a href="{{ path('cuid_customer_area_home') }}">
+
+                    {% endif %}
+                        
+
+                 <nav id="account" class="flexible">
+                    <div class="material-symbols-outlined">account_circle</div><div class="navName">
+
+
+                                    {% if account is not empty %}
+                    {{accountname}}
+                    
+                                    {% else %}
+                    Vos démarches en ligne
+                                    {% endif %}
+                    
+
+                    
+                    </div>
+                </nav></a>
+
+                {% if account.firstname is not empty and account.firstname != "Guest" %}
+
+                                 <a href="{{ path('cuid_connection') }}"><nav id="account" class="flexible">
+                    <div class="material-symbols-outlined">power_settings_new</div><div class="navName">Se déconnecter</div>
+                </nav></a>
+
+
+                {% else %}
+
+                                 <a href="{{ path('cuid_document', { 'pagename': 'register' }) }}"><nav id="account" class="flexible">
+                    <div class="material-symbols-outlined">how_to_reg</div><div class="navName">S'enregistrer</div>
+                </nav></a>
+
+                
+
+                {% endif %}
+            
+            </div>
+        </section>
+
+        <section id="bottom-bar" class="flexible">
+        <img class="logo invert" src="/cuid/media/image/ambaconnect.png"/>
+    
+
+        <div class="logotitle">
+            <span>AMBACONNECT</span><br>
+            <span>Service en ligne pour les ambassades</span>
+
+        </div>
+
+        <ul id="menu" class="flexible">
+
+                        {% if account.firstname is not empty and account.firstname != "Guest" %}
+
+     {% include part ~ '/blocks/menu2.html.twig' %}
+
+                    {% else %}
+
+
+         {% include part ~ '/blocks/menu1.html.twig' %}
+
+                    {% endif %}
+
+
+
+            {#
+
+            <a href=""><li class="flexible"><div class="material-symbols-outlined">supervised_user_circle</div><div class="menuname">Dienstleistungen</div>
+                        {% include "website/blocks/submenu/submenu1.html.twig" %}
+            </li></a>
+
+            <a href=""><li class="flexible"><div class="material-symbols-outlined">euro</div><div class="menuname">Preise</div>
+                        {% include "website/blocks/submenu/submenu1.html.twig" %}
+            </li></a> 
+
+            <a href=""><li class="flexible"><div class="material-symbols-outlined">event_available</div><div class="menuname">Reservierung</div>
+                        {% include "website/blocks/submenu/submenu1.html.twig" %}
+            </li></a> 
+
+
+            <a href=""><li class="flexible"><div class="material-symbols-outlined">mail</div><div class="menuname">Kontakt</div>
+                        {% include "website/blocks/submenu/submenu1.html.twig" %}
+            </li></a> 
+
+            #}
+
+
+            <li id="burger-menu">
+            
+                <div class="burger-menu">
+                    <div class="bar">
+                    <span class="bar-1"> </span>
+                    <span class="bar-2"> </span>
+                    <span class="bar-3"> </span>
+                    </div>
+                </div>
+            </div>
+            
+            </li>
+
+
+        </ul>
+
+        </section>
+
+        <ul class="menumobile">
+
+                                {% if account.firstname is not empty and account.firstname != "Guest" %}
+
+            <a href="{{ path('cuid_customer_area_home') }}"><li>Accueil</li></a>
+
+            <a href="{{ path('cuid_customer_area_my_profile') }}"><li>Profil</li></a>
+
+            <a href="{{ path('cuid_document', { 'pagename': 'visa' }) }}"><li>Visa</li></a>
+
+             <a href="{{ path('cuid_customer_area_new_notarize') }}"><li>demander un acte consulaire</li></a>
+
+             <a  href="{{ path('cuid_customer_area_faq') }}#faq"><li>FAQ</li></a>
+
+             {% else %}
+
+           <a href="{{ path('cuid_customer_area_infos') }}"><li>Accueil</li></a>
+
+            <a href="{{ path('cuid_customer_area_infos') }}#services"><li>Nos services</li></a>
+
+            <a href="{{ path('cuid_document', { 'pagename': 'visa' }) }}"><li>Visa</li></a>
+
+             <a href="{{ path('cuid_document', { 'pagename': 'register' }) }}"><li>S'enregistrer</li></a>
+
+             <a href="{{ path('cuid_customer_area_infos') }}#faq"><li>FAQ</li></a>
+
+
+            {% endif %}
+
+
+        </ul>
+
+        </header>
+
+    <script>
+
+            $(".burger-menu ").on("click",".bar",function(){
+        
+        $(".menumobile").slideToggle();
+        $(".bar").toggleClass('change');
+        $(".menumobile li").slideRight();
+
+        });
+
+                    $(".mobilesubmenu").on("click",function(){
+        
+        $(this).closest(".mobilesubmenu ul ").removeClass("hidden");
+
+
+        });
+
+        
+    </script>
+
+
+
+
+
+
+        {% endblock %}
+
+

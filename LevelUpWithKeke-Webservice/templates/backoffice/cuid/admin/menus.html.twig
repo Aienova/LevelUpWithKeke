@@ -1,0 +1,258 @@
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifier votre Menu</h1>
+                    </div>
+
+                    <div id="square-menu">
+
+                                <div class="square flexible">
+
+                                    <div id="form-creator">
+
+
+                                     <div id="form-settings">
+
+                                            <div id="form-settings-fields">
+                                            <h2>Configurer votre menu</h2>
+
+                                            {% if menus is not empty %}
+                                            
+                                            <div id="menu-top-setting">
+                                            {% for menu in menus %}
+
+
+                                                <form method="POST" id="menu-{{menu.id}}" class="menu-item" enctype="multipart/form-data">
+                                               <input type="hidden" name="menus_data" value="1" />
+                                               <input type="hidden" name="action" value="edit" />
+                                               <input type="hidden" name="submenu" value="0" />
+                                                <input type="hidden" name="id" value="{{menu.id}}" />
+                                                    <h3>Modifier cette section du menu</h3>
+                                                    <input type="text" name="title" placeholder="Titre du champs" value="{{menu.title}}" required/><br><br>
+                                                    <h3>Position du lien (de gauche à droite)</h3>
+                                                    <select name="position">
+                                                    {% for i in 1 .. menucount %}
+                                                    {% if i == 1 %}
+                                                        <option value="{{i}}" {% if menu.position == i %} selected  {% endif %} >Première position</option>
+
+                                                    {% elseif i == menucount %}                                                    
+                                                        <option value="{{i}}" {% if menu.position == i %} selected  {% endif %}>Dernière position</option>
+                                                        
+  
+                                                    {% elseif i == 2 %}                                                     
+                                                        <option value="{{i}}" {% if menu.position == i %} selected  {% endif %}>Seconde position</option>
+
+                                                    {% else %}                                                     
+                                                        <option value="{{i}}" {% if menu.position == i %} selected  {% endif %}>{{i}}e position</option>
+
+
+                                                    {% endif %} 
+
+                                                    {% set i = i + 1  %}                                                 
+
+                                                    {% endfor %}
+
+                                                    </select>
+
+                                                     <h3>Lien du menu :</h3>
+
+
+                                                     <select class="multisearcher" data-id="{{menu.title}}-result" name="page">
+
+                                                     {% for page in pages %}
+
+                                                     <option value="{{page.id}}" {% if menu.page is not empty %}{% if page.id == menu.page.id %} selected  {% endif %}{% endif %}   >{{page.title}}</option>
+                                                        
+                                                     {% endfor %}
+
+                                                     <option value="0" {% if menu.page is empty %} selected {% set hidden = "" %}{% else %}{% set hidden = "hidden" %}  {% endif %}>Lien personnalisé</option>
+
+                                                     </select>
+
+                                                     <input id="{{menu.title}}-result-0" type="text" class="{{menu.title}}-result {{hidden}}" name="link" placeholder="ex : https://www.google.fr/" value="{{menu.url}}"/><br><br>
+
+
+
+
+                                                    <input type="submit" name="decision" value="Modifier"/><input type="submit" name="decision"  value="Supprimer"/>
+                                                
+                                                </form>
+
+                                                {% if menu.CMSsubmenus is not empty %}
+
+                                                <h2>Sous menu de {{menu.title}}</h2>
+
+                                                    {% for submenu in menu.CMSsubmenus %}
+
+                                                <form method="POST" id="submenu-{{submenu.id}}" class="submenu-item"> 
+                                                <input type="hidden" name="menus_data" value="1" />
+                                               <input type="hidden" name="action" value="edit-submenu" />
+                                               <input type="hidden" name="id" value="{{submenu.id}}" />
+                                                <input type="hidden" name="submenu" value="{{submenu.cmsmenu.id}}" />
+                                                <label>Titre : <input type="text" name="title" value="{{submenu.title}}" /></label><br>
+
+                                                                 <label>Position</label>
+                                                                 
+                                                    <select name="position">
+                                                    {% for i in 1 .. submenu.totalsubmenu %}
+                                                    {% if i == 1 %}
+                                                        <option value="{{i}}" {% if menu.position == i %} selected  {% endif %} >Première position</option>
+
+                                                    {% elseif i == menucount %}                                                    
+                                                        <option value="{{i}}" {% if menu.position == i %} selected  {% endif %}>Dernière position</option>
+                                                        
+  
+                                                    {% elseif i == 2 %}                                                     
+                                                        <option value="{{i}}" {% if menu.position == i %} selected  {% endif %}>Seconde position</option>
+
+                                                    {% else %}                                                     
+                                                        <option value="{{i}}" {% if menu.position == i %} selected  {% endif %}>{{i}}e position</option>
+
+
+                                                    {% endif %} 
+
+                                                    {% set i = i + 1  %}                                                 
+
+                                                    {% endfor %}
+
+                                                    </select>
+
+
+
+                                                
+                                                </label>
+
+                                                                          <h3>Lien du menu :</h3>
+
+
+                                                     <select class="multisearcher" data-id="{{submenu.title}}-result" name="page">
+
+                                                     {% for page in pages %}
+
+                                                     <option value="{{page.id}}" {% if submenu.page is not empty %}{% if page.id == submenu.page.id %} selected  {% endif %}{% endif %}   >{{page.title}}</option>
+                                                        
+                                                     {% endfor %}
+
+                                                     <option value="0" {% if submenu.page is empty %} selected {% set hidden = "" %}{% else %}{% set hidden = "hidden" %}  {% endif %}>Lien personnalisé</option>
+
+                                                     </select>
+
+                                                     <input id="{{submenu.title}}-result-0" type="text" class="{{submenu.title}}-result {{hidden}}" name="link" placeholder="ex : https://www.google.fr/" value="{{submenu.url}}"/><br><br>
+
+                                                                                                
+                                            <input type="submit" name="decision" value="Modifier"/><input type="submit" name="decision"  value="Supprimer"/>                                          
+                                            </form>
+
+
+
+                                                    {% endfor %}
+
+                                                {% endif %}
+
+                                            {% endfor %}
+                                            </div>
+
+                                            {% endif %}
+
+                                      
+
+                                               
+
+
+
+                                            </div>
+
+
+                                    </div>
+
+
+                                    </div>
+
+                                    {#
+
+                                    <div id="form-render">
+                                    <h2>Mode pré-rendu :</h2>
+
+                                    {% include "forms/blocks/render.html.twig" %}
+
+
+                                    </div>
+
+                                    #}
+
+                                    
+                                                <form method="POST" id="addform-fixed" enctype="multipart/form-data">
+                                               <input type="hidden" name="menus_data" value="1" />
+                                               <input type="hidden" name="action" value="add" />
+                                                    <h3>Ajouter une section au menu</h3>
+                                                    <input type="text" name="title" placeholder="Titre du champs" value="" required/><br><br>
+                                                    <h3>Position du lien (de gauche à droite)</h3>
+                                                    <select name="position">
+                                                    {% for i in 1 .. menucount %}
+                                                    {% if i == 1 %}
+                                                        <option value="{{i}}">Première position</option>
+
+                                                    {% elseif i == menucount %}                                                    
+                                                        <option value="{{i}}">Dernière position</option>
+                                                        
+  
+                                                    {% elseif i == 2 %}                                                     
+                                                        <option value="{{i}}">Seconde position</option>
+
+                                                    {% else %}                                                     
+                                                        <option value="{{i}}">{{i}}e position</option>
+
+
+                                                    {% endif %} 
+
+                                                    {% set i = i + 1  %}                                                 
+
+                                                    {% endfor %}
+
+                                                    </select>
+
+                                                     <h3>Lien du menu :</h3>
+
+
+                                                     <select class="multisearcher" data-id="perso-link-result" name="page">
+
+                                                     {% for page in pages %}
+
+                                                     <option value="{{page.id}}">{{page.title}}</option>
+                                                        
+                                                     {% endfor %}
+
+                                                     <option value="0">Lien personnalisé</option>
+
+                                                     </select>
+
+                                                     <input id="perso-link-result-0" type="text" class="perso-link-result hidden" name="link" placeholder="ex : https://www.google.fr/" value=""/><br><br>
+
+                                                    <h3>Sous-menu de :</h3>
+                                                    
+
+                                                    <select name="submenu">
+                                                    <option value="0"><span class="redtext">Aucun</span></option>
+                                                     {% for menu in menus %}
+
+                                                     <option value="{{menu.id}}">{{menu.title}}</option>                                                                                                      
+
+                                                     {% endfor %}
+                                                     </select>
+
+                                                    <input type="submit" name="decision" value="Ajouter"/>
+                                                
+                                                </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

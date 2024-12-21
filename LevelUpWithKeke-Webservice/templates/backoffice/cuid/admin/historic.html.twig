@@ -1,0 +1,64 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Consulter les tableaux de vos données</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+
+                                <div class="optionsearch">
+
+                                <strong> sélectionner votre tableau</strong>
+                                        <select id="tableToExtract" name="tableToExtract" class="searcher">
+                                        {% for i in 0 .. counter %}
+                                            <option value="{{ data[i]["tableid"] }}">{{ data[i]["title"] }}</option>
+                                        {% endfor %}
+                                        </select>
+                                <button id="exportButton">"Extraire les données de ce tableau au format Excel</button>
+
+                                </div>
+
+
+                                <div id="displaytTable">
+                                {% for i in 0 .. counter %}
+
+                                {% if i == 0 %}
+
+                                {% include "backoffice/cuid/admin/blocks/tables/VisaTable.html.twig" %}
+
+                                {% endif %}
+
+                                {% if i == 1 %}
+
+                                {% include "backoffice/cuid/admin/blocks/tables/PassportTable.html.twig" %}
+
+                                {% endif %}
+
+                                {% if i > 1 %}
+
+                                 {% include "backoffice/cuid/admin/blocks/tables/DataTable.html.twig" %}
+
+                                {% endif %}
+
+                                 {% endfor %}
+                                 </div>
+
+                                
+                                </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}

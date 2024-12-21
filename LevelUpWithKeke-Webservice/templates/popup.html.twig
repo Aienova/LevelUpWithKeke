@@ -1,0 +1,22 @@
+<div id='popup'><h3>{{ formmessage|raw }}</h3></div>
+
+    <script>
+
+        $("#popup").removeClass("hidden");
+        $("#popup").addClass("showing");
+
+
+
+                setTimeout(function() {
+
+            $("#popup").removeClass("showing");
+
+                    },8000);
+
+
+            setTimeout(function() {
+
+            $("#popup").addClass("hidden");
+
+                    },9000);
+    </script>

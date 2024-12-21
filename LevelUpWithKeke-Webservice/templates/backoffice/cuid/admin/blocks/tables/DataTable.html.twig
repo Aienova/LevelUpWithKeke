@@ -1,0 +1,101 @@
+
+      
+        {% if i > 0 %}
+
+        {% set hidden = "hidden" %}
+
+        {% else %}
+
+        {% set hidden = "" %}
+
+        {% endif %}
+      
+      
+      
+        {% if data[i]["maxcount"] > 0 %}
+
+
+
+<table id="result-{{data[i]["tableid"]}}" data-name="{{ data[i]["title"] }}"  class="table-resa result {{hidden}}">
+    <thead>        
+            <tr>
+            <th>{{ data[i]["title"] }}</th>
+            </tr>
+        <tr>
+                    <th>Code</th>
+        {% for y in 0 .. data[i]["maxcount"]  %}
+
+
+
+            <th>{{data[i][y].name}}</th>
+
+        
+
+
+        {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+
+    {# BODY  #}
+
+
+
+        <tr>
+
+        {% set memo = data[i][0].notarize.id %}
+                        <td>{{data[i][0].notarize.numberid}}</td>
+        {% for y in 0 .. data[i]["maxcount"]  %}
+
+            {% if data[i][y].notarize.id > memo %}
+
+            </tr><tr>
+                        <td>{{data[i][y].notarize.numberid}}</td>
+                        <td>{{data[i][y].value}}</td>
+
+
+            {% set memo = data[i][y].notarize.id %}
+
+            {% else %}
+
+            <td>{{data[i][y].value}}</td>
+
+            {% endif %}
+
+
+
+
+        {% endfor %}
+
+        </tr>
+        
+
+
+        
+
+
+
+
+    {# BODY #}
+
+
+    </tbody>
+</table>
+
+{% else %}
+
+
+<table id="result-{{data[i]["tableid"]}}" data-name="{{ data[i]["title"] }}"         class="table-resa result {{hidden}}">
+
+        <thead>        
+            <tr>
+            <th>{{ data[i]["title"] }}</th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr><td colspan="7">Aucun résultat</td></tr>
+    </tbody>
+</table>
+
+
+{% endif %}

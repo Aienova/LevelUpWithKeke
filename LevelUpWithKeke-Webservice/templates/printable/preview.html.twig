@@ -1,0 +1,35 @@
+
+
+            <div id='popup'>
+
+                    <h3>Prévualsiation de votre document</h3>
+                    <iframe id="printf" name="printf" src="{{printable}}" height="600" weight="1000"></iframe>
+
+                    <button id="print-this">Imprimer</button>
+                    <button id="close-this">Fermer</button>
+
+
+            </div>
+
+                <script>
+
+                    $("#popup").removeClass("hidden");
+                    $("#popup").addClass("showing");
+
+                    
+                    $("#print-this").click(function(){
+
+
+                        window.frames["printf"].focus();
+                        window.frames["printf"].print();
+
+                    });
+
+                    $("#close-this").click(function(){
+
+                            $('#message-form').html("");
+                            $("#message-form").addClass("hidden");
+
+                    });
+
+                </script>

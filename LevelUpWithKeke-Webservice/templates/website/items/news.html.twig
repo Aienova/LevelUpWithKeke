@@ -1,0 +1,232 @@
+
+
+
+
+            <section class="full-h" id="news">
+
+                                 <div  class="flexible mobileblock full">
+
+                                    <div class="content central-text">
+                                    <div class="padder">
+
+                                    <h2>Vos démarches en ligne</h2>
+  
+                                            <div id="stepsfield" >
+
+
+                                            <div class="flexible mobileblock">
+
+                                                <div class="card">
+                                                <div id="registerImage" class="image"></div>
+                                                    <div class="card-content">
+                                                        <h3>SERVICE D'ENREGISTREMENT</h3>
+                                                        <p>Pour vos différentes démarches administratives au niveau de l'ambassade (passeport, carte consulaire, extrait de naissance etc.).</p>
+                                                       
+                                                        <a href="/document/passport"><button>Lire la suite</button></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                <div id="visaImage" class="image"></div>
+                                                    <div class="card-content">
+                                                        <h3>DEMANDE DE VISA</h3>
+                                                        <p>Vous désirez visiter, investir ou vous installer au Congo Brazzaville. Obtenez les renseignements ou de l'aide pour l'obtention d'un visa.</p>
+                                                        
+                                                        <a href="/document/visa"><button>Lire la suite</button></a>
+                                                    </div>
+                                                </div>
+ 
+                                            
+                                            </div>
+
+
+                                            <div class="flexible mobileblock">
+
+                                                <div class="card">
+                                                <div class="image" style="background-image:url('./build/media/image/photos/rendez-vous.jpg')"></div>
+                                                    <div class="card-content">
+                                                        <h3>PRISE DE RENDEZ-VOUS</h3>
+                                                        <p>Pour vos différentes démarches administratives au niveau de l'ambassade (passeport, carte consulaire, extrait de naissance etc.).</p>
+                                                       
+                                                        <a href="/document/passport"><button>Lire la suite</button></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                <div style="background-image:url('./build/media/image/photos/colis.jpg')" class="image"></div>
+                                                    <div class="card-content">
+                                                        <h3>DEMANDE ET ENVOI D'ACTE CONSULAIRE</h3>
+                                                        <p>Vous désirez visiter, investir ou vous installer au Congo Brazzaville. Obtenez les renseignements ou de l'aide pour l'obtention d'un visa.</p>
+                                                        
+                                                        <a href="/document/visa"><button>Lire la suite</button></a>
+                                                    </div>
+                                                </div>
+ 
+                                            
+                                            </div>
+
+
+
+                                        </div>
+
+                                    </div>
+                        </div>
+                        </div>
+
+                        <div id="customer-area">
+                        <div class="flexible mobileblock">
+                        <h2>PROCEDURE DE COLLECTE, DE PRODUCTION ET DE RESTITUTION DE PASSEPORTS CEMAC AUX CONGOLAIS DE L’ETRANGER</h2><a href="/service-en-ligne"><button>Vos services en lignes</button></a>
+                        </div>
+                        </div>
+
+
+                        <div  class="flexible mobileblock full">
+
+                                    <div class="content central-text">
+
+                                    <div class="padder">
+                                    
+
+                                    <h2>Dernières actualités</h2>
+  
+                                            <div id="newsfield">
+                                            <div class="flexible mobileblock">
+
+                                                        {% set countB = 1 %}
+
+                                            {% for article in articles %}
+
+
+
+                                            {% if article.publishDate|date("U") <= "now"|date("U") and article.statement == 0 and countB <= 6 %}
+
+                                                <div class="card">
+
+                                                <div class="image" style="background-image:url('{{article.image}}')"></div>
+
+
+
+                                                <div class="card-content">
+
+                                                <h3>{{article.title}}</h3>
+                                                <h4>Publié : {{article.publishDate|date("d/m/Y")}}</h4>
+                                                <p>{{article.description|raw|slice(0, 50) ~ '...'}}</p>
+                                                <a href="/article/{{article.name}}"><button>Lire la suite</button></a>
+                                                </div>
+                                                </div>
+
+                                                                    {% if countB % 3 == 0 %}
+
+                                                        </div><div class="flexible mobileblock">                      
+                        
+                                            {% endif %}
+
+                                   {% set countB = countB + 1 %}
+
+                                                
+                                            {% endif %}
+                                            {% endfor %}
+                                            </div>
+
+                                     
+                                            
+                                            </div>
+
+                                    </div>
+                        </div>
+                        </div>
+
+                        <div  class="flexible mobileblock full">
+
+                                    <div class="content central-text">
+                                    <div class="padder">
+
+
+                                        
+
+
+                                    <h2>Nos évènements avenir</h2>
+  
+                                            <div id="eventsfield">
+
+                                            {% set count = 0 %}
+                                            
+                                            {% for event in events|sort((a, b) => a.eventDate <=> b.eventDate) %}
+
+                                            {% if event.eventDate|date("Y-m-d") >= "now"|date("Y-m-d") %}
+
+                                            <div class="square flexible white-text">
+
+                                            {% if event.image != NULL %}
+
+
+                                                <div class="image hiddenformobile" style="background-image: url('{{event.image}}');"></div>   
+
+                                              
+                                               {% else %}
+
+                                                    <div class="image" style="background-image: url('/cuid/media/event-default.jpg');"></div> 
+
+
+
+                                            {% endif %}
+
+
+
+                                            <div class="text-content">
+
+                                                <h3>{{event.title}}</h3>
+                                                <strong>Date de l'évènement : {{event.EventDate|date("d/m/Y")}}</strong><br>
+
+                                                <p>{{event.description}}</p>
+
+                                                <a href="./evenement/{{event.tag}}"><button>Lire la suite</button></a>
+
+                                                
+                                            
+                                            </div>                                         
+
+
+
+                                            </div>
+
+                                            {% set count = count + 1 %}
+
+                                            {% endif %}
+
+
+
+
+                                            {% endfor %}
+
+                                            {% if count == 0 %}
+
+                                                                                                                    <div class="square flexible white-text">
+                                            <div class="image" style="background-image: url('/cuid/media/event-default.jpg');"></div> 
+                                            <div class="text-content">
+
+                                                <h3>De nouveau évènement à venir</h3>
+                                               
+
+                                                <p>Il n' y a aucun évènement à venir pour l'instant ,mais restez connectez, de nouveaux évènements viendront çi peut</p>
+                                            
+                                            </div> 
+                                            </div>
+                                                
+                                            {% endif %}
+
+                                     
+                                            
+                                            </div>
+
+                                    </div>
+                        </div>
+                        </div>
+
+
+
+        
+            </section>
+
+
+

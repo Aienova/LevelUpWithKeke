@@ -1,0 +1,77 @@
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}    
+
+
+                    <div id="page-banner">
+            <h1>Choisir un document</h1>
+
+            </div>  
+
+     <section id="fonctionnal">
+
+
+
+            <div id="page-content">
+                                    <div class="flexible">
+
+                                <a href="../service-en-ligne">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                home
+                                </span>Retourner à l'accueil</div>
+                                </a>
+                            </div>
+
+                <div id="message-form"></div>
+
+                <div id="document-choices" >
+
+                <h2>Quel document consulaire souhaitez-vous obtenir ?</h2>
+
+                    <nav class="flexible white-text">
+
+
+                    {% set i = 1 %}
+
+
+                    {% for document in documents %}
+
+                        <a href="/document/{{document.name}}"><div class="square"><h2>{{document.title}}</h2></div></a>
+
+                        {% if i % 3 == 0 %}
+
+                              
+                              </nav>
+                              
+                              <nav class="flexible white-text">
+
+                        {% endif %}
+
+                          {% set i = i + 1 %}
+                    
+                    {% endfor %}
+
+
+                    </nav>
+
+                </div>
+
+
+
+
+                </div>
+
+
+
+
+                    
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    </section>
+
+
+        {% endblock %}

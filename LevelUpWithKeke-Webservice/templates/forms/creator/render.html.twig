@@ -1,0 +1,43 @@
+<h1>{{form.title}}</h1>
+
+<p>{{form.description}}</p>
+
+
+
+                                {% set hidden = "" %}
+
+                                {% for step in form.FormSteps %}
+
+                                {% if step.position > 1 %}
+
+
+                                {% endif %}
+
+                                <div id="step{{step.position}}">
+
+                                                            <h2>{{step.name}}</h2>
+                                        {% set count = 0  %}
+
+                                        {% for setting in form.FormItemSettings %}
+
+                                {% if setting.FormStep is not empty %}
+                                {% if setting.FormStep.position == step.position %}
+
+
+                                {% include "forms/creator/items/" ~ setting.FormItem.name ~ ".html.twig" %}
+
+                                {% endif %}
+                                {% else %}
+
+                                <p class="redflag"> Veuillez associé ce champs à une étape : {{setting.title}} (# {{setting.id}} )
+
+                                {% endif %}
+
+                                                                        {% set count = count + 1  %}
+
+                                        {% endfor %}
+
+
+                                </div>
+
+                                 {% endfor %}

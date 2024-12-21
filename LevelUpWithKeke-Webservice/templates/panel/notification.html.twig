@@ -1,0 +1,13 @@
+
+{% if notificationcount > 0 %}
+<p>Vous avez {{notificationcount}} nouvelle(s) notification(s) :</p>
+<ul>
+{% for notification in notification %}
+<li>date :{{ notification.dateReceived|date("m/d/Y") }} | {{ notification.message }} </li>
+{% endfor %}
+
+{% else %}
+
+<p>Vous avez aucune notification </p>
+
+{% endif %}

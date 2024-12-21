@@ -1,0 +1,289 @@
+@import "default";
+@import "customer-area/header";
+@import "customer-area/body";
+@import "customer-area/footer";
+
+
+
+*{
+
+    margin: 0;
+  padding: 0;
+}
+
+
+
+  body {
+    background-color: #fffcdd;
+      margin: 0;
+    padding: 0;
+    width:100%;
+    font-family: 'Verdana', sans-serif;
+    scroll-behavior: smooth;
+    background-image: url('/assets/media/image/photos/background2.jpg');
+    background-attachment: fixed;
+  
+    
+  }
+
+  #page-title {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+  h1,h2,h3{
+
+      font-family: nothingtosomething;
+  }
+
+
+  #comming-soon{
+
+    margin-top:50px;
+    font-size: 50px;
+  }
+
+
+  #booking-panel {
+    background-color: #245c2d;
+    color: white;
+}
+
+
+li#new-resa {
+  background-color: #e55557;
+  padding: 7px;
+  color: white;
+}
+
+
+  .square{
+
+    background-color: #213f0c;
+    padding:25px;
+    
+  }
+
+      #booking-historic {
+        text-align: center;
+
+        h3{
+
+          padding-bottom:37px;
+        }
+    }
+
+      #booking-empty {
+        padding-top: 5em;
+        height: fit-content;
+      }
+
+
+  #search-engine{
+
+    background-color: rgb(142, 158, 172);
+  }
+
+
+  section#jobs {
+
+    background-color: #747d85;
+    color: white;
+
+      }
+
+      section#services {
+        background-color: #ecd6ca;
+        padding-top:50px;
+        padding-bottom:50px;
+        color: rgb(0, 0, 0);
+        }
+
+        h2{
+
+          font-size: 30px;
+          margin-top:20px;
+        }
+
+#aboutus {
+
+  background-color: #a28375;
+  color: white;
+
+    } 
+
+          div#booking-performances {
+            width: 100%;
+            text-align: right;
+        }
+
+        div#next-booking {
+          width: 100%;
+      }
+
+
+    #booking-performances-cost {
+      font-size: 50px;
+  }
+
+  ul#booking-performances-list {
+    padding-bottom: 15px;
+}
+
+
+    .booking-info-result {
+      text-align: left;
+      font-size: 15px;
+      margin: 5px;
+  }
+
+
+#recruiter-background{
+
+  background-image: url('/assets/media/image/photos/recruiter.jpg');
+  background-size: cover;
+  height: 900px;
+
+}
+
+#candidate-background{
+
+  background-image: url('/assets/media/image/photos/candidate.jpg');
+  background-size: cover;
+
+}
+
+#worker-background{
+
+  background-image: url('/assets/media/image/photos/worker.jpg');
+  background-size: cover;
+
+}
+
+#prices{
+
+  background-color: #f5ebe5;
+
+}
+
+
+
+.price{
+  font-size: 60px;
+  padding: 30px;
+}
+
+
+#booking{
+
+  h2{
+    text-align: center;
+    font-size:30px;
+    padding-top:70px;
+    padding-bottom:50px;
+
+  }
+
+  h3{
+    font-size:15px;
+    padding-bottom:50px;
+
+  }
+
+}
+
+
+#booking-form{
+
+  height: fit-content;
+
+
+}
+
+
+
+#booking-info {
+  margin-left: 20px;
+  width:370px;
+}
+
+#calendar {
+  background-color: white;
+  width: 370px;
+  height: fit-content;
+
+}
+
+#map {
+  margin-top:20px;
+  width: 370px;
+
+        img{
+
+          width:100%;
+        }
+}
+
+
+.booking-info {
+  padding-bottom: 25px;
+}
+
+
+#gallery{
+
+  padding-top:50px;
+  text-align: center;
+
+      h2{
+
+        font-size: 25px;
+                
+      }
+}
+
+#document-info {
+  background-color: #f85010;
+  color: white;
+  padding: 30px;
+  width: 350px;
+  margin-left: 20px;
+
+  li{
+
+    margin-top:25px;
+    list-style: inside;
+  }
+}
+
+div#notifaction-square {
+  margin: 10px;
+  padding: 40px;
+  background-color: #f84e0f;
+  color: white;
+
+  h3{
+
+    font-size: 25px;
+  }
+
+
+
+}
+
+
+#document-choices {
+
+
+        .square {
+          background-color: #213f0c;
+          color:white;
+          padding: 25px;
+          margin: 10px;
+          width: 140px;
+        }
+
+
+}
+

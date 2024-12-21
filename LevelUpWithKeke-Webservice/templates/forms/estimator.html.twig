@@ -1,0 +1,156 @@
+
+<style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+    
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+    
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    input[type="range"] {
+    width: 70%;
+}
+    
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    </style>
+
+    <div id="estimation">
+
+
+        <div>
+        <label for="surface">Fläche Ihrer Räumlichkeiten in m²</label><br>
+        <input type="range" id="surface" name="surface" min="20" max="5000" value="20" step="10" oninput="this.nextElementSibling.value = this.value" /><output>20</output> <span>m²</span>
+
+        </div>
+
+
+        <div>
+                    <label for="passengers">Gewünschte Anzahl Besuche pro Woche</label><br>
+            <input type="range" id="passengers" name="passengers" min="1" max="6"  value="1"  oninput="this.nextElementSibling.value = this.value"  /><output>1</output> <span>tage</span>
+
+        </div>
+
+        <br><br>
+
+
+
+
+    <div>
+        <span>Empfangen Sie täglich die Öffentlichkeit?</span><br>
+        <label class="switch">
+            <input id="public" name="public" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+  </div>
+
+
+  <div id="cost">
+
+
+    <h2>Gesamtkosten: <span id="total-cost">216.67</span>€ exkl. MwSt.</h2>
+
+
+          </div>
+      </div>
+  
+  
+              <script>
+
+
+                function estimation(){
+
+                  var surface = parseInt($("#surface").val());
+                var passengers = parseInt($("#passengers").val());
+                var min = 216.99;
+                var max = 13999.99;
+
+  
+                var cost = surface/2 * passengers;
+
+                if ($('#public').is(':checked')) {
+
+                    cost = cost + ((cost*10)/100);
+
+                }
+
+                if (cost <= min) {
+
+                    cost = min;
+
+                }
+
+                if (cost >= max) {
+
+                    cost = max;
+
+                }
+
+                $("#total-cost").html(cost.toFixed(2));
+
+
+                }
+
+                estimation();
+
+
+
+                $("#estimation").on( "mouseover", function() {
+
+                  estimation();
+                      
+                    } );
+                      
+  
+              </script>
+          

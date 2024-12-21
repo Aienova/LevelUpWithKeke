@@ -1,0 +1,42 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Gérer vos offres d'emplois</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+                                
+                                <div class="flexible">
+
+
+                                <a href="./addjob">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                add_circle
+                                </span>Ajouter une offre d'emploi</div>
+                                </a>
+
+
+
+                                </div>
+
+                                 {% include "backoffice/cuid/admin/blocks/tables/JobsTable.html.twig" %}
+
+                                
+                                </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}

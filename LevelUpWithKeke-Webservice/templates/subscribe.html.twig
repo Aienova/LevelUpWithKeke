@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html class="full-h">
+    <head>
+
+                    
+
+                    {% block javascripts %}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            {{ encore_entry_link_tags("connection-styles") }}
+            {{ encore_entry_script_tags("connection-scripts") }}
+                    {% endblock %}
+
+                    <title>Melden Sie sich in Ihrem speziellen Bereich an</title>
+    </head>
+
+    
+    <body class="full-h">
+            <a href="{{ path('cuid_home') }}"><nav class="return-button" >Retourner sur le site web</nav></a>
+
+       <!-- 
+
+                    DISCONNECT BUTTON   
+
+        <form id="disconnection" method="POST">
+                <input type="hidden" name="disconnection" value="1" />
+                <input type=  
+                "submit" value="Disconnect">
+
+
+        </form> -->
+
+        <main class="full-h">
+
+          <div id="customer-subscribe">
+
+                        <div id="connection-title" class="central-text">
+                                <img class="logo" src="/build/media/image/icons/logo-main.png"/>
+                                <h1>S'inscrire aux services en ligne</h1>
+                        </div>
+
+
+
+                        <div id="subscribe" class="theform">
+
+                                                 
+      <div id="message-form"></div>
+    <div id="create-customer" class="stepform dataform">
+
+            
+            <form id="subscribe-form" data-route="/inscription" method="POST">
+
+            <p>Une foi l'inscription terminé, veuillez consultez vos emails pour activer votre compt. Pour des raisons de sécurité l'activation de votre compte depuis votre boite email est obligatoire si vous voulez effectuer vos démarches en lignes</p>
+
+            <div id="step1" class="step">
+                <h3>Votre identité</h3>
+                
+                <div><label>Prénom</label><input type="text" name="firstname"/></div>
+                <div><label>Nom</label><input type="text" name="surname" /></div>
+                <div><label>Email</label><input type="text" name="email" /></div>
+                <div><label>Telephone</label><input type="text" name="telephone" /></div>       
+                <nav class="movestep" data-step="2">Etape suivante</nav>
+
+            </div>
+
+            <div id="step2" class="step hidden" >
+                <h3>Votre mot de passe</h3>
+
+                 <div><label>Login</label><input type="text" name="login" required/></div>
+                 <div><label>Mot de passe</label><input type="password" name="password" required/></div>
+                <div><label>Confirmer mot de passe</label><input type="password" name="confirm_password" required/></div>
+
+
+                <div class="flexible">
+                <nav class="movestep" data-step="1">Etape précédente</nav>
+
+                <div><input type="submit" value="S'inscrire"></div>  
+                </div>
+            
+            </div>
+
+            </form>
+
+       
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+                         {% include '/forms/scripts-form.html.twig' %}
+                                          
+                        </div>
+
+        </div>
+
+        <br>
+        <h3 class="central-text">Si vous avez déjà un compte, veuillez vous connecter ici :<a href="{{ path('cuid_connection') }}"><br><strong>Se connecter</strong></a></h3>
+
+                    
+
+                <footer>
+
+            <p>Copyright 2023 by <a href="https://aienova.com/">Aienova</a> - Nothing to Something</p>
+
+        </footer>
+        </main>
+
+
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+
+
+    </body>
+
+    
+</html>
+
+      

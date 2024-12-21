@@ -1,0 +1,165 @@
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" >
+            {{ encore_entry_link_tags("pdf-styles") }}
+
+
+
+<div class="container">
+        <div class="invoice">
+            <div class="row">
+                <div class="col-7">
+                <p><strong>
+                
+                {% if contractType == 1 %}
+                Rechnung Nr: 
+                {% else %}
+                Angebot Nr:
+                {% endif %}
+
+                
+                
+                {{booking.code}}</strong></p>
+                </div>
+             
+            </div>
+               <div style="text-align:right;width:100%"><img src="/cuid/media/image/printable/logo.png" class="logo"/></div>
+            <div class="row">
+                <div class="col-7">
+                    <p class="addressMySam">
+                        <strong>Procleanreinigung</strong><br/>
+                        Liesen Str 12 A, 13355 Berlin<br/>
+                        
+                    </p>
+
+                    <p>
+                </div>
+                <div class="col-5">
+                    <br/><br/><br/>
+                    <p class="addressDriver">
+                        <strong th:text="${driver.getCompanyName()}">{{booking.customer.firstname}} {{booking.customer.surname}}</strong><br/>
+                        <strong th:text="${driver.getCompanyName()}">Kundenreferenz : {{booking.customer.login}}#{{booking.customer.id}}</strong><br/>
+                       {# Réf. Client <em th:text="${driver.getUserId()}">{{booking.code}}</em><br/> #}
+                        <span th:text="${driver.getAddress()}">{{booking.location}}</span><br/>
+                    </p>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <h6>Sehr geehrte Damen und Herren, {{booking.customer.surname}},<br> Wir danken ihnen für ihre Anfrage vom  {{booking.bookingDate|date("d/m/Y")}} und unterbreiten Ihrem folgendes Angebot :
+            </h6>
+            <br/>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Aufwand</th>
+                    <!--<th>Quantité</th>-->
+                    <!--<th>Unité</th>-->
+                    <!--<th>PU TTC</th>-->
+
+
+                  {% if booking.hour is not empty %}
+   
+                    <th class="text-right">{{booking.hour}} Stunden</th>
+                    {% set unity = "Stundensatz" %}
+                    
+                {% endif %}
+
+                {% if booking.surface is not empty %}
+
+                    <th class="text-right">{{booking.surface}}m²</th>
+                    {% set unity = "Preis zum Quadratmeter" %}
+                    
+                {% endif %}
+
+
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+
+
+                    <td>{{unity}}</td>
+                    <td class="text-right">{{booking.hourlyRate}}€</td>
+                    
+
+                </tr>
+
+                  <tr>
+                            <td><strong>Rechungsbetrag netto</strong></td>
+                            <td class="text-right" th:text="${totalHT}">{{booking.cost}}€</td>
+                        </tr>
+                        <tr>
+                            <td><strong>zzgl.mwst</strong></td>
+                            <td class="text-right" th:text="${totalHT}">19%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gesamtbetrag</strong></td>
+                            {% set ttc = booking.cost + ( (booking.cost) * (19 / 100))  %}
+                            <td class="text-right" th:text="${totalHT}">{{ttc}}€</td>
+                        </tr>
+               
+              
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-8">
+                </div>
+                <div class="col-4">
+                    <table class="table table-sm text-right">
+
+                      
+                   {#     <tr>
+                            <td>TVA 20%</td>
+                            <td class="text-right" th:text="${totalTVA}">0,00€</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total TTC</strong></td>
+                            <td class="text-right" th:text="${totalTTC}">0,00€</td>
+                        </tr>
+
+                        #}
+                    </table>
+                </div>
+            </div>
+
+            <p class="conditions">
+               Charles Arnault Dongard Yoka <br>
+               <img src="/cuid/media/image/printable/signature.png" class="logo"/>
+                <br/>
+             
+            </p>
+
+
+                <div class="row">
+
+                <p style="padding:10px">
+                Inhaber: Charles Arnault Mobile +4917655249659  <br/>
+                Dongard Yoka
+                </p>
+
+                <p style="padding:10px">
+                Bankeverbindung: DE31100500001064703700 <br/>
+                </p>
+
+                </div>
+                <!--IBAN FR76 1470 7034 0031 4211 7882 825 - SWIFT CCBPFRPPMTZ-->
+
+
+                 
+                <div class="row">
+
+                <p style="padding:10px; width:50%">
+                Liesen straße 12 A ,  <a href="">procleanreinigung.de</a><br/>
+                13355 Berlin ,  <a href="">info@procleanreinigung.de</a>
+                </p>
+
+                <p style="padding:10px; width:50%">
+                Betriebsnümmer:144222<br/>
+                Steuernümmer:2326400490
+                </p>
+
+                </div>
+                <!--IBAN FR76 1470 7034 0031 4211 7882 825 - SWIFT CCBPFRPPMTZ-->
+            
+        </div>
+    </div>

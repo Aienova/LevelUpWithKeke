@@ -1,0 +1,136 @@
+                                     
+                                    <label>Renseigner le numéro SIRET</label><br>
+                                    <input type="text" name="siret" placeholder="ex : 41495656" />
+
+                                    <label>Activité de la société</label><br>
+                                    <input type="text" name="activity" placeholder="ex : Création d'application Web" />
+
+                                    <label>Nombre de salarié (approximatif) :</label><br>
+                                    <select name="workforce">
+                                        <option value="1">1 employé(e)</option>
+                                        <option value="2">2 employé(e)s</option>
+                                        <option value="3">3-5 employé(e)s</option>
+                                        <option value="4">6-10 employé(e)s</option>
+                                        <option value="5">11-20 employé(e)s</option>
+                                        <option value="6">21-50 employé(e)s</option>
+                                        <option value="7">51-100 employé(e)s</option>
+                                        <option value="8">+100 employé(e)s</option>
+                                    </select>
+
+                                    <h3>Importer le logo de la société</h3><br>
+                                    <div id="uploaderUnique">{% include '/forms/uploadUniqueDocument.html.twig' %}</div>
+
+                                   <h3>Définisez vos 4 atouts</h3>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quam sem, vehicula nec est id, mollis dictum mi. Proin fermentum convallis dignissim. In viverra, magna vel laoreet iaculis, massa magna rhoncus arcu, tincidunt venenatis dolor risus quis est.</p>
+                                    
+                                            <fieldset>
+                                            <legend>Quels sont vos 4 atouts:</legend>
+
+                                            <h4><span id="valuecount" data-count="0">0</span> Atout(s) sélectionné(s) </h4>
+
+ 
+
+                                            <div id="values" class="flexible centralizer">
+                                                
+                                                {% set i = 0 %}
+                                                {% for value in values|sort((a, b) => a.frname > b.frname) %}
+
+                                                    <div id="value-order-{{i}}" class="value unselected" data-valueid="{{value.id}}">
+                                                        <label for="value-{{value.id}}">
+                                                            <img class="asset-logo" src="/build/media/image/icons/asset.png" />
+                                                            <br><strong>{{value.frname}}</strong> 
+                                                        </label>
+                                                        <input type="checkbox" data-checked="0" value="{{value.id}}"  id="value-{{value.id}}" name="value{{i}}"/>
+                                                        
+                                                    </div>
+                                                
+                                                {% set i = i + 1 %}
+
+                                                {% if i % 4 == 0 %}
+                                                
+
+                                                </div>
+                                                <div id="values" class="flexible centralizer">
+
+                                                {% endif %}
+                        
+                                                {% endfor %}
+
+
+                                            </div>
+                                            
+
+
+                                            </fieldset>
+
+
+                                     <label>Description de la société</label>
+                                    <textarea name="description"></textarea>
+
+
+                                    <script>
+
+                          
+
+                                for(let i=0 ; i<15; i++){
+
+                                    $('#value-order-'+i).click(function(){
+                                            
+                                        var count = $('input:checkbox:checked').length;
+                                        var valueid = $('#value-order-'+i).attr('data-valueid');
+                                        
+                                        console.log("values selected : "+count);
+
+                                    if(count<4) {
+                                        
+                                        $(".value").removeClass("locked");
+
+
+                                        if($('#value-'+valueid).prop('checked')==true){
+
+                                            $('#value-order-'+i).removeClass("unselected");
+                                            $('#value-order-'+i).addClass("selected");
+                                            console.log("selected");
+
+                                        }else{
+
+                                            $('#value-order-'+i).addClass("unselected");
+                                            $('#value-order-'+i).removeClass("selected");
+                                        }
+
+                                        $('#valuecount').html(count);
+
+                                    }else{
+
+
+                                        if(count==4) {
+
+                                            if($('#value-'+valueid).prop('checked')==true){
+
+                                                $('#valuecount').html(count);
+                                                $('#value-order-'+i).removeClass("unselected");
+                                                $('#value-order-'+i).addClass("selected");
+                                
+                                            }else{
+                                
+                                                $('#value-order-'+i).addClass("unselected");
+                                                $('#value-order-'+i).removeClass("selected");
+                                            }
+
+                                        }
+
+                                        $("#values .unselected").addClass("locked");
+                                        
+                                        console.log("Limit reached !");
+
+                                    }
+
+                                    });
+
+                                }
+
+                          
+
+
+                                    </script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="full">
+    <head>
+
+                    
+
+                    {% block javascripts %}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            {{ encore_entry_link_tags(part ~ "-styles") }}
+            {{ encore_entry_script_tags(part ~ "-scripts") }}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+                    {% endblock %}
+
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+                    
+
+                    <title>{{title}}</title>
+    </head>
+
+    <body class="full-h">
+
+    
+        <div id="editor" class="hidden">
+                <div id="editor-form">
+                        <div id="panel-editor">
+                        <span id="close-editor" class="material-symbols-outlined">cancel</span>
+                        </div>
+
+                                <div id="editor-form-display"></div>
+                </div>
+        </div>
+
+     {% include '/backoffice/cuid/'~ part ~'/blocks/header.html.twig' %}
+
+       <!-- 
+
+                    DISCONNECT BUTTON   
+
+        <form id="disconnection" method="POST">
+                <input type="hidden" name="disconnection" value="1" />
+                <input type=  
+                "submit" value="Disconnect">
+
+
+        </form> -->
+
+        <main>
+         {% include '/backoffice/cuid/'~ part ~'/blocks/cards.html.twig' %}
+        {% block content %}{% endblock %}
+        
+                <footer>
+                     {% include '/backoffice/cuid/'~ part ~'/blocks/footer.html.twig' %}
+
+        </footer>
+        </main>
+
+
+
+    </body>
+
+    
+</html>

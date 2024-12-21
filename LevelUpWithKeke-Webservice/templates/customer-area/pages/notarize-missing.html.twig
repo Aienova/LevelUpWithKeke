@@ -1,0 +1,177 @@
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}    
+
+
+                    <div id="page-banner">
+            <h1>Documents et informations manquantes à votre demande</h1>
+
+            </div>  
+
+     <section id="fonctionnal">
+
+
+
+            <div id="page-content" class="centralizer">
+
+            {% if notarize.decision.id == 4 %}
+
+            <div id="alert-square" class="redflag"><h3>Merci pour votre demande, cependant l'ambassade a besoin d'informations ou documents supplémentaires pour traiter votre demande :
+            
+            <p>{{notarize.CompanyComment}}</p>
+            
+            </div>
+
+            {% if sent == 1 %}
+
+                <div id="message-form">
+                
+                
+                {% include "popup.html.twig" %}
+
+                
+                
+                
+                </div>
+
+                          {% endif %}
+
+                <div class="flexible">
+                    <form id="notarize-form" method="POST" enctype="multipart/form-data">
+                                    <h3>Envoyer vos documents manquants pour votre demande :</h3>
+                                   
+
+
+                                    <input type="hidden" name="notarizeType" value="{{notarize.type.id}}" />
+
+
+                                    <label>Importez vos document çi-dessous :
+
+                                    <input type="file" name="notarizeFile[]" id="notarizeFile" multiple/>
+                                    
+                                    </label>
+                                    
+                                    
+                                    </label>
+                                    
+                                    <p>Avez vous des remarques sur vos documents manquants ?</p>
+
+                          {#   <h3>Estimation</h3>
+
+                            <p><strong>Temps de trajet :</strong> 30 min </p>
+                            <p><strong>Temps total de la prestation :</strong> 1h </p>
+
+                            <strong>Prix</strong>
+                            <strong>120€</strong>  #}
+
+
+                            <textarea id="comment" name="comment" placeholder="Avez-vous un commentaire ?"></textarea>
+
+                            <p><input type="submit" name="booking" value="Envoyer votre document" /></p>
+
+                  </form>
+
+                                                     <div id="document-info">
+
+                            {% set i = 1 %}
+                            {% for notarizeType in notarizeTypes %}
+
+
+                              {% if i > 1 %}
+
+                              {% set hidden = "hidden" %}
+
+                              {% else %}
+
+                              
+                              {% set hidden = "" %}
+
+                              {% endif %}
+
+
+                          <div id="details-{{notarizeType.id}}" class="details {{hidden}}">                        
+                          <h2>Veuiller respecter les consignes suivantes pour authentifier pour vos documents</h2>
+                        <br>
+                            {{notarizeType.details|raw}}
+                          </div>
+
+                          {% set i = i + 1 %}
+
+                         {% endfor %}
+
+                        
+
+                    </div>
+
+                </div>
+
+                {% endif %}
+
+                {% if notarize.decision.id == 2  %}
+
+
+             <div id="alert-square" class="blueflag">
+             
+             
+             <h3>L'ambassade est en cours de traitement de vos documents et informations , veuillez attendre leur validation</h3>
+            
+            
+            
+            </div>
+
+                            {% endif %}
+
+                {% if notarize.decision.id == 3  %}
+
+            <div id="alert-square" class="greenflag">
+             
+             
+             <h3>L'ambassade a validé votre demande, il ne manque aucun fichié </h3>
+            
+            
+            
+            </div>
+
+                                        {% endif %}
+                                        
+              
+                              {% if notarize.decision.id == 1  %}
+
+            <div id="alert-square"  class="redflag">
+             
+             
+             <h3>Cette demande a été annulé , il n' y a rien procédé </h3>
+            
+            
+            
+            </div>
+
+                                        {% endif %}
+
+
+
+
+
+
+
+                    
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+                        <script>
+
+                        
+
+
+
+
+                        </script>
+
+                  
+
+    </section>
+
+
+        {% endblock %}

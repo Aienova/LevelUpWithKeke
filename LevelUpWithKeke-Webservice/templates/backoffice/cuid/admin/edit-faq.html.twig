@@ -1,0 +1,62 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifeir une question</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                            <div class="flexible">
+                                <a href="../faqs">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos questions</div>
+                                </a>
+
+                            </div>
+
+
+                                    <form id="page-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="addpage_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+                                            <p>
+                                            <h2>Question :</h2>
+                                            <input type="text" name="question" value="{{faq.question}}" />
+                                            </p>
+
+                                            <p>
+                                            <h2>Réponse à la question :</h2>
+
+                                            {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}
+
+                                            </p>
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+
+                                    <input type="submit"  value="Modifier une question/réponse" />
+                                    </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

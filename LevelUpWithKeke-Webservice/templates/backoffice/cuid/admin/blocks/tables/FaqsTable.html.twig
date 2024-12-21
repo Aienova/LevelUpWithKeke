@@ -1,0 +1,44 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if faqs is defined %}
+        {% if faqs is not empty  %}
+
+        {% for faq in faqs |sort((a, b) => b.id <=> a.id) %}
+
+        <tr>
+            <td>{{faq.question}}</td>
+
+            <td>
+
+            
+
+                {% set decision = '
+                
+                <a href="./edit-faq/'~ faq.id ~'"><span class="material-symbols-outlined decision-button">edit</span></a>
+                
+                <span data-action="delete" data-section="faq" data-id="'~ faq.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                
+                %}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

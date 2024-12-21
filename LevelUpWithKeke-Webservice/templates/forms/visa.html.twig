@@ -1,0 +1,568 @@
+           
+
+           
+
+           {% set surname = null %}
+           {% set marital = null %}
+           {% set firstname = null %}
+           {% set profession = null %}
+           {% set birthdate = null %}
+           {% set birthplace = null %}
+           {% set birthcountry = null %}
+           {% set origin = null %}
+           {% set deliveryDate = null %}  
+           {% set thegender = null %}            
+           {% set nationality = null %}
+
+                        {% set mainLocation = NULL %}  
+                        {% set telephone = NULL %}  
+                        {% set email = NULL %}  
+                        {% set residenceAdressDate = NULL %}  
+                                       {% set residenceCountry = NULL %}      
+
+                {% if customer.person is not null %} 
+                
+                        {% set surname = customer.person.surname %}    
+
+                        {% set firstname = customer.person.firstname %} 
+
+                        {% if customer.person.maritalStatus is not null %}
+                                {% set marital = customer.person.maritalStatus.id %}  
+                        {% endif %}
+
+                        {% set profession = customer.person.profession %}  
+
+                        {% set birthdate = customer.person.birthdate|date("Y-m-d") %}  
+
+                        {% set birthplace = customer.person.birthplace %}  
+
+                        {% set birthcountry = customer.person.birthCountry.id %}  
+
+                        {% if customer.person.origin is not null %}
+                                {% set origin = customer.person.origin.id %}  
+                        {% endif %}
+
+                        {% set deliveryDate = customer.person.deliveryDate|date("Y-m-d") %}  
+
+                        {% set thegender = customer.person.gender.id %}  
+
+                        {% if customer.person.nationality is not null %}
+                                       {% set nationality = customer.person.nationality.id %}                 
+                        {% endif %}
+
+                        {% set mainLocation = customer.person.residenceAdress %}  
+                        {% set telephone = customer.person.telephone %}  
+                        {% set email = customer.person.email %}  
+                        {% set residenceAdressDate = customer.person.residenceAdressDate|date("Y-m-d") %}  
+                        {% if customer.person.residenceCountry is not null %}
+                                       {% set residenceCountry = customer.person.residenceCountry.id %}                 
+                        {% endif %}
+
+                {% endif %}
+           
+           
+           
+           
+           <form method="POST" id="visa-form" class="middle-form" enctype="multipart/form-data">
+
+
+
+           <div id="navForm" class="flexible mobileblock">
+           <nav class="movestep selected" data-step="1">   Infos personnelles</nav>
+           <nav class="movestep" data-step="2">    Infos voyage</nav>
+           <nav class="movestep" data-step="3">   Adresse actuelle</nav>
+           <nav class="movestep" data-step="4">   Documents</nav>
+           </div>
+
+
+                <input type="hidden" name="formType" value="1"/>
+
+                                <div id="step1" class="step">
+
+                                                            <h2>Informations personnelles</h2>
+
+                                                            <div class="centralizer">
+                                                            {% include "/forms/uploads/upload-image.html.twig" %}
+                                                            </div>
+
+                        <div class="flexible mobileblock">
+
+
+
+
+                                <div class="column">
+                                        <p><label>Nom(s) <input name="surname" type="text" placeholder="Nom de famille" value="{{surname}}" required/></label></p>
+
+                                        <p><label>Statut matrimonial 
+                                                <select name="maritalStatus" >
+                                                <option>Faire un choix</option>
+                                                {% for maritalStatus in maritalStatus %}
+                                                        <option value="{{ maritalStatus.id }}" 
+                                                        
+                                                        {% if marital == maritalStatus.id %}
+
+                                                                selected
+                                                                
+                                                        {% endif %}>{{ maritalStatus.frName }}</option>
+                                                {% endfor %} 
+                                                </select>                           
+                                        </label></p>
+                                        
+
+                                        <p><label>Pays de naissance
+                                    <select name="birthCountry">
+                                            {% for nation in nations %}
+                                                    <option value="{{ nation.id }}" {% if nation.id == birthcountry %} selected {% endif %}>{{ nation.Name }}</option>
+                                            {% endfor %} 
+
+                                    </select>
+                                </label></p>
+
+
+
+                                      <p><label>Lieu de naissance
+                                     <input type="text" name="birthplace" value="{{birthplace}}" required/>
+                                </label></p>
+
+
+                                <p><label>Nationalité d'origine
+                                    <select name="origin">
+                                            {% for nation in nations %}
+                                                    <option value="{{ nation.id }}" {% if nation.id == origin %} selected {% endif %}>{{ nation.Name }}</option>
+                                            {% endfor %} 
+
+                                    </select>
+                                </label></p>
+
+
+
+                                </div>
+
+
+                                <div class="column mobileblock">
+                                        <p><label>Prénom <input name="firstname"  type="text" placeholder="Prénom" value="{{firstname}}" required/></label></p>
+
+                                        <p><label>Profession
+                                        <input type="text" name="profession" placeholder="Profession" value="{{profession}}"  required/>
+                                        </label></p>
+
+                                        <p><label>Date de naissance
+                                        <input type="date" name="birthdate" value="{{birthdate}}" required/>
+                                        </label></p>
+
+                                        <p><label>Sexe
+                                        <select name="gender" >
+                                                {% for gender in genders %}
+                                                        <option value="{{ gender.id }}" {% if gender.id == thegender %} selected {% endif %}>{{ gender.frName }}</option>
+                                                {% endfor %} 
+                                        </select>
+                                        </label></p>
+
+                                        <p><label>Nationalité actuelle
+                                        <select name="nationality">
+                                                {% for nation in nations %}
+                                                        <option value="{{ nation.id }}" {% if nation.id == nationality %} selected {% endif %}>{{ nation.Name }}</option>
+                                                {% endfor %} 
+
+                                        </select>
+                                        </label></p>
+
+
+
+                                </div>
+
+
+                        </div>
+
+                                                     <p><label>Date d'obtention de la nationalité
+                                     <input type="date" name="deliveryDate" value="{{deliveryDate}}" required/>
+                                </label></p>
+
+                                                                    <div class="flexible mobileblock">
+
+                                            <nav class="movestep" data-step="2"> Etape suivante</nav>
+
+                                    </div>
+
+                                    </div>
+
+
+                                 <div id="step2" class="step hidden">
+
+                                         <h2>Informations sur le voyage</h2>
+
+                        <div class="flexible mobileblock">
+
+                                <div class="column">
+
+                                <p><label>Type de Visa
+                                    <select name="visaType">
+                                            {% for visaType in visaTypes %}
+                                                    <option value="{{ visaType.id }}">{{ visaType.frName }}</option>
+                                            {% endfor %} 
+                                    </select>
+                                </label></p>
+
+                                <p><label>Date de délivrance
+                                     <input name="deliveryDate" type="date" required/>
+                                </label></p>
+
+                                <p><label>Date d'expiration du passeport
+                                     <input name="expirationDate" type="date" required/>
+                                </label></p>
+
+                                <p><label>Adresse(s) exacte(s) de votre séjour au Congo
+                                     <input type="text" name="congoAddress" required/>
+                                </label></p>
+
+                                <p><label>Autorité de délivrance du passeport
+                                     <input name="deliveryAutority"  type="text" required/>
+                                </label></p>
+
+
+                                </div>
+
+                                <div class="column mobileblock">
+
+                                <p><label>Numéro de passeport
+                                    <input name="numberId" type="text" required/>
+                                </label></p>
+
+                                <p><label>Lieu de délivrance du passeport
+                                    <input name="deliveryPlace" type="text" required/>
+                                </label>
+                                </p>
+
+
+                                <p><label>Date d'extension du passeport
+                                     <input name="extensionDate" type="date" required/>
+                                </label></p>
+
+                                <p><label>Motif de voyage
+                                    <select name="travelReason">
+                                            {% for travelReason in travelReasons %}
+                                                    <option value="{{ travelReason.id }}">{{ travelReason.frName }}</option>
+                                            {% endfor %} 
+                                    </select>
+                                </label></p>
+
+
+                                <p><label>Date exacte d'arrivée au Congo
+                                     <input type="date"  name="congoArrivalDate" required/>
+                                </label></p>     
+
+
+                                </div>
+
+
+
+                        </div>
+
+
+                                   <div class="flexible mobileblock">
+
+                                            <nav class="movestep" data-step="1"> Etape précédente</nav>
+                                            <nav class="movestep" data-step="3"> Etape suivante</nav>
+                                    </div>
+
+
+                        </div>
+
+
+                <div id="step3" class="step hidden">
+
+
+                <h2>Adresse actuelle</h2>
+
+<!--
+                                <p><label>Nom et prénom du père
+   
+                                <input name="fatherName"  type="text" placeholder="Prénom NOM" required/>
+                                </label></p>
+
+                                <p><label>Nom et prénom de la mère
+ 
+                                <input name="motherName"  type="text" placeholder="Prénom NOM" required/>
+                                </label></p>
+-->
+                                
+
+                <div class="flexible mobileblock">
+
+
+                        <div class="column">
+                                
+                                 <p><label>Adresse actuelle
+                                     <input type="text"  name="mainLocation" value="{{mainLocation}}"  required/>
+                                </label></p>
+
+
+
+                                <p>
+                                <label>téléphone actuel</label>
+                                <input type="text"  name="telephone" value="{{telephone}}"  required/>
+                                </p>
+
+                        {% if email is null %}
+
+                                <p>
+                                <label>adresse email / Email</label>
+                                <input type="text"  name="email" value="{{email}}"  required/>
+                                </p>
+                                
+                        {% endif %}
+
+                        </div>
+
+                        <div class="column">
+
+                                <p><label>Depuis quand vivez-vous à cette adresse
+                                     <input type="date" name="residenceAdressDate"  value="{{residenceAdressDate}}"   required/>
+                                </label></p>
+
+                                <p><label>Pays de résidence
+                                    <select name="residenceCountry">
+                                            {% for nation in nations %}
+                                                    <option value="{{ nation.id }}" {% if nation.id == residenceCountry %}
+                                                        selected
+                                                    {% endif %}>{{ nation.Name }}</option>
+                                            {% endfor %} 
+                                    </select>
+                                </label></p>
+
+
+                        </div>
+
+                        </div>
+
+                                                           <div class="flexible mobileblock">
+
+                                            <nav class="movestep" data-step="2"> Etape précédente</nav>
+                                            <nav class="movestep" data-step="4"> Etape suivante</nav>
+                                    </div>
+
+
+                        </div>
+
+                        <div id="step4" class="step hidden">
+
+                        <h2>Documents à envoyer </h2>
+
+                        <div class="content">
+                                        <p>Joindre les pi&egrave;ces requises pour le visa :</p>
+                                        <ul>
+                                        <li>
+                                        <p><span style="color: #ff0000;"><strong>Un passeport valide</strong></span><br /><span style="color: #ff0000;">Joindre la copie du passeport&nbsp; qui doit avoir une validit&eacute; d&rsquo;au moins 6 mois.</span></p>
+                                                
+                                                <div><label>Copie de votre passeport (recto)<input id="upload-zone" type="file" name="doc_passport_recto"></label></div>
+                                                <div><label>Copie de votre passeport (verso)<input id="upload-zone" type="file" name="doc_passport_verso"></label></div>
+                                        </li>
+                                        <li>
+                                        <p><span style="color: #ff0000;"><strong>Une r&eacute;servation d&rsquo;h&ocirc;tel ou lettre d&rsquo;invitation&nbsp;</strong></span><br /><span style="color: #ff0000;">Joindre Une lettre d&rsquo;invitation portant l'accord de la Direction D&eacute;partementale de la Surveillance du Territoire (DDST)&nbsp; de la R&eacute;publique du Congo,&nbsp;pr&eacute;cisant le motif du voyage, le nom et l&rsquo;adresse d&rsquo;un h&ocirc;te en R&eacute;publique du Congo. Cette pi&egrave;ce doit &ecirc;tre adress&eacute;e au Service visas de l&rsquo;Ambassade de la R&eacute;publique du Congo &agrave; Paris</span></p>
+                                        
+                                            <div><label>Copie réservation d'hotel ou invitation<input id="upload-zone" type="file" name="doc_letter_booking"></label></div>
+                                              
+                                        
+                                        </li>
+                                        <li>
+                                        <p><span style="color: #ff0000;"><strong>Une lettre d&rsquo;affaires</strong></span><br /><span style="color: #ff0000;">Joindre une lettre d&rsquo;affaires&nbsp; sur papier en-t&ecirc;te de l&rsquo;entreprise portant l'accord de la Direction D&eacute;partementale de la Surveillance du Territoire (DDST) et pr&eacute;cisant la nature des activit&eacute;s &agrave; r&eacute;aliser, une r&eacute;servation d'h&ocirc;tel, le nom et l&rsquo;adresse d&rsquo;un h&ocirc;te en R&eacute;publique du Congo. Les pi&egrave;ces doivent &ecirc;tre adress&eacute;es au Service Visas de l&rsquo;Ambassade de la R&eacute;publique du Congo</span></p>
+                                        
+                                        
+                                                                                    <div><label>Copie lettre d'affaire<input id="upload-zone" type="file" name="doc_business_letter"></label></div>
+                                        
+                                        </li>
+                                        <li>
+                                        <p><span style="color: #ff0000;"><strong>Copie de la reservation du billet d&rsquo;avion</strong></span><br /><span style="color: #ff0000;">Pr&eacute;cisant les dates de d&eacute;part et de retour</span></p>
+                                                                                    
+                                                                                    <div><label>Copie de la réservation du billet d'avion<input id="upload-zone" type="file" name="doc_flight_ticket"></label></div>
+                                        
+                                        
+                                        </li>
+                                        <li>
+                                        <p><span style="color: #ff0000;"><strong>&nbsp;Une note verbale pour les passeports diplomatiques et de services.</strong></span></p>
+                                        </li>
+                                        <li>
+                                        <p><span style="color: #ff0000;">POUR LES CAS DE DECES : MERCI DE BIEN VOULOIR JOINDRE L'ATTESTATION DE DECES OU BIEN L'ATTESTATION DE DEPOT DE LA DEPOUILLE A LA MORGUE.</span></p>
+
+                                                                                                                            <div><label>Copie de la réservation du billet d'avion<input id="upload-zone" type="file" name="doc_death_register"></label></div>
+                                        </li>
+                                        <li>
+                                        <p><span style="color: #ff0000;">POUR LES VISAS D' ENFANTS MINEURS : JOINDRE L'AUTORISATION PARENTALE DE SORTIE DU TERRITOIRE - LA PREUVE DE FILIATION ET LA COPIE DE LA PIECE D'IDENTITE DU PERE OU DE LA MERE.</span></p>
+
+                                                                                                                                                                    <div><label>Copie de la réservation du billet d'avion<input id="upload-zone" type="file" name="doc_parental_authorisation"></label></div>
+                                        </li>
+                                        </ul>
+
+
+                                    
+                                    <p class="uppercaser">APRÈS LE PAIEMENT DE LA DEMANDE DE VISAS EN LIGNE, LA PRISE DE RENDEZ-VOUS EN LIGNE EST OBLIGATOIRE POUR LE DÉPÔT DE CHAQUE DEMANDE DE VISA AU GUICHET VISA DE L'AMBASSADE DU CONGO A PARIS, SITUÉE A Wallstraße 69, 10179 Berlin, Allemagne.</p>
+                                
+                                        <p class="red-text">AUCUN DOSSIER NE SERA TRAITÉ SANS PRÉSENTATION DU RENDEZ-VOUS.</p>
+
+
+                                        <p><strong>1. LES DOSSIERS DE DEMANDES DE VISAS ENVOY&Eacute;S PAR DHL OU BIEN CHRONOSPOST.</strong></p>
+<p><strong>2. LES D&Eacute;TENTEURS DE PASSEPORTS DIPLOMATIQUES ET DE SERVICES.</strong></p>
+<p>Apr&egrave;s l'enregistrement et le paiement de la demande de visa en ligne, le demandeur doit :</p>
+<p><span style="color: #ff0000;">- Imprimer le re&ccedil;u de paiement ou bien faire la capture d'&eacute;cran et d&eacute;poser ou faire d&eacute;poser son passeport au Guichet visas de l'Ambassade du Congo &agrave; Paris au 1, rue L&eacute;onard de Vinci - 75116 - Paris.</span></p>
+<p>Soit</p>
+<p><span style="color: #ff0000;">- Envoyer au Wallstraße 69, 10179 Berlin, le passeport par Chronospost avec une enveloppe Chronopost pour le renvoi du passeport par l'Ambassade .</span></p>
+<p>Ou bien</p>
+<p><span style="color: #ff0000;">-Envoyer au Wallstraße 69, 10179 Berlin, le passeport par DHL plus le bordereau de retour pay&eacute; de DHL pour le renvoi du passeport par l'Ambassade</span></p>
+
+
+                        </div>
+
+
+                        
+
+
+
+                                {#
+
+                                <object class="flexible"><input type="number" name="timeTravelNumber" min="1" value="1">
+
+                                        <select name="timeTravelUnit">
+                                                <option>jour(s)</option>
+                                                <option>semaine(s)</option>
+                                                <option>moi(s)</option>
+                                                <option>année(s)</option>
+                                        </select>
+                                </object>
+
+
+                                </label></p>
+
+                                <p><label>Lieu d'entrée
+                                     <input name="startPlace"  type="text" required/>
+                                </label></p>
+
+
+                                <p><label>Précédent numéro de Visa d'entrée au Congo (si aucun, ne pas remplir)
+                                     <input name="previousVisaNumber"  type="text"/>
+                                </label></p>
+
+
+                                 <p><label>Précédent Visa a été délivré par
+                                     <input name="previousVisaDeliver"  type="text"/>
+                                </label></p>
+
+                                
+                                <p><label>Date du précédent Visa d'entrée au Congo
+                                     <input name="previousVisaDate"  type="date"/>
+                                </label></p>
+
+
+
+                                
+
+                                <p><label>Êtes-vous déjà venu au Congo ?
+                                        <label for="q1-yes"><input id="q1-yes" type="radio" name="firstTime" value="1"> Oui</label>
+                                        <label for="q1-no"><input id="q1-no" type="radio" name="firstTime" value="0"> Non</label>
+                                </label></p>
+
+ 
+
+                                <p><label>Quand et où (la dernière visite au Congo) ?
+                                        <object class="flexible"> <span>Le</span> <input type="date" name="lastTravelDate" /> <span>à</span> <input type="text" name="lastTravelLocation" /></object>
+                                </label></p>
+
+
+                                <p><label>Avez-vous déjà vécu au Congo pendans plus de 3 mois ?
+                                        <label for="q2-yes">Oui<input id="q2-yes" type="radio" name="allreadyLived" value="1" required> </label>
+                                        <label for="q2-no">Non<input id="q2-no" type="radio" name="allreadyLived" value="0" required> </label>
+                                </label></p>
+
+                                <p><label>A quel date et à quelle endroit (la dernière visite au Congo) ?
+                                        <object class="flexible"> <span>Le</span> <input type="date" name="last3YearsTravelDate" /> <span>à</span> <input type="text" name="lastTravel3YearsLocation" /></object>
+                                </label></p>
+
+
+
+
+                                <p><label>Par où comptez-vous aller pour quitter le Congo
+                                     <input type="text" name="congoDepartureLocation" placeholder="ex : Aérooport de Brazzaville" required/>
+                                </label></p>
+
+
+                                <p><label>Vous vous engagez à accepter aucun emploi rémunérer :
+                                        <label for="v1-yes"><input id="v1-yes" type="checkbox" name="noWorkContract" value="1" required> </label>
+                                      
+                                </label></p>
+
+
+                                <p><label>Vous vous engagez à ne pas s'installer au Congo :
+                                        <label for="v2-yes"><input id="v2-yes" type="checkbox" name="noImmigration" value="1" required> </label>
+                                </label></p>                             
+                                
+
+
+                                    <div class="flexible">
+                                            <nav class="movestep" data-step="2"> Etape suivante</nav>
+                                         
+                                    </div>
+
+                                </div>
+
+
+                                <div id="step2" class="step hidden">
+
+                                                            <h2>Information sur le voyage</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <div class="flexible">
+                                            <nav class="movestep" data-step="1"> Etape précédente</nav>
+                                            <nav class="movestep" data-step="3"> Etape suivante</nav>
+                                         
+                                    </div>
+
+                                </div>
+
+
+
+                                <div id="step3" class="step hidden">
+
+                                <h2>Adresse actuelle</h2>
+
+
+
+
+
+                                <p><label>Téléphone actuel
+                                     <input type="text" name="telephone" required/>
+                                </label></p>
+
+
+
+                                <p><label>Adresse Email
+                                     <input type="text"name="email"  required/>
+                                </label></p>
+
+                                #}
+
+                                <label>Avez-vous un commentaire ?<textarea name="comment"></textarea></label>
+                <br>
+                <h2 id="verify-error" class="red-text"></h2>
+                        
+                                    <div class="flexible mobileblock">
+                                           
+                                           <nav class="movestep" data-step="3"> Etape précédente</nav> 
+                                            
+                                            <input type="submit" id="respond-form" value="Envoyer votre demande" required/>
+                                    </div>
+
+                                </div>
+
+
+
+
+                            </form>

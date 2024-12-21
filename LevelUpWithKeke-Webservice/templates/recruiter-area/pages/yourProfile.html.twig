@@ -1,0 +1,188 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="fonctionnal">
+
+            <div id="page-banner">
+            <h1>Votre profil Candidat</h1>
+
+            </div>
+
+            <div id="page-content">
+            <h2>Ce que les recruteurs voient sur votre profil</h2>
+
+            <div id="profile" data-route="profil-candidate" class="flexible">
+
+                <!---A METTRE DANS UN CODE CONTROLEUR -->
+
+                <div id="identity" class="item">
+                    <div class="flexible">
+                        <img class="avatar" src="/build/media/image/icons/avatar.png" />
+                            <ul class="info-item-list"> 
+                                <li><h2>Eudes KONDA</h2></li>
+                                <li><h3>Chef de projet Web</h3></li>
+                                <li>Secteur d'activité : xxx</li>
+                                <li>Niveau d'étude : xxx</li>
+                                <li>Localisation : xxx</li>
+                                <li>Date de naissance : xxx</li>
+                                <li>Date de disponibilité : xxx</li>   
+                                <li><button><span class="material-symbols-outlined">mail</span> Envoyez un message</button></li>
+                                <li><button><span class="material-symbols-outlined">phone_iphone</span> Appelez par téléphone</button></li>     
+                            </ul>
+                    </div>
+
+                    {# PLUS TARD
+                    <h3>Le suivre:</h3>
+                        <img class="logo-mini invert" src="/build/media/image/icons/facebook.png" />
+                        <img class="logo-mini invert" src="/build/media/image/icons/github.png" />
+                        <img class="logo-mini invert" src="/build/media/image/icons/linkedin.png" />
+
+                        #}
+                </div>
+
+                        <div id="description" class="item">
+
+                                    <h3>Votre description :</h3>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere pulvinar elit, nec elementum massa viverra dapibus. 
+                                    Sed mollis tristique eros sit amet pretium. Quisque blandit magna eu eleifend convallis. Aenean placerat turpis in blandit consequat. 
+                                    Mauris vitae congue est. Aenean efficitur pretium tortor. Aliquam dictum dictum imperdiet. Fusce convallis sem in consequat feugiat.</p>
+
+                                    <button><span class="material-symbols-outlined"><span class="material-symbols-outlined">contact_page</span></span>consulter son CV</button>
+
+                                    <button><span class="material-symbols-outlined">folder_open</span>Consulter ses autres documents</button>
+
+                            </div>
+
+                        <div id="skills" class="item">
+
+                            <h3>Mes compétences</h3>
+
+
+                                <div class="flexible">
+
+                                        <div class="column">
+                                                    <div class="skill">
+                                                            <span>Skill name :</span><span class="exp">5 ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level1"></div>                                            
+                                                                </div>
+                                                    </div>
+
+
+                                                    <div class="skill">
+                                                            <span>Skill name :</span><span class="exp">1 ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level1"></div>                                            
+                                                                </div>
+                                                    </div>
+
+
+
+                                                    <div class="skill">
+                                                            <span>Skill name :</span><span class="exp">3 ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level3"></div>                                            
+                                                                </div>
+                                                    </div>
+
+
+
+                                                    <div class="skill">
+                                                            <span>Skill name :</span><span class="exp">4 ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level4"></div>                                            
+                                                                </div>
+                                                    </div>
+
+
+                                                    <div class="skill">
+                                                            <span>Skill name :</span><span class="exp">4 ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level4"></div>                                            
+                                                                </div>
+                                                    </div>
+
+
+                                        </div>
+
+                                        <div class="column">
+                                                    <div class="skill">
+                                                            <span>Skill name :</span><span class="exp">5 ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level1"></div>                                            
+                                                                </div>
+                                                    </div>
+
+
+                                                    <div class="skill">
+                                                            <span>Skill name :</span><span class="exp">1 ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level1"></div>                                            
+                                                                </div>
+                                                    </div>
+
+
+
+                                                    <div class="skill">
+                                                            <span>Skill name :</span><span class="exp">3 ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level3"></div>                                            
+                                                                </div>
+                                                    </div>
+
+
+
+                                                    <div class="skill">
+                                                            <span>Skill name :</span><span class="exp">4 ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level4"></div>                                            
+                                                                </div>
+                                                    </div>
+
+
+                                                    <div class="skill">
+                                                            <span>Skill name :</span><span class="exp">4 ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level4"></div>                                            
+                                                                </div>
+                                                    </div>
+
+                                        </div>
+
+                                </div>
+
+                                <br>
+
+                            <h3>Mes atouts</h3>
+
+                                <div class="flexible">
+                                    <div class="asset"><img class="logo-mini" src="/build/media/image/icons/asset.png" /><br><strong>Curieux</strong> </div>
+                                    <div class="asset"><img class="logo-mini" src="/build/media/image/icons/asset.png" /><br><strong>Leader</strong> </div>
+                                    <div class="asset"><img class="logo-mini" src="/build/media/image/icons/asset.png" /><br><strong>Créatif</strong> </div>
+                                    <div class="asset"><img class="logo-mini" src="/build/media/image/icons/asset.png" /><br><strong>Autonome</strong> </div>
+                                </div>
+            
+            
+            </div>
+
+
+
+            </div>
+
+
+
+
+
+
+            
+
+        </section>
+        {% endblock %}
+
+             

@@ -1,0 +1,36 @@
+                                       
+                                        
+                                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                        
+                                        <form id="yourDescription" method="POST" data-candidateid="{{candidate.id}}">
+                                            
+                                            <h3>Modifer votre description</h3>
+
+                                         <textarea name="description" >{{candidate.description}}</textarea>
+                                        
+                                        <div id="form-validation"><input type="submit" name="editor" value="Modifier"/></div>
+                                        
+                                        </form>
+
+                                            <script>
+                                                        $('#yourDescription').submit(function(e){
+
+                                                            var id = $('#yourDescription').data("candidateid");
+
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: '/edit-candidate-description/'+id,
+                                                    type: 'POST',
+                                                    data:$('#yourDescription').serialize(),
+
+                                                    success: function(data) {
+                                                        $('#editor-form-display').html(data);
+                                                        location.reload();
+                                                    },
+                                                    error: function() {
+                                                        $('#editor-form-display').text('Erreur au niveau des résultats de recherches');
+                                                    }
+                                                });
+                                            });
+
+                                            </script>  

@@ -1,0 +1,35 @@
+    <h1>Calendar</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
+        </thead>
+        <tbody>
+    <tr>
+        {% set currentDate = "now"|date("m/d/Y") %}
+        {% set daysInMonth = currentDate|date('t') %}
+        {% set dayOfWeek = currentDate|date('w') %}
+        
+        {# Add empty cells for days before the first day of the month #}
+        {% for i in 0..dayOfWeek-1 %}
+            <td></td>
+        {% endfor %}
+        
+        {# Generate the days of the month #}
+        {% for day in 1..daysInMonth %}
+            <td>{{ day }}</td>
+            {% if currentDate|date('w') == 0 %}
+                </tr><tr>
+            {% endif %}
+            {% set currentDate = currentDate|date_modify('+1 day') %}
+        {% endfor %}
+    </tr>
+</tbody>
+    </table>

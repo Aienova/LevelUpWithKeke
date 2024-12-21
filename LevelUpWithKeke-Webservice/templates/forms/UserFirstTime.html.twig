@@ -1,0 +1,76 @@
+
+                
+                {% set path = path('cuid_admin_user_dashboard', {'section': 'home'})  %}
+                
+                
+                
+                <div class="flexible">
+                    <div class="column"><div class="image"></div></div>
+
+                    <div class="column">
+
+                            <form method="POST" enctype="multipart/form-data">
+
+                                <div id="step1" class="step">
+
+
+                                    <h3>Merci d'avoir choisi Cuid pour votre site Web</h3>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quam sem, vehicula nec est id, mollis dictum mi. Proin fermentum convallis dignissim. In viverra, magna vel laoreet iaculis, massa magna rhoncus arcu, tincidunt venenatis dolor risus quis est. Duis dapibus eros diam, quis ultrices nisi posuere id. Integer tincidunt risus in pulvinar consectetur. <br>Êtes-vous près ?</p>
+                                    
+                                    <div class="flexible">
+                                            <nav class="movestep" data-step="2">Commencez le tutoriel</nav>
+                                            <a href="{{ path }}"><nav>Passez le tutoriel</nav></a>
+                                    </div>
+
+
+                                </div>
+
+
+                                <div id="step2" class="step hidden">
+
+                                
+                                    <h3>Comment créer une page</h3>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quam sem, vehicula nec est id, mollis dictum mi. Proin fermentum convallis dignissim. In viverra, magna vel laoreet iaculis, massa magna rhoncus arcu, tincidunt venenatis dolor risus quis est.</p>
+                                    
+
+
+                                    {# END Add a company #}
+
+                                    <div class="flexible">
+                                            <nav class="movestep" data-step="1"> Revenir à l'étape précédente</nav>
+                                            <nav class="movestep" data-step="3"> Aller à l'étape suivante</nav>
+                                    </div>
+
+                                    <a href="{{ path }}"><nav> Passez le tutoriel</nav></a>
+
+                                </div>
+
+
+
+
+                                <div id="step3" class="step hidden">
+
+                                    <h3>Comment créer une modifier votre contenu</h3>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quam sem, vehicula nec est id, mollis dictum mi. Proin fermentum convallis dignissim. In viverra, magna vel laoreet iaculis, massa magna rhoncus arcu, tincidunt venenatis dolor risus quis est.</p>
+                                    
+                                    <div class="flexible">
+                                            <nav class="movestep" data-step="2"> Revenir à l'étape précédente</nav>
+                                    </div>
+
+                                    <a href="{{ path }}"><nav> Terminez le tutoriel</nav></a>
+
+                                </div>                 
+                                                       
+                            
+                    </form>   
+
+
+                    </div>
+
+                </div>
+                    
+
+

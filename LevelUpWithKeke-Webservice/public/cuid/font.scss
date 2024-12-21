@@ -1,0 +1,135 @@
+@font-face {
+
+    
+    font-family: nothingtosomething;
+    src: url(/fonts/Alatsi-Regular.ttf);
+  
+    }
+  
+  
+    @font-face {
+  
+      
+      font-family: "Amethysta";
+      src: url(/fonts/Amethysta-Regular.ttf);
+    
+      }
+  
+      @font-face {
+  
+      
+        font-family: "Montserrat";
+        src: url(/fonts/Montserrat-Regular.ttf);
+      
+        }
+    
+  
+  
+    @font-face {
+  
+      
+      font-family: "Alatsi";
+      src: url(/fonts/Alatsi-Regular.ttf);
+    
+      }
+  
+  
+      
+    @font-face {
+  
+      
+      font-family: "Digital Desolation Alternate";
+      src: url(/fonts/Digital-Desolation-Alternate.ttf);
+    
+      }
+  
+  
+      @font-face {
+  
+      
+        font-family: "Reenie Beanie";
+        src: url(/fonts/ReenieBeanie-Regular.ttf);
+      
+        }
+    
+  
+  
+        @font-face {
+  
+      
+          font-family: "Bebas Neue";
+          src: url(/fonts/BebasNeue-Regular.ttf);
+        
+          }
+  
+    
+          @font-face {
+  
+      
+            font-family: "Cormorant";
+            src: url(/fonts/CormorantSC-Bold.otf);
+          
+            }
+  
+  
+              
+          @font-face {
+  
+      
+            font-family: "Jacquar";
+            src: url(/fonts/Jacquard24Charted-Regular.ttf);
+          
+            }
+  
+            @font-face {
+  
+      
+              font-family: "Open Sans";
+              src: url(/fonts/OpenSans_Condensed-SemiBold.ttf);
+            
+              }
+  
+              @font-face {
+  
+      
+                font-family: "Andada";
+                src: url(/fonts/Andada-Regular.otf);
+              
+                }
+
+
+                @font-face {
+  
+      
+                  font-family: "RecklessNeue";
+                  src: url(/fonts/RecklessNeue-Light.ttf);
+                
+                  }
+  
+  
+    /* fallback */
+  @font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+  }
+  
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+  
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');

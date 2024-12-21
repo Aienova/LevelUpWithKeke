@@ -1,0 +1,288 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+       
+
+
+        {% block content %}
+
+
+
+        <section id="fonctionnal">
+        
+
+            <div id="page-banner" class="noimage nocolor">
+            <h1>Profil du candidat</h1>
+
+            </div>
+
+            <div id="page-content">
+            <h2>Descriptif du candidat</h2>
+            <div class="flexible">
+            {% if part == "recruiter-area"%}
+            <a href="{{ path('cuid_recruiter_area_candidates') }}"><div class="addbutton" id="add-jobOffer">Rechercher d'autres candidats <span class="material-symbols-outlined">search</span></div></a>
+            <a href="{{ path('cuid_recruiter_area_applications') }}"><div class="addbutton" id="add-jobOffer">Consulter la liste de vos candidatures <span class="material-symbols-outlined">list</span></div></a>
+            {% endif %}
+
+            {% if yourprofile == TRUE %}
+             <a href="{{ path('cuid_candidate',{id: candidate.id}) }}"><div class="addbutton" id="add-jobOffer">Visualiser votre profil en vue recruteur <span class="material-symbols-outlined">visibility</span></div></a>
+             {% endif %}
+            
+            </div>
+
+            <div id="tablet-menu" class="flexible">
+                <div id="tablet-menu-description" class="addbutton"><span class="material-symbols-outlined">description</span>  Consulter sa description</div>
+                <div id="tablet-menu-skills" class="addbutton"><span class="material-symbols-outlined">bar_chart</span>  Consulter ses compétences</div>
+            </div>
+
+                        <div id="smartphone-menu" class="flexible">
+                <div id="smartphone-menu-identity" class="addbutton"><span class="material-symbols-outlined">account_circle</span> Identité</div>
+                <div id="smartphone-menu-description" class="addbutton"><span class="material-symbols-outlined">description</span> Description</div>
+                <div id="smartphone-menu-skills" class="addbutton"><span class="material-symbols-outlined">bar_chart</span> Compétences</div>
+
+            </div>
+
+
+            <div id="profile" data-route="profil-candidate" class="flexible mobileblock square">
+
+ 
+
+                <!---A METTRE DANS UN CODE CONTROLEUR -->
+
+                <div id="identity" class="item">
+
+                
+
+                                    {% if candidate.avatar is not empty %}
+                    <img class="avatar" src="/build/media/image/icons/avatar/{{candidate.avatar.gender}}/{{candidate.avatar.picture}}.png" />
+                    {% else %}
+                    <img class="avatar" src="/build/media/image/icons/avatar/default.png" />    
+                    {% endif %}
+
+                    {% if yourprofile == TRUE %}
+                    <div class="edit-button" data-action="edit-avatar-candidate" data-id="{{candidate.id}}"><span class="material-symbols-outlined">edit_square</span>Editer votre avatar</div>
+                    {% endif %}
+
+                            <ul class="info-item-list"> 
+                                <li><h2>{{candidate.firstname}} {{candidate.surname}}</h2></li>
+                                <li><h3>{{candidate.jobTitle}}</h3></li>
+                                <li>Métier : {{candidate.job.FRname}}</li>
+                                <li>Niveau d'étude : {{candidate.licence.FRname}}</li>
+                                <li>Localisation : {{candidate.location}}</li>
+                                {% if candidate.availabilityDate|date("Y-m-d") > "now"|date("Y-m-d") %}
+                                <li>Date de disponibilité : A partir du {{candidate.availabilityDate|date("d/m/Y")}}</li> 
+                                {% else %}
+                                <li>Date de disponibilité : ASAP</li>
+                                {% endif %}
+                                <li>Prétention : 
+                                {% if candidate.wage is not empty %}
+                                {{candidate.wage}}{{candidate.wageCurrency}}{{candidate.wageType}}
+                                {% else %}
+                                Aucune
+                                {% endif %}
+                                
+                                </li>  
+                                <li><a href="mailto:{{candidate.email}}"><button><span class="material-symbols-outlined">mail</span> Envoyez un message</button></a></li>
+                                <li><a href="tel:{{candidate.telephone}}"><button><span class="material-symbols-outlined">phone_iphone</span> Appelez par téléphone</button></a></li>     
+                            </ul>
+
+                            {% if yourprofile == TRUE %}
+                            <div class="edit-button" data-action="edit-candidate-identity" data-id="{{candidate.id}}"><span class="material-symbols-outlined">edit_square</span>Editer votre identité</div>
+                            {% endif %}
+                   
+
+                    
+                    <h3>Le suivre:</h3>
+                    {% for media in media %}
+                        <a href="{{media.url}}" target="_blank"><img class="logo-mini invert" src="/build/media/image/icons/{{media.name}}.png" /></a>
+                    {% endfor %}
+
+                    {% if yourprofile == TRUE %}
+                      <div class="edit-button" data-action="edit-candidate-media" data-id="{{candidate.id}}"><span class="material-symbols-outlined">edit_square</span>Editer vos réseaux sociaux</div>
+                     {% endif %}
+       
+                </div>
+
+                        <div id="description" class="item">
+
+                                    <h3>Sa description :</h3>
+
+                                    
+
+                                    {% if candidate.description is not empty %}
+
+                                    <p>{{candidate.description}}</p>
+                    
+                                    {% else %}
+
+                                    <p>Aucune description disponible</p>
+
+                                    {% endif %}
+
+                                   {% if yourprofile == TRUE %}
+                                    <div class="edit-button" data-action="edit-candidate-description" data-id="{{candidate.id}}"><span class="material-symbols-outlined">edit_square</span>Modifier votre description</div>
+                                    {% endif %}
+
+                                    <h3>Le Job idéale</h3>
+
+                                    {% if candidate.dream is not empty %}
+                                    <p>{{candidate.dream}}</p>
+
+                                    {% else %}
+
+                                    <p>Non renseigné </p>
+
+                                    {% endif %}
+
+                                    {% if yourprofile == TRUE %}
+                                    <div class="edit-button" data-action="edit-candidate-dream" data-id="{{candidate.id}}"><span class="material-symbols-outlined">edit_square</span>Modifer votre Job Idéale</div>
+                                    {% endif %}
+
+                                    <h3>Emploi précédent</h3>
+                                    <p>Je travaillai précédemment en tant que : {{candidate.previousJob}}</p>
+
+                                    {% if yourprofile == TRUE %}
+                                    <div class="edit-button" data-action="edit-candidate-previous-job" data-id="{{candidate.id}}"><span class="material-symbols-outlined">edit_square</span>Modifer votre emploi précédent</div>
+                                    {% endif %}     
+
+                                     {% if cv is not empty %}
+
+                                    <a target="_blank" href="{{ app.request.getSchemeAndHttpHost() }}/{{cv.path}}"><button><span class="material-symbols-outlined"><span class="material-symbols-outlined">contact_page</span></span>consulter son CV</button></a>
+                                 
+                                    {% endif %}   
+
+                                    {% if yourprofile == TRUE %}
+                                    <div class="edit-button" data-action="edit-candidate-cv" data-id="{{candidate.id}}"><span class="material-symbols-outlined">edit_square</span>Modifer votre CV (au format PDF)</div>
+                                    {% endif %}     
+                                 
+                                 {#   <a target="_blank" href="{{cv.path}}"><button><span class="material-symbols-outlined"><span class="material-symbols-outlined">contact_page</span></span>consulter ses diplômes</button></a>
+                                 {# PLUS TARD   <button><span class="material-symbols-outlined">folder_open</span>Consulter ses autres documents</button> #}
+
+                            </div>
+
+                        <div id="skills" class="item">
+
+                            <h3>Ses compétences</h3>
+
+
+                                <div class="flexible">
+
+                                        <div class="column">
+
+                                        {% if skills is not empty %}
+                                        {% set count = 0 %}
+                                        {% for skill in skills %}
+                                                    <div class="skill">
+                                                            <span>{{skill.skillName}} :</span><span class="exp">{{skill.skillExp}} ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level{{skill.skillExp}}"></div>                                            
+                                                                </div>
+                                                    </div>
+
+                                        {% set count = count + 1 %}
+
+                                         {% if count is divisible by(5) and count != 10 %}
+
+                                        </div>
+
+                                        
+                                        <div class="column" >
+
+
+                                        {% endif %}
+
+                                        {% endfor %}
+
+                                        {% else %}
+                                        <p>Aucune compétence renseignée</p>
+                                        {% endif %}
+
+
+
+
+                                        </div>
+
+
+
+                                </div>
+
+                                    {% if yourprofile == TRUE %}
+                                    <div class="edit-button" data-action="edit-candidate-skills" data-id="{{candidate.id}}"><span class="material-symbols-outlined">edit_square</span>Modifer vos compétences</div>
+                                    {% endif %}   
+
+                                <br>
+
+                            <h3>Ses atouts</h3>
+
+                                <div class="flexible">
+
+                                {% if assets is not empty %}
+                                {% for asset in assets %}
+                                    <div class="asset"><img class="asset-logo" src="{{asset.image}}" /><br><strong>{{asset.FRname}}</strong> </div>
+                                {% endfor %}
+                                {% else %}
+                                        <p>Aucun atout renseigné</p>
+                                        {% endif %}
+                                </div>
+
+                                    {% if yourprofile == TRUE %}
+                                    <div class="edit-button" data-action="edit-candidate-assets" data-id="{{candidate.id}}"><span class="material-symbols-outlined">edit_square</span>Modifer vos atouts</div>
+                                    {% endif %}   
+
+                            <h3>Langues</h3>
+                               
+                            <ul>
+                             {% for language in candidate.languages %}
+                             {% if language.level == 1 %}{% set level = "Native" %}{% endif %}
+                             {% if language.level == 2 %}{% set level = "Notion" %}{% endif %}
+                             {% if language.level == 3 %}{% set level = "Intermédiaire" %}{% endif %}
+                             {% if language.level == 4 %}{% set level = "Professionnelle" %}{% endif %}
+                             {% if language.level == 5 %}{% set level = "Couramment" %}{% endif %}
+                             
+                             <li><img class="logo-tiny" src="/build/media/image/icons/flag/{{language.country}}.jpg"/><span class="language-info">{{language.FRname}} : {{level}}</span></li>
+                             {% endfor %}
+                            </ul>
+
+                                    {% if yourprofile == TRUE %}
+                                    <div class="edit-button" data-action="edit-candidate-languages" data-id="{{candidate.id}}"><span class="material-symbols-outlined">edit_square</span>Modifer vos langues</div>
+                                    {% endif %}   
+
+
+                            
+                            <h3>Statistiques</h3>
+
+                            <ul>
+                                <li>Nombres de visites ce mois-çi : <span class="alert">N/C</span></li>
+                                <li>Taux d'informations : <span class="alert">N/C</span></li>
+                                <li>Nombres de candidatures : <span class="alert">N/C</span></li>
+                                <li>Nombres de candidatures validées : <span class="alert">N/C</span></li>
+                                <li>Années d'expériences : <span class="alert">N/C</span></li>
+                                <li>Dernière connexion : <span class="alert">N/C</span></li>
+
+                            </ul>
+                            
+    
+            
+            
+                        </div>
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+            
+
+        </section>
+        {% endblock %}
+
+             

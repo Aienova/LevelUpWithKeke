@@ -1,0 +1,53 @@
+      <div id="message-form"></div>
+      <form id="booking-form" method="POST">
+                    <h3>Veuiller remplir ce formularie pour rpendre rendez-vous :</h3>
+                    <label>Prénom<input type="text" placeholder="Prénom" name="firstname" /></label>
+                    <label>Nom<input type="text" placeholder="Nom" name="surname" /></label>              
+                    <label>E-mail<input type="text" placeholder="ex : xxxx@gmail.com" name="email" /></label>
+                    <label>Telephone<input type="text" placeholder="telephone" name="telephone" /></label>
+                    <label>Date de rendez-vous<input type="datetime-local" name="bookingDate" /></label>
+                    <p>Quel est la raison de votre rendez-vous ?</p>
+
+                    <fieldset>
+                        <legend>Choisir la raison de votre rendez-vous:</legend>
+
+                        <div>
+                          <input type="checkbox" id="buroreingung" name="performance1" value="1" />
+                          <label for="buroreingung">Visa</label>
+
+                          <input type="checkbox" id="praxisreinigung" name="performance2" value="2" />
+                          <label for="praxisreinigung">Passeport</label>
+                        </div>
+
+
+                        <div>
+                          <input type="checkbox" id="unterhaltsreinigung" name="performance3" value="3" />
+                          <label for="unterhaltsreinigung">Rencontre avec un responsable de l'ambassade</label>
+
+
+                         <div>
+                          <input type="checkbox" id="andere" name="performance11" value="11" />
+                          <label for="andere">Autre</label>
+                        </div>
+
+
+                    </fieldset>
+
+                          {#   <h3>Estimation</h3>
+
+                            <p><strong>Temps de trajet :</strong> 30 min </p>
+                            <p><strong>Temps total de la prestation :</strong> 1h </p>
+
+                            <strong>Prix</strong>
+                            <strong>120€</strong>  #}
+
+                            <input type="hidden" name="booking" value="ok"  />
+
+                            <textarea id="comment" name="comment" placeholder="Avez-vous un commentaire ?"></textarea>
+
+                            <p><input type="submit" name="booking" value="Demander un rendez-vous" /></p>
+
+                  </form>
+
+                           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    

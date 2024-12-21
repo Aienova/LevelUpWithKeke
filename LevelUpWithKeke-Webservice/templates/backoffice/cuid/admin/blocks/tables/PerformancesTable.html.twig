@@ -1,0 +1,56 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Heures</th>
+            <th>Prix</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if performances is defined %}
+        {% if performances is not empty  %}
+
+        {% for performance in performances |sort((a, b) => b.id <=> a.id) %}
+
+        <tr>
+
+            <td>{{performance.name}}</td>
+            <td> {{performance.totaltime}} min</td>
+
+            {% if performance.price == 0 %}
+
+            <td class="green-text">Gratuit</td>
+
+            {% else %}
+            <td class="blue-text">{{performance.price}}€</td>
+
+            {% endif %}
+
+
+            <td>
+
+                {% set decision = '
+                
+                <a href="./edit-performance/'~ performance.id ~'"><span class="material-symbols-outlined ">edit</span></a>
+                
+                               <span data-action="delete" data-section="performance" data-id="'~ performance.id ~'" class="material-symbols-outlined open-editor">delete</span>'
+                
+                
+                %}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html class="full-h">
+    <head>
+
+                    
+
+                    {% block javascripts %}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            {{ encore_entry_link_tags("connection-styles") }}
+            {{ encore_entry_script_tags("connection-scripts") }}
+                    {% endblock %}
+
+                    <title>Mot de passe oublié</title>
+    </head>
+
+    
+    <body class="full-h">
+
+    
+             {% include 'customer-area/blocks/header.html.twig' %}
+
+       <!-- 
+
+                    DISCONNECT BUTTON   
+
+        <form id="disconnection" method="POST">
+                <input type="hidden" name="disconnection" value="1" />
+                <input type=  
+                "submit" value="Disconnect">
+
+
+        </form> -->
+
+        <main class="full-h">
+
+
+          <div id="connection-form">
+
+      <div id="connection-title">
+        <img class="logo" src="/build/media/image/icons/logo-main.png"/>
+        <h1>Mot de passe oublié </h1>
+      </div>
+
+        
+    <div id="recover-customer">
+
+
+        <h2>Veuillez renseigner votre email ou votre login pour récupérer votre mot de passe</h2>
+
+                <p class="validmessage">
+
+        {% if message != NULL %}
+
+            {% if error == 1 %}
+
+
+            {% set class = "errormessage" %}
+
+            {% else %}
+
+            {% set class = "validmessage" %}
+
+            {% endif %}
+
+                <p class="{{class}}">{{ message }}</p>
+
+            {% endif %}
+
+
+                
+                </p>
+
+            
+            <form method="POST" id="recover-form">
+
+                <div><label>Votre adresse email ou votre login</label><input type="text" required="required" name="recover"/></div>
+
+                <input type="submit" value="Renvoyer le lien" />
+
+            </form>
+        
+        
+        
+        </div>
+
+
+                               <a href="{{ path('cuid_connection') }}"><h3 class="central-text">Revenir à la page de connexion </a>
+
+
+        </main>
+                <footer>
+
+                         {% include 'customer-area/blocks/footer.html.twig' %}
+
+
+        </footer>
+
+
+    </body>
+
+    
+</html>
+
+      

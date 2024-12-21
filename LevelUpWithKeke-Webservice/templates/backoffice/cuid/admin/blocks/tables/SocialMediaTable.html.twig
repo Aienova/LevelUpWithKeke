@@ -1,0 +1,61 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Nom du réseau social</th>
+            <th>Date de création</th>
+            <th>Visibilité</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if socialmedia is defined %}
+        {% if socialmedia is not empty  %}
+
+        {% for social in socialmedia |sort((a, b) => b.id <=> a.id) %}
+
+        <tr>
+            <td><a href="{{social.link}}">{{social.socialMediaType.name}}</a></td>
+            <td>{{social.creationDate|date("d/m/Y h:i:s")}}</td>
+            <td>
+            
+            
+            {% if social.visibility == 1 %}
+
+            En ligne
+
+            {% else %}
+
+            Hors ligne
+
+            {% endif %}
+            
+            </td>
+            <td>
+
+            
+
+                {% set decision = '
+                
+                <a href="./edit-social/'~ social.id ~'"><span class="material-symbols-outlined decision-button">edit</span></a>
+                
+                <span data-action="delete" data-section="socialmedia" data-id="'~ social.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                
+                %}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

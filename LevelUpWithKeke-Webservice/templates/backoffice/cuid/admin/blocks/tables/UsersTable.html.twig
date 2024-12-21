@@ -1,0 +1,81 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Prénom Nom</th>
+            <th>Email</th>
+            <th>Login</th>
+            <th>Niveau de privilège</th>
+            <th>Etat de connection</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if users is defined %}
+        {% if users is not empty  %}
+
+        {% for user in users %}
+
+        <tr>
+            <td>{{user.firstname}} {{user.surname}}</td>
+            <td><a href="mailto:{{user.email}}">{{user.email}}</a></td>
+            <td>{{user.login}}</td>
+            <td>{{user.level.frName}}</td>
+
+            <td>
+            
+            
+            {% if user.connected == 1 %}
+
+            <span class="green-text">En ligne</span>
+
+            {% else %}
+
+            <span class="red-text">Hors ligne</span>
+
+            {% endif %}
+            
+            </td>
+            <td>
+
+            {% if user.id == 1 %}
+
+                {% set decision = '
+                
+                <span class="material-symbols-outlined decision-button red-text">dangerous</span>
+                
+              ' 
+                
+                
+                
+                %}
+            
+            {% else %}
+
+                            {% set decision = '
+                
+                <a href="./edit-user/'~ user.id ~'"><span class="material-symbols-outlined decision-button">edit</span></a>
+                
+                <span data-action="delete" data-section="user" data-id="'~ user.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                
+                
+                %}
+
+            {% endif %}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

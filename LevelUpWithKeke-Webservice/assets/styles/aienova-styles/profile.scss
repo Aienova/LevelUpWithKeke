@@ -1,0 +1,108 @@
+#profile {
+
+
+    color:white;
+    padding: 20px;
+    
+
+    h2{
+
+        font-size:50px;
+        margin-top:30px;
+        margin-bottom:10px;
+        padding:0px;
+    }
+
+    ul{
+
+        margin-bottom:50px;
+    }
+    
+    h3{
+
+        font-size:30px;
+        margin-top:30px;
+        margin-bottom:10px;
+        padding:0px;
+    }
+
+    p{
+
+        text-align: left;
+    }
+
+
+}
+
+.stat{
+
+    text-align: center;
+    margin:auto;
+    margin-top:20px;
+}
+
+span.language-info {
+
+    margin-left: 10px;
+    margin-top: 0px;
+
+}
+
+
+.edit-button {
+    background-color: #c91863;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor:pointer;
+}
+
+
+#close-editor{
+
+    cursor:pointer;
+}
+
+div#apply {
+    background-color: #c91863;
+    padding: 20px;
+    margin-top: 77px;
+
+    h3{
+
+        font-size: 25px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    }
+}
+
+.edit-button:hover{
+
+    background-color: #d1bf18;
+    color:black;
+
+
+}
+
+
+#navDoc{
+
+    margin-bottom: 30px;
+
+    nav{
+
+        background-color: black;
+        color:white;
+        padding:10px;
+        margin-right:10px;
+    }
+}
+
+#consularDocument{
+
+    li{
+        margin-bottom:15px;
+        color:white;
+    }
+}

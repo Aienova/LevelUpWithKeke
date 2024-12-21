@@ -1,0 +1,355 @@
+
+@media (max-height: 700px) {
+
+
+        div#card #searchbar {
+            margin: 0px;
+            margin-left: auto;
+            width: 80%;
+        }
+
+
+
+    }
+
+
+
+@media (max-width: 700px) {
+
+    .card{
+
+        width: 100%!important;
+        margin:0px!important;
+        margin-bottom:10px!important;
+
+    }
+
+    #booking-info{
+
+        margin-top:30px;
+    }
+
+    .padder{
+
+        padding:40px;
+    }
+
+    #navForm nav {
+
+        width: 90%;
+    }
+
+    #newsfield {
+        width: 340px;
+        margin: auto;
+    }
+
+    div#contact-map {
+        width: 400px;
+        margin: auto;
+    }
+
+    article {
+        width: 100%;
+        margin: 0px!important;
+        margin-bottom:20px!important;
+
+    }
+
+    .organizer {
+        width: 80%;
+    }
+
+    .info-item {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .right-side {
+        width: 94%!important;
+    }
+
+    .left-side {
+        width: 87%!important;
+    }
+
+    div#page-content {
+        padding: 10px;
+    }
+
+    .logotitle {
+
+        width: 100%;
+    }
+
+    .middle-form {
+        width: 83%;
+        margin: auto;
+
+        div{
+
+            padding:0px!important;
+        }
+
+
+    }
+
+
+    .menumobile {
+        width: 100%;
+        padding: 0px;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    #contact-infos {
+        width: 75%;
+        margin: auto;
+    }
+
+    #customer-area {
+        width: 100%!important;
+        text-align: center!important;
+    }
+
+    #toptitle h1 {
+        font-size: 44px!important;
+    }
+
+    #newsfield {
+        width: 360px;
+        margin: auto;
+    }
+
+   #banner {
+
+        height: 651px!important;
+    }
+
+    #eventsfield{
+
+        .square {
+            background-color: rgb(247, 89, 18) !important;
+            margin: auto;
+            width: fit-content!important;
+            height: 300px;
+            margin-bottom: 50px;
+        }
+    
+    
+    } 
+
+    .hiddenformobile{
+
+        display:none;
+    }
+
+    #chief-message {
+        padding-top: 180px;
+       padding-left: 0px!important;
+        max-height: fit-content!important; 
+        width:fit-content!important; 
+        margin: auto;
+        padding-bottom: 100px;
+    }
+
+    #fonctionnal {
+        padding: 20px;
+    }
+
+    #jobOfferList{
+        
+        #description{
+
+            display: none;
+        }
+
+    }
+
+    .sub-menu {
+      
+        width: 250px!important;
+        padding-top:70px!important;
+
+    }
+
+    #profile{
+
+        #skills{
+
+            display: none;
+        }
+
+        #description{
+
+            display: none;
+        }
+
+
+ 
+    }
+
+    #promtion-product-list {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    #promtion-product-shower {
+        display: none;
+    }
+
+    #promtion-product{
+
+        display:block;
+    }
+
+    #promtion-product-list {
+        width: 100%!important;
+    }
+
+    #banner-slider{
+
+        display:none;
+    }
+
+    #searchbar {
+        margin-right: 0px!important;
+        width: 81%!important;
+    }
+
+    #tablet-menu{
+
+        display:none!important;
+    }
+
+    #smartphone-menu{
+
+        display:flex!important;
+    }
+
+    #candidates-list{
+
+        #description{
+
+            display: none;
+        }
+
+        #statistic{
+
+            display: none;
+        }
+
+
+    }
+    .image {
+        background-color: blue;
+        width: 100%;
+        height: 500px;
+    }
+
+    #biglines{
+
+
+        height:fit-content!important;
+
+        .full{
+
+            height: auto!important;
+        }
+
+        .flexible{
+
+            display:block!important;
+        }
+    }
+
+
+
+    #services{
+
+
+        height:fit-content!important;
+
+        .full{
+
+            height: auto!important;
+        }
+
+        .flexible{
+
+            display:block!important;
+        }
+
+
+    }
+
+
+    #jobs{
+
+
+        height:fit-content!important;
+
+        .full{
+
+            height: auto!important;
+        }
+
+        .flexible{
+
+            display:block!important;
+        }
+
+
+    }
+
+    #search-partners{
+
+        .flexible {
+        display:block!important;
+        }
+    }
+
+
+    #main-title{
+
+        .flexible {
+            display: block;
+            text-align: center;
+        }
+
+    }
+
+
+    .menu-inline li{
+
+        margin-top:25px;
+        margin-bottom:25px;
+        display: block;
+    }
+
+
+    #partners {
+        padding-bottom: 300px;
+    }
+
+    #search-engine form {
+        display: block;
+
+
+        div {
+            margin: 10px;
+            color: white;
+            height:auto;
+            background-color: #ff000000;
+        }
+
+        .input-select{
+
+            width:95%;
+        }
+    }
+
+
+}

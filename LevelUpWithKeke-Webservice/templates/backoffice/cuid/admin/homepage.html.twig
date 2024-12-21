@@ -1,0 +1,175 @@
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifier votre page d'accueil</h1>
+                    </div>
+
+                    <div id="square-menu">
+
+                    
+                                <div class="padder">
+
+
+                                <div class="square flexible">
+
+
+                                <div class="column" style="width:40%">
+
+                                    <form  method="POST" enctype="multipart/form-data">
+
+                                    <h2>Informations générales de la page d'accueil</h2>
+
+
+                                    <input type="hidden" name="homepage_data" value="maininfos" />
+                                            
+                                            <p><h3>Titre de la page d'accueil</h3>
+                                            <input type="text" name="title" value="{{homepage.title}}" />
+                                            </p>
+                                            
+
+                                            <p>
+                                            <h3>Description de la page d'accueil:</h3>
+                                            <textarea name="description">{{homepage.description}}</textarea>
+                                            </p>
+
+
+
+                                       {#     {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}  #}
+
+
+
+                                    <input type="submit"  value="modifier titre et description du site web" />
+                                    </form>
+                                    </div>
+
+                                <div class="column" style="width:30%">
+                                    <form  method="POST" enctype="multipart/form-data">
+
+                                    <h2>Bannière</h2>
+
+                                    <input type="hidden" name="homepage_data" value="banner" />
+
+                                            <p><h3>Titre de la bannière</h3>
+                                            <input type="text" name="bannerTitle" value="{{homepage.bannerTitle}}" />
+                                            </p>
+
+                                            <p><h3>Lien de la vidéo de la bannière</h3>
+                                            <input type="text" name="bannerVideo" value="{{homepage.bannerVideo}}" />
+
+                                            <h3>Afficher la vidéo ?</h3>
+                                            <label for="yes">Oui<input type="radio" id="yes" name="bannerVideoDisplayed" value="1" 
+                                            
+                                            {% if homepage.bannerVideoDisplayed == 1 %}
+                                                
+                                                checked
+
+                                            {% endif %}
+                                                
+                                                ></label>
+                                            <label for="no">Non<input type="radio" id="no" name="bannerVideoDisplayed" value="0"
+                                            
+                                            {% if homepage.bannerVideoDisplayed == 0 %}
+                                                
+                                                checked
+
+                                            {% endif %}
+                                            
+                                            ></label>
+                                            </p>
+
+                                            <p><h3>Image de la bannière</h3>
+                                             {% include "backoffice/cuid/admin/blocks/plugins/background-image-selector/plugin.html.twig" %}
+                                            </p>
+
+                                            <input type="submit"  value="modifier bannière" />
+
+                                    </form>
+                                </div>
+
+
+                                                                <div class="column" style="width:50%">
+                                    <form  method="POST" enctype="multipart/form-data">
+
+                                    <h2>Informations complémentaire</h2>
+
+                                    <input type="hidden" name="homepage_data" value="otherinfos" />
+
+                                    
+                                            <p><h3>Parlez un plus de vous ?</h3>
+                                            <input type="text" name="aboutUsTitle" value="{{homepage.aboutUsTitle}}" /><br><br>
+                                            <textarea name="aboutUs" >{{homepage.aboutUs}}</textarea>
+                                            </p>
+
+
+                                             <p><h3>Quels sont vos services ?</h3>
+                                            <input type="text" name="ourServicesTitle" value="{{homepage.ourServicesTitle}}" /><br><br>
+                                            <textarea name="ourServices">{{homepage.ourServices}}</textarea>
+                                            </p>
+
+
+                                            <p><h3>Justifier vos prix ?</h3>
+                                            <input type="text" name="ourPricesTitle" value="{{homepage.ourPricesTitle}}" /><br><br>
+                                            <textarea name="ourPrices">{{homepage.ourPrices}}</textarea>
+                                            </p>
+                                            <input type="submit"  value="modifier vos infos complémentaires" />
+                                    </form>
+                                    </div>
+
+
+
+
+
+
+
+
+
+{#
+                                            {% if settings is not empty %}
+
+                                            
+                                            {% for setting in settings %}
+                                                {% include "forms/blocks/items/"~ setting.item.name ~".html.twig" %}
+                                            {% endfor %}
+
+                                            {% endif %}
+
+                                        
+                                                <form method="POST" id="form-settings-new-field" enctype="multipart/form-data">
+                                               <input type="hidden" name="form_data" value="1" />
+                                               <input type="hidden" name="addNewFormItem" value="1" />
+                                                    <h3>Ajouter un champ à votre formulaire</h3>
+                                                    <input type="text" name="title" placeholder="Titre du champs" value="" require/><br><br>
+
+                                                    <input type="hidden" name="addfield" value="1" />
+                                                    <input type="submit" value="Ajouter"/>
+                                                
+                                                </form>
+
+                                                #}
+
+
+
+                                    {#
+
+                                    <div id="form-render">
+                                    <h2>Mode pré-rendu :</h2>
+
+                                    {% include "forms/blocks/render.html.twig" %}
+
+
+                                    </div>
+
+                                    #}
+                     </div>
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

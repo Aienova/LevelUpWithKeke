@@ -1,0 +1,73 @@
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/cuid/plugins/text-editor/src/site.css">
+        <link rel="stylesheet" href="/cuid/plugins/text-editor/src/richtext.min.css">
+
+
+
+        <div class="page-wrapper box-content">
+
+        {% if page is defined %}
+
+            <textarea class="content" name="content" value="{{page.content}}" >{{page.content}}</textarea>
+
+        {% elseif event is defined %}
+
+            <textarea class="content" name="content" value="{{event.content}}" >{{event.content}}</textarea>
+
+                {% elseif article is defined %}
+
+            <textarea class="content" name="content" value="{{article.content}}" >{{article.content}}</textarea>
+                        
+                        {% elseif setting is defined %}
+
+            <textarea class="content" name="content" value="{{setting.content}}" >{{setting.content}}</textarea>
+
+                        {% elseif faq is defined %}
+
+            <textarea class="content" name="content" value="{{faq.answer}}" >{{faq.answer}}</textarea>
+
+                                    {% elseif job is defined %}
+
+            <textarea class="content" name="content" value="{{job.content}}" >{{job.content}}</textarea>
+        
+                                {% elseif notarizetype is defined %}
+
+            <textarea class="content" name="content" value="{{notarizetype.details}}" >{{notarizetype.details}}</textarea>
+
+
+                                                {% elseif performance is defined %}
+
+            <textarea class="content"  name="content" value="{{performance.content}}" >{{performance.content}}</textarea>
+
+            
+                                                {% elseif mail is defined %}
+
+            <textarea id="{{id}}" class="biatch" name="{{name}}" value="{{content}}" >{{content}}</textarea>
+            
+                <script>
+        $(document).ready(function() {
+            $('#{{id}}').richText();
+        });
+        </script>
+                {% else  %}
+
+                         <textarea class="content" name="content" value="" ></textarea>
+
+
+         {% endif %}
+        </div>
+
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="/cuid/plugins/text-editor/src/jquery.richtext.js"></script>
+
+
+        <script>
+        $(document).ready(function() {
+            $('.content').richText();
+        });
+        </script>
+
+

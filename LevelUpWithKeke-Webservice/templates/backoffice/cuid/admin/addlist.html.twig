@@ -1,0 +1,104 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Ajouter une liste pour vos formulaire</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                                           <div class="flexible">
+                                <a href="./lists">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter toutes vos listes de formulaire</div>
+                                </a>
+                            </div>
+
+
+                                    <form id="page-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="addlist_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+  
+
+                                            <p>
+                                            <h2>Titre de votre liste</h2>
+                                            <input type="text" name="title" />
+                                            </p>
+
+
+                                             <p>
+                                            <h2>Nom de la donnée</h2>
+                                            <input type="text" name="name" />
+                                            </p>
+
+
+                                            <h2>Ajouter vos options à cette liste </h2>
+
+                                            <ul id="options-list">
+
+
+
+                                            {% for i in 1..50 %}
+
+                                            
+                                            {% if i > 1 %} {% set hidden = "hidden" %} {% else %} {% set hidden = "" %} {% endif %}
+
+                                                <li id="option{{i}}" class="{{hidden}}"><label>Option n°{{i}} <input type="text" name="option{{i}}" placeholder="Nom de votre option"/>
+
+                                            <div class="optionlister" id="optionlister{{i}}">
+                                            {% if i < 50 %}
+                                                <span class="material-symbols-outlined lister" data-action="add" data-row="{{i}}">add</span>
+                                            {% endif %}
+                                                
+                                                {% if i > 1 %}
+                                                <span class="material-symbols-outlined lister" data-action="remove" data-row="{{i}}">remove </span>
+
+                                                {% endif %}
+                                                </div>
+
+                                                </li>
+
+                                                    {% set i = i + 1 %}
+
+                                                {% endfor %}
+
+
+                                            </ul>
+
+                                            <h3>Vous avez au total : <span id="countoptions">1</span> option(s)</h3>
+
+                                            <input type="hidden" id="totaloptions" name="totaloptions" value="1" />
+
+
+
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+                                    
+                                    <br><br>
+                                    <input type="submit"  value="Créer une nouvelle liste" />
+                                    </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

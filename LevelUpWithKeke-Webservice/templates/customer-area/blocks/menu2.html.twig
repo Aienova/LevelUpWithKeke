@@ -1,0 +1,82 @@
+            <a href="{{ path('cuid_customer_area_home') }}"><li><div class="menuname ">Accueil
+            <div class="menuline  "></div>
+            
+            </div></div></li></a>
+
+
+                    <a class="scroller" href="{{ path('cuid_customer_area_new_notarize') }}" >
+                        <li>
+                            <div class="flexible">
+                                    <div class="menuname">Nouvelle demande
+                                            <div class="menuline "></div>
+                                    </div> 
+                            </div>
+
+                        </li>
+                    </a>
+
+
+                    <a href="{{ path('cuid_customer_area_my_profile') }}" >
+                        <li>
+                            <div class="flexible">
+                                    <div class="menuname">Profil
+                                            <div class="menuline "></div>
+                                    </div> 
+                            </div>
+
+                        </li>
+                    </a>
+
+
+
+                    <a href="">
+                        <li class="display-submenu">
+                            <div class="flexible">
+                                    <div class="menuname">Visa
+                                            <div class="menuline "></div>
+                                    </div> 
+                            </div>
+
+                                                    {% include "customer-area/blocks/submenu/submenu1.html.twig" %}
+
+                        </li>
+                    </a>
+
+
+                       <a href="" >
+                        <li class="display-submenu">
+                            <div class="flexible">
+                                    <div class="menuname">Actes consulaires
+                                            <div class="menuline "></div>
+                                    </div> 
+                            </div>
+
+                                                    {% include "customer-area/blocks/submenu/submenu2.html.twig" %}
+
+                        </li>
+                    </a>
+
+                    <a href="" >
+                        <li class="display-submenu">
+                            <div class="flexible">
+                                    <div class="menuname">Passeport
+                                            <div class="menuline "></div>
+                                    </div> 
+                            </div>
+
+                                                    {% include "customer-area/blocks/submenu/submenu3.html.twig" %}
+
+                        </li>
+                    </a>
+
+
+                    <a href="{{ path('cuid_customer_area_faq') }}#faq" >
+                        <li>
+                            <div class="flexible">
+                                    <div class="menuname">FAQ
+                                            <div class="menuline "></div>
+                                    </div> 
+                            </div>
+
+                        </li>
+                    </a>

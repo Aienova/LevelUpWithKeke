@@ -1,0 +1,342 @@
+
+
+#space-bar {
+    height: 109px;
+}
+
+
+header {
+    background-color: black;
+    width: 100%;
+    height: fit-content;
+    font-size: 20px;
+    color: white;
+    position: fixed;
+    z-index: 1111111;
+    top:0px;
+
+    a{
+
+        color:white;
+    }
+    
+    
+
+}
+
+#burger-menu{
+
+    display:none;
+}
+
+
+#contact-info{
+
+    a{
+        color:white;
+        margin-right:20px;
+    }
+}
+
+div#connection-menu {
+    margin-left: auto;
+
+    a{
+        color:white;
+        margin-right:10px;
+    }
+
+
+}
+
+.menu {
+    height:100%;
+    width:100%;
+    background-color:slategrey;
+    z-index:9999;
+    display:none;
+    text-align:center;
+  }
+  
+  .menu li  {
+    
+      padding-top:3em;
+      padding-bottom:3em;
+      text-decoration:none;
+      list-style-type: none;
+      
+    
+  }
+  
+   .menu li  a {
+    
+      padding-top:3em;
+      text-decoration:none;
+      color:white;
+    
+  }    
+
+
+.burger-menu { 
+
+    cursor:pointer;
+    padding-right: 20px;
+  
+  }
+  
+  
+  .bar {
+    
+     transition:0.4s;
+    
+  }
+  
+  
+  
+  .bar-1 {
+    
+    width:5em;
+    display: block;
+    width: 40px;
+    border-top: 6px solid rgb(0, 0, 0);
+    padding-top:6px;
+    cursor:pointer;
+    transition:0.4s;
+  }
+  
+  
+  
+   .bar-2 {     
+    width:5em;
+    display: block;
+    width: 40px;
+    border-top: 6px solid rgb(0, 0, 0);
+    padding-top:5px;  
+    display:fixed;
+    transition:0.4s;
+    }
+  
+  
+     .bar-3 {  
+  
+    width:5em;
+    display: block;
+    width: 40px;
+    border-top: 6px solid rgb(0, 0, 0);
+    padding-top:5px;
+    transition:0.4s;
+  
+    }
+  
+  
+  .change .bar-1 {
+  
+  -webkit-transform: rotate(-45deg) translate(-10px, 5px);
+      transform: rotate(-45deg) translate(-10px, 8px);
+  }
+  
+  .change .bar-2 {opacity:0;}
+  
+  .change .bar-3 {
+      -webkit-transform: rotate(45deg) translate(-10px, 5px);
+      transform: rotate(45deg) translate(-10px, -5px);
+  }
+  
+  
+
+  #top-bar {
+    padding: 3px;
+    background-image: linear-gradient(45deg, #01772e, #ebdf2c, red);
+    color: white;
+    font-size: 13px;
+}
+    #bottom-bar{
+
+        height: 70px;
+        padding-left: 10px;
+        padding-top: 10px;
+
+    .logo{
+
+        height:56px;
+    }
+
+
+    a{
+
+
+        text-decoration: none;
+        display: flex;
+    }
+
+    ul.submenu-list li {
+        padding-top: 10px !important;
+    }
+
+#menu li {
+    margin-top: 15px;
+    padding-left: 10px;
+    font-size: 12px;
+    padding-bottom: 20px;
+    width: 180px;
+    text-align: center;
+
+    .flexible{
+
+        margin:auto;
+        text-align: center;
+        width:fit-content;
+    }
+}
+
+.logotitle {
+
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.display-submenu:hover {
+    list-style: none;
+
+
+    .sub-menu{
+
+        display:flex;
+        z-index:1;
+        opacity:1;
+        top: 0px;
+        height: fit-content;
+        
+    }
+}
+
+#aienova-logo{
+
+    height:50px;
+}
+
+
+div#bottom-header {
+
+    padding-top: 25px;
+    text-align: center;
+
+    span{
+
+        font-size: 13px;
+
+    }
+}
+
+}
+
+.menuname {
+    height: fit-content;
+    margin: auto;
+    margin-left: 5px;
+    text-transform: uppercase;
+}
+
+.selectmenu{
+
+    transform: translate(-20px, 7px);
+    transition-duration: 1s;
+    opacity: 0;
+
+}
+
+
+.sub-menu {
+
+    z-index:-1111111;
+    height: 10px;
+    width: 250px;
+    opacity: 0;
+    background-color: #ffffff;
+    left: 0px;
+    top: -750px;
+    margin-left: -30px;
+    transition-duration: 0.2s;
+    position: relative;
+
+
+}
+
+
+.submenu-list{
+
+    width: 100% !important;
+    margin-top: 0px !important;
+
+    li{
+
+        width: 100% !important;
+        padding-bottom: 20px;
+        margin-top: 0px !important;
+        padding-top: 30px;
+        border-bottom: solid 2px #00000014;
+
+    }
+
+    li:hover{
+
+        .selectmenu{
+
+            transform: translate(0px, 7px);
+            opacity: 1;
+        
+        }
+        
+    }
+
+
+}
+
+.menuselected {
+    width: 100% !important;
+}
+
+.menumobile {
+    height:100%;
+    width:100%;
+    background-color: #056839;
+    z-index:9999;
+    display:none;
+    text-align:center;
+
+    a{
+
+        color:white;
+    }
+
+
+
+    
+    li{
+
+        color:white;
+    }
+  }
+  
+  .menumobile li {
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+    .mobilesubmenu ul {
+    margin-left: 110px;
+}
+  
+   .menumobile li  a {
+    
+      padding-top:3em;
+      text-decoration:none;
+      color:white;
+    
+  } 

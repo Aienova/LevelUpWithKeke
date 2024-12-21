@@ -1,0 +1,194 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Client : #{{customer.id}}</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+                                
+                                <div class="flexible">
+                                <a href="../customers">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Retourner à la liste des clients</div>
+                                </a>
+                                </div>
+
+                                
+            <div id="profile" data-route="profil-candidate" class="flexible">
+
+
+
+                <!---A METTRE DANS UN CODE CONTROLEUR -->
+
+                <div id="identity" class="column">
+
+                {% if customer.person.complete != 1 %}
+
+                                <h3 class="red-text"><span class="material-symbols-outlined">warning</span>Ce client n'a pas terminé <br>son enregistrement</h3>
+
+                                {% else %}
+
+                                      <h3 class="green-text"><span class="material-symbols-outlined">check_circle</span>Ce Client est bien enregistré à <br>l'ambassade du Congo de Berlin</h3>              
+                {% endif %}
+
+                    <div class="flexible">
+
+                            <ul class="column">
+                                <li><h3>Informations personnelles</h3></li> 
+                                <li><img class="identity-photo" src="{{customer.person.photo.link}}" /> </li>
+                                <li><strong>Nom :</strong> {{customer.person.surname}}</li>
+                            {% if customer.person.gender.id == 1 %}
+                                <li><strong>Nom de jeune fille :</strong> {{customer.person.maidenname}}</li>
+                            {% endif %}
+                            
+                                <li><strong>Prénom :</strong> {{customer.person.firstname}}</li>
+                                <li><strong>Sexe :</strong> {{customer.person.gender.frName}}</li>
+                                <li><strong>Né{% if customer.person.gender.id == 1 %}e{% endif %}</strong> le : {{customer.person.birthdate|date("d/m/Y")}}</li>
+                                 <li><strong>Lieu de naissance :</strong> {{customer.person.birthplace}} </li>                                
+                                <li><strong>Adresse actuel :</strong> {{customer.person.residenceAdress}}</li>
+                                <li><strong>Situation matrimonial :</strong> {{customer.person.maritalStatus.frName}}</li>
+                                <li><strong>Type de ressortissant :</strong> {{customer.person.nationalType.frName}}</li>   
+                                <li><strong>Taille (mêtre) :</strong> {{customer.person.height / 100}} m</li>  
+                                <li><strong>Couleur des yeux :</strong> {{customer.person.eyecolor}} </li> 
+                                <li><strong>Couleur des cheveux :</strong> {{customer.person.haircolor}} </li> 
+                                <li><strong>Nom du conjoint :</strong> {{customer.person.spouseName}} </li> 
+                                <li><strong>Nationalité du conjoint :</strong> {{customer.person.spouseNationality.name}} </li> 
+                                <li><strong>Nationalité d'origine :</strong> {{customer.person.origin.name}} </li> 
+                                <li>
+
+                                <h3>Actes consulaires disponibles</h3>
+
+                                    <div id="hisDocuments" class="lecture" style="height:400px;width:100%;">
+
+                                            <ul class="padder-medium">
+                                            {% for document in customer.notarizeDocuments %}
+
+                                                <li><strong>{{document.notarizeType.frName}} :</strong><br> Référence - {{document.documentId}} - Code - {{document.code}}</li>
+                                                
+                                            {% endfor %}
+
+                                            </ul>
+                                    </div>
+                                
+                                
+                                </li>
+
+                            </ul>
+                    </div>
+
+                {# plus tard
+                    
+                    <h3>Le suivre:</h3>
+                        <img class="logo-mini invert" src="/build/media/image/icons/facebook.png" />
+                        <img class="logo-mini invert" src="/build/media/image/icons/github.png" />
+                        <img class="logo-mini invert" src="/build/media/image/icons/linkedin.png" />
+
+                        #}
+                </div>
+
+                        <div id="description" class="column">
+
+
+
+                        <div id="residence">
+                            <h3>Informations du pays de résidence</h3>
+                            <ul class="info-item-list">
+                                <li><strong>Pays de résidence : </strong>{{customer.person.residenceCountry.name}}</li>
+                                <li><strong>Antécédent judiciare :  </strong> {% if customer.person.criminalRecord == TRUE %}
+                                    Oui
+                                    {% else %}
+                                    Non
+                                {% endif %}</li>
+                                <li><strong>Date d'arrivée :  </strong>{{customer.person.arrivalDate|date("d/m/Y")}}</li>
+                                <li><strong>Numéro de téléphone :  </strong>{{customer.person.telephone}}</li>
+                                <li><strong>Adresse du pays d'origine résidence :  </strong>{{customer.person.residenceAdress}}</li>
+                                <li><strong>Ville :  </strong>{{customer.person.city}}</li>
+                                <li><strong>Code Postal :  </strong>{{customer.person.postalCode}}</li>
+                                <li><strong>Email :  </strong>{{customer.person.email}}</li>
+                            </ul>
+                                    
+
+                        </div>
+
+                        {#
+                         <p><strong class="sider" data-side="birth" >Acte de naissance</strong> | <strong  class="sider" data-side="contact" >Contact au pays</strong> | 
+                        
+                        <br><br><strong  class="sider" data-side="emergency" >Cas d'urgence</strong> | <strong   class="sider" data-side="IDcard" >Pièce d'identité</strong></p>
+                        #}
+                        <div class="side" id="birth">
+                            <h3>Acte de naissance</h3>
+                            <ul class="info-item-list">
+                                <li> <strong>Numéro de l'acte de naissance : </strong> {{customer.person.birthCertificateNumber}} </li>
+                                <li> <strong>Organisme ayant délivré de l'acte de naissance : </strong> {{customer.person.birthCertificateOrganisation}} </li>
+                                <li> <strong>Date de Délivrance de l'acte de naissance : </strong> {{customer.person.birthCertificateDate|date("d/m/Y")}} </li>
+                                <li> <strong>Numéro de jugement : </strong> {{customer.person.judgementNumber}} </li>
+                                <li> <strong>Le Déclarant de l'acte de naissance : </strong> {{customer.person.birthCertificateDeclarant}} </li>
+                            </ul>
+                        </div>
+
+                        <div class="side" id="contact">
+                            <h3>Contact au pays d'origine</h3>
+                            <ul class="info-item-list">
+                                <li> <strong>Nom et prénom du père : </strong> {{customer.person.fatherName}} </li>
+                                <li> <strong>Profession du père : </strong> {{customer.person.fatherProfession}} </li>
+                                <li> <strong>Nom et prénom de la mère : </strong> {{customer.person.motherName}} </li>
+                                <li> <strong>Profession de la mère : </strong> {{customer.person.motherProfession}} </li>
+                                <li> <strong>Email d'un des parents : </strong> {{customer.person.parentEmail}} </li>
+                                <li> <strong>Adresse du père : </strong> {{customer.person.fatherAddress}} </li>
+                                <li> <strong>Numéro d'un des parents : </strong> {{customer.person.parentTelephone}} </li>
+                                <li> <strong>Adresse du mère : </strong> {{customer.person.motherAddress}} </li>
+                                <li> <strong>Département : </strong> {{customer.person.department}} </li>
+                                <li> <strong>Commune ou District : </strong> {{customer.person.district}} </li>
+                            </ul>
+                        </div>
+
+                        <div class="side" id="emergency">
+                            <h3>Personne à prévenir en cas d'urgence</h3>
+                             <ul class="info-item-list">
+                                <li> <strong>Nom </strong> {{customer.person.emergencyPersonSurname}} </li>
+                                <li> <strong>Prénom : </strong> {{customer.person.emergencyPersonFirstname}} </li>
+                                <li> <strong>Adresse : </strong> {{customer.person.emergencyPersonAddress}} </li>
+                                <li> <strong>Numéro de téléphone : </strong> {{customer.person.emergencyPersonTelephone}} </li>
+                                <li> <strong>Lien de parenté : </strong> {{customer.person.emergencyPersonLink}} </li>
+                            </ul>
+
+                        </div>
+
+                            <div class="side" id="IDCard">
+                            <h3>Pièce d'identité</h3>
+                             <ul class="info-item-list">
+                                <li> <strong>Type de pièce </strong> {{customer.person.identityType.frName}} </li>
+                                <li> <strong>Délivré le : </strong> {{customer.person.deliveryDate|date("d/m/Y")}} </li>
+                                <li> <strong>Numéro de la pièce : </strong> {{customer.person.identityNumber}} </li>
+                                <li> <strong>Date d'expiration : </strong> {{customer.person.expirationDate|date("d/m/Y")}} </li>
+                                <li> <strong>Délivré par : </strong> {{customer.person.deliveredBy}} </li>
+                                <li> <strong>Délivré à : </strong> {{customer.person.deliveryPlace}} </li>
+
+                                
+                            </ul>
+
+                        </div>
+
+                            </div>
+
+
+                                
+                                </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}

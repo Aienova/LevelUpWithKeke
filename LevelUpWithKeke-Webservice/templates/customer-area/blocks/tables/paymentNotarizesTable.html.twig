@@ -1,0 +1,76 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Numéro de demande</th>
+            <th class="hiddenformobile">Date d'émission</th>
+            <th>Type de demande</th>
+            <th  class="hiddenformobile">Etat de la demande</th>
+            <th  class="hiddenformobile">Prix</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        {% if  notarizes is defined %}
+        {% if notarizes is not empty  %}
+        {% for notarize in notarizes %}
+
+
+
+
+        <tr>
+               <td>{{notarize.numberId}}</td>
+            <td  class="hiddenformobile">{{  notarize.dateCreation | date("d/m/Y h:i:s", "Europe/Paris") }}</td>
+            <td>{{notarize.type.frName}}</td>
+            <td class="hiddenformobile"><div class="{{notarize.decision.classColor}}-text">{{notarize.decision.symbol|raw}}{{notarize.decision.frName}}</div></td>
+            <td class="hiddenformobile">
+
+                            {% if notarize.cost == NULL %}
+
+               {% set decision = '<span data-action="/notarize/'~ notarize.id ~'"  class="material-symbols-outlined decision-button">visibility</span>' %}
+                {% set price ="<span class='red-text'>En attende de validation</span>" %}
+
+                    {% if notarize.decision.id == 4 %}
+
+                        {% set decision = '<a href="/service-en-ligne/infos-maquantes/'~ notarize.id ~'"><span data-action="/notarize-preview/0/'~ notarize.id ~'" class="material-symbols-outlined">description</span></a><span data-action="/notarize/'~ notarize.id ~'"  class="material-symbols-outlined decision-button">visibility</span>' %}
+
+                    {% endif %}
+
+
+
+                {% else %}
+
+                {% set ttc = notarize.cost + ( (notarize.cost) * (website.vat / 100))  %}
+                {% set price ="<span class='green-text'>" ~ ttc ~ "€</span>" %}
+               {% set decision = '<span data-action="/payment/notarize/'~ notarize.id ~'" class="material-symbols-outlined decision-button">credit_card</span> <span data-action="/notarize-preview/0/'~ notarize.id ~'" class="material-symbols-outlined decision-button">description</span><span data-action="/notarize/'~ notarize.id ~'"  class="material-symbols-outlined decision-button">visibility</span>' %}
+                
+                {% endif %}
+                                 {{price|raw}}        
+
+            </td>
+            <td>
+
+            {#
+
+                {% if notarize.confirmation == TRUE and notarize.companyConfirmation == TRUE %} {% set decision = '<span data-action="/notarize-preview/1/'~ notarize.id ~'" class="material-symbols-outlined decision-button">euro</span>' %}Warten auf Zahlung{% endif %}
+                
+                {% if notarize.confirmation == TRUE and notarize.companyConfirmation == FALSE %} {% set decision = '<span data-action="/notarize/'~ notarize.id ~'"  class="material-symbols-outlined decision-button">visibility</span>' %}Warten auf die Bestätigung durch den Dienstanbieter{% endif %}
+                
+                {% if notarize.confirmation == FALSE and notarize.companyConfirmation == TRUE %} {% set decision = '<span data-action="/decision/1/'~ notarize.id ~'"  class="material-symbols-outlined decision-button">check_circle</span><span   data-action="/decision/0/'~ notarize.id ~'" class="material-symbols-outlined decision-button">cancel</span><span   data-action="/notarize-preview/0/'~ notarize.id ~'" class="material-symbols-outlined decision-button">description</span>' %}Warten auf Ihre Bestätigung{% endif %}
+                #}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+        {% else %}
+                <tr><td colspan="7">Aucune demande pour l'instant</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucune demande pour l'instant</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

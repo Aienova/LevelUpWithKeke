@@ -1,0 +1,130 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifier cette liste de formulaire</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+
+                                           <div class="flexible">
+                                <a href="../lists">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter toutes vos listes de formulaire</div>
+                                </a>
+                            </div>
+
+
+                                    <form id="page-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="list_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+  
+
+                                            <p>
+                                            <h2>Titre de votre liste</h2>
+                                            <input type="text" name="title" value="{{list.title}}" />
+                                            </p>
+
+
+                                             <p>
+                                            <h2>Nom de la donnée</h2>
+                                            <input type="text" name="name" value="{{list.name}}" />
+                                            </p>
+
+
+                                            <h2>Ajouter vos options à cette liste </h2>
+
+                                            <ul id="options-list">
+
+
+
+                                            {% for i in 1..50 %}
+
+
+
+                                            {% if options[ i - 1 ] is defined %}
+
+                                            {% set option = options[ i - 1 ].value %}
+                                            {% set hidden = "" %}
+
+                                            {% else %}
+
+                                             {% set option = ""  %}
+                                             {% set hidden = "hidden" %}
+
+                                            {% endif %}
+
+
+                                            {% if i < count %}
+
+                                            {% set hidelister = "hidden" %}
+
+                                            {% else %}
+
+                                            {% set hidelister = "" %}                                          
+                                                
+                                            {% endif %}
+
+                                            
+                                           
+
+                                                <li id="option{{i}}" class="{{hidden}}"><label>Option n°{{i}} <input type="text" name="option{{i}}" placeholder="Nom de votre option" value="{{option}}"/>
+
+                                            <div class="optionlister {{hidelister}}" id="optionlister{{i}}">
+                                            {% if i < 50 %}
+                                                <span class="material-symbols-outlined lister" data-action="add" data-row="{{i}}">add</span>
+                                            {% endif %}
+                                                
+                                                {% if i > 1 %}
+                                                <span class="material-symbols-outlined lister" data-action="remove" data-row="{{i}}">remove </span>
+
+                                                {% endif %}
+                                                </div>
+
+                                                </li>
+
+                                                    {% set i = i + 1 %}
+
+                                                {% endfor %}
+
+
+                                            </ul>
+
+                                            <h3>Vous avez au total : <span id="countoptions">{{count}}</span> option(s)</h3>
+
+                                            <input type="hidden" id="totaloptions" name="totaloptions" value="1" />
+
+
+
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+                                    
+                                    <br><br>
+                                    <input type="submit"  value="Modifier cette liste" />
+                                    </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

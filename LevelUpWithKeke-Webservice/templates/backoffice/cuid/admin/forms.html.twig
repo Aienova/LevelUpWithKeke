@@ -1,0 +1,35 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Gérer vos formulaires</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                                <a href="./addform">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                add_circle
+                                </span>Ajouter un formulaire</div>
+                                </a>
+
+                                 {% include "backoffice/cuid/admin/blocks/tables/FormsTable.html.twig" %}
+
+                                
+                                </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}

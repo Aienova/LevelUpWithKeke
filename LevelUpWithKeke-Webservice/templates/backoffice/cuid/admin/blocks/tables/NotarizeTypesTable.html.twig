@@ -1,0 +1,60 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Nom</th>
+            <th>Carte consulaire nécéssaire ?</th>
+            <th>prix</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if notarizetypes is defined %}
+        {% if notarizetypes is not empty  %}
+
+        {% for notarizeType in notarizetypes |sort((a, b) => b.id <=> a.id) %}
+
+        <tr>
+            <td>{{notarizeType.id}}</td>
+            <td>{{notarizeType.frName}}</td>
+            <td>
+            {% if notarizeType.consularDocument != 1 %}<span class="red-text">Non</span>{% else %}
+            <span class="green-text">Oui</span>{% endif %}
+            </td>
+
+            {% if notarizeType.price == 0 %}
+
+            <td class="green-text">Gratuit</td>
+
+            {% else %}
+            <td class="blue-text">{{notarizeType.price}}€</td>
+
+            {% endif %}
+
+
+            <td>
+
+                {% set decision = '
+                
+                <a href="./edit-notarizetype/'~ notarizeType.id ~'"><span class="material-symbols-outlined ">edit</span></a>
+                
+                               <span data-action="delete" data-section="notarizetype" data-id="'~ notarizeType.id ~'" class="material-symbols-outlined open-editor">delete</span>'
+                
+                
+                %}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

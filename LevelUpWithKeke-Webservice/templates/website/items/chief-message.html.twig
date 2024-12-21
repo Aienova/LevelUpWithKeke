@@ -1,0 +1,68 @@
+            <section class="full-h" id="chief-message" >
+
+                        <div class="padder">
+
+                        <div class="flexible mobileblock full">
+
+
+
+                        <div class="chief-text">
+
+                        <h2>{{section.mainTitle}}</h2>
+
+                        <p>
+                        {{ section.content|raw }}
+                        </p>
+
+                        <h3 style="text-align:right"> - {{section.secondTitle}}</h3>
+
+
+                        
+                        </div>
+
+                        <img class="chief-photo hiddenformobile" src="{{ section.image }}">
+
+
+
+                        </div>
+                        </div>
+            </section>
+
+            <section id="statements">
+            
+
+            <h2>Communiqués de l'ambassade</h2>   
+
+            <div class="flexible mobileblock">
+
+
+            {% set countA = 1 %}
+
+
+            {% for statement in statements %}
+
+
+            
+                
+                       <a href="./article/{{statement.name}}"><div class="article-block">
+                       <h3>{{statement.publishDate|date("d/m/Y") }}</h3>
+                       <div class="thumbnail" style="background-image:url('/cuid/media/event-default.jpg'); background-size:cover;"></div>
+                       <h4 class="title uppercaser">{{statement.title}}</h4>
+                       </div></a>
+
+                    {% if countA % 3 == 0 %}
+
+                        </div><div class="flexible mobileblock">                      
+                        
+                    {% endif %}
+
+                                   {% set countA = countA + 1 %}
+
+            {% endfor %}
+
+
+
+            </div>
+
+            </section>
+

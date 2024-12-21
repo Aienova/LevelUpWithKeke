@@ -1,0 +1,16 @@
+ <h3>Uploader plusieurs documents</h3>
+
+
+         <fieldset>
+
+            <legend>Vos documents au format PDF</legend>
+
+            {{ form_start(multiform) }}
+
+            <div class="drag-n-drop-zone"><h3>Déposer votre fichier ici</h3></div>
+            {{ form_widget(multiform) }}
+
+            {{ form_end(multiform) }}
+
+
+         </fieldest>

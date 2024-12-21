@@ -1,0 +1,24 @@
+                    
+                    
+                    <div class="sub-menu">
+
+
+                                <ul class="submenu-list">
+
+                                {% for submenu in menu.cmssubmenus %}
+                                    <a href="{{submenu.url}}">
+                                    
+                                    <li>
+                                    
+                                    <sapn class="submenuname"><span class="selectmenu material-symbols-outlined" >arrow_right</span></span>{{submenu.title}}</span>
+
+
+                                    
+                                    </li></a>
+                                {% endfor %}
+
+                                </ul>
+
+
+                    </div>
+            

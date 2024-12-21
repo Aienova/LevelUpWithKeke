@@ -1,0 +1,70 @@
+
+            {% extends "assets.twig" %}
+        
+        {% block asset %}
+                        {% set path1 = path('cuid_admin_user_dashboard', {'section': 'home'})  %}
+                        {% set path2 = path('cuid_admin_user_dashboard', {'section': 'media'})  %}
+                        {% set path3 = path('cuid_admin_user_dashboard', {'section': 'pages'})  %}
+                        {% set path4 = path('cuid_admin_user_dashboard', {'section': 'services'})  %}
+                        {% set path5 = path('cuid_admin_user_dashboard', {'section': 'theme'})  %}
+                        {% set path6 = path('cuid_admin_user_dashboard', {'section': 'settings'})  %}
+                        {% set path7 = path('cuid_admin_connection')  %}
+                        
+        <header>
+
+        <img class="logo invert" src="/build/media/image/icons/cuid.png"/>
+
+        <ul id="menu">
+            <a href="{{ path1 }}"><li class="flexible"><div class="material-symbols-outlined">bar_chart_4_bars</div><div class="menuname">Tableau de Bord</div></li></a>
+
+            
+       
+
+            <a href="{{ path2 }}"><li class="flexible"><div class="material-symbols-outlined">image</div><div class="menuname">Images & Videos</div>
+            </li></a>
+
+
+            <a href="{{ path3 }}"><li class="flexible"><div class="material-symbols-outlined">description</div><div class="menuname">Pages & Article</div>
+                        {% include "backoffice/cuid/admin/blocks/submenu/submenu1.html.twig" %}
+            </li></a>
+
+
+
+            <a href="{{ path4 }}"><li class="flexible"><div class="material-symbols-outlined">info</div><div class="menuname">Services</div>
+                        {% include "backoffice/cuid/admin/blocks/submenu/submenu2.html.twig" %}  
+            </li></a> 
+
+
+            <a href="{{ path5 }}"><li class="flexible"><div class="material-symbols-outlined">palette</div><div class="menuname">Apparence</div>
+                        {% include "backoffice/cuid/admin/blocks/submenu/submenu3.html.twig" %}
+            </li></a> 
+
+       {#     <a ><li class="flexible"><div class="material-symbols-outlined">signal_cellular_alt</div><div class="menuname">Statistique</div>
+                                    {% include "backoffice/cuid/admin/blocks/submenu/submenu5.html.twig" %}   #}
+            
+            </li></a> 
+
+            <a ><li class="flexible"><div class="material-symbols-outlined">settings</div><div class="menuname">Paramètre</div>
+                                    {% include "backoffice/cuid/admin/blocks/submenu/submenu4.html.twig" %}
+            
+            </li></a> 
+
+
+            <a  href="{{ path7 }}"><li id="disconnect-button" class="flexible"><div class="material-symbols-outlined">power_settings_new</div><div class="menuname">Se déconnecter</div>
+            </li></a>
+
+        </ul>
+
+        </header>
+
+
+
+
+
+        <div id="tablet-button" class="open-button"><span class="material-symbols-outlined">menu</span></div>
+        <div id="smartphone-button"><span class="material-symbols-outlined">menu</span></div>
+
+
+        {% endblock %}
+
+

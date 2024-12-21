@@ -1,0 +1,139 @@
+
+                                <style>
+
+                                body{
+
+                                background-color:{{ graphics.primaryColor }};
+                                font-family:{{ graphics.fontText.name }};
+                                font-weight:{{ graphics.fontTextWeight.name }};
+                                background-image:url({{ graphics.backgroundImage }});
+                                background-repeat:
+                                 {% if graphics.backgroundRepeat == true %}
+
+                                        repeat
+
+                                {% else %}
+
+                                no-repeat
+                                 {% endif %} 
+                                
+                                ;
+
+                                background-size: contain;
+                   
+                                }
+
+
+
+                                h1,h2,h3,h4{
+
+                                        font-family:{{ graphics.fontTitle.name }};
+                                        
+                                        font-weight:{{ graphics.fontTitleWeight.name }};
+                                }
+
+                                
+                                
+
+                                .square{
+
+                                background-color:{{ graphics.secondaryColor }};
+
+
+                                }
+
+                                #booking-panel{
+
+                                background-color:{{ graphics.secondaryColor }};
+
+
+                                }
+
+                                .menuline {
+
+                                width: 0px;
+                                height: 5px;
+                                    background-color: {{ graphics.secondaryColor }};
+                                margin-top: 9px;
+                                transition-duration:1s;
+
+                                }
+
+                                .menuname{
+
+                                color:{{ graphics.secondaryColor }};
+
+
+                                }
+
+
+
+
+                                #menu li:hover .menuname  {
+                                
+                          
+                                    filter: brightness(0.5);
+
+                                
+   
+
+                                }
+
+                                #menu li:hover .menuname  {
+                                
+                               
+                                    filter: brightness(0.5);
+
+                                
+   
+
+                                }
+
+                                sapn.submenuname {
+                                color: grey;
+                                
+                                }
+
+
+
+                                .submenuname:hover  {
+                                
+                                
+                                color:{{ graphics.secondaryColor }};  
+                                    filter: brightness(0.5);
+
+                                
+   
+
+                                }
+
+                                li:hover .menuline {
+                                width: 100px;
+                                }
+
+                                button:hover {
+                                
+                                background-color:{{ graphics.thirdColor }}!important;
+                                }
+
+                                input[type=submit]:hover {
+                                
+                                background-color:{{ graphics.thirdColor }}!important;
+                                }
+
+                                header{
+
+                                background-color:{{ graphics.headerColor }};
+
+
+                                }
+
+                                
+                                footer{
+
+                                background-color:{{ graphics.footerColor }};
+
+                                }
+
+
+                                </style>

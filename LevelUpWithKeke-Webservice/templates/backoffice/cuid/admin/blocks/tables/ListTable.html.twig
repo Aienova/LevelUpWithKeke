@@ -1,0 +1,49 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Intitulé de liste</th>
+            <th>Nom de la donnée</th>
+            <th>Nombres d'options</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if list is defined %}
+        {% if list is not empty  %}
+
+        {% for list in list |sort((a, b) => b.id <=> a.id) %}
+
+        <tr>
+            <td>{{list.title}}</td>
+            <td>{{list.name}}</td>
+            <td>{{list.optionsTotal}}</td>
+
+            <td>
+
+            
+
+                {% set decision = '
+                
+                <a href="./edit-list/'~ list.id ~'"><span class="material-symbols-outlined decision-button">edit</span></a>
+                
+                <span data-action="delete" data-section="list" data-id="'~ list.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                
+                %}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

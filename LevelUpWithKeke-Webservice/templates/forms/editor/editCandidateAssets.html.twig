@@ -1,0 +1,138 @@
+                                       
+                                        
+                                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                        
+                                        <form id="yourAssets" method="POST" data-candidateid="{{candidate.id}}">
+
+
+
+                                            
+                                            <h3>Modifer vos informations personnelles</h3>
+
+                                            <fieldset>
+                                                        <legend>Quels sont vos 4 atouts:</legend>
+
+                                                        <h4><span id="assetcount" data-count="0">0</span> Atout(s) sélectionné(s) </h4>
+
+                                                        <div id="assets" class="flexible centralizer">
+                                                            
+                                                            {% set i = 0 %}
+                                                            {% for asset in assets|sort((a, b) => a.frname > b.frname) %}
+
+                                                                <div id="asset-order-{{i}}" class="asset unselected" data-assetid="{{asset.id}}">
+                                                                    <label for="asset-{{asset.id}}">
+                                                                        <img class="asset-logo" src="{{asset.image}}" />
+                                                                        <br><strong>{{asset.frname}}</strong> 
+                                                                    </label>
+                                                                    <input type="checkbox" class="checkasset" data-checked="0" value="{{asset.id}}"  id="asset-{{asset.id}}" name="asset{{i}}"/>
+                                                                    
+                                                                </div>
+                                                            
+                                                            {% set i = i + 1 %}
+
+                                                            {% if i % 4 == 0 %}
+                                                            
+
+                                                            </div>
+                                                            <div id="assets" class="flexible centralizer">
+
+                                                            {% endif %}
+                                    
+                                                            {% endfor %}
+
+
+                                                        </div>
+
+
+                                            </fieldset>
+
+
+                                        <input type="hidden" name="editor" value="Atouts modifiées"/>
+                                        <div id="form-validation"><input type="submit" name="editor" value="Modifier"/></div>
+                                        
+                                        </form>
+
+                                            <script>
+                                                        $('#yourAssets').submit(function(e){
+
+                                                            var id = $('#yourAssets').data("candidateid");
+
+                                                e.preventDefault();
+
+                                                $.ajax({
+                                                    url: '/edit-candidate-assets/'+id,
+                                                    type: 'POST',
+                                                    data:$('#yourAssets').serialize(),
+
+                                                    success: function(data) {
+                                                        $('#editor-form-display').html(data);
+                                                        location.reload();
+                                                    },
+                                                    error: function() {
+                                                        $('#editor-form-display').text('Erreur au niveau des résultats de recherches');
+                                                    }
+                                                });
+                                            });
+
+                                                        
+                                            $(document).ready(function () {
+
+                                                for(let i=0 ; i<18; i++){
+
+                                                    $('#asset-order-'+i).click(function(){
+                                                            
+                                                        var count = $('input:checkbox:checked').length;
+                                                        var assetid = $('#asset-order-'+i).attr('data-assetid');
+                                                        
+                                                        console.log("Assets selected : "+count);
+
+                                                    if(count <4) {
+                                                        
+                                                        $(".asset").removeClass("locked");
+
+
+                                                        if($('#asset-'+assetid).prop('checked')==true){
+
+                                                            $('#asset-order-'+i).removeClass("unselected");
+                                                            $('#asset-order-'+i).addClass("selected");
+
+                                                        }else{
+
+                                                            $('#asset-order-'+i).addClass("unselected");
+                                                            $('#asset-order-'+i).removeClass("selected");
+                                                        }
+
+                                                        $('#assetcount').html(count);
+
+                                                    }else{
+
+
+                                                        if(count==4) {
+
+                                                            if($('#asset-'+assetid).prop('checked')==true){
+
+                                                                $('#assetcount').html(count);
+                                                                $('#asset-order-'+i).removeClass("unselected");
+                                                                $('#asset-order-'+i).addClass("selected");
+                                                
+                                                            }else{
+                                                
+                                                                $('#asset-order-'+i).addClass("unselected");
+                                                                $('#asset-order-'+i).removeClass("selected");
+                                                            }
+
+                                                        }
+
+                                                        $("#assets .unselected").addClass("locked");
+                                                        
+                                                        console.log("Limit reached !");
+
+                                                    }
+
+                                                    });
+
+                                                }
+
+                                            });
+
+                                            </script>  

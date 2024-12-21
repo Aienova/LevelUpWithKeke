@@ -1,0 +1,100 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Code de réservation</th>
+            <th>Nom Prénom du visiteur</th>
+            <th>Date et heure du rendez-vous</th>
+            <th>Motif</th>
+            <th>Etat</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if bookings is defined %}
+        {% if bookings is not empty  %}
+
+
+
+        {% for booking in bookings |sort((a, b) => b.id <=> a.id) %}
+
+                        {% set decision = '
+                <span data-action="choose" data-section="booking" data-id="'~ booking.id ~'" class="material-symbols-outlined open-editor">help</span>' 
+                
+
+                
+                
+                %}
+
+             {% set state = "<span class='blue-text'>En attente de confirmation</span>" %}
+
+        {% if booking.decision.id == 2 %}
+        {% set state = "<span class='blue-text'>En attente de confirmation</span>" %}
+        {% endif %}
+
+        {% if booking.decision.id == 4 %}
+        {% set state = "<span class='orange-text'>En attente de confirmation (Reportée)</span>" %}
+        {% endif %}
+
+        {% if booking.confirmation == 1 and booking.decision.id == 2 %}
+        {% set state = "<span class='blue-text'>En attente de votre confirmation</span>" %}
+        {% endif %}
+
+        {% if booking.confirmation == 0 and booking.decision.id == 3 %}
+        {% set state = "<span class='blue-text'>En attente de confirmation du visiteur</span>" %}
+
+                                {% set decision = '
+                <span data-action="delete" data-section="booking" data-id="'~ booking.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                                %}
+
+
+
+        {% endif %}
+
+        {% if booking.confirmation == 1 and booking.decision.id == 3 %}
+        {% set state = "<span class='green-text'>Confirmée</span>" %}
+
+                                        {% set decision = '
+                <span data-action="delete" data-section="booking" data-id="'~ booking.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                                %}
+        {% endif %}
+
+
+        {% if booking.decision.id == 1 or booking.cancelled == 1 %}
+        {% set state = "<span class='red-text'>Annulée</span>" %}
+                                        {% set decision = '
+                <span data-action="delete" data-section="booking" data-id="'~ booking.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                                %}
+        {% endif %}
+
+
+
+        <tr>
+            <td>{{booking.code}}</td>
+            <td><a href="mailto:{{booking.customer.email}}">{{booking.customer.firstname}} {{booking.customer.surname}}</a></td>
+            <td>{{booking.bookingDate|date("d/m/Y h:i:s")}}</td>
+            <td>{{booking.subject}}</td>
+            <td>{{state|raw}}</td>
+
+
+
+
+            <td>
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

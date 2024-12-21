@@ -1,0 +1,36 @@
+                                            <form method="POST"  id="block-settings-{{setting.item.id}}" class="form-field">
+                                            <input type="hidden" name="form_data" value="1" />
+                                             <input type="hidden" name="EditFormItem" value="1" />
+                                            <input type="hidden" name="entity" value="{{setting.id}}" />
+                                               
+                                                    <h3>Message du responsable ( # {{setting.id}} )</h3>
+
+                                                                                            {% if homepage is defined %}
+
+                                    <input type="hidden" name="homepage_data" value="chief-message" />
+
+                                        {% else %}
+                                        
+                                            <input type="hidden" name="form_data" value="1" />
+
+                                        {% endif %}
+
+                                       <p> <strong>Titre principal</strong><br>
+                                        <input type="text" name="maintitle" placeholder="Titre principale" value="{{setting.mainTitle}}" /></p>
+
+                                       <p> <strong>Le Message</strong><br>
+                                        <textarea name="content">{{setting.content}}</textarea></p>
+
+                                            {% include "backoffice/cuid/admin/blocks/plugins/image-selector/plugin.html.twig" %}
+                                                  
+
+                                                 
+
+
+
+                                                    <input type="hidden" name="formItem" value="1" />
+                                                    <input type="hidden" name="editfield" value="1" />
+
+                                                    <input type="submit" value="Modifier"/>
+                                                
+                                                </form>

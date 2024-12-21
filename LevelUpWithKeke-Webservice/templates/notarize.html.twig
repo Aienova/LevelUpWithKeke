@@ -1,0 +1,62 @@
+
+<div id='popup'>
+<h2>Demande {{notarize.numberId}}</h2>
+
+        <h3>Information général</h3>
+            <ul>
+                <li>Prénom : {{notarize.customer.firstname}}</li>
+                <li>Nom: {{notarize.customer.surname}}</li>
+                <li>Type de demande: {{notarize.type.frName}}</li>
+                <li>Date de la demande : {{notarize.dateCreation|date("d/m/Y h:i:s")}}</li>
+            </ul>
+
+        <h3>Commentaire de l'ambassade</h3>
+
+            <p>
+
+            {% if notarize is empty %}
+
+               Aucun commentaire
+
+            {% else %}
+
+                {{notarize.comment}}
+
+            {% endif %}
+
+
+            </p>
+
+                <button id="close-popup">Fermer</button>
+</div>
+
+
+
+    <script>
+
+        $("#popup").removeClass("hidden");
+        $("#popup").addClass("showing");
+
+
+        $("#close-popup").click(function(){
+
+            $("#popup").removeClass("showing");
+            $("#popup").addClass("hidden");
+
+        });
+
+                /*
+
+                setTimeout(function() {
+
+            $("#popup").removeClass("showing");
+
+                    },2000);
+
+
+            setTimeout(function() {
+
+            $("#popup").addClass("hidden");
+
+                    },3000);  */
+    </script>

@@ -1,0 +1,30 @@
+{# templates/payment/index.html.twig #}
+
+
+
+                <div id='popup'>
+                <span id="close-this" class="material-symbols-outlined clickable">cancel</span>
+
+
+                                <h3>Vos modes de paiement</h3>
+
+            <a href="{{stripe_checkout}}"><button>Payer avec stripe</button></a> <a href="{{paypal_checkout}}"><button>Payer avec Paypal</button></a>
+
+                </div>
+
+    <script>
+
+        $("#popup").removeClass("hidden");
+        $("#popup").addClass("showing");
+
+
+        $("#close-this").click(function(){
+
+            console.log("close");
+        $("#message-form").html("");
+        $("#message-form").addClass("hidden");
+
+        });
+
+
+    </script>

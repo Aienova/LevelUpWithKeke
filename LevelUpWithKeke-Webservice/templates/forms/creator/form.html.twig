@@ -1,0 +1,85 @@
+  <form method="POST" id="visa-form" class="middle-form" enctype="multipart/form-data">
+                <input type="hidden" name="formType" value="0"/>
+
+
+
+                                {% set hidden = "" %}
+
+                                {% for step in form.FormSteps %}
+
+                                {% if step.position > 1 %}
+
+                                {% set hidden = "hidden" %}
+
+                                {% endif %}
+
+                                <div id="step{{step.position}}" class="step {{hidden}}">
+
+                                                            <h2>{{step.name}}</h2>
+                                        {% set count = 0  %}
+
+                                        {% for setting in form.FormItemSettings %}
+
+
+
+
+                                {% if setting.FormStep.position == step.position %}
+
+
+
+                                <input type="hidden" name="form_{{setting.Form.Id}}_field_{{count}}_column" value="{{setting.name}}">
+
+
+                                {% include "forms/creator/items/" ~ setting.FormItem.name ~ ".html.twig" %}
+                                
+
+                                {% endif %}
+
+                                                                        {% set count = count + 1  %}
+
+                                        {% endfor %}
+                                        
+                                           
+                                           
+                                           {% if step.position == form.steps %}
+
+                                               <p><label>Avez-vous un commentaire ?</label><br>
+                                                <textarea name="comment"></textarea>
+                                             </p>       
+                                        {% endif %}
+
+                                    <div class="flexible">
+
+                                    {% if step.position > 1 %}
+
+                                    {% set previous = step.position - 1 %}
+
+                                            <nav class="movestep" data-step="{{previous}}"> Etape précédente</nav>
+                                {% endif %}  
+
+
+                                
+                                    {% if step.position < form.steps %}
+
+                                    {% set next = step.position + 1 %}
+
+                                            <nav class="movestep" data-step="{{next}}"> Etape suivante</nav>
+                                             
+                                {% endif %}  
+                                             {% if step.position == form.steps %}
+
+
+                                                    
+                                             
+                                             <input type="submit" value="Envoyer votre demande" /> 
+
+                                             {% endif %}                 
+                                    </div>
+
+                                </div>
+
+                                 {% endfor %}
+
+
+
+                  </form>

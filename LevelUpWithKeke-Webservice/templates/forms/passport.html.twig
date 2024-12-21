@@ -1,0 +1,64 @@
+           <form method="POST" id="visa-form" class="middle-form" enctype="multipart/form-data">
+
+                <input type="hidden" name="formType" value="4"/>
+
+                                <div id="step1" class="step">
+
+                                <h2>Passeport: Vérification</h2>
+                         {% if customer.id == 1 %}
+                              <div class="flexible mobileblock">
+                                 <p><label>Déjà enregistré ? Entrez votre adresse email :
+                                     <input type="text" name="email" required/>
+                                </label></p>
+
+                                <p><label>Votre nom :
+                                     <input type="text" name="surname"  required/>
+                                </label></p>
+
+
+                                <p><label>Votre prénom :
+                                     <input type="text" name="firstname"  required/>
+                                </label></p>
+
+                              </div>
+
+                              {% endif %}
+
+                              <div class="flexible mobileblock">
+                                <p><label>Le numéro de votre pièce :
+                                     <input type="text" name="numberId" required/>
+                                </label></p>
+
+                         {% if customer.id == 1 %}
+                                <p><label>Le numéro de téléphone :
+                                     <input type="text" name="telephone" required/>
+                                </label></p>
+                         {% endif %}
+                              </div>
+
+                        
+                                    <div class="flexible mobileblock">
+ 
+                                            <input type="submit" value="Envoyer votre demande"/>
+                                    </div>
+
+                                </div>
+
+                                
+                            {% if passports is not null %}
+
+                            <h3>Document(s) trouvé(s) : </h3>
+
+                            <ul>
+                                {% for passport in passports %}
+
+                                <li><strong>Passport - {{passport.numberId}} :</strong> Délivré le {{passport.deliveryDate|date("d/m/Y h:i:s")}} par {{passport.deliveryAutority}}, expire le {{passport.expirationDate|date("d/m/Y h:i:s")}}</li>
+                                    
+                                {% endfor %}
+
+                            </ul>
+                                
+                            {% endif %}
+
+
+                            </form>

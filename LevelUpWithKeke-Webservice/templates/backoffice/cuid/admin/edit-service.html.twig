@@ -1,0 +1,295 @@
+      {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Demande : {{service.type.frName}} par {{service.customer.firstname}} {{service.customer.surname}}</h1>
+                        
+                    </div>
+
+                    <div id="square-menu">
+
+                    <div id="decision-notification" class="{{service.decision.classColor}}flag"><h2>{{service.decision.symbol|raw}}{{service.decision.frName}}</h2></div>
+
+                                <div class="square">
+
+                                <div class="flexible">
+                                <a href="../services">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos demandes clients</div>
+                                </a>
+                            </div>
+
+                            <div class="flexible">
+
+                             <div class="optionbutton sider" data-side="general-info">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Informations générales</span>
+
+                            </div>
+
+                            <div class="optionbutton sider" data-side="details-info">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Détails complets</span>
+
+                            </div>
+
+                            </div>
+
+
+                            <div class="flexible">
+
+                            <div id="general-info" class="column black-text side">
+                                <h2>Informations générales</h2>
+
+                                <ul id="general-info-list">
+                                    <li>Identitifiant : {{service.numberId}}</li>
+                                    <li>Date d'émission : {{service.dateCreation|date("d/m/Y h:i:s")}}</li>
+                                    <li>Type de la demande : {{service.type.frName}}</li>
+                                </ul>
+
+                                <div id="general-info-customer">
+                                <h2>Informations sur le client</h2>
+
+                                <ul id="general-info-customer-list">
+                                <li>   
+
+            {% if service.customer.id != 1 %}
+                <img class="identity-photo" id="blah" src="{{service.customer.person.photo.link}}" alt="your image" /><br>
+            {% else %}
+                         <img class="identity-photo" id="blah" src="../cuid/media/image/identity.jpg" alt="your image" /><br>           
+            {% endif %}
+
+            </li>
+                                <li>Prénom : {{service.customer.firstname}}</li>
+                                <li>Nom :  {{service.customer.surname}}</li>
+                                <li>Adresse email :  <a href="mailto:{{service.customer.email}}">{{service.customer.email}}</a></li>
+                                <li>Telephone :  <a href="tel:{{service.customer.email}}">{{service.customer.telephone}}</a></li>
+                                <li>Adrese postale :  {{service.customer.mainLocation}}</li>
+                                </ul>
+                                </div>
+
+                                <div id="general-info-comments">
+                                <h2>Commentaires du client</h2>
+
+                                <p>{{service.comment}}</p>
+
+                            
+                                </div>
+
+
+
+
+                            </div>
+
+                            <div id="details-info"  class="column side hidden">
+
+                            {% if details is not empty %}
+
+                            <h2>Détails complet de la demande</h2>
+
+                                <ul id="details-list">
+                                {% for detail in details %}
+                                    <li><strong>{{detail.name}} : </strong>{{detail.value}}</li>
+                                {% endfor %}
+                                </ul>
+                            {% else %}
+
+                            {% if service.type.id <= 2 %}
+
+                            {% include "/backoffice/cuid/admin/blocks/tables/"~ service.type.frName ~"Details.html.twig"%}
+
+                            {% else %}
+
+                            {% if service.type.id == 7 %}
+
+                            {% include "/backoffice/cuid/admin/blocks/tables/EnregistrementDetails.html.twig"%}
+
+                            {% endif %}
+
+                            <h3>Aucun détails supplémenatire sur cette demande </h3>
+
+                            {% endif %}
+
+                            {% endif %}
+
+                            <br><br>
+
+                            <h2>Document(s) numérique(s) envoyé(s) par le client :    </h2>
+
+                                <div id="details-documents">
+                                    <div class="flexible">
+                                    {% set count = 1 %}
+                                {% if service.CMSDocuments is not empty %}
+                                {% for document in service.CMSDocuments %}
+                                    <a href="{{document.link}}" target="_blank"><div class="cubable central-text"><img class="icon" src="/build/media/image/icons/file.png" /><br></strong>{{document.name}}</div></a>
+                                    {% if count is divisible by(2) %}
+                                    </div><div class="flexible">
+                                    {% endif %}
+                                    {% set count = count + 1 %}
+                                {% endfor %}
+                                {% else %}
+
+                                <h3>Aucun document n'a été renseigné pour cette demande</h3>
+
+                                {% endif %}
+                                 
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            
+
+
+                            <form id="company-responses" method="POST" enctype="multipart/form-data"  class="column">
+                                <input type="hidden" name="service_data"  value="1"/>
+                            {% if service.cost > 0 %}
+
+                            {% set prize = service.cost ~ "€" %}
+
+                            {% elseif service.cost == 0 %}
+
+                           {% set prize = "Gratuit" %}
+
+                           {% else %}
+
+                           {% set prize = "Non défini" %}
+
+                            {% endif %}
+                            
+                            <div id="initial-prize"> <h2>Coût de la demande : {{prize}}</h2></div>
+
+                                    <h2>Réponses de l'ambassade :</h2>
+
+                            <p><label>Cette demande du client est :</label>
+
+
+
+                        <div class="flexible">
+                            <div>
+                                <input type="radio" id="decision-reject" name="decision" value="1"  {% if service.decision.id == 1 %} checked {% endif %} />
+                                <label for="decision-reject">Rejetée</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="decision-wait" name="decision" value="2"  {% if service.decision.id == 2 %} checked {% endif %} />
+                                <label for="decision-wait">En attente</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="decision-check-again" name="decision" value="4"  {% if service.decision.id == 4 %} checked {% endif %} />
+                                <label for="decision-check-again">Revérifier</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="decision-validate" name="decision" value="3"  {% if service.decision.id == 3 %} checked {% endif %} />
+                                <label for="decision-validate">Validée</label>
+                            </div>
+                            
+                        </div>
+
+                        {% if service.type.id != 2 %}
+
+                        <p>
+                        <label>Prix de la demande
+                        <input type="number" name="price" min="0" value="{{service.cost}}" step="any"/>
+                        </label>
+                        </p>
+                            
+                        {% endif %}
+
+                        {% if service.type.id > 2 and service.type.id != 7 %}
+
+                        <p>
+                        <label>Le numéro de référence du document
+                        <input type="text" name="documentId" value="{{service.person.consularCardId}}"/>
+                        </label>
+                        </p>
+
+                        <p>
+                        <label>La clé de controle
+                        <input type="text" name="codeDocument"  />
+                        </label>
+                        </p>
+
+                        
+                        {% endif %}
+
+
+
+                        {% if service.type.id == 7 %}
+
+                        <p>
+                        <label>Numéro de la Carte consulaire
+                        <input type="text" name="documentId" value="{{service.person.consularCardId}}"/>
+                        </label>
+                        </p>
+
+                        <p>
+                        <label>La clé de controle
+                        <input type="text" name="codeDocument"  />
+                        </label>
+                        </p>
+                            
+                        {% endif %}
+
+
+
+                        <p>
+                        <label>Remarques de l'ambassade (Si il manque des informations ou des documents)
+                        <textarea name="comment">{{service.companyComment}}</textarea>
+                        </label>
+                        </p>
+                                {#
+
+                                    
+
+
+                                    <input type="hidden" name="addpage_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+                                            <p>
+                                            <h2>Titre de votre page :</h2>
+                                            <input type="text" value="{{page.title}}" name="title" />
+                                            </p>
+
+                                                                                        <p>
+                                            <h2>Description de votre page :</h2>
+                                            <textarea name="description" >{{page.description}}</textarea>
+                                            </p>
+
+                                            <p>
+                                            <h2>Contenu de votre page :</h2>
+
+                                      
+
+                                            </p>
+
+                                  
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+
+
+
+                                    <input type="submit"  value="Répondre à la demande" />
+                                    </form>
+
+                     </div>
+                 </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

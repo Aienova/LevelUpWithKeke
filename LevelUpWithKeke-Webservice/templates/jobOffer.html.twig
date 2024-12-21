@@ -1,0 +1,181 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="fonctionnal">
+
+            <div id="page-banner">
+            <h1>Offres d'emplois</h1>
+
+            </div>
+
+            <div id="page-content">
+            <h2>Le descriptif de l'offre d'emploi</h2>
+            <p>Veuillez remplir les informations sur le moteur de recherche</p>
+
+               <div class="flexible">
+               {% if part == "recruiter-area"%}
+
+                <a href="{{ path('cuid_recruiter_area_job_offers') }}"><div class="addbutton" id="add-jobOffer">Rechercher d'autres offres d'emplois <span class="material-symbols-outlined">search</span></div></a>
+                <a href="{{ path('cuid_recruiter_area_applications') }}"><div class="addbutton" id="add-jobOffer">Consulter la liste de vos candidatures <span class="material-symbols-outlined">list</span></div></a>
+                
+                {% else %}
+                
+                <a href="{{ path('cuid_candidate_area_job_offers') }}"><div class="addbutton" id="add-jobOffer">Rechercher d'autres offres d'emplois <span class="material-symbols-outlined">search</span></div></a>
+                <a href="{{ path('cuid_candidate_area_applications') }}"><div class="addbutton" id="add-jobOffer">Consulter la liste de vos candidatures <span class="material-symbols-outlined">list</span></div></a>
+                                
+                {% endif %}
+
+
+            </div>
+
+          <div id="joboffer" data-route="joboffer" class="flexible square white-text">
+
+            
+                <div id="identity" class="item">
+
+                        <a href="{{ path('cuid_company',{id: jobOffer.company.id})}}"><img class="logo-company" src="{{ app.request.getSchemeAndHttpHost() }}\{{jobOffer.company.logo}}"></a>
+                            <ul class="info-item-list"> 
+                                <li><h2>{{jobOffer.title}}</h2></li>
+                                <li><h3>{{jobOffer.company.name}}</h3></li>
+                                <li>Métier : {{jobOffer.job.FRname}}</li>
+                                <li>Niveau d'étude requis : {{jobOffer.licence.FRname}}</li>
+                                <li>Localisation : {{jobOffer.location}}</li>
+                                <li>Date de disponibilité : {{ jobOffer.startDate|date("d/m/Y") }}</li>  
+                                <li>Type de contrat : {{jobOffer.contract.FRname}}</li> 
+                                <li>Rémunération : {{jobOffer.wage}}{{jobOffer.wageCurrency}}{{jobOffer.wageType}}</li> 
+                                {% if part == "recruiter-area"%}
+                                <li><button>Modifier les coordonnées</button></li>
+                                {% endif %}
+                            
+                            </ul>
+              
+
+                    
+                    <h3>Le suivre:</h3>
+                        {% for media in media %}
+                        <a href="{{media.url}}" target="_blank"><img class="logo-mini invert" src="/build/media/image/icons/{{media.name}}.png" /></a>
+                    {% endfor %}
+                    
+                    {% if part == "recruiter-area"%}
+                        <button>Modifier les réseaux sociaux</button>
+                    {% endif %}
+                    
+
+                </div>
+
+                        <div id="description" class="item">
+
+                                    <h2>Votre description :</h2>
+
+                                    <p>{{jobOffer.description}}</p>
+                                    {% if part == "recruiter-area"%}
+                                    <button>Modifier la description</button>
+                                    {% endif %}
+
+                                       
+                                    <h2>Les missions</h2>
+                                        <ul>
+                                        {% for mission in missions  %}
+                                            <li>{{mission.description}}</li>
+                                        {% endfor %}
+                                        </ul>
+                                      
+
+                                    {% if part == "recruiter-area"%}
+                                {#    <button>Modifier la mission</button>  #}
+                                    {% endif %}
+                        </div>
+
+                              <div id="skills" class="item">
+
+                
+
+                            <h2>Compétence(s) requise(s)</h2>
+
+                        
+                                <div class="flexible">
+
+                                        <div class="column">
+
+                                        {% set count = 0 %}
+                                        {% for skill in skills %}
+                                                    <div class="skill">
+                                                            <span>{{skill.skillName}} :</span><span class="exp">{{skill.skillExp}} ans xp</span>
+                                                                <div class="skillbar">
+                                                                    <div class="skilllevel level{{skill.skillExp}}"></div>                                            
+                                                                </div>
+                                                    </div>
+
+                                        {% set count = count + 1 %}
+
+                                         {% if count is divisible by(5) %}
+
+                                        </div>
+                                        <div class="column">
+
+
+                                        {% endif %}
+
+                                        {% endfor %}
+
+
+                                        </div>
+
+                                </div>
+
+                                <br>
+                    
+
+                            <h2>Nos avantages</h2>
+
+                                <div class="flexible">
+
+                                {% for advantage in advantages %}
+                                    <div class="asset"><img class="asset-logo" src="/build/media/image/icons/advantage/{{advantage.name}}.png" /><br><strong>{{advantage.FRname}}</strong> </div>
+                                {% endfor %}
+                                </div>
+
+
+                                <div id="apply">
+                           
+
+                                {% if part == "candidate-area"%}
+
+                                     <h3>Compatibilité : {{compatibility}} %</h3>
+
+                                    {% if applied == FALSE %}
+
+                                        <form method="POST">
+                                            <h3>Candidater dès maintenant pour cette offre</h3>
+                                            <input type="submit" name="apply" value="Je dépose ma candidature">
+                                        </form>
+                                    
+                                    {% else %}
+
+                                    <h3>Vous avez déjà candidater à cette offre</h3>
+
+                                    {% endif %}
+                                {% endif %}
+
+
+
+
+                                </div>
+
+                   
+                            
+    
+            
+            
+                        </div>
+
+        </section>
+
+        {% endblock %}
+
+             

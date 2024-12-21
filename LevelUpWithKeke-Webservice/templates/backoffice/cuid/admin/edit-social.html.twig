@@ -1,0 +1,78 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifier un réseau social</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                             <div class="flexible">
+                                <a href="../socialmedia">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos réseaux sociaux</div>
+                                </a>
+
+                                <a href="../addsocial">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                add_circle
+                                </span>Ajouter un nouveau réseau social</div>
+                                </a>
+                            </div>
+
+
+                                    <form id="page-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="social_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+                                            <p>
+                                            <h2>Choisir un réseau social :</h2>
+                                            <select name="socialmediaType">
+                                                {% for socialtype in socialMediaTypes           %}
+                                                    <option value="{{socialtype.id}}"  {% if socialtype.id == social.socialmediaType.id %} selected {% endif %}>{{socialtype.name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                            </p>
+
+                                            <p>
+                                            <h2>Lien de votre réseau social</h2>
+                                            <input type="text" name="link" value="{{social.link}}" />
+                                            </p>
+
+                                            <p>
+                                            <h2>Le rendre visibile ?</h2>
+                                            <label for="yes">Oui<input type="radio" id="yes" name="visibility" value="1" {% if social.visibility == 1 %} checked {% endif %}></label>
+                                            <label for="no">Non<input type="radio" id="no" name="visibility" value="0" {% if social.visibility == 0 %} checked {% endif %}></label>
+                                            </p>
+
+
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+
+                                    <input type="submit"  value="Modifier le réseau social" />
+                                    </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

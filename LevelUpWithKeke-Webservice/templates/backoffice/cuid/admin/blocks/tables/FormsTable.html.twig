@@ -1,0 +1,53 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Titre de formulaire</th>
+            <th>Date de creation</th>
+            <th>Description</th>
+            <th>Auteur</th>
+            <th>Type de service</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if forms is defined %}
+        {% if forms is not empty  %}
+
+        {% for form in forms |sort((a, b) => b.id <=> a.id) %}
+
+        <tr>
+            <td>{{form.title}}</td>
+            <td>{{form.creationDate|date("d/m/Y h:i:s")}}</td>
+            <td>{{form.description}}</td>
+             <td>{{form.author}}</td>
+            <td>{{form.notarizeType.frName}}</td>
+            <td>
+
+            
+
+                {% set decision = '
+                
+                <a href="./edit-form/'~ form.id ~'"><span class="material-symbols-outlined decision-button">edit</span></a>
+                
+                <span data-action="delete" data-section="form" data-id="'~ form.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                
+                
+                %}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

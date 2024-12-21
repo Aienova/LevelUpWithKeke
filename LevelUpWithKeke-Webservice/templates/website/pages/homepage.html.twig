@@ -1,0 +1,84 @@
+
+
+       {% extends "base.html.twig" %}
+    
+
+        {% block content %}
+
+
+        {% for section in sections|sort((a, b) => a.position <=> b.position) %}
+
+                 {% include '/website/items/'~ section.item.name ~ '.html.twig' %}
+
+        {% endfor %}
+
+
+
+
+          <!--  <div id="search-engine"></div> -->
+
+                                  {#
+           
+            <section class="full-h" id="partners">
+
+                        
+
+                        <div class="flexible full">
+
+                        
+
+                        <div class="content central-text">
+                        <h2>Nous travaillons avec des entreprises partenaires afin d'améliorer notre service</h2>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Integer augue lectus, pretium eget tincidunt at, aliquam vitae libero.
+                         Mauris non quam purus. Pellentesque nec pretium dui. Pellentesque elementum imperdiet diam in elementum. 
+                         Duis semper elementum auctor. Cras facilisis risus libero, quis eleifend ante dapibus et. 
+                         Curabitur nec tempus dolor, consequat lacinia augue. Sed pulvinar volutpat quam. Cras venenatis dolor ut congue sodales. 
+                         Sed placerat sit amet sapien sit amet ornare. Nullam ornare tincidunt nibh, at elementum nunc. Sed leo mauris, efficitur sit amet nisl non, 
+                         porta congue dolor. Phasellus a elementum elit, ac luctus lacus.</p>
+
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue lectus, pretium eget tincidunt at, aliquam vitae libero. Mauris non quam purus. Pellentesque nec pretium dui. Pellentesque elementum imperdiet diam in elementum. Duis semper elementum auctor. Cras facilisis risus libero, quis eleifend ante dapibus et. Curabitur nec tempus dolor, consequat lacinia augue. Sed pulvinar volutpat quam. Cras venenatis dolor ut congue sodales. Sed placerat sit amet sapien sit amet ornare. Nullam ornare tincidunt nibh, at elementum nunc. Sed leo mauris, efficitur sit amet nisl non, porta congue dolor. Phasellus a elementum elit, ac luctus lacus.</p>
+                        
+                        <div id="partners" class="centralizer">
+
+
+                                         <img class="logo" src="{{ asset('build/media/image/icons/logo-partner.png') }}"/>
+                                         <img class="logo" src="{{ asset('build/media/image/icons/logo-partner.png') }}"/>
+                                         <img class="logo" src="{{ asset('build/media/image/icons/logo-partner.png') }}"/>
+                                         <img class="logo" src="{{ asset('build/media/image/icons/logo-partner.png') }}"/>
+                                         <img class="logo" src="{{ asset('build/media/image/icons/logo-partner.png') }}"/>
+                                         <img class="logo" src="{{ asset('build/media/image/icons/logo-partner.png') }}"/>
+                                   
+
+                        <h2>Nous recherchons des entreprises pour un partenariat dans les secteurs d'activités suivantes :</h3>
+                        <div id="search-partners">
+                        
+                                <div class="flexible"><h3>Hotellerie</h3><h3>Restauration</h3><h3>Ingénieurie</h3><h3>Transport/Voyage</h3></div>
+                                <div class="flexible"><h3>Assurance</h3><h3>Banque / Finance </h3>  <h3>Cabinet de recrutement</h3></div>
+                        
+                        </div>
+
+                        </div>
+
+
+                        
+
+                        
+                        
+                        </div>
+
+                        
+
+                        
+            </section>
+
+
+
+
+
+            #}
+
+        {% endblock %}
+
+             

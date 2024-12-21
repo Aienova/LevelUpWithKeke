@@ -1,0 +1,160 @@
+      {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifer votre article</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                        <div class="flexible">
+                                <a href="../articles">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos articles</div>
+                                </a>
+
+                                <a href="../addarticle">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                add_circle
+                                </span>Ajouter un nouvel article</div>
+                                </a>
+                            </div>
+
+
+
+
+                                    <form id="page-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="article_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+                                            <p>
+                                            <h2>Titre de votre page :</h2>
+                                            <input type="text" value="{{article.title}}" name="title" />
+                                            </p>
+
+                                                                                        <p>
+                                            <h2>Description de votre page :</h2>
+                                            <textarea name="description" >{{article.description}}</textarea>
+                                            </p>
+
+                                                                                        <p>
+                                            <h2>Date de publication :</h2>
+                                            <input type="date" name="publishDate" value="{{ article.publishDate|date("Y-m-d") }}" />
+                                            </p>
+
+                                                                                        <p>
+                                            <h2>Catégorie de l'article :</h2>
+                                            <select  name="category">
+
+                                            {% for category in categories %}
+
+                                            <option value="{{category.id}}"
+                                            
+                                            {% if category.id == article.category.id %}
+
+                                                selected
+                                                
+                                            {% endif %}                                            
+                                            
+                                            
+                                            >{{category.title}}</option>
+
+                                            {% endfor %}
+
+                                            </select>
+                                            </p>
+
+                                            
+                                            <p>
+                                            <h2>Mot-clé de l'article :</h2>
+                                            <select name="tag">
+
+                                            {% for tag in tags %}
+
+                                            <option value="{{tag.id}}"
+                                            
+                                            {% if tag.id == article.tag.id %}
+
+                                                selected
+                                                
+                                            {% endif %}  
+                                            
+                                            >{{tag.title}}</option>
+
+                                            {% endfor %}
+
+                                            </select>
+                                            </p>
+
+
+                                            <h2>Cette article est-il un communiqué de presse, un message important de l'mabassade ?</h2>
+                                            <p> <strong>Note :</strong> Les articles communiqués de presses s'affichent en haut dans la page d'accueil </p>
+                                            <label>Oui<input type="radio" name="statement" value="1" 
+
+                                            {% if article.statement == 1 %}
+
+                                            checked
+                                                
+                                            {% endif %}
+                                            
+                                            /></label>
+
+
+
+                                            <label>Non<input type="radio" name="statement" value="0" 
+                                            
+
+                                            {% if article.statement == 0 %}
+
+                                            checked
+                                                
+                                            {% endif %}
+                                            
+                                            
+                                            /></label>
+                                            </p>
+
+
+
+                                            <p>
+                                            <h2>Contenu de votre page :</h2>
+
+                                            {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}
+
+                                            </p>
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+
+                                        <p>
+                                        
+                                        <h2>Image de présentation :</h2>
+                                         {% include "backoffice/cuid/admin/blocks/plugins/image-selector/plugin.html.twig" %}
+
+                                            </p>
+
+                                    <input type="submit"  value="Modifier cette article " />
+                                    </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

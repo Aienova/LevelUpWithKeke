@@ -1,0 +1,31 @@
+       
+        
+        <div id="uplaod-identity-photo">
+        <p>Votre photo d'identité</p>
+
+
+
+    {% if customer.person is not null %}
+
+            {% if customer.id != 1 %}
+                <img class="identity-photo" id="blah" src="{{customer.person.photo.link}}" alt="your image" /><br>
+            {% else %}
+                         <img class="identity-photo" id="blah" src="../cuid/media/image/identity.jpg" alt="your image" /><br>           
+            {% endif %}
+
+                {% else %}
+                        <img class="identity-photo" id="blah" src="../cuid/media/image/identity.jpg" alt="your image" /><br>
+    {% endif %}
+
+        <input accept="image/*" type='file' name="idPhoto" id="imgInp"/>
+
+
+            <script>
+            imgInp.onchange = evt => {
+            const [file] = imgInp.files
+            if (file) {
+                blah.src = URL.createObjectURL(file)
+            }
+            }
+            </script>
+        </div>

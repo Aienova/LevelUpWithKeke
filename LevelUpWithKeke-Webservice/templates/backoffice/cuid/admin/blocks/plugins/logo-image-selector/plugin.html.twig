@@ -1,0 +1,66 @@
+<div id="image-selector">
+
+{% if media is not empty %}
+
+                                <div id="media-gallery">
+
+                                <nav class="flexible">
+
+                                {% set count = 0 %}
+
+
+                                {% for media in media|sort((a, b) => b.id <=> a.id) %}
+
+
+                                    <div class="media-block">
+                                        <label for="logo{{media.id}}">
+                                        <div  style="background-image:url('{{media.link}}')" class="media-thumbnail"></div>
+                                        <span>{{media.name}}</span>
+                                        <a href="{{media.link}}"><span class="material-symbols-outlined">visibility</span></a><br>
+                                        <br><input type="radio" id="logo{{media.id}}" name="picture" value="{{media.id}}"
+                                        
+                                        {% if website is defined %}
+                                        {% if media.id == website.logo.id %}
+
+                                        checked
+
+
+                                        {% endif %}
+                                        {% endif %}
+
+
+                                        {% if performance is defined %}
+                                        {% if media.id == performance.logo.id %}
+
+                                        checked
+
+
+                                        {% endif %}
+                                        {% endif %}
+                                        
+                                        />
+                                        </label>
+                                    </div>
+
+                                     {% set count = count + 1 %}
+
+                                {% endfor %}
+
+
+
+                                </nav>
+
+
+
+                                </div><br>
+
+
+{% else %}
+
+<h2>Vous n'avez aucune nouvelle image dans votre bibliothèque média</h2>
+
+{% endif %}
+
+<a href="/cuid/dashboard/media"><nav>Ajouter une nouvelle image dans la galerie</nav></a>
+
+</div>

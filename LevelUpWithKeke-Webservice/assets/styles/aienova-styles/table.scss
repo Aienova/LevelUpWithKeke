@@ -1,0 +1,85 @@
+table {
+    width: 100%;
+    background-color: black;
+
+    thead {
+        background-color: black;
+        color: white;
+        height: 50px;   
+    }
+
+    th {
+        width: 100px;
+
+    }
+
+
+    td {
+        background-color: white;
+        height: 77px;
+        text-align: center;
+        color:black;
+
+
+
+    }
+
+    a {
+
+        color:orange!important;
+    }
+
+
+}
+
+.decision-button{
+
+    cursor:pointer;
+    padding:10px;
+
+
+}
+
+.open-editor{
+
+    cursor:pointer;
+
+}
+
+.open-editor:hover{
+
+    cursor:pointer;
+    color:white;
+    background-color: black;
+
+}
+
+
+
+.decision-button:hover{
+
+    background-color: black;
+    color:white;
+
+
+}
+
+#displaytTable {
+    width: 100%;
+    overflow-x: scroll;
+
+    th{
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    
+    td{
+
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+}

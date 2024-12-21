@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html class="full-h">
+    <head>
+
+                    
+
+                    {% block javascripts %}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            {{ encore_entry_link_tags("customer-area-styles") }}
+            {{ encore_entry_script_tags("customer-area-scripts") }}
+                    {% endblock %}
+
+                                        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+
+                    <title>Paiement validée</title>
+    </head>
+
+    
+    <body class="full-h">
+
+       <!-- 
+
+                    DISCONNECT BUTTON   
+
+        <form id="disconnection" method="POST">
+                <input type="hidden" name="disconnection" value="1" />
+                <input type=  
+                "submit" value="Disconnect">
+
+
+        </form> -->
+
+        <main id="payment-complete">
+
+      <div id="message-form"></div>
+      <div id="subscribe-form" class="central-text">
+        <h1>Votre paiement à bien été enregistré, vous trouverez ci-joint la facture de la réservation {{booking.code}}</h1>
+
+
+        <button data-action="/booking-preview/{{booking.id}}" class="decision-button" ><span class="material-symbols-outlined decision-button">print</span>Consulter votre facture</button>
+
+        <a href="{{ path('cuid_customer_area_home') }}"><button>Retourner à l'espace client</button></a>
+      </div>
+
+
+        </main>
+
+
+
+    </body>
+
+    
+</html>
+
+      

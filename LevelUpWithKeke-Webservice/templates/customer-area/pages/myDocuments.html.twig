@@ -1,0 +1,147 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+            <div id="page-banner">
+            <h1>Mes documents</h1>
+
+            </div>
+
+
+        <section id="fonctionnal">
+
+
+            <div id="page-content">
+            <h2>La liste de vos documents par catégoriques</h2>
+
+            <div id="myDocuments">
+
+                            <div id="navDoc" class="flexible">
+                                <nav class="sider" data-side="consularDocument">   Document consulaire </nav>
+                                <nav class="sider" data-side="visa">  Visa </nav>
+                            </div>
+
+                            <main id="consularDocument" class="side">
+
+                            {% for document in documents|sort((a, b) => b.id <=> a.id) %}
+
+                            
+                                <div id="doc-{{document.id}}">
+                                
+                                
+                                <div class="square white-text marger-bottom">
+                                    <div class="flexible  mobileblock ">
+                                        <ul class="column">
+                                            <li><h2>{{document.notarizeType.frName}}</h2></li>
+                                            <li>Délivré le {{document.sendDate|date("d/m/Y")}}</li>
+                                            <li>Par {{document.sender}}</li>
+                                            <li>Numéro de référence :{{document.documentId}}</li>
+                                            <li>Clé de contrôle (survoler pour voir): <span class="hider">{{document.code}}</span></li> 
+                                            <li><br><a href="{{ path('cuid_customer_area_new_booking') }}?docname={{document.notarizeType.frName}}&reference={{document.documentId}}&customer={{document.customer.firstname}} {{document.customer.surname}}"><button>Le récupéer à l'ambassade</button></a> <button data-action="/payment/document/{{document.id}}" class="decision-button">Demander un envoie du document par DHL <span class="material-symbols-outlined">credit_card</span></button></li>       
+                                        </ul>
+
+                                                <div class="column">
+                                                <h3>Description :</h3>
+                                                <p>
+                                                    Un acte consulaire sert principalement à accomplir des formalités administratives et juridiques pour les ressortissants d'un pays qui résident ou se trouvent à l'étranger. Votre espace dédié permet de les retrouver plus rapidement.
+                                                </p>
+
+                                                    <div class="flexible mobileblock orange-text">
+                                                    <p><strong>Note importante :</strong> Les envois de document se font uniquement par DHL pour 26€ </p>
+                                                    <img class="logo" src="/build/media/image/icons/DHL-Logo.png"/></div>
+                                                    </div>
+
+                                                </div>
+                                    
+                                        </div>    
+                                    </div>
+
+                                
+                            {% endfor %}
+
+                            </main>
+
+
+                            <main id="visa" class="side hidden">
+
+                            {% for visa in visas|sort((a, b) => b.id <=> a.id) %}
+
+                            
+                                <div id="visa-{{visa.id}}">
+                                
+                                
+                                <div class="square white-text marger-bottom">
+                                    <div class="flexible mobileblock">
+                                        <ul class="column">
+                                            <li><h2>{{visa.visaType.frName}}</h2></li>
+                                            
+                                            {% set arrivalDate = visa.congoArrivalDate|date("Y-m-d") %}
+                                            
+
+                                               {% set departureDate = arrivalDate|date_modify('+'~ visa.visaType.day ~' day') %}
+                                                                                        
+                                            <li>Départ le {{visa.congoArrivalDate|date("d/m/Y")}}</li>
+
+                                            <li>Numéro de passeport :{{visa.passport.numberId}}</li>
+
+                                            <li>Nombre de jour : {{visa.visaType.day}}</li>
+
+                                            {% if departureDate|date('Y-m-d') >= "2024-07-15"|date('Y-m-d')  %}
+
+                                            <li><br><a href="{{ path('cuid_customer_area_new_booking') }}?docname={{visa.visaType.frName}}&reference={{visa.passport.numberId}}&customer={{visa.customer.firstname}} {{visa.customer.surname}}"><button>L'obtenir à l'ambassade</button></a> </li>       
+
+                                            {% else %}
+
+                                            <li><h3 class="red-text">Ce Visa a expiré depuis le {{departureDate|date('d/m/Y')}}</h3></li>
+                                                
+                                            {% endif %}
+                                            
+                                        </ul>
+
+                                                <div class="column">
+
+                                                <h3>Description :</h3>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis dui quis ultrices interdum. Maecenas vulputate consequat tristique. Cras suscipit congue ipsum, ut aliquet nisl congue at. Donec a quam efficitur, condimentum risus eget, dignissim mauris. Fusce porttitor sapien vel elit pretium, sagittis tristique quam tincidunt. Donec sagittis, justo at ornare gravida, magna lorem hendrerit ipsum, sed iaculis nisi dolor sit amet orci.
+                                                </p>
+                                               
+                                                </div>
+                                    
+                                        </div>    
+                                    </div>
+
+                                
+                            {% endfor %}
+
+                            </main>
+
+
+
+
+           </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+            
+
+        </section>
+        {% endblock %}
+
+             

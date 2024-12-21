@@ -1,0 +1,65 @@
+
+{% block createcandidate %}
+
+    <div id="candidate-validation">
+    <h1>Create your candidate profil</h1>
+                            
+                            
+                            <p>{{joboffertitle}}</p>
+
+            <ul id="candidates-list">
+
+
+            {% if candidates is empty %}
+
+            <span>Il n'y a aucun candidat pour cette offre d'emploi</span>
+
+            {% else %}
+
+            {% for candidate in candidates %}
+
+                    <li>{{candidate.firstname}} {{candidate.surname}}--------<span class="decision" data-id="{{candidate.id}}" data-decision="1" data-jobofferid="{{jobofferid}}" style="color:green">Valider</span>--------<span class="decision" data-id="{{candidate.id}}" data-decision="0"  data-jobofferid="{{jobofferid}}" style="color:red">Refuser</span></li>
+
+
+            {% endfor %}
+            {% endif %}
+            
+            </ul>
+
+            </div>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script>
+                        $('.decision').click(function() {
+
+                                    var decision = $(this).closest(".decision").attr("data-decision");
+                                    var id = $(this).closest(".decision").attr("data-id");
+                                    var jobofferid = $(this).closest(".decision").attr("data-jobofferid");
+
+                $.ajax({
+                    url: '/candidate-validation',
+                    type: 'POST',
+                    data: { 
+                        
+                        decision : decision,
+                        id : id,
+                        jobofferid : jobofferid
+  
+                            },
+        
+
+
+                    success: function(data) {
+                        $('#candidate-validation').html(data);
+                       },
+                       error: function() {
+                        $('#candidate-validation').text('Erreur au niveau des résultats de recherches');
+                       }
+                });
+            });
+
+            </script>
+
+
+{% endblock %}
+
+             

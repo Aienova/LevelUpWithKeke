@@ -1,0 +1,45 @@
+<div id="confirm-form">
+
+<h3>{{confirmmessage}}</h3>
+
+<button id="action-button" data-action="{{action}}" data-id="{{id}}" data-section="{{section}}">Oui</button><button id="cancel-editor">Non</button>
+
+</div>
+
+<script>
+
+ 
+
+
+$("#action-button").click(function(){
+
+    var section = $("#action-button").data("section");
+    var id = $("#action-button").data("id");
+    var action = $("#action-button").data("action");
+
+    console.log("Lock it");
+
+            $("#editor").removeClass("hidden");
+
+            $.ajax({
+                url: '/cuid/set/'+action+'/'+section+'/'+id,
+                type : 'POST',
+                success: function(data) {
+                 $('#editor-form-display').html(data);
+                 location.reload();
+                },
+                error: function() {
+                 $('#editor-form-display').text('Erreur au niveau du subscribe form');
+                }
+                     });
+
+
+});
+
+$("#cancel-editor").click(function(){
+
+    $("#editor").addClass("hidden");
+
+});
+
+</script>

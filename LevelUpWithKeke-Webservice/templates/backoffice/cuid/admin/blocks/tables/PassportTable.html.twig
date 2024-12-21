@@ -1,0 +1,152 @@
+
+      
+        {% if i > 0 %}
+
+        {% set hidden = "hidden" %}
+
+        {% else %}
+
+        {% set hidden = "" %}
+
+        {% endif %}
+      
+      
+      
+      {% if passportservices is not empty %}
+
+
+
+<table id="result-{{data[i]["tableid"]}}" data-name="passport"  class="table-resa result {{hidden}}">
+     <thead>
+        <tr>
+            <th>Nom:</th>
+            <th>Prénom:</th>
+            <th>Nom Jeune Fille:</th>
+            <th>Nom du conjoint(e):</th>
+            <th>Statut matrimonial:</th>
+            <th>Taille (cm):</th>
+            <th>Profession:</th>
+            <th>Votre fonction:</th>
+            <th>Entrerpise:</th>
+            <th>Nationalité du conjoint:</th>
+            <th>Couleur des cheveux:</th>
+            <th>Couleur des yeux:</th>
+            <th>Genre:</th>
+            <th>Type de ressortissant:</th>
+            <th>Date de naissance:</th>
+            <th>Lieu de naissance:</th>
+            <th>Nationalité d'origine:</th>
+            <th>Pays de Résidence:</th>
+            <th>Date d'arrivée:</th>
+            <th>Antécédent Judiciaire:</th>
+            <th>Numéro de téléphone:</th>
+            <th>Adresse dans le pays d'origine:</th>
+            <th>Code postal:</th>
+            <th>Ville:</th>
+            <th>Adresse Email:</th>
+            <th>Numéro de l'acte de naissance:</th>
+            <th>Date de Délivrance de l'acte de naissance:</th>
+            <th>Organisme ayant délivré de l'acte de naissance:</th>
+            <th>Numéro de jugement:</th>
+            <th>Le Déclarant de l'acte de naissance:</th>
+            <th>Nom et prénom du père:</th>
+            <th>Nom et prénom de la mère:</th>
+            <th>Profession du père:</th>
+            <th>Profession de la mère:</th>
+            <th>Email d'un des parents:</th>
+            <th>Numéro d'un des parents:</th>
+            <th>Adresse du père:</th>
+            <th>Adresse de la mère:</th>
+            <th>Département:</th>
+            <th>Commune ou District:</th>
+            <th>Nom (Personne à prévenir en cas d'urgence):</th>
+            <th>Prénom (Personne à prévenir en cas d'urgence):</th>
+            <th>Adresse (Personne à prévenir en cas d'urgence):</th>
+            <th>Numéro de téléphone (Personne à prévenir en cas d'urgence):</th>
+            <th>Lien de parenté (Personne à prévenir en cas d'urgence):</th>
+            <th>Type de pièce (Pièce d'identité):</th>
+            <th>Numéro de la Pièce:</th>
+            <th>Délivré le:</th>
+            <th>Date d'expiration:</th>
+            <th>Délivré par:</th>
+            <th>Lieu de délivrance:</th>
+        </tr>
+    </thead>
+    <tbody>
+
+            {% for service in passportservices %}
+        <tr>
+            <td>{{ service.person.surname }}</td>
+            <td>{{ service.person.firstname }}</td>
+            <td>{{ service.person.maidenname }}</td>
+            <td>{{ service.person.spouseName }}</td>
+            <td>{{ service.person.maritalStatus.FRname }}</td>
+            <td>{{ service.person.height }}</td>
+            <td>{{ service.person.profession }}</td>
+            <td>{{ service.person.job }}</td>
+            <td>{{ service.person.company }}</td>
+            <td>{{ service.person.spouseNationality.name }}</td>
+            <td>{{ service.person.haircolor }}</td>
+            <td>{{ service.person.eyecolor }}</td>
+            <td>{{ service.person.gender.FRname }}</td>
+            <td>{{ service.person.nationalType.FRname }}</td>
+            <td>{{ service.person.birthdate|date("d/m/Y") }}</td>
+            <td>{{ service.person.birthplace }}</td>
+            <td>{{ service.person.origin.name }}</td>
+            <td>{{ service.person.residenceCountry.name }}</td>
+            <td>{{ service.person.arrivalDate|date("d/m/Y") }}</td>
+            <td>{{ service.person.criminalRecord }}</td>
+            <td>{{ service.person.telephone }}</td>
+            <td>{{ service.person.residenceAdress }}</td>
+            <td>{{ service.person.postalCode }}</td>
+            <td>{{ service.person.city }}</td>
+            <td>{{ service.person.email }}</td>
+            <td>{{ service.person.birthCertificateNumber }}</td>
+            <td>{{ service.person.birthCertificateDate|date("d/m/Y") }}</td>
+            <td>{{ service.person.birthCertificateOrganisation }}</td>
+            <td>{{ service.person.judgementNumber }}</td>
+            <td>{{ service.person.birthCertificateDeclarant }}</td>
+            <td>{{ service.person.fatherName }}</td>
+            <td>{{ service.person.motherName }}</td>
+            <td>{{ service.person.fatherProfession }}</td>
+            <td>{{ service.person.motherProfession }}</td>
+            <td>{{ service.person.parentEmail }}</td>
+            <td>{{ service.person.parentTelephone }}</td>
+            <td>{{ service.person.fatherAddress }}</td>
+            <td>{{ service.person.motherAddress }}</td>
+            <td>{{ service.person.department }}</td>
+            <td>{{ service.person.district }}</td>
+            <td>{{ service.person.emergencyPersonSurname }}</td>
+            <td>{{ service.person.emergencyPersonFirstname }}</td>
+            <td>{{ service.person.emergencyPersonAddress }}</td>
+            <td>{{ service.person.emergencyPersonTelephone }}</td>
+            <td>{{ service.person.emergencyPersonLink }}</td>
+            <td>{{ service.person.identityType.FRname }}</td>
+            <td>{{ service.person.identityNumber }}</td>
+            <td>{{ service.person.deliveryDate|date("d/m/Y") }}</td>
+            <td>{{ service.person.expirationDate|date("d/m/Y") }}</td>
+            <td>{{ service.person.deliveredBy }}</td>
+            <td>{{ service.person.deliveryPlace }}</td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+
+
+<table id="result-{{data[i]["tableid"]}}" data-name="passport"  class="table-resa result {{hidden}}">
+
+        <thead>        
+            <tr>
+            <th>{{ data[i]["title"] }}</th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr><td colspan="7">Aucun résultat</td></tr>
+    </tbody>
+</table>
+
+
+{% endif %}

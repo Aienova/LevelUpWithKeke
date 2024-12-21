@@ -1,0 +1,93 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifier une offre d'emploi</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                            <div class="flexible">
+                            
+                                <a href="../jobs">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos offres d'emploi</div>
+                                </a>
+
+                                <a href="../addjob">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                add
+                                </span>Créer une nouvelle offre d'emploi</div>
+                                </a>
+
+                            </div>
+
+
+                                    <form id="page-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="job_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+
+                                            <p>
+                                            <h2>Titre de l'offre d'emploi :</h2>
+                                            <input type="text" name="title" value="{{job.title}}" required/>
+                                            </p>
+
+                                            <p>
+                                            <h2>Description de l'offre d'emploi :</h2>
+                                            <textarea name="description"  required>{{job.description}}</textarea>
+                                            </p>
+
+                                            <p>
+                                            <h2>Diplôme(s) ou qualification(s) requise(s):</h2>
+                                            <p class="black-text">Si aucune, veuillez ne rien remplir</p>
+                                            <input type="text" name="diploma" value="{{job.diploma}}"  />
+                                            </p>
+
+                                            <p>
+                                            <h2>Salaire (BRUT):</h2>
+                                            <input type="number" name="wage" value="{{job.wage}}" />
+                                            </p>
+
+                                            <p>
+                                            <h2>Date de début :</h2>
+                                            <input type="date" name="startDate" value="{{job.startDate|date('Y-m-d')}}" />
+                                            </p>
+
+
+                                            <p>
+                                            <h2>Contenu de l'offre d'emploi :</h2>
+
+                                            {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}
+
+                                            </p>
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+
+                                    <input type="submit"  value="Modifier une offre d'emploi" />
+                                    </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

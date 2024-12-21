@@ -1,0 +1,160 @@
+
+
+       {% extends "base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Bonjour {{user.firstname}},<br> que souhaitez-vous faire aujourd'hui</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                            <div class="left-side">
+
+                                <nav id="profile" class="square">
+                                        <h2>Votre entreprise</h2>
+                                        <div class="flexible info-item">
+                                            <img class="avatar" src="{{company.logo}}" />
+                                                    <ul class="info-item-list">
+                                                            <li><h3>{{company.name}}</h3></li>                                                           
+                                                            <li><strong>Secteur d'activité : </strong>{{company.activity}}</li>
+                                                            <li><strong>Nombres de salariés : </strong>{{company.workforce}}</li>
+                                                            <li>
+                                                            <strong>Description de la société</strong><br>
+                                                            {{company.description }}
+                                                            </li>
+                                                        </ul>
+                                         </div>
+
+                                         <div class="info-item">
+                                            <h3>Statistique</h3>
+                                            <div class="flexible">
+
+                                                <div id="stat1" class="stat">
+                                                    <strong class="title">Nombres de <br>candidatures</strong><br>
+                                                    <strong class="percent">N/C</strong>
+                                                </div>
+
+                                                <div id="stat2" class="stat">
+                                                    <strong class="title">Nombres d'offres <br>d'emplois</strong><br>
+                                                    <strong class="percent">N/C</strong>
+                                                </div>
+
+                                                <div id="stat3" class="stat">
+                                                    <strong class="title">Taux <br>de réactivité</strong><br>
+                                                    <strong class="percent">N/C</strong>
+                                                </div>
+
+                                            </div>
+
+
+
+                                         </div>
+
+
+
+
+                                </nav>
+                            
+                            </div>
+                            
+
+
+                            <div class="right-side">
+
+                                    <nav class="flexible">
+                                         <div id="search-job" class="square">
+                                            <a href="{{ path('cuid_recruiter_area_candidates') }}"><h2>Chercher des candidats</h2></a>
+                                        </div>
+
+                                        <div id="edit-apply" class="square">
+                                            <a href="{{ path('cuid_recruiter_area_job_offers') }}"><h2>Consulter ou créer vos offres d'emplois</h2></a>
+                                             
+                                        </div>
+                                    </nav>
+
+                                    <nav class="flexible">
+
+                                         <div id="job-offers-subjection" class="square">
+
+                                        <div class="flexible">
+                                            <h2>Vos candidats </h2>   
+                                                {% if applications is not empty %}
+                                                    <div class="arrow-nav">
+                                                            <span id="previousorder" class="material-symbols-outlined">arrow_back_ios</span> 
+                                                            <span id="order" data-maxorder="{{maxcount}}" data-currentorder="1" >1</span>/<sapn>{{maxcount}}</span>
+                                                            <span id="nextorder" class="material-symbols-outlined">arrow_forward_ios</span>
+                                                    </div>
+                                                {% endif %}
+                                                    
+                                        </div>
+
+                                        {% set i = 1 %} 
+                                        {% set hidden = "" %} 
+                                        {% if applications is not empty %}
+                                        {% for application in applications %}
+                                         
+                                         {% if i > 1 %}
+
+                                         {% set hidden = "hidden" %} 
+
+                                         {% endif %}
+
+                                            <div id="slide-{{i}}" class="flexible info-item slide {{hidden}}">
+                                                <img class="logo" src="/build/media/image/icons/avatar.png" />
+                                                <ul class="info-item-list">
+                                                    <li><strong>Nom/prénom : </strong>{{application.candidate.firstname}} {{application.candidate.surname}}</li>
+                                                    <li><strong>Métier : </strong>{{application.candidate.job.FRname}}</li>
+                                                    <li><strong>Type de contrat : </strong>{{application.jobOffer.contract.FRname}}</li>
+                                                    <li><strong>Localisation : </strong>{{application.jobOffer.location}}</li>
+                                                    <li><strong>Rémunération : </strong>{{application.jobOffer.wage}}{{application.jobOffer.wageCurrency}}{{application.jobOffer.wageType}}</li>
+                                                    <li><a href="{{ path('cuid_candidate',{id: application.candidate.id})}}"><button>Consulter le profil complet</button></a></li>
+                                                </ul>
+
+                                                     
+                                                <div id="compatibility">
+                                                    <strong class="title">Compatibilité</strong><br>
+                                                    <strong class="percent">{{application.compatibility}}%</strong>
+                                                </div>
+                                              
+                                            </div>
+
+                                            {% set i = i + 1 %} 
+
+                                        {% endfor %}
+
+                                        {% else %}
+
+                                        <div class="central-text">
+                                        <p>Vous n'avez aucune candidatures pour vos offres d'emploi. Si vous n'avez aucune offre d'emploi publié, vous pouvez la créer en cliquant çi-dessous :</p>
+                                        <a href="{{ path('cuid_recruiter_area_create_job_offers') }}"><button>Créer une offre d'emploi</button></a>
+                                        </div>
+
+                                        {% endif %}
+
+
+
+
+                                        
+                                        </div>
+
+                                      
+                                    </nav>
+
+                            </div>
+
+                    </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}
+
+             

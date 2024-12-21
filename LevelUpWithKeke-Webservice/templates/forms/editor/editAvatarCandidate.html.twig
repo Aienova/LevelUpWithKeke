@@ -1,0 +1,75 @@
+                                       
+                                        
+                                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                        
+                                        <form id="yourAvatar" method="POST" data-candidateid="{{candidate.id}}">
+                                            
+                                            <h3>Modifer votre avatar</h3>
+
+
+                                                {% set menchecked = "" %}
+                                                {% set womenchecked = "" %}
+                                                    {% if candidate.avatar.gender == "men" %}
+                                                    {% set menchecked = "checked" %}
+                                                    {% endif %}
+
+                                                    {% if candidate.avatar.gender == "women" %}
+                                                    {% set womenchecked = "checked" %}
+                                                    {% endif %}
+
+                                                <p>Vous êtes : </p>
+                                                <label id="men-selection">Homme<input type="radio" name="gender" value="men" {{menchecked}}></label>
+                                                <label id="women-selection">Femme<input type="radio" name="gender" value="women" {{womenchecked}}></label>
+
+
+                                                    <div id="men">{% include '/forms/selects/avatarMen.html.twig' %}</div>
+                                                    <div id="women" class="hidden">{% include '/forms/selects/avatarWomen.html.twig' %}</div>
+
+                                        
+                                        <div id="form-validation"><input type="submit" name="editor" value="Modifier"/></div>
+                                        
+                                        </form>
+
+
+                                           <script>
+
+                                            $('#men-selection').click(function() {
+
+                                                $('#men').removeClass("hidden");
+                                                $('#women').addClass("hidden");
+
+                                            });
+
+                                            $('#women-selection').click(function() {
+
+                                                $('#men').addClass("hidden");
+                                                $('#women').removeClass("hidden");
+
+                                            });
+
+                                             </script>
+
+                                                             
+
+                                            <script>
+                                                        $('#yourAvatar').submit(function(e){
+
+                                                            var id = $('#yourAvatar').data("candidateid");
+
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: '/edit-avatar-candidate/'+id,
+                                                    type: 'POST',
+                                                    data:$('#yourAvatar').serialize(),
+
+                                                    success: function(data) {
+                                                        $('#editor-form-display').html(data);
+                                                        location.reload();
+                                                    },
+                                                    error: function() {
+                                                        $('#editor-form-display').text('Erreur au niveau des résultats de recherches');
+                                                    }
+                                                });
+                                            });
+
+                                            </script>  

@@ -1,0 +1,59 @@
+
+{% block searchengine %}
+
+    <div id="candidates-list">
+    <h1>Estimer le salaire BRUT d'un profil</h1>
+    
+
+
+
+    <h2>En cours de développement</h2>
+                
+        {#
+            {{ form_start(form) }}
+            {{ form_row(form.jobName) }}
+            {{ form_row(form.levelDegree) }}
+            {{ form_row(form.contractType) }}
+            {{ form_row(form.companySize) }}
+            {{ form_row(form.location) }}
+            {{ form_row(form.experiences) }}
+            
+            <select name="devise">
+                        <option value="eur">Euro</option>
+                        <option value="usd">Dollars</option>
+                        <option value="gbp">Livres sterling</option>
+                        <option value="chf">Franc-Suisse</option>
+                </select>
+                
+            {{ form_row(form.submit) }}
+            {{ form_end(form) }}
+
+            #}
+                    
+
+
+            </div>
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script>
+                        $('#search-engine form').submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    url: '/search-engine',
+                    type: 'post',
+                    data:$('#search-engine form').serialize(),
+                    success: function(data) {
+                        $('#candidates-list').html(data);
+                       },
+                       error: function() {
+                        $('#candidates-list').text('Erreur au niveau des résultats de recherches');
+                       }
+                });
+            });
+
+            </script>
+
+
+{% endblock %}
+
+             

@@ -1,0 +1,37 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Demandes de vos clients</h1>
+                    </div>
+
+                                    <div id="message-form"></div>
+
+                    <div id="square-menu">
+
+
+
+                                <div class="square">
+
+                                <div class="flexible">
+
+                                 {% include "backoffice/cuid/admin/blocks/plugins/filter/plugin.html.twig" %}
+                                
+                                </div>     
+
+                                 {% include "backoffice/cuid/admin/blocks/tables/NotarizesTable.html.twig" %}
+
+                                </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}

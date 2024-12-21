@@ -1,0 +1,37 @@
+                                            <form method="POST"  id="block-settings-{{setting.item.id}}" class="form-field">
+
+                                        {% if homepage is defined %}
+
+                                    <input type="hidden" name="homepage_data" value="banner" />
+
+                                        {% else %}
+                                        
+                                            <input type="hidden" name="form_data" value="1" />
+
+                                        {% endif %}
+
+
+
+
+
+                                             <input type="hidden" name="EditFormItem" value="1" />
+                                            <input type="hidden" name="entity" value="{{setting.id}}" />
+                                               
+                                                    <h3>Bannière ( # {{setting.id}} )</h3><br>
+
+                                                    <strong>Titre principal</strong><br>
+                                                    <input type="text" name="maintitle" placeholder="titre principale" value=" {{setting.mainTitle}} " />
+                                                    <br><br>
+                                                    <strong>Titre secondaire</strong><br>
+                                                    <input type="text" name="secondtitle" placeholder="second titre" value=" {{setting.secondTitle}} " />
+                                                    <br><br>
+                                                    <div id="previewBannerImage" style="background-image:url('{{ setting.bannerImage }}')"></div>
+                                                    <br>{% include "backoffice/cuid/admin/blocks/plugins/background-image-selector/plugin.html.twig" %}
+ 
+
+                                                    <input type="hidden" name="formItem" value="1" />
+                                                    <input type="hidden" name="editfield" value="1" />
+
+                                                    <input type="submit" value="Modifier"/>
+                                                
+                                                </form>

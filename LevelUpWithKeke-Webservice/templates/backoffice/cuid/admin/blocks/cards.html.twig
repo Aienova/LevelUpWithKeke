@@ -1,0 +1,49 @@
+
+                            <div id="card" class="flexible">
+
+
+                                   <div id="searchbar" class="flexible">
+
+
+                
+                                   {#
+                                          <form id="searchinput" action="/connexion" class="flexible">
+                                                 <input type="text" placeholder="Geben Sie hier Ihre Suche ein" />
+                                                 <input id="searchinput-submit" type="submit" value=""/>
+
+                                          </form>
+
+                                   #}
+
+                                   <a href="{{ path('cuid_home') }}" target="_blank"><nav id="good-deal" class="flexible">
+                                   <div class="material-symbols-outlined">home</div><div class="navName">Votre site web</div>
+                                   </nav></a>
+
+                                   <a href=" {{ path('cuid_admin_user_dashboard', {'section': 'menus'}) }}"><nav id="good-deal" class="flexible">
+                                   <div class="material-symbols-outlined">menu</div><div class="navName">Mon menu</div>
+                                   </nav></a>
+
+                                   <a href=" {{ path('cuid_admin_user_dashboard', {'section': 'pages'}) }}"><nav id="good-deal" class="flexible">
+                                   <div class="material-symbols-outlined">description</div><div class="navName">Mes pages</div>
+                                   </nav></a>                                   
+
+                                  {# <a href="{{ path('cuid_customer_area_home') }}"><nav id="messenger" class="flexible">
+                                   <div class="material-symbols-outlined">mail</div><div class="navName">Messagerie</div>
+                                   </nav></a> #}
+
+
+                                   
+                                   <a id="cuid-account" href="{{ path('cuid_admin_user_dashboard_edit', {'section': 'user' , 'id': user.id}) }}"><nav  class="flexible">
+                                   <div class="material-symbols-outlined">account_circle</div><div class="notification-number"></div><div class="navName">{{user.login}}</div>
+                                  <!-- <div class="material-symbols-outlined">shopping_cart</div><div class="navName">Votre panier</div>  -->
+                                   </nav></a>
+
+
+                                   </div>
+
+                                   <!-- <img src="/build/media/image/icons/frais-de-port.png" /> -->
+
+
+
+                            </div>
+                            

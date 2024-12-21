@@ -1,0 +1,128 @@
+
+{% block searchengine %}
+
+    <div id="search-engine-companies">
+                
+                {{ form_start(form) }}
+                {{ form_end(form) }}
+
+            <ul>
+
+               {% if sortby == 1 %}
+                {% if orderby == 1 %}
+        {% set companiesSorted = companies|sort((a, b) => b.name <=> a.name) %}
+        {% else %}
+        {% set companiesSorted = companies|sort((a, b) => a.name <=> b.name) %}
+        {% endif %}
+        {% endif %}
+
+
+        {% if sortby == 2 %}
+         {% if orderby == 1 %}
+        {% set companiesSorted = companies|sort((a, b) => b.workforce <=> a.workforce) %}
+        {% else %}
+        {% set companiesSorted = companies|sort((a, b) => a.workforce <=> b.workforce) %}
+        {% endif %}
+        {% endif %}
+
+
+
+
+            {% for company in companiesSorted %}
+
+                    <li id="company-{{company.id}}" class="search-item flexible">
+                    
+
+                        <div id="identity" class="item flexible">
+                                        <img class="logo-company" src="{{company.logo}}">
+                                        <ul class="info-item-list"> 
+                                                <li><h3>{{company.name}}</h3></li>
+                                                <li>Activité : {{company.activity}}</li>
+                                                <li>SIRET : {{company.siret}}</li>                                              
+                                                <li><a href="{{ path('cuid_company',{id: company.id})}}"><button>Consulter l'entreprise</button></a></li>                   
+                                        </ul>
+
+                                        
+                        </div>
+
+                        <div id="description" class="item">
+
+                                        <h3>Description :</h3>
+
+                                        <p>{{company.description}}</p>
+
+                                                <h3>Nos valeurs :</h3>
+
+                                                     <div class="flexible">
+
+                                {% if company.value is not empty %}
+                                {% for value in company.value %}
+                                    <div class="asset"><img class="asset-logo" src="/build/media/image/icons/value/{{value.name}}.png" /><br><strong>{{value.FRname}}</strong> </div>
+                                {% endfor %}
+                                {% else %}
+                                        <p>Aucune valeurs renseignées</p>
+                                        {% endif %}
+
+                                        </div>
+                                
+                                        
+
+
+
+                        </div>
+
+                        <div id="Statistic" class="item">
+                                <h3>Statistique</h3>
+
+                                        <ul class="info-item-list"> 
+                                                <li><strong>Taux d'embauche :</strong> N/C</li>
+                                                <li><strong>Taux de licenciement :</strong> N/C</li>
+                                                <li><strong>Nombres de d'employé :</strong>{{company.workforce}}</li>
+                                                <li><strong>Moyenne d'âge :</strong>N/C</li>                    
+                                        </ul>
+                                
+                                {#  PLUS TARD
+
+                                        <h3>Avis : (31)</h3>
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star</span>
+                                        <span class="material-icons">star_half</span>
+                                        <span class="material-icons">star_outline</span>
+
+
+                                        #}
+
+                        </div>
+
+                        
+                    </li>
+
+
+            {% endfor %}</ul>
+            </div>
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+            <script>
+                        $('#search-engine form').submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    url: '/search-engine-companies',
+                    type: 'post',
+                    data:$('#search-engine form').serialize(),
+                    success: function(data) {
+                        $('#search-engine').html(data);
+                       },
+                       error: function() {
+                        $('#search-engine').text('Erreur au niveau des résultats de recherches');
+                       }
+                });
+            });
+
+            </script>
+
+
+{% endblock %}
+
+             

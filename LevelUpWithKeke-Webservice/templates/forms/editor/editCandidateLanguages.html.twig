@@ -1,0 +1,75 @@
+                                       
+                                        
+                                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                        
+                                        <form id="yourLanguage" method="POST" data-candidateid="{{candidate.id}}">
+                                            
+                                            <h3>Modifer vos informations personnelles</h3>
+
+                                         <ul id="langue-list">
+                                        {% for i in 1..5 %}
+                                                 <li class="flexible">  
+                                                 
+                                                 
+                                        <div><label>Langue<label><br><select name="languageName{{i}}">
+                                                                
+                                                                <option value="0">Choisir une langue</option>
+                                                                <option value="1">Anglais</option>
+                                                                <option value="2">Mandarin</option>
+                                                                <option value="3">Espagnole</option>
+                                                                <option value="4">Français</option>
+                                                                <option value="5">Allemand</option>
+                                                                <option value="6">Italien</option>
+                                                                <option value="7">Portuguais</option> 
+                                                                <option value="8">Japonnais</option>
+                                                                <option value="9">Néerlandais</option> 
+
+                                                            </select> </div>  
+                                            
+                                            
+                                            <div><label>Niveau :</label>
+                                            <br>
+                                                            <select name="languageLevel{{i}}">
+
+                                                                <option value="1">Native</option>
+                                                                <option value="2">Notion</option>
+                                                                <option value="3">Intermédiaire</option>
+                                                                <option value="4">Professionnelle</option>
+                                                                <option value="5">Couramment</option>  
+
+                                                            </select>                                           
+            
+                                            </div>      
+                                            </li>
+                                        {% endfor %}
+
+                                        </ul>
+
+                                        <input type="hidden" value="" name="editor" />
+                                        
+                                        <div id="form-validation"><input type="submit" name="editor" value="Modifier"/></div>
+                                        
+                                        </form>
+
+                                            <script>
+                                                        $('#yourLanguage').submit(function(e){
+
+                                                            var id = $('#yourLanguage').data("candidateid");
+
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: '/edit-candidate-languages/'+id,
+                                                    type: 'POST',
+                                                    data:$('#yourLanguage').serialize(),
+
+                                                    success: function(data) {
+                                                        $('#editor-form-display').html(data);
+                                                        location.reload();
+                                                    },
+                                                    error: function() {
+                                                        $('#editor-form-display').text('Erreur au niveau des résultats de recherches');
+                                                    }
+                                                });
+                                            });
+
+                                            </script>  

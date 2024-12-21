@@ -1,0 +1,210 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Créer une charte graphique</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+
+                                    <form id="page-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="graphic_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+                                            
+                                            <h2>Code couleurs</h2>
+                                            <p>
+                                            <strong>couleur principale :</strong>
+                                            <input type="color" name="primaryColor" value="{{graphics.primaryColor}}" />
+                                            </p>
+
+                                            <p>
+                                            <strong>couleur secondaire :</strong>
+                                            <input type="color" name="secondaryColor" value="{{graphics.secondaryColor}}" />
+                                            </p>
+
+                                             <p>
+                                            <strong>Troisième couleur :</strong>
+                                            <input type="color" name="thirdColor" value="{{graphics.thirdColor}}"/>
+                                            </p>
+
+                                             <p>
+                                            <strong>Couleur du menu :</strong>
+                                            <input type="color" name="headerColor" value="{{graphics.headerColor}}"/>
+                                            </p>
+
+
+                                            <p>
+                                            <strong>Couleur du pied-de-page :</strong>
+                                            <input type="color" name="footerColor" value="{{graphics.footerColor}}"/>
+                                            </p>
+
+
+                                            <h2>Polices</h2>
+
+                                             <p>
+
+                                            <strong>Polices des Titres :</strong>
+
+                                            <select id="fontTitle" class="fontTitlePreview" name=" fontTitle">
+                                            {% for font in fonts %}
+                                                <option value="{{font.name}}" {% if graphics.fontTitle.id == font.id %} selected  {% endif %}>{{font.name}}</option>
+
+                                            {% endfor %}
+                                            </select>
+
+
+                                             <strong>Taille Polices des Titres :</strong>                                            
+                                             
+                                             <select id="fontTitleWeight"  class="fontTitlePreview" name="fontTitleWeight">
+                                            {% for fontWeight in fontWeights %}
+                                                <option value="{{fontWeight.name}}" {% if graphics.fontTitleWeight.id == fontWeight.id %} selected  {% endif %}>{{fontWeight.FRname}}</option>
+                                            {% endfor %}
+                                            </select>
+
+                                            <div id="fontTitlePreview">
+                                                <h2>Nothing to Something</h2>
+                                            </div>
+
+                                            </p>
+
+
+
+                                            <p>
+                                            <strong>Polices des Textes :</strong>
+
+                                            <select id="fontText" class="fontTextPreview" name=" fontText">
+                                            {% for font in fonts %}
+                                                <option value="{{font.name}}" {% if graphics.fontText.id == font.id %} selected  {% endif %}>{{font.name}}</option>
+
+                                            {% endfor %}
+                                            </select>
+
+
+                                             <strong>Taille Polices des Textes :</strong>                                           
+                                            <select id="fontTextWeight" class="fontTextPreview" name=" fontTextWeight">
+                                            {% for fontWeight in fontWeights %}
+                                                <option value="{{fontWeight.name}}" {% if graphics.fontTextWeight.id == fontWeight.id %} selected  {% endif %}>{{fontWeight.FRname}}</option>
+                                            {% endfor %}
+                                            </select>
+
+                                            <div id="fontTextPreview">
+
+                                                <p>I was floating high above our lives
+                                                I was looking down from space
+                                                I was puzzled by the starlight on your face
+                                                Can I undo all the things I've done?
+                                                Say the words I never said?
+                                                Is there something that survives?
+                                                Is it love that will lift us
+                                                From nothing to something?
+                                                The spark of a better day
+                                                I feel it coming
+                                                Can we rise above these warring clowns
+                                                Who would turn friend against friend?
+                                                Can we live the way we meant to live?
+                                                Will we come home in the end?
+                                                Is therе something that survives?
+                                                Is it love that will lift us
+                                                From nothing to somеthing?
+                                                The spark of a better day
+                                                I feel it coming
+                                                </p>
+
+                                            </div>
+
+
+                                            </p>
+
+                                            <p>
+                                            <h2>Choisir une image d'arrière plan</h2>
+
+             <div>
+            <legend>Voulez-vous ajouter une image d'arrière plan ?</legend>
+
+
+
+            <label for="yes-image">Oui
+            <input type="radio" id="yes-image" class="sider" name="isImage" data-side="backgroundImageSelector" value="1" 
+            
+            {% if graphics.backgroundImage is not empty %}
+
+            checked
+                
+            {% endif %}></label>
+
+            
+            <label for="no-image">Non
+            <input type="radio" id="no-image" class="clearsider" name="isImage" value="0"             
+            
+            {% if graphics.backgroundImage is empty %}
+
+            checked
+                
+            {% endif %}></label>
+                                                    
+                                            </div>
+
+                <div class="side" id="backgroundImageSelector" {% if graphics.backgroundImage is empty %} class="hidden" {% endif %}>
+
+             {% include "backoffice/cuid/admin/blocks/plugins/background-image-selector/plugin.html.twig" %}
+
+                                                                                     <div>
+            <legend>Voulez-vous répéter l'image d'arrière-plan ?</legend>
+
+            <label for="yes">Oui
+            <input type="radio" id="yes" name="backgroundReapeat" value="1" 
+            
+            {% if graphics.backgroundRepeat == true %}
+                      checked      
+            {% endif %}
+></label>
+
+            
+            <label for="no">Non
+            <input type="radio" id="no" name="backgroundReapeat" value="0"
+            
+                        {% if graphics.backgroundRepeat == false %}
+                      checked      
+            {% endif %}
+            
+            ></label>
+                                                    
+                                            </div>
+                                            </div>
+
+
+                                            </p>
+
+   
+
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+
+                                    <div class="flexible"><input type="submit"  value="Modifier l'apparence" /> <a href="{{graphics.section.url}}"><nav>Voir le résultat </nav></a></div>
+                                    </form>
+
+
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

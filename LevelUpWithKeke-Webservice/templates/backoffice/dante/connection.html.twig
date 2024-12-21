@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="full-h">
+    <head>
+
+                    
+
+                    {% block javascripts %}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            {{ encore_entry_link_tags("connection-styles") }}
+            {{ encore_entry_script_tags("connection-scripts") }}
+                    {% endblock %}
+
+                    <title>Melden Sie sich in Ihrem speziellen Bereich an</title>
+    </head>
+
+    
+    <body class="full-h">
+
+       <!-- 
+
+                    DISCONNECT BUTTON   
+
+        <form id="disconnection" method="POST">
+                <input type="hidden" name="disconnection" value="1" />
+                <input type=  
+                "submit" value="Disconnect">
+
+
+        </form> -->
+
+        <main class="full-h white-text">
+
+        <a href="{{ path('cuid_home') }}"><nav class="return-button" >Zurück zur Website</nav></a>
+
+          <div id="connection-form">
+
+
+      <div id="connection-title">
+        <img class="logo invert" src="/build/media/image/icons/logo-main.png"/>
+        <h1>Melde dich in deinem Konto an </h1>
+      </div>
+
+
+        
+
+                {% if error_connection == 1 %}
+                        <p style="color:red">Verbindung abgelehnt: Falsches Passwort oder Benutzername</p>
+                {% endif %}
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+
+           <p><input type="submit" value="Einloggen" /></p>
+    {{ form_end(form) }}
+        </div><br>
+        <h3 class="central-text">Sie haben bitte kein Konto<a href="{{ path('cuid_subscribe') }}"><strong>Registrieren</strong></a></h3>
+
+        <h3 class="central-text">Sie haben Ihre Passwörter vergessen , <a href="{{ path('cuid_oblivion') }}"><strong>klicken Sie hier</strong></a></h3>
+
+        
+                <footer>
+
+            <p>Copyright 2023 by <a href="https://aienova.com/">Aienova</a> - Nothing to Something</p>
+
+        </footer>
+        </main>
+
+
+
+    </body>
+
+    
+</html>
+
+      

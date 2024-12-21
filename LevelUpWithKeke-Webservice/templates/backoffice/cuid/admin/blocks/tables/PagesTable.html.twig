@@ -1,0 +1,65 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Titre de la page</th>
+            <th>Lien</th>
+            <th>Date de creation</th>
+            <th>Description</th>
+            <th>Auteur</th>
+            <th>Visibilité</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if pages is defined %}
+        {% if pages is not empty  %}
+
+        {% for page in pages |sort((a, b) => b.id <=> a.id) %}
+
+        <tr>
+            <td>{{page.title}}</td>
+            <td><a href="/page/{{page.name}}">./page/{{page.name}}</a></td>
+            <td>{{page.creationDate|date("d/m/Y h:i:s")}}</td>
+            <td>{{page.description}}</td>
+             <td>{{page.author}}</td>
+            <td>
+              
+            {% if page.visibility == 1 %}
+
+            En ligne
+
+            {% else %}
+
+            Hors ligne
+
+            {% endif %}
+            
+            </td>
+            <td>
+
+            
+
+                {% set decision = '
+                
+                <a href="./edit-page/'~ page.id ~'"><span class="material-symbols-outlined decision-button">edit</span></a>
+                
+                <span data-action="delete" data-section="page" data-id="'~ page.id ~'" class="material-symbols-outlined open-editor">delete</span>' 
+                
+                
+                %}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

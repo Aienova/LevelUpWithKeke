@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="full-h">
+    <head>
+
+                    
+
+                    {% block javascripts %}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            {{ encore_entry_link_tags("connection-styles") }}
+            {{ encore_entry_script_tags("connection-scripts") }}
+                    {% endblock %}
+
+                    <title>Paiement validée</title>
+    </head>
+
+    
+    <body class="full-h">
+
+    <div id="message-form"></div>
+
+       <!-- 
+
+                    DISCONNECT BUTTON   
+
+        <form id="disconnection" method="POST">
+                <input type="hidden" name="disconnection" value="1" />
+                <input type=  
+                "submit" value="Disconnect">
+
+
+        </form> -->
+
+        <main class="full-h">
+
+        <a href="{{ path('cuid_home') }}"><nav class="return-button" >Retourner sur le site web</nav></a>
+
+          <div id="connection-form">
+
+
+      <div id="connection-title">
+        <img class="logo" src="/build/media/image/icons/logo-main.png"/>
+        <h1>Votre paiement a bien été enregistré </h1>
+      </div>
+
+
+      <h3>Vous pouvez télécharger votre facture ou revenir à votre espace client ci-dessous :</h3>
+
+
+
+      <button data-action="/notarize-preview/1/{{bill.id}}" class="material-symbols-outlined decision-button" >Consulter votre facture</button> <br><br>
+      <a href="{{ path('cuid_customer_area_home') }}"><button>Revenir à l'espace client</button></a>
+
+
+     
+        
+                <footer>
+
+            <p>Copyright 2023 by <a href="https://aienova.com/">Aienova</a> - Nothing to Something</p>
+
+        </footer>
+        </main>
+
+
+
+    </body>
+
+    
+</html>
+
+      

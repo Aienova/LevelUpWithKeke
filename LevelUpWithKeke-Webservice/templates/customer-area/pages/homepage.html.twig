@@ -1,0 +1,316 @@
+
+
+       {% extends "base.html.twig" %}
+    
+
+        {% block content %}
+
+                                                            <div id="message-form"></div>
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Bonjour {{customer.firstname}},<br> Bienvenu sur votre espace des services en ligne de l'Ambassade :</h1>
+                    </div>
+                    </div>
+
+                    {% if currentNotarizes is not empty %}
+                        
+
+
+                    <div id="notifaction-square">
+                    
+                    <h3>Vous avez {{currentNotarizes|length}} démarches en cours , veuillez les traitrer depuis la rubrique suivi de mes demandes</h3>
+                    
+                    
+                    </div>
+
+                    {% endif %}
+
+                    <div id="square-menu" class="flexible mobileblock">
+
+                            <div class="left-side">
+
+                                <nav id="profile" class="square">
+                                        <h2>Votre identité</h2>
+                                        <div class="info-item">
+                                        <div class="flexible mobileblock">
+                                            <img class="identity-photo" src="{{customer.person.photo.link}}" /> 
+                                                    <ul class="info-item-list">
+                                                            <li><h3>{{customer.firstname}} {{customer.surname}}</h3></li>
+                                                            <li><strong>Email : </strong>{{customer.email}}</li>
+                                                            <li><strong>Téléphone : </strong>{{customer.telephone}}</li>
+                                                            <li><strong>Adresse de résidence : </strong>{{customer.mainLocation}}</li>
+
+                                                            {% if customer.Person.complete == 1 and  customer.Person.consularCard == 0 %}
+
+                                                            <li class="orange-text">Vous avez déjà fait un enregsitrement à l'ambassade, cependant il vous reste à obtenir votre consulaire en faisant la demande çi dessous :</li>
+                                                               <a href="{{ path('cuid_customer_area_new_notarize') }}"> <button>Demander la carte consulaire</button></a>
+
+                                                            {% elseif customer.Person.complete == 1 and  customer.Person.consularCard == 1 %}
+
+                                                            <li>Vous avez obtenu votre carte consulaire, son numéro est le {{customer.Person.consularCardId}}</li>
+                                                            <li><a href="{{ path('cuid_customer_area_my_documents') }}"><button>Consulter vos actes consulaires disponibles</button></a></li>
+
+                                                            {% else %}
+                                                            <li>Vous n'avez pas terminé votre enregsitrement, veuillez la complétez çi-dessous :</li>
+                                                            <li><a href="/document/register"><button>S'enregistrer</button></a></li>
+                                                            {% endif %}
+
+
+
+                                                          {# PLUS TARD  <li><strong>A la recherche d'un : </strong>{{candidate.location}}</li> #}
+                                                            <li>
+                                                            </ul>
+                                        </div>
+                                                            
+                                                            <h3>Dernier(s) visa(s) connu(s) :</h3>
+                                                            
+                                                            <ul class="info-item-list">
+                                                            {% if customer.Visas is not empty %}
+
+                                                            <li class="orange-text">Pensez à prendre rendez-vous pour obtenir votre VISA</li>
+
+                                                                {% for visa in customer.Visas %}
+                                                                <li>Visa pour {{visa.travelReason.Frname}} de {{visa.timetravel}}: {{visa.congoArrivalDate|date("d/m/Y")}} </li>
+                                                                    
+                                                                {% endfor %}
+                                                                
+                                                                {% else %}
+                                                            <li><span class="red-text">Aucun visa enregsitré</span></li>
+                                                                                                                        {% endif %}
+                                                            </ul>
+
+                                                            <h3>Mes paiements à effectuer :</h3>   
+                                                            <ul>
+                                                            {% if mustPayNotarizes is not empty %}
+
+                                                                  {% for pay in mustPayNotarizes %}
+                                                                          <li class="redflag padder">{{pay.numberId}} - {{pay.type.FRname}}:  {{pay.cost}} € -- Payer :
+                                                                          <span data-action="/payment/notarize/{{pay.id}}" class="material-symbols-outlined decision-button">credit_card</span>
+                                                                          
+                                                                          </li>
+                                                                  {% endfor %}
+
+                                                            {% else %}
+
+                                                            <li>Aucune demande en cours de paiement, pour l'instant</li>
+                                                            
+                                                            {% endif %}
+
+                                                            </ul>
+
+
+                                                            
+                                                            
+                                                                </li>
+
+                                                        </ul>
+                                         </div>
+                                </nav>
+                            
+                            </div>
+                            
+
+
+                            <div class="right-side">
+
+                                    <nav class="flexible">
+                                         <div id="search-job" class="square">
+                                            <a href="{{ path('cuid_customer_area_new_notarize') }}"><h2>Demander un acte consulaire</h2></a>
+                                        </div>
+
+                                        <div id="edit-apply" class="square">
+                                            <a href="{{ path('cuid_customer_area_notarize_list') }}"><h2>Suivis de mes <br>demandes</h2></a>
+                                             
+                                        </div>
+                                    </nav>
+
+                                    
+                                    <nav class="flexible">
+                                         <div id="search-job" class="square">
+                                            <a href="{{ path('cuid_customer_area_notarize_payment_list') }}"><h2>Mes <br>paiements</h2></a>
+                                        </div>
+
+                                        <div id="edit-apply" class="square">
+                                            <a href="{{ path('cuid_document', { 'pagename': 'visa' }) }}" ><h2>Demander<br>un visa</h2></a>
+                                             
+                                        </div>
+                                    </nav>
+
+                                         <nav class="flexible">
+
+                                         <div id="job-offers-subjection" class="square">
+
+                                        <div class="flexible">
+                                            <h2>Votre prochain rendez-vous à l'ambassade</h2>   
+                                        </div>
+
+                                            <div id="booking-historic">
+                                                {% if booking is not empty %}
+                                                
+                                                <div class="flexible">
+
+                                                        <div id="next-booking">
+                                                
+                                                                <div class="booking-info">
+
+                                                                    <div class="flexible">
+
+                                                                        <div class="material-symbols-outlined">location_on</div>
+                                                                        <div class="booking-info-name">Adresse</div>
+
+                                                                    </div>
+
+                                                                    <div class="booking-info-result">{{booking.location}}</div>
+                                                                
+                                                                </div>
+
+
+
+                                                                <div class="booking-info">
+
+                                                                    <div class="flexible">
+
+                                                                        <div class="material-symbols-outlined">calendar_month</div>
+                                                                        <div class="booking-info-name">Date et heure</div>
+
+                                                                    </div>
+
+                                                                    <div class="booking-info-result">{{booking.bookingDate|date("d/m/Y h:i:s")}}</div>
+                                                                
+                                                                </div>
+
+                                                                
+                                                                <div class="booking-info">
+
+
+
+                                                                    <div class="flexible">
+
+                                                                        <div class="material-symbols-outlined">account_circle</div>
+                                                                        <div class="booking-info-name">Nom de l'hôte:</div>
+
+                                                                    </div>
+
+                                                                    <div class="booking-info-result">Service consulaire</div>
+                                                                
+                                                                </div>
+
+                                                        </div>
+
+                                                        <div id="booking-performances">
+                                                            <h3>Au sujet du rendez-vous</h3>
+                                                                        <ul id="booking-performances-list">
+                                                                        
+                                                                        <li> Motif : {{booking.subject}} <br><br></li>
+                                                                        <li> Commentaire : <br><br>{{booking.comment}} </li>                                                            
+                                                                        </ul>
+
+                                                                        {#
+                                                                        <strong>Gesamtkosten :</strong>
+                                                                        {% if booking.cost is not empty %}
+                                                                        <h3 id="booking-performances-cost">{{booking.cost}}€<h3>
+                                                                        {% else %}                                                                                                                                               
+                                                                        <h3 id="booking-performances-cost">Der Preis wird berechnet<h3>
+                                                                        {% endif %}
+
+                                                                        #}
+                                                        
+                                                        </div>
+
+
+
+
+                                                </div>
+
+
+
+                                                <div id="booking-notification">
+
+                                                                    {#
+
+                                                                    {% if booking.confirmation == TRUE and booking.companyConfirmation == TRUE and booking.paid == FALSE and booking.cancelled == FALSE  %}
+
+                                                                    <span>Die Reservierung wurde bestätigt, Sie können mit den Zahlungen fortfahren</span><br><br>  
+                                                                    
+                                                                    <button class="decision-button" data-action="/booking-payment/{{booking.id }}">Bezahlen Sie die Reservierung ({{booking.cost}}€)</button>
+                                                                    <button class="decision-button" data-action="/decision/0/{{booking.id}}">Kündigen Sie den Dienst</button>
+
+                                                                    {% endif %}
+
+
+                                                                    {% if booking.confirmation == TRUE and booking.companyConfirmation == FALSE and booking.paid == FALSE and booking.cancelled == FALSE  %}
+
+                                                                    <span> Sie haben die Reservierung bestätigt. Bitte warten Sie auf die Bestätigung des Dienstleisters</span><br><br>
+                                                                    <button class="decision-button" data-action="/decision/0/{{booking.id}}">Kündigen Sie den Dienst</button>
+
+                                                                    {% endif %}
+
+
+                                                                    
+                                                                    {% if booking.confirmation == FALSE and booking.companyConfirmation == TRUE and booking.paid == FALSE and booking.cancelled == FALSE  %}
+
+                                                                    <span> Der Dienstleister hat Ihre Anfrage bestätigt, bitte bestätigen Sie diese wiederum</span><br><br>
+                                                                    <button class="decision-button" data-action="/decision/1/{{booking.id}}">Bestätigen Sie den Dienst</button>
+                                                                    <button class="decision-button" data-action="/decision/0/{{booking.id}}">Kündigen Sie den Dienst</button>
+
+                                                                    {% endif %}
+
+
+                                                                    {% if booking.confirmation == FALSE and booking.companyConfirmation == FALSE and booking.paid == FALSE and booking.cancelled == FALSE  %}
+
+                                                                    <span>Bitte bestätigen Sie Ihre Anfrage</span><br><br>
+                                                                    <button class="decision-button" data-action="/decision/1/{{booking.id}}">Bestätigen Sie den Dienst</button>
+                                                                    <button class="decision-button" data-action="/decision/0/{{booking.id}}">Kündigen Sie den Dienst</button>
+
+                                                                    {% endif %}
+
+
+                                                                    {% if booking.paid == TRUE and booking.cancelled == FALSE  %}
+
+                                                                    <span>Ihre Reservierung wurde bezahlt, Sie können die Rechnung unten herunterladen</span><br><br>
+                                                                     <button>Laden Sie die Rechnung herunter</button>
+
+
+                                                                    {% endif %}
+
+                                                                    #}
+
+                                                                  <a href="/service-en-ligne/mes-rendez-vous"><button>Gérer vos rendez-vous</button></a>
+                                                
+                                                
+                                                
+                                                </div>
+
+
+                                            </div>
+                                            
+                                            {% else %}
+                                            
+                                            <div id="booking-empty">
+                                                <div class="centralizer"><h3>Vous n'avez aucun rendez-vous pour le moment<br>Pour prendre un nouveau rendez-vous, veuillez cliquer çi-dessous :</h3> <a href="{{ path('cuid_customer_area_new_booking') }}"><button>Prendre rendez-vous</button></a></div>
+                                            </div>
+                                            
+                                            {% endif %}
+                                            </div>
+                                        
+                                        
+                                        
+                                        </div>
+
+                                      
+                                    </nav>
+
+                            </div>
+
+                    </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}
+
+             

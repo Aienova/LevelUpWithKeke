@@ -1,0 +1,105 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifier un type de service</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                            <div class="flexible">
+                                <a href="../notarizetypes">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos services</div>
+                                </a>
+
+                                <a href="../addnotarizetype">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                add
+                                </span>Ajouter la liste de vos services</div>
+                                </a>
+
+                            </div>
+
+
+
+                                    <form id="page-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="addnotarizetype_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+                                            <p>
+                                            <h2>Intitulé du service :</h2>
+                                            <input type="text" name="frName" value="{{notarizetype.frName}}" required/>
+                                            </p>
+
+                                            <p>
+                                            <h2>Prix du service (en Euro) :</h2>
+                                            <input type="number" name="price" value="{{notarizetype.price}}"  required/>
+                                            </p>
+
+                                            <p>
+                                            <h2>Indications et pré-requis de ce service :</h2>
+                                            <strong>Veuillez précisez les documents scannées à fournir, si nécéssaire</strong>
+
+                                            {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}
+
+                                            </p>
+
+
+                                             <p>
+                                            <h2>Ce service nécéssite-t-il une carte consulaire ?</h2>
+                                            <p> <strong>Note :</strong> Il est obligatoire pour les ressortissants d'être enregistrer afin de demander un document consulaire </p>
+                                            <label>Oui<input type="radio" name="isAuth" value="1" 
+                                            
+                                            {% if notarizetype.consularDocument == 1 %}
+
+                                            checked
+                                                
+                                            {% endif %}
+                                            
+                                            /></label>
+
+                                            <label>Non<input type="radio" name="isAuth" value="0" 
+                                            
+                                            {% if notarizetype.consularDocument == 0 %}
+
+                                            checked
+                                                
+                                            {% endif %}
+                                            
+                                            /></label>
+                                            </p>
+
+                                            
+
+
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+
+                                    <input type="submit"  value="Créer un type de service" />
+                                    </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

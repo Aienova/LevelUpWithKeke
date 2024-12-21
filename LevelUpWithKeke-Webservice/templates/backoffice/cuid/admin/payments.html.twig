@@ -1,0 +1,31 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Gérer vos moyens de paiements</h1>
+                    </div>
+
+                    <p>CUID est compatbile avec les moyens de paiement suivant, veuillez créer un compte sur ces modes de paiement et l'associer avec votre clé API </p>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+
+                                 {% include "backoffice/cuid/admin/blocks/tables/PaymentsList.html.twig" %}
+
+                                
+                                </div>
+
+
+                  </div>
+            </section>
+
+
+        {% endblock %}

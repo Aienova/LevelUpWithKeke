@@ -1,0 +1,51 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Date et heure</th>
+            <th>Adresse</th>
+            <th>Etat</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        {% if  bookings is defined %}
+        {% if bookings is not empty  %}
+        {% for booking in bookings %}
+
+        <tr>
+            <td>{{booking.code}}</td>
+            <td>{{booking.bookingDate|date("d/m/Y h:i:s")}}</td>
+            <td>{{booking.location}}</td>
+            <td>
+
+        
+                {% if booking.confirmation == TRUE and booking.decision.id == 3 %} {% set decision = ' <span data-action="/booking/'~ booking.id ~'" class="material-symbols-outlined decision-button">visibility</span>' %}<span class="green-text">Confirmée</span>{% endif %}
+                
+                {% if booking.confirmation == TRUE and booking.decision.id == 2 %} {% set decision = '<span data-action="/booking/'~ booking.id ~'"  class="material-symbols-outlined decision-button">visibility</span>' %}<span class="blue-text">En attente de confirmation de l'hôte</span>{% endif %}
+                
+                {% if booking.confirmation == FALSE and booking.decision.id == 3 %} {% set decision = '<span data-action="/decision/1/'~ booking.id ~'"  class="material-symbols-outlined decision-button">check_circle</span><span   data-action="/decision/0/'~ booking.id ~'" class="material-symbols-outlined decision-button">cancel</span><span   data-action="/booking-preview/0/'~ booking.id ~'" class="material-symbols-outlined decision-button">description</span>' %}<span class="blue-text">En attente de votre confirmation</span>{% endif %}
+                
+                {% if booking.confirmation == FALSE and booking.decision.id == 2 %} {% set decision = '<span  data-action="/decision/1/'~ booking.id ~'" class="material-symbols-outlined decision-button">check_circle</span><span   data-action="/decision/0/'~ booking.id ~'"  class="material-symbols-outlined decision-button">cancel</span><span data-action="/booking/'~ booking.id ~'"  class="material-symbols-outlined decision-button">visibility</span>' %}<span class="blue-text">En attente de confirmation</span>{% endif %}
+           
+                           {% if booking.confirmation == FALSE and booking.decision.id == 4 %} {% set decision = '<span data-action="/decision/1/'~ booking.id ~'"  class="material-symbols-outlined decision-button">check_circle</span><span   data-action="/decision/0/'~ booking.id ~'" class="material-symbols-outlined decision-button">cancel</span> <span data-action="/booking/'~ booking.id ~'" class="material-symbols-outlined decision-button">visibility</span>' %}<span class="orange-text">En attente de votre confirmation (Reporté)</span>{% endif %}
+
+                                      {% if booking.confirmation == TRUE and booking.decision.id == 4 %} {% set decision = ' <span data-action="/booking/'~ booking.id ~'" class="material-symbols-outlined decision-button">visibility</span>' %}<span class="green-text">Confirmée</span>{% endif %}
+            </td>
+            <td>
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+
+        {% endfor %}
+        {% else %}
+                <tr><td colspan="7">Aucun rendez-vous pour le moment</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun rendez-vous pour le moment</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

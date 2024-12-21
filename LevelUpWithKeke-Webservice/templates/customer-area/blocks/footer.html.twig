@@ -1,0 +1,93 @@
+
+              
+              
+              <div id="footer-content" class="flexible mobileblock">
+
+                     <ul>
+                            <li><h3>NOUS CONTACTER</h3></li>
+                            <a href="https://www.google.com/maps/place/Ambassade+du+Congo+Brazzaville+en+Allemagne/@52.5125764,13.4079393,17z/data=!3m1!4b1!4m6!3m5!1s0x47a84f8cc63ca925:0xe309c8c29011a99e!8m2!3d52.5125732!4d13.4105142!16s%2Fg%2F11hy9vwnqv?authuser=0&entry=ttu" target="_blank"><li class="flexible"><div class="material-symbols-outlined">location_on</div><div class="navName">{{website.location}}</div></li></a>
+                             <a href="tel:+49 3012378546"><li class="flexible"><div class="material-symbols-outlined">call</div><div class="navName">{{website.telephone}}</div></li></a>
+                            <a href="mailto:contact@ambacongo.de"><li class="flexible"><div class="material-symbols-outlined">mail</div><div class="navName">{{website.email}}</div></li></a>
+                            
+                            <li><div class="flexible"><div class="material-symbols-outlined">schedule</div><div class="navName">Horaires de travail :</div></div>
+
+                            (du Lundi au Vendredi) <br>
+                            Ouverture (matinée) : 9h - 13h<br>
+                            Ouverture (après-midi) : 14h - 16h<br>
+
+                            </li>
+                            
+                            
+                            <li>
+                            
+
+                            {% for social in socials %}
+
+                            {% if social.visibility == TRUE %}
+                            
+                            <a target="_blank" href="{{social.link}}"><img class="logo-mini invert" src=".{{social.socialMediaType.logo}}" /></a>
+
+                            {% endif %}
+                            
+                            {% endfor %}                  
+                      
+                      
+                      </li>
+                      
+                      </ul>
+
+
+                     <ul>
+
+                     <li><h3>SERVICES CONSULAIRES</h3></li>
+                     <a href="/document/visa"><li>Visa</li></a>
+                     <a href="/document/passeport"><li>Enregistrement</li></a>
+                     <a href="/service-en-ligne/authentifier-un-document"><li>Authentifier un document</li></a>
+                     <a href="/service-en-ligne/rendez-vous"><li>Prendre rendez-vous</li></a>
+                     <a href="/page/contact"><li>Contact</li></a>
+
+
+                     {#
+                     {% for menu in menu %}
+                     {% if menu.topmenu == false %}
+
+                            <a href="{{menu.url}}"><li>{{menu.title}}</li></a>
+
+                            
+                     {% endif %}
+                     {% endfor %}
+                     #}
+
+                                              {#    <a href="tel:0777777777"><li>Condition général de vente</li></a>
+                            <a href="mailto:contact@white-shiny.fr"><li>F.A.Q</li></a>
+                            <a href="mailto:contact@white-shiny.fr"><li>A propos</li></a>  #}
+
+
+                      </ul>
+
+                      <ul id="newsletter">
+                      <li><h3 class="uppercaser">Newsletter</h3></li>
+                      <li>Suivez l'actualité de l'ambassade du Congo, inscrivez-vous à notre newsletter</li>
+                      <li>
+                      <form id="newsletter-EEform" method="POST">
+                            <div><input type="text" name="email" placeholder="Votre email : xxxx@doamine.com" /></div>
+                            <div><input type="hidden" name="newsletter" /></div>
+                            <div style="margin-top:10px;"><input type="submit" value="S'inscrire" /></div>
+                      </form>
+
+                      </li>
+                      <li>
+                      
+                      </ul>
+
+
+
+
+
+              </div>
+           {#  <link rel="stylesheet" href="style.css"/>  #}
+
+
+
+    <p>Powered by <a href="https://aienova.com"><img class="logo-mini invert" style="transform:translateY(12px)" src="/build/media/image/icons/aienova.png"/></a> Nothing to something</p>
+

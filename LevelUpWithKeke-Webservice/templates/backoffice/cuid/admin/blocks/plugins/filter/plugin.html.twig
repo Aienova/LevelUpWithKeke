@@ -1,0 +1,65 @@
+
+
+<form id="filter-search" method="POST">
+
+<input type="hidden" name="filter" value="1" />
+
+<label>Recherche par :
+        <select name="proprety">
+        
+        {% if pages is defined or articles is defined  %}
+
+        <option value="title">Titre</option>
+        <option value="author">Auteur</option>
+            
+        {% endif %}
+
+        {% if customers is defined  %}
+
+        <option value="firstname">Prénom</option>
+        <option value="surname">Nom</option>
+         <option value="mainLocation">Adresse Postale</option> 
+
+        {% endif %}
+
+        {% if services is defined  %}
+
+        <option value="n.numberId">Identifiant</option>
+        <option value="cus.surname">Nom de famille du Client</option>
+        <option value="tp.name">Type de service</option>
+            
+        {% endif %}
+
+
+        {% if bookings is defined  %}
+
+        <option value="b.code">code réservation</option>
+        <option value="cus.surname">Nom de famille du Client</option>
+        <option value="b.subject">Motif</option>
+            
+        {% endif %}
+
+
+        </select>
+
+                <input type="text" name="value" placeholder="Nom de filtre recherche" />
+
+                {% if services is defined  or bookings is defined  %}
+
+                        <select name="decision">
+
+                        <option value="2">En cours</option>
+                        <option value="1">Annulée</option>
+                        <option value="3">Validée</option>
+                        <option value="4">A revoir</option>                        
+                        </select>
+
+
+                {% endif %}
+
+
+
+        <input type="submit"  value="Filtrer ma recherche" />
+
+
+</form>

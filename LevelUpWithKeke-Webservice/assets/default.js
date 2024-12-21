@@ -1,0 +1,11 @@
+import './scripts/form/search-engine.js';
+import './scripts/panel/panel.js'; 
+import './scripts/panel/slide.js';
+import './scripts/panel/menu.js';
+import './scripts/panel/editor.js';
+import './scripts/form/booking.js';
+import './scripts/table/booking-list.js';
+import './scripts/form/stepbystep.js';
+import './scripts/form/side.js';
+import './scripts/form/loader.js';
+import './scripts/form/verify.js';

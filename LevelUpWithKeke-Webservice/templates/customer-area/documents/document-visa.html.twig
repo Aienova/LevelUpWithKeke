@@ -1,0 +1,98 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="page-body">
+
+                    {% if sent == 1 %}
+
+                <div id="message-form">
+                
+                
+                {% include "popup.html.twig" %}
+
+                
+                
+                
+                </div>
+
+                          {% endif %}
+
+
+            <div id="page-content">
+
+            <div id="page-title">
+            <h1>Demande de Visa</h1>
+            </div>
+
+            
+
+                                    <div class="flexible mobileblock">
+                                <a href="../service-en-ligne/suivis-des-demandes">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos demandes</div>
+                                </a>
+
+                                <a href="{{ path('cuid_document', { 'pagename': 'visa-tracking' }) }}">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                zoom_in
+                                </span>Suivre vos demandes de visa</div>
+                                </a>
+
+                                {% if customer.id != 1 %}
+
+                                <a href="../service-en-ligne">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                home
+                                </span>Retourner à l'accueil</div>
+                                </a>
+
+                                {% else %}
+
+                                <a href="../infos-service-en-ligne">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                home
+                                </span>Retourner à l'accueil</div>
+                                </a>
+                                    
+                                {% endif %}
+
+
+                            </div>
+            
+                {% include "forms/visa.html.twig" %}
+
+            {#
+
+            <div class="flexible">
+
+                <div class="content">
+                TEXT TEXT
+                </div>
+
+
+                <div class="content">
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                </div>
+
+            </div>
+
+            #}
+
+
+
+
+            </div>
+
+        </section>
+        {% endblock %}

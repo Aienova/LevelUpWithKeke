@@ -1,0 +1,41 @@
+<table id="table-resa3" class="table-resa hidden">
+    <thead>
+        <tr>
+            <th >Numéro de demande</th>
+            <th class="hiddenformobile">Date de refus</th>
+            <th >Type de demande</th>
+            <th class="hiddenformobile">Etat de la demande</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if  cancelNotarizes is defined %}
+        {% if cancelNotarizes is not empty  %}
+        {% for cancelNotarize in cancelNotarizes %}
+
+                    {% if  cancelNotarize.state == 0 %}{% set statuts = 'Rejetée' %}{% endif  %}
+            {% if  cancelNotarize.state == 1 %}{% set statuts = 'Envoyée' %}{% endif  %}
+            {% if  cancelNotarize.state == 2 %}{% set statuts = 'En cours de traitement' %}{% endif  %}
+            {% if  cancelNotarize.state == 3 %}{% set statuts = 'En cours de vérification' %}{% endif  %}
+            {% if  cancelNotarize.state == 4 %}{% set statuts = 'Accepté(e)' %}{% endif  %}
+
+        <tr>
+            <td>{{cancelNotarize.numberId}}</td>
+            <td class="hiddenformobile">{{cancelNotarize.dateDecision|date("d/m/Y h:i:s")}}</td>
+            <td>{{cancelNotarize.type.frName}}</td>
+            <td  class="hiddenformobile">{{statuts}}</td>
+            <td><span data-action="/Notarize/{{cancelNotarize.id}}" class="material-symbols-outlined decision-button">visibility</span></td>
+  
+        </tr>
+
+        {% endfor %}
+        {% else %}
+                <tr><td colspan="7">Aucune demande enregsitrée</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucune demande enregsitrée</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

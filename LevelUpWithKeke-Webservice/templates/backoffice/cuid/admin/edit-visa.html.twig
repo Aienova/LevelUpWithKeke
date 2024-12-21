@@ -1,0 +1,72 @@
+
+       {% extends "/backoffice/cuid/base.html.twig" %}
+    
+
+        {% block content %}
+
+            <section id="fonctionnal">
+                  <div id="main-title">
+                    <div class="flexible">
+                       
+                        <h1>Modifier un type de visa</h1>
+                    </div>
+
+                    <div id="square-menu" class="flexible">
+
+                                <div class="square">
+
+                            <div class="flexible">
+                                <a href="../visas">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                list
+                                </span>Consulter la liste de vos types de visa</div>
+                                </a>
+
+                                <a href="../addvisa">
+                                <div class="optionbutton">
+                                <span class="material-symbols-outlined">
+                                add_circle
+                                </span>Ajouter un nouveau type de visa</div>
+                                </a>
+
+                            </div>
+
+
+                                    <form id="page-editor" method="POST" enctype="multipart/form-data">
+
+
+                                    <input type="hidden" name="visa_data" value="1" />
+                                    <input type="hidden" name="author" value="{{user.firstname}} {{user.surname}}" />
+                                            <p>
+                                            <h2>Intitulé du visa :</h2>
+                                            <input type="text" name="frName" value="{{visa.frName}}" />
+                                            </p>
+
+                                            <p>
+                                            <h2>Prix du visa :</h2>
+                                            <input type="number" name="price" value="{{visa.price}}" />
+                                            </p>
+
+                                            <p>
+                                            <h2>Nombre de jour(s) :</h2>
+                                            <input type="number" name="day" value="{{visa.day}}" />
+                                            </p>
+
+                                   {#
+                                    
+                                    <h3>Déposer vos images ou Vidéos ici</h3>
+
+                                    <input id="upload-zone" type="file" name="newmedia[]" multiple>
+                                    
+                                        #}
+
+                                    <input type="submit"  value="Modifier ce type de visa" />
+                                    </form>
+
+                     </div>
+                  </div>
+            </section>
+
+
+        {% endblock %}

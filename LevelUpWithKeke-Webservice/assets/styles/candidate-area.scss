@@ -1,0 +1,43 @@
+@import "default";
+@import "candidate-area/header";
+@import "candidate-area/body";
+@import "candidate-area/footer";
+
+
+
+
+body {
+    margin: 0px;
+    height: 100%;
+    font-family: "Roboto";
+    background-image: url('/assets/media/image/photos/background3.jpg');
+    background-attachment: fixed;
+
+    h1{
+
+        margin-top:0px;
+    }
+
+
+    #connection-form {
+        width: 400px;
+        margin: auto;
+        padding-top: 270px;
+    }
+
+
+    h1,h2,h3{
+
+        font-family: nothingtosomething;
+    }
+
+    input[type=submit] {
+        background-color: rgb(0 0 0);
+    
+    }
+}
+
+#search-engine,.square{
+
+    background-color: #0984e2;
+}

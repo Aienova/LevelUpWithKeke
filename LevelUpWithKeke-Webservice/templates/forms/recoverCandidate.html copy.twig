@@ -1,0 +1,33 @@
+
+
+    <div id="recover-customer" class="stepform dataform" data-action="recover-customer">
+
+
+        <h2>Veuillez renseigner votre email ou votre login pour récupérer votre mot de passe</h2>
+
+                <p class="validmessage">{{ message }}</p>
+
+            
+            <form method="POST" id="recover-form">
+
+                <div><label>Votre adresse email ou votre login</label><input type="text" required="required" name="recover"/></div>
+
+                <input type="submit" value="Renvoyer le lien" />
+
+            </form>
+
+       
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+                         {% include '/forms/scripts-form.html.twig' %}
+
+
+
+
+
+
+
+
+
+
+             

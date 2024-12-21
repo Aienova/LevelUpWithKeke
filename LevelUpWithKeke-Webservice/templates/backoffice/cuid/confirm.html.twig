@@ -1,0 +1,156 @@
+<div id="confirm-form">
+
+<h3>{{confirmmessage}}</h3>
+
+{% if section == "booking" %}
+
+            <div id="confirm-details">
+                <strong>détails du rendez-vous</strong>
+                <p>Visiteur :{{data.customer.firstname}} {{data.customer.surname}}</p>
+                <p>Date et heure :{{data.bookingDate|date("d/m/Y h:i:s")}}</p>
+                <p>Motif:{{data.subject}}</p>
+                <div id="comment">Commentaire:{{data.comment}}</div>
+            </div>
+
+            <div id="confirm-report" class="hidden">
+            <br>
+            <p>Souhaitez-vous , reporter ce rendez-vous ?</p>
+            </br>
+
+            <label>Nouvelle date et heure<input id="newDate" name="newDate" type="datetime-local"/></label>
+
+
+            </div>
+
+
+{% endif %}
+
+<div id="confirm-choice">
+<button id="action-button" data-action="{{action}}" data-id="{{id}}" data-section="{{section}}">Oui</button>
+
+        {% if section == "booking" and action == "choose" %}
+        <button id="report-button">Non</button>
+        {% else %}
+        <button id="cancel-editor">Non</button>
+        {% endif %}
+
+</div>
+
+<div id="report-choice" class="hidden">
+<button id="action-button2" data-action="report" data-id="{{id}}" data-section="{{section}}">Oui</button>
+<button id="action-button3" data-action="cancel" data-id="{{id}}" data-section="{{section}}">Non (Annuler le rendez-vous)</button>
+
+</div>
+
+
+
+</div>
+
+<script>
+
+
+$("#action-button").click(function(){
+
+    var section = $("#action-button").data("section");
+    var id = $("#action-button").data("id");
+    var action = $("#action-button").data("action");
+
+
+    console.log("Lock it");
+
+            $("#editor").removeClass("hidden");
+
+            $.ajax({
+                url: '/cuid/set/'+action+'/'+section+'/'+id,
+                type : 'POST',
+
+                success: function(data) {
+                 $('#editor-form-display').html(data);
+                 location.reload();
+                },
+                error: function() {
+                 $('#editor-form-display').text('Erreur au niveau du subscribe form');
+                }
+                     });
+
+
+});
+
+$("#action-button2").click(function(){
+
+    var section = $("#action-button2").data("section");
+    var id = $("#action-button2").data("id");
+    var action = $("#action-button2").data("action");
+        var newDate = $("#newDate").val();
+
+    console.log("Lock it");
+
+            $("#editor").removeClass("hidden");
+
+            $.ajax({
+                url: '/cuid/set/'+action+'/'+section+'/'+id,
+                type : 'POST',
+                data : { date: newDate },
+                success: function(data) {
+                 $('#editor-form-display').html(data);
+                 location.reload();
+                },
+                error: function() {
+                 $('#editor-form-display').text('Erreur au niveau du subscribe form');
+                }
+                     });
+
+
+});
+
+
+
+$("#action-button3").click(function(){
+
+    var section = $("#action-button3").data("section");
+    var id = $("#action-button3").data("id");
+    var action = $("#action-button3").data("action");
+        var newDate = $("#newDate").val();
+
+    console.log("Lock it");
+
+            $("#editor").removeClass("hidden");
+
+            $.ajax({
+                url: '/cuid/set/'+action+'/'+section+'/'+id,
+                type : 'POST',
+                data : { date: newDate },
+                success: function(data) {
+                 $('#editor-form-display').html(data);
+                 location.reload();
+                },
+                error: function() {
+                 $('#editor-form-display').text('Erreur au niveau du subscribe form');
+                }
+                     });
+
+
+});
+
+
+
+$("#report-button").click(function(){
+
+        $("#confirm-choice").addClass("hidden");
+        $("#report-choice").removeClass("hidden");
+        $("#confirm-report").removeClass("hidden");
+        $("#confirm-details").addClass("hidden");
+
+
+});
+
+
+$("#cancel-editor").click(function(){
+
+
+    console.log("cancel this !");
+        $("#editor").addClass("hidden");
+
+});
+
+</script>

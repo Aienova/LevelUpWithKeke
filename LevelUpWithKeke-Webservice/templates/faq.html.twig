@@ -1,0 +1,140 @@
+<style>
+
+.accordion,.accordion * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.accordion {
+    overflow: hidden;
+    background: #ffffff;
+    border-top: 1px solid #acacac;
+    width: 70%;
+    margin: auto;
+    margin-bottom : 50px;
+
+}
+
+.accordion-section {
+    border-bottom: 1px solid #acacac
+}
+
+.accordion-section-title {
+    width: 100%;
+    padding: 15px 5px;
+    display: inline-block;
+    position: relative;
+    background: black;
+    color: white;
+    transition: all linear 0.15s
+}
+
+.accordion-section-title:focus {
+
+    background: blue;
+    color: white;
+}
+
+.accordion-section-title .plus,.accordion-section-title .minus {
+    position: absolute;
+    right: 0;
+    width: 10px
+}
+
+.accordion-section-title .plus {
+    display: inline-block;
+    float: right
+}
+
+.accordion-section-title .minus {
+    display: none
+}
+
+.accordion-section-title.active {
+    color: white;
+}
+
+.accordion-section-title.active .minus {
+    display: inline-block;
+    float: right
+}
+
+.accordion-section-title.active .plus {
+    display: none
+}
+
+.accordion-section-title.active,.accordion-section-title:hover {
+    text-decoration: none
+}
+
+.accordion-section-content {
+    padding: 15px 5px;
+    background-color: #f1e8c7;
+    display: none;
+}
+
+.accordion-section-content p {
+    margin-top: 0
+}
+
+.accordion-section-content#accordion-3 p {
+    margin-bottom: 2px;
+    line-height: 1.2
+}
+
+
+</style>
+
+{% set i = 1 %}
+
+{% for faq in faqs %}
+
+                    <div class="accordion">
+                                        <div class="accordion-section">
+                                            <a href="#accordion-{{i}}" class="accordion-section-title"><strong>{{faq.question}} <span class="plus">+</span><span class="minus">-</span></strong></a>
+
+                                            <div id="accordion-{{i}}" class="accordion-section-content" style="display: none;">
+                                                
+                                            {{faq.answer|raw }}
+                                        </div>
+                    </div>
+                    </div>
+    {% set i = i + 1 %}
+
+{% endfor %}
+
+
+
+
+
+
+
+
+<script>
+  $(document).ready(function() {
+    function close_accordion_section() {
+        $('.accordion .accordion-section-title').removeClass('active');
+        $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+    }
+
+    $('.accordion-section-title').click(function(e) {
+        // Grab current anchor value
+        var currentAttrValue = $(this).attr('href');
+
+        if($(e.target).is('.active')) {
+            close_accordion_section();
+        }else {
+            close_accordion_section();
+
+            // Add active class to section title
+            $(this).addClass('active');
+            // Open up the hidden content panel
+            $('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
+        }
+
+        e.preventDefault();
+    });
+});
+
+</script>

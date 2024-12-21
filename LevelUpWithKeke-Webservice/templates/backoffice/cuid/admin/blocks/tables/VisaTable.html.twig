@@ -1,0 +1,112 @@
+
+      
+        {% if i > 0 %}
+
+        {% set hidden = "hidden" %}
+
+        {% else %}
+
+        {% set hidden = "" %}
+
+        {% endif %}
+      
+      
+      
+        {% if visaservices is not empty %}
+
+
+<table id="result-{{data[i]["tableid"]}}" data-name="visa" class="table-resa result {{hidden}}">
+  <thead>
+              <tr>
+            <th>Demande de Visa</th>
+            </tr>
+
+        <tr>
+            <th>Code:</th>
+            <th>Nom:</th>
+            <th>Nom de jeune fille:</th>
+            <th>Prénom:</th>
+            <th>Nom du père:</th>
+            <th>Nom de la mère:</th>
+            <th>Nationalité d'origine:</th>
+            <th>Nationalité actuelle:</th>
+            <th>Adresse:</th>
+            <th>Profession:</th>
+            <th>Numéro de passeport:</th>
+            <th>Date de délivrance:</th>
+            <th>Date d'expiration du passeport:</th>
+            <th>Autorité de délivrance du passeport:</th>
+            <th>Temps du séjour:</th>
+            <th>Lieu d'entrée:</th>
+            <th>Précédent numéro de Visa d'entrée au Congo:</th>
+            <th>Précédent Visa a été délivré par:</th>
+            <th>Date du précédent Visa d'entrée au Congo:</th>
+            <th>Motif de voyage:</th>
+            <th>Première fois au Congo ?:</th>
+            <th>Date de la dernière visite au Congo:</th>
+            <th>Lieu de la dernière visite au Congo:</th>
+            <th>Déjà vécu 3 ans au Congo:</th>
+            <th>Dates pendant ces 3 années aux Congos:</th>
+            <th>Lieu pendant ces 3 années aux Congos:</th>
+            <th>Date d'arrivé au Congo</th>
+            <th>Adresse au Congo</th>
+            <th>Lieu de départ au Congo</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for service in visaservices %}
+            <tr>
+            <td>{{ service.numberId }}</td>
+            <td>{{ service.person.surname }}</td>
+            <td>{{ service.person.maidenname }}</td>
+            <td>{{ service.person.firstname }}</td>
+            <td>{{ service.person.fathername }}</td>
+            <td>{{ service.person.mothername }}</td>
+            <td>{{ service.person.origin.name }}</td>
+            <td>{{ service.person.nationality.name }}</td>
+            <td>{{ service.customer.mainLocation }}</td>
+            <td>{{ service.person.profession }}</td>
+            <td>{{ service.passport.numberId }}</td>
+            <td>{{ service.passport.deliveryDate|date("d/m/Y") }}</td>
+            <td>{{ service.passport.expirationDate|date("d/m/Y") }}</td>
+            <td>{{ service.passport.deliveryAutority }}</td>
+            <td>{{ service.visa.timeTravel }}</td>
+            <td>{{ service.visa.startPlace }}</td>
+            <td>{{ service.visa.previousVisaNumber }}</td>
+            <td>{{ service.visa.previousVisaDeliver }}</td>
+            <td>{{ service.visa.previousVisaDate|date("d/m/Y") }}</td>
+            <td>{{ service.visa.travelReason.FRname }}</td>
+            <td>{% if service.visa.firstTime == TRUE %}{% endif %}{{ service.visa.firstTime }}</td>
+            <td>{{ service.visa.lastTravelDate|date("d/m/Y") }}</td>
+            <td>{{ service.visa.lastTravelLocation }}</td>
+            <td>{{ service.visa.allReadyLived }}</td>
+            <td>{{ service.visa.last3YearsTravelDate|date("d/m/Y") }}</td>
+            <td>{{ service.visa.lastTravel3YearsLocation }}</td>
+            <td>{{ service.visa.congoArrivalDate|date("d/m/Y") }}</td>
+            <td>{{ service.visa.congoAddress }}</td>
+            <td>{{ service.visa.congoDepartureLocation }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+{% else %}
+
+
+<table id="result-{{data[i]["tableid"]}}" data-name="visa"  class="table-resa result {{hidden}}">
+
+        <thead>        
+            <tr>
+            <th>{{ data[i]["title"] }}</th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr><td colspan="7">Aucun résultat</td></tr>
+    </tbody>
+</table>
+
+
+{% endif %}

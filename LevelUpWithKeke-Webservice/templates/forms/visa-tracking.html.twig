@@ -1,0 +1,67 @@
+
+                                         
+           <form method="POST" id="visa-form" class="middle-form" enctype="multipart/form-data">
+
+
+                <input type="hidden" name="formType" value="5"/>
+
+                                <div id="step1" class="step">
+
+                                <h2>Suivi demande de visa</h2>
+                         {% if customer.id == 1 %}
+                         <div class="flexible mobileblock">
+
+
+
+                                <p><label>Déjà enregistré ? Entrez votre adresse email :
+                                     <input type="text" name="email" required/>
+                                </label></p>
+
+                                                                <p><label>Numéro de téléphone *
+                                     <input type="text" name="telephone" required/>
+                                </label></p>
+                           </div>
+                         {% endif %}
+
+
+                         <div class="flexible mobileblock">
+
+                                <p><label>Référence Visa *
+                                     <input type="text" name="visaNumberId" required/>
+                                </label></p>
+
+
+                                <p><label>Numéro du passeport *
+                                     <input type="text" name="numberId" required/>
+                                </label></p>
+
+                         </div>
+
+                        
+                                    <div class="flexible mobileblock">
+
+                                            
+                                            <input type="submit" value="Valider"/>
+                                    </div>
+
+                                </div>
+
+
+                            {% if notavisa is not null %}
+
+                            <h3>Visa trouvé : </h3>
+
+                            <ul>
+
+
+                                <li><strong>Visa - {{notavisa.numberId}} :</strong> Type de Visa : {{notavisa.visa.visaType.frName}} pour {{notavisa.visa.travelReason.frName}} à partir du {{notavisa.visa.congoArrivalDate|date("d/m/Y h:i:s")}}</li>
+                                    
+
+
+                            </ul>
+                                
+                            {% endif %}
+
+
+
+                            </form>

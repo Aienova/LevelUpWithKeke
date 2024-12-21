@@ -1,0 +1,31 @@
+                                            <form method="POST"  id="block-settings-{{setting.item.id}}" class="form-field">
+                                            <input type="hidden" name="form_data" value="1" />
+                                             <input type="hidden" name="EditFormItem" value="1" />
+                                            <input type="hidden" name="entity" value="{{setting.id}}" />
+                                               
+                                                    <h3>Image Text ( # {{setting.id}} )</h3>
+
+                                                                                            {% if homepage is defined %}
+
+                                    <input type="hidden" name="homepage_data" value="image-text" />
+
+                                        {% else %}
+                                        
+                                            <input type="hidden" name="form_data" value="1" />
+
+                                        {% endif %}
+
+
+                                            {% include "backoffice/cuid/admin/blocks/plugins/image-selector/plugin.html.twig" %}
+                                                  
+
+                                                    {% include "backoffice/cuid/admin/blocks/plugins/text-editor/plugin.html.twig" %}
+
+
+
+                                                    <input type="hidden" name="formItem" value="1" />
+                                                    <input type="hidden" name="editfield" value="1" />
+
+                                                    <input type="submit" value="Modifier"/>
+                                                
+                                                </form>

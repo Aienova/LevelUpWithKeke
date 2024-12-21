@@ -1,0 +1,53 @@
+    <div id="list-stats" >
+    <div class="flexible">
+
+
+
+
+
+
+        {% for i in 1 .. count - 1 %}
+
+
+            <div class="stat-info">
+                <h2>{{ statname[i] }}</h2>
+
+                    <span id="stat-value-{{i}}" class="stat-value">
+
+
+                    {% if i == 16 %}
+
+                    {{ statvalue[i]|date("Y") }}
+
+                    {% else %}
+
+                    {{ statvalue[i] }}
+
+                    {% endif %}
+
+                    
+                     </span>
+
+                    {#
+                    <li>
+
+                        {% if stat.activated == 1 %}
+                        Activé
+                        {% else %}
+                        Desactivé
+                        {% endif %}
+                    </li>
+                    #}
+
+            
+            </div>
+
+                    {% if i is divisible by(4) %}
+                    
+                    </div><div class="flexible">
+
+                    {% endif %}
+
+        {% endfor %}
+    </div>
+    </div>

@@ -1,0 +1,32 @@
+<div id='popup'><h3>{{ formmessage|raw }}</h3>
+
+        <form method="POST">
+        <input type="hidden" name="decision" value="{{decision}}" />
+        <input type="hidden" name="booking-id" value="{{booking.id}}" />
+        
+        <button name="answer" value="1"><span class="material-symbols-outlined">check_circle</span>Ja</button><button name="answer" value="0"><span class="material-symbols-outlined">cancel</span>Nein</button>
+
+        </form>
+
+</div>
+
+    <script>
+
+        $("#popup").removeClass("hidden");
+        $("#popup").addClass("showing");
+
+                /*
+
+                setTimeout(function() {
+
+            $("#popup").removeClass("showing");
+
+                    },2000);
+
+
+            setTimeout(function() {
+
+            $("#popup").addClass("hidden");
+
+                    },3000);  */
+    </script>

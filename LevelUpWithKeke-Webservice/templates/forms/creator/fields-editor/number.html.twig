@@ -1,0 +1,31 @@
+                                            <form method="POST" id="form-settings-field-{{setting.id}}" class="form-field">
+
+                                                        <input type="hidden" name="form_data" value="1" />
+                                             <input type="hidden" name="EditFormItem" value="1" />
+                                            <input type="hidden" name="entity" value="{{setting.id}}" />
+                                               
+                                                    <h3>{{setting.title}} ( # {{setting.formItem.id}} )</h3>
+                                                    <h4>Champ {{setting.formItem.frName}}</h4>
+
+                                                    <input type="text" name="title" placeholder="titre du champs" value="{{setting.title}}" />
+                                                    <input type="text" name="name" placeholder="nom de la donnée" value="{{setting.name}}" />
+                                                    <br><br>
+                                                    <label>Minimum<input type="number" name="min" min="0" value="{{setting.min}}" required/></label>
+                                                    <label>Maximum<input type="number" name="max" min="1" value="{{setting.max}}"  required/></label>
+                                                    
+                                                    {% if steps is not empty %}
+                                                    <label>Etape associé à : 
+                                                    <select name="step">
+                                                        {% for step in steps %}
+                                                        <option value="{{step.id}}">Etape {{step.position}} - {{step.name}}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                    </label>
+                                                    {% endif %}
+                                                    <input type="hidden" name="formItem" value="1" />
+                                                    <input type="hidden" name="editfield" value="1" />
+
+                                                    <input type="submit" name="decision" value="Modifier"/>
+                                                    <input type="submit" name="decision" value="Supprimer"/>
+                                                
+                                                </form>

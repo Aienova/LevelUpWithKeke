@@ -1,0 +1,58 @@
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}    
+
+
+                    <div id="page-banner">
+            <h1>Suivi de mes demandes</h1>
+
+            </div>  
+
+     <section id="fonctionnal">
+
+
+
+            <div id="page-content">
+                <div id="message-form"></div>
+
+                                        <div class="flexible">
+
+                                <a href="../service-en-ligne">
+                                <div class="navbutton">
+                                <span class="material-symbols-outlined">
+                                home
+                                </span>Retourner à l'accueil</div>
+                                </a>
+                            </div>
+
+                            <div id="booking-panel">
+
+                                    <ul class="menu-inline">
+                                        <li id="resa1">Demande en cours</li>
+                                        <li id="resa2">Demande cloturée</li>
+                                        <li id="resa3">Demande annulée</li>
+                                        <a href="{{ path('cuid_customer_area_new_notarize') }}"><li id="new-resa">Demander un acte consulaire </li></a>
+                                    </ul>
+                            
+                            </div>
+                            
+                            {% include "customer-area/blocks/tables/currentNotarizesTable.html.twig" %}
+
+                            {% include "customer-area/blocks/tables/paidNotarizesTable.html.twig" %}
+
+                            {% include "customer-area/blocks/tables/cancelNotarizesTable.html.twig" %}
+                </div>
+
+
+
+
+                    
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    </section>
+
+
+        {% endblock %}

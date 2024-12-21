@@ -1,0 +1,29 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="fonctionnal">
+
+            <div id="page-banner">
+            <h1>Vos offres d'emplois</h1>
+
+            </div>
+
+            <div id="page-content">
+            <h2>La liste de vos offres d'emploi </h2>
+            <p>Veuillez remplir les informations sur le moteur de recherche</p>
+
+            <a href="{{ path('cuid_recruiter_area_create_job_offers') }}"><div class="addbutton" id="add-jobOffer">Créer une nouvelle offre d'emploi <span class="material-symbols-outlined">add_circle</span></div></a>
+            <div id="search-engine" data-route="search-engine-job-offers">
+            <div id="loading"><img class="aienova-loader" src="/build/media/image/icons/loader.gif" /><br><h4>Nothing to Something</h4></div>
+            </div>
+            </div>
+
+        </section>
+        {% endblock %}
+
+             

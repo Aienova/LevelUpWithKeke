@@ -1,0 +1,82 @@
+@import "default";
+
+
+
+body {
+    margin: 0px;
+    height: 100%;
+    font-family: "Roboto";
+    background-image: linear-gradient(orange,rgb(255, 123, 0));
+
+    h1{
+
+        margin-top:0px;
+        text-align: center;
+    }
+
+    #connection-title{
+
+        margin-bottom:10px;
+
+        h1 {
+            padding-top: 10px;
+            font-size: 50px;
+            width: 100%;
+        }
+
+        h3{
+            padding-top: 10px;
+            font-size: 20px;
+        }
+
+    }
+
+
+
+    .return-button{
+
+        background-color: black;
+        padding:10px;
+        color:white;
+        text-align: center;
+    }
+
+    .return-button:hover{
+
+        background-color: rgb(245, 203, 16);
+        padding:10px;
+        color:black;
+    }
+    
+
+
+
+    #connection-form {
+        width: 50%;
+        margin: auto;
+        padding-top: 100px;
+        text-align: center;
+    }
+
+
+    #subscribe-form {
+        width: 400px;
+        margin: auto;
+    }
+
+
+    p {
+        text-align: center;
+    }
+
+    h1,h2,h3{
+
+        font-family: nothingtosomething;
+        font-size: 30px;
+    }
+
+    input[type=submit] {
+        background-color: rgb(0 0 0);
+    
+    }
+}

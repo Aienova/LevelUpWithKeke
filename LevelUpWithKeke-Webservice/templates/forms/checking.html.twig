@@ -1,0 +1,45 @@
+
+                                         
+           <form method="POST" id="visa-form" class="middle-form" enctype="multipart/form-data">
+
+
+                <input type="hidden" name="formType" value="3"/>
+
+                                <div id="step1" class="step">
+
+                                <h2>Vérification de l'authenticité d'un document</h2>
+
+                                <p>Ce formulaire permet de vérifier qu'un document a bien été délivré par l'ambassade du Congo en France :</p>
+                                 
+                                                                     <div class="flexible mobileblock">
+                                 <p><label>Le numéro de référence du document
+                                     <input type="text" name="documentId" placehodler="Entrez la référence du document" required/>
+                                </label></p>
+
+
+                                <p><label>La clé de controle
+                                     <input type="text" name="code"  placehodler="Entrez la clé de contrôle" required/>
+                                </label></p>
+                                      </div>                                          
+                                            <input type="submit" value="Vérifier"/>
+
+
+                                </div>
+
+                                
+                            {% if documents is not null %}
+
+                            <h3>Document(s) trouvé(s) : </h3>
+
+                            <ul>
+                                {% for document in documents %}
+
+                                <li><strong>{{document.notarizeType.frName}} - {{document.documentId}} :</strong> Reçu le {{document.sendDate|date("d/m/Y h:i:s")}} envoyé par {{document.sender}}</li>
+                                    
+                                {% endfor %}
+
+                            </ul>
+                                
+                            {% endif %}
+
+                            </form>

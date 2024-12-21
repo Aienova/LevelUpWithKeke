@@ -1,0 +1,67 @@
+<table id="table-resa1" class="table-resa">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Date d'enregistrement</th>
+            <th>Adresse Postale</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if customers is defined %}
+        {% if customers is not empty  %}
+
+        {% for customer in customers |sort((a, b) => b.id <=> a.id) %}
+
+        {% if customer.id != 1 %}
+            
+
+
+        <tr>
+            <td>{{customer.id}}</td>
+            <td>{{customer.firstname}}</td>
+            <td>{{customer.surname}}</td>
+            <td>{{customer.creationDate|date("d/m/Y h:i:s")}}</td>
+            <td>
+            
+            {% if customer.mainLocation is not empty %}
+            {{customer.mainLocation}}
+            {% else %}
+            <span class="red-text">Non renseigné</span>    
+            {% endif %}
+            
+            
+            </td>
+            <td>
+
+            
+
+                {% set decision = '
+                <a href="./customer/'~ customer.id ~'"><span class="material-symbols-outlined decision-button">account_circle</span></a>
+                <a href="tel:'~ customer.telephone ~'"><span class="material-symbols-outlined decision-button">phone</span></a>
+                <a href="mailto:'~ customer.email ~'"><span class="material-symbols-outlined decision-button">mail</span></a>
+               
+
+' 
+                
+                
+                %}
+
+                 {{decision|raw}}                           
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+          {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun résultat</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

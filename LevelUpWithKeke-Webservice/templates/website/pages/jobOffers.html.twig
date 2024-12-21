@@ -1,0 +1,34 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="page-body">
+
+            <div id="page-banner">
+            <h1>Nos offres d'emplois</h1>
+
+            </div>
+
+            <div id="page-content">
+            <h2>Découvrez les offres d'emploi disponible via le moteur de recherche</h2>
+            <p>Veuillez remplir les informations sur le moteur de recherche</p>
+            <div id="search-engine" data-route="search-engine-job-offers" data-location="{{city}}" data-title="{{jobTitle}}">
+            <div id="loading"><img class="aienova-loader" src="/build/media/image/icons/loader.gif" /><br><h4>Nothing to Something</h4></div>
+            </div>
+            </div>
+
+
+
+
+
+
+            
+
+        </section>
+        {% endblock %}
+
+             

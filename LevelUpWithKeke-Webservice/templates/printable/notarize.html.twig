@@ -1,0 +1,148 @@
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" >
+            {{ encore_entry_link_tags("pdf-styles") }}
+
+
+
+<div class="container">
+        <div class="invoice">
+            <div class="row">
+                <div class="col-7">
+                <p><strong>
+                
+                {% if contractType == 1 %}
+                Facture: 
+                {% else %}
+                Devis:
+                {% endif %}
+
+                
+                
+                {{notarize.numberId}}</strong></p>
+                </div>
+             
+            </div>
+               <div style="text-align:right;width:100%"><img src="{{website.logo.link}}" class="logo"/></div>
+            <div class="row">
+                <div class="col-7">
+                    <p class="addressMySam">
+                        <strong>{{website.companyName}}</strong><br/>
+                        {{website.location}}<br/>
+                        
+                    </p>
+
+                    <p>
+                </div>
+                <div class="col-5">
+                    <br/><br/><br/>
+                    <p class="addressDriver">
+                        <strong th:text="${driver.getCompanyName()}">{{notarize.customer.firstname}} {{notarize.customer.surname}}</strong><br/>
+                        <strong th:text="${driver.getCompanyName()}">Réf. Client : {{notarize.customer.login}}#{{notarize.customer.id}}</strong><br/>
+                       {# Réf. Client <em th:text="${driver.getUserId()}">{{notarize.code}}</em><br/> #}
+                        <span th:text="${driver.getAddress()}">{{notarize.customer.mainLocation}}</span><br/>
+                    </p>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <h6>Madame, Monsieur {{notarize.customer.surname}},<br> Nous vous remercions pour votre demande de {{notarize.type.FRname}} effectué le  {{notarize.dateCreation|date("d/m/Y")}} vous trouvez-ci dessous le détail                  
+            
+            {% if contractType == 1 %}
+                de la facture : 
+                {% else %}
+                du devis:
+                {% endif %}:
+            </h6>
+            <br/>
+            <table class="table table-striped">
+                <thead>
+
+                    <!--<th>Quantité</th>-->
+                    <!--<th>Unité</th>-->
+                    <!--<th>PU TTC</th>-->
+
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td><strong>Service demandé :</strong></td>
+                    <td class="text-right" th:text="${totalHT}">{{notarize.type.FRname}}</td>
+
+                </tr>
+
+  
+                  <tr>
+                            <td><strong>Prix (HT)</strong></td>
+                            <td class="text-right" th:text="${totalHT}">{{notarize.cost}}€</td>
+                        </tr>
+                        <tr>
+                            <td><strong>T.V.A</strong></td>
+                            <td class="text-right" th:text="${totalHT}">{{website.vat}}%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Coût Total</strong></td>
+                            {% set ttc = notarize.cost + ( (notarize.cost) * (website.vat / 100))  %}
+                            <td class="text-right" th:text="${totalHT}">{{ttc}}€</td>
+                        </tr>
+               
+              
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-8">
+                </div>
+                <div class="col-4">
+                    <table class="table table-sm text-right">
+
+                      
+                   {#     <tr>
+                            <td>TVA 20%</td>
+                            <td class="text-right" th:text="${totalTVA}">0,00€</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total TTC</strong></td>
+                            <td class="text-right" th:text="${totalTTC}">0,00€</td>
+                        </tr>
+
+                        #}
+                    </table>
+                </div>
+            </div>
+
+            <p class="conditions">
+               {{website.owner}} <br>
+               <img src="/cuid/media/image/printable/signature.png" class="logo"/>
+                <br/>
+             
+            </p>
+
+
+                <div class="row">
+
+                <p style="padding:10px">
+                Téléphone: Accueil Ambassade {{website.telephone}}  <br/>
+
+                </p>
+
+                <p style="padding:10px">
+                IBAN: XXXXXXXXXXXXXX <br/>
+                </p>
+
+                </div>
+                <!--IBAN FR76 1470 7034 0031 4211 7882 825 - SWIFT CCBPFRPPMTZ-->
+
+
+                 
+                <div class="row">
+
+                <p style="padding:10px; width:50%">
+                {{website.location}} ,  <a href="">{{website.domain}}</a><br/>
+                  <a href="">{{website.email}}</a>
+                </p>
+
+
+
+                </div>
+                <!--IBAN FR76 1470 7034 0031 4211 7882 825 - SWIFT CCBPFRPPMTZ-->
+            
+        </div>
+    </div>

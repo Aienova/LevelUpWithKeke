@@ -1,0 +1,64 @@
+                                       
+                                        
+                                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                        
+                                        <form id="yourSkills" method="POST" data-candidateid="{{candidate.id}}">
+
+
+
+                                            
+                                            <h3>Modifer vos informations personnelles</h3>
+
+                                                     <ul id="skills-list">
+
+                                        {% for i in 1..10 %}
+
+                                            <li class="flexible">  <div><label>Intitulé de la compétences<label><br><input type="text" name="skillName{{i}}" value="{{ skill[i - 1].skillName }}"></div>  
+                                            
+                                            
+                                            <div><label>Année d'expérience(s) :</label>
+                                            <br>
+                                                            <select name="skillExp{{i}}">
+                                                          {% for y in 1..10 %}
+                                                                <option value="{{y}}" {% if y == skill[i - 1].skillExp %} selected {% endif %}>{{y}} année(s) d'exp</option>
+                                                            {% endfor %}
+                                                            </select>                                            
+                
+                                            </div>   
+                                            
+                                            
+                                            </li>
+
+
+
+                                        {% endfor %}
+
+                                        </ul>
+                                        <input type="hidden" name="editor" value="Compétences modifiées"/>
+                                        <div id="form-validation"><input type="submit" name="editor" value="Modifier"/></div>
+                                        
+                                        </form>
+
+                                            <script>
+                                                        $('#yourSkills').submit(function(e){
+
+                                                            var id = $('#yourSkills').data("candidateid");
+
+                                                e.preventDefault();
+
+                                                $.ajax({
+                                                    url: '/edit-candidate-skills/'+id,
+                                                    type: 'POST',
+                                                    data:$('#yourSkills').serialize(),
+
+                                                    success: function(data) {
+                                                        $('#editor-form-display').html(data);
+                                                        location.reload();
+                                                    },
+                                                    error: function() {
+                                                        $('#editor-form-display').text('Erreur au niveau des résultats de recherches');
+                                                    }
+                                                });
+                                            });
+
+                                            </script>  

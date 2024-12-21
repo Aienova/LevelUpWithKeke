@@ -1,0 +1,81 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="page-body">
+
+            <div id="page-banner" class="white-text">
+            <h1>Nos offres d'emplois</h1>
+
+            </div>
+
+            <div id="page-content">
+
+            <div class="organizer">
+            {% for job in jobs %}
+
+                               
+                                <div class="square jobOffer white-text marger-bottom">
+                                    <div class="flexible mobileblock">
+                                        <ul id="" class="column">
+                                            <li><h2>{{job.title}}</h2></li>
+                                            <li><strong>A partir du : </strong> {{job.startDate|date("d/m/Y")}}</li>
+                                            <li><strong>Diplôme(s) et pré-requi(s) :</strong> {{job.diploma}}</li>
+                                            <li><strong>Salaire :</strong> {{job.wage}} €</li> 
+                                            <li><br><a href="/emploi/{{job.tag}}"><button>Voir l'offre</button></a> </li>       
+                                        </ul>
+
+                                                <div class="column">
+                                                <h3>Description :</h3>
+                                                <p>
+                                                    {{job.description}}
+                                                </p>                                       
+
+                                                </div>
+                                    
+                                        </div>    
+                                    </div>
+            
+                
+            {% endfor %}
+            </div>
+
+
+
+
+            {#
+
+            <div class="flexible">
+
+                <div class="content">
+                TEXT TEXT
+                </div>
+
+
+                <div class="content">
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                </div>
+
+            </div>
+
+            #}
+
+
+
+                                <div id="customer-area">
+                        <div class="flexible mobileblock">
+                        <h2>PROCEDURE DE COLLECTE, DE PRODUCTION ET DE RESTITUTION DE PASSEPORTS CEMAC AUX CONGOLAIS DE L’ETRANGER</h2><a href="/service-en-ligne"><button>Vos services en lignes</button></a>
+                        </div>
+                        </div>
+
+
+
+            </div>
+
+        </section>
+        {% endblock %}

@@ -1,0 +1,52 @@
+    <div id="list-graphics" >
+    <div class="flexible">
+
+        {% for graphic in graphics %}
+
+
+        <div id="graphic-{{graphic.id}}" class="image-card">
+
+            <div class="image" style="background-image:url({{graphic.backgroundImage}})">
+            <h2>{{graphic.section.title}}</h2>
+            <div class="colorbar" style="background-color:{{graphic.primaryColor}}"></div>
+            <div class="colorbar" style="background-color:{{graphic.secondaryColor}}"></div>
+            <div class="colorbar" style="background-color:{{graphic.thirdColor}}"></div>
+            
+            </div>
+
+            <div class="info">
+                <h2>Charte grahique #{{graphic.id}}</h2>
+                <ul>
+                    <li>Couleur principale : {{graphic.primaryColor}}</li>
+                    <li>Couleur secondaire : {{graphic.secondaryColor}}</li>
+                    <li>3e couleur : {{graphic.thirdColor}}</li>
+                    <li>Police de titre : {{graphic.fontTitle.name}}</li>
+                    <li>Police de texte : {{graphic.fontText.name}}</li>
+                    
+                    
+                    {#
+                    <li>
+
+                        {% if graphic.activated == 1 %}
+                        Activé
+                        {% else %}
+                        Desactivé
+                        {% endif %}
+                    </li>
+                    #}
+
+
+                    <li>
+                    
+                    <a href="./edit-graphic/{{graphic.id}}"><button>Modifier cette charte graphique</button></a>
+                    <br><a target="_blank" href="{{graphic.section.url}}"><button>Voir le résultat</button></a>
+                    
+                    </li>
+                </ul>
+            
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+    </div>

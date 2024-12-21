@@ -1,0 +1,91 @@
+
+
+       {% extends "base.html.twig" %}
+
+
+        {% block content %}
+
+
+        <section id="page-body">
+
+            <div id="page-banner" class="white-text">
+            <h1>{{page.title}}</h1>
+
+            </div>
+
+            <div id="page-content">
+
+            <h2>Vous souhaitez contacter l'ambassade du Congo</h2>
+
+            <div id="contact" class="flexible mobileblock">
+
+            <div id="contact-infos" class="column">
+
+
+                            <ul>
+
+                                    <li><span class="material-symbols-outlined">location_on</span>Wallstrasse 69, 10179 Berlin</li>
+                                    <a href="tel:+49 3012378546"><li><span class="material-symbols-outlined">call</span>+49 3012378546</li></a>
+                                    <a href="mailto:contact@ambacongo.de"><li><span class="material-symbols-outlined">mail</span>contact@ambacongo.de</li></a>
+                                    
+                                    <li><span class="material-symbols-outlined">schedule</span>Horaires de travail
+
+                                    (du Lundi au Vendredi) :<br>
+                                    Ouverture (matinée) : 9h - 13h<br>
+                                    Ouverture (après-midi) : 14h - 16h<br>
+
+                                    </li>
+                      
+                            </ul>
+      <div id="message-form"></div>
+                            <form id="contact-form" method="POST">
+
+                                <input type="hidden" name="contact-us" value="1" />
+                                <p><label>Email<input name="email" type="text"></label></p>
+                                <p><label>Sujet <input name="subject" type="text"></label></p>
+                                <p><label>Message <textarea name="message"></textarea></label></p>
+
+                                <input type="submit" value="Envoyez votre email">
+
+                            </form>
+
+            </div>
+
+                        <div id="contact-map" class="column">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.152651759173!2d13.407939275415831!3d52.51257643678078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84f8cc63ca925%3A0xe309c8c29011a99e!2sAmbassade%20du%20Congo%20Brazzaville%20en%20Allemagne!5e0!3m2!1sfr!2sde!4v1715632138046!5m2!1sfr!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+            
+            
+            </div>
+            
+                                    <div id="customer-area">
+                        <div class="flexible mobileblock">
+                        <h2>PROCEDURE DE COLLECTE, DE PRODUCTION ET DE RESTITUTION DE PASSEPORTS CEMAC AUX CONGOLAIS DE L’ETRANGER</h2><a href="/service-en-ligne"><button>Vos services en lignes</button></a>
+                        </div>
+                        </div>
+
+
+            {#
+
+            <div class="flexible">
+
+                <div class="content">
+                TEXT TEXT
+                </div>
+
+
+                <div class="content">
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                <img src="/cuid/media/image/01-03-2024/bureau-212933.jpg"/>
+                </div>
+
+            </div>
+
+            #}
+
+
+            </div>
+            
+
+        </section>
+        {% endblock %}

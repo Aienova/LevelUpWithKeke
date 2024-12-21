@@ -1,0 +1,201 @@
+
+            {% extends "assets.twig" %}
+
+
+        
+        {% block asset %}
+
+        
+                    <div id="space-bar"></div>
+        <header>
+
+        <section id="top-bar" class="flexible">
+            <div id="contact-info">
+            
+            <div id="contact-info" class="flexible">
+
+                            <a href="tel:+493012378546"><nav id="account" class="flexible">
+                    <div class="material-symbols-outlined">call</div><div class="navName">+49 3012378546</div>
+                </nav></a>
+
+
+                    <a href="mailto:contact@ambacongo.de"><nav id="account" class="flexible">
+                    <div class="material-symbols-outlined">mail</div><div class="navName">contact@ambacongo.de</div>
+                </nav></a>
+            
+            </div>
+            
+            
+            </div>
+
+            <div id="connection-menu" class="flexible">
+
+                <a href="{{ path('cuid_customer_area_new_booking') }}"><nav id="rendez-vous" class="flexible">
+                    <div class="material-symbols-outlined">calendar_month</div><div class="navName">Prendre rendez-vous</div>
+                </nav></a>
+
+                 <a href="{{ path('cuid_customer_area_infos') }}"><nav id="account" class="flexible">
+                    <div class="material-symbols-outlined">account_circle</div><div class="navName">
+
+                                    {% if user is not empty %}
+                    {{user.firstname}}  {{user.surname}}
+                    
+                                    {% else %}
+                    Vos démarches en ligne                    
+                                    {% endif %}
+                    
+
+                    
+                    </div>
+                </nav></a>
+
+                {% if user is not empty %}
+
+                                 <a href="{{ path('cuid_connection') }}"><nav id="account" class="flexible">
+                    <div class="material-symbols-outlined">power_settings_new</div><div class="navName">Se déconnecter</div>
+                </nav></a>
+
+
+                {% else %}
+
+                                 <a href="{{ path('cuid_document', { 'pagename': 'register' }) }}"><nav id="account" class="flexible">
+                    <div class="material-symbols-outlined">how_to_reg</div><div class="navName">S'enregistrer</div>
+                </nav></a>
+
+                
+
+                {% endif %}
+            
+            </div>
+        </section>
+
+        <section id="bottom-bar" class="flexible">
+        <img class="logo" src="{{ asset(logoAsset) }}"/>
+    
+
+        <div class="logotitle black-text">
+            <span>AMBASSADE DU CONGO</span><br>
+            <span>Allemagne</span>
+
+        </div>
+
+        <ul id="menu" class="flexible">
+
+            <a href="{{ path('cuid_home') }}"><li><div class="menuname ">Accueil
+            <div class="menuline  {% if menuselect == NULL %} menuselected {% endif %}"></div>
+            
+            </div></div></li></a>
+            
+            
+
+            
+            {% for menu in menu |sort((a, b) => a.position <=> b.position) %}
+
+                {% if menu.topmenu == true %}
+                    <a {% if menu.url is not empty %} href="{{menu.url}}" {% endif %}><li class="display-submenu"><div class="flexible">
+                    <div class="menuname">{{menu.title}}
+                    <div class="menuline  {% if menuselect == menu.page.name %} menuselected {% endif %}"></div>
+                    </div> 
+                    
+                     </div>
+                    {% if menu.cmssubmenus is not empty %}
+                        {% include "website/blocks/submenu/submenu1.html.twig" %}
+                    {% endif %}
+                    </li></a>
+                
+                {% endif %}
+
+
+            {% endfor %}
+            
+    
+
+            {#
+
+            <a href=""><li class="flexible"><div class="material-symbols-outlined">supervised_user_circle</div><div class="menuname">Dienstleistungen</div>
+                        {% include "website/blocks/submenu/submenu1.html.twig" %}
+            </li></a>
+
+            <a href=""><li class="flexible"><div class="material-symbols-outlined">euro</div><div class="menuname">Preise</div>
+                        {% include "website/blocks/submenu/submenu1.html.twig" %}
+            </li></a> 
+
+            <a href=""><li class="flexible"><div class="material-symbols-outlined">event_available</div><div class="menuname">Reservierung</div>
+                        {% include "website/blocks/submenu/submenu1.html.twig" %}
+            </li></a> 
+
+
+            <a href=""><li class="flexible"><div class="material-symbols-outlined">mail</div><div class="menuname">Kontakt</div>
+                        {% include "website/blocks/submenu/submenu1.html.twig" %}
+            </li></a> 
+
+            #}
+
+
+            <li id="burger-menu">
+            
+                <div class="burger-menu">
+                    <div class="bar">
+                    <span class="bar-1"> </span>
+                    <span class="bar-2"> </span>
+                    <span class="bar-3"> </span>
+                    </div>
+                </div>
+            </div>
+            
+            </li>
+
+
+        </ul>
+
+        </section>
+
+        <ul class="menumobile">
+
+            <a href="/"><li>Accueil</li></a>
+                 
+            {% for menu in menu %}
+
+                {% if menu.topmenu == true %}
+                    <a class="mobilesubmenu" {% if menu.url is not empty %} href="{{menu.url}}"{% else %}{% endif %}><li >
+                    {{menu.title}}
+                    </li></a>
+                
+                {% endif %}
+
+
+            {% endfor %}
+
+        </ul>
+
+        </header>
+
+    <script>
+
+            $(".burger-menu ").on("click",".bar",function(){
+        
+        $(".menumobile").slideToggle();
+        $(".bar").toggleClass('change');
+        $(".menumobile li").slideRight();
+
+        });
+
+                    $(".mobilesubmenu").on("click",function(){
+        
+        $(this).closest(".mobilesubmenu ul ").removeClass("hidden");
+
+
+        });
+
+
+
+    </script>
+
+
+
+
+
+
+        {% endblock %}
+
+

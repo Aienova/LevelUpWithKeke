@@ -1,0 +1,42 @@
+
+{% block createcandidate %}
+
+    <div id="job-offer-validation">
+    <h1>{{joboffer.title}}</h1>
+                            
+            <ul id="jobOffer-details">
+
+                <li>ID : {{joboffer.id}}</li>
+                <li>Company : {{joboffer.companyId}}</li>
+                <li>Degree minimum required :{{joboffer.licenceMin}}</li>
+
+            </ul>
+
+            {% if isapplied != true %}
+            <div id="compatbility-test">{{compatibility.verdict}}</div>
+
+
+
+            {% if compatibility.percent > 20 %}
+            <button id="apply-to" data-id="{{joboffer.id}}" data-candidateid="1">Apply</button> 
+            {% endif %}
+            
+            <button onclick="window.location.href='{{ path('share_linkedin') }}'" id="share-this">Share</button>
+
+            {% else %}
+
+            <span style="color:green">You have already applied to this job offer</span>
+
+            {% endif %}
+
+
+
+            </div>
+
+
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+{% endblock %}
+
+             

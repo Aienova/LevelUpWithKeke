@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="full-h">
+    <head>
+
+                    
+
+                    {% block javascripts %}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            {{ encore_entry_link_tags("connection-styles") }}
+            {{ encore_entry_script_tags("connection-scripts") }}
+                    {% endblock %}
+
+                    
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+                    
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+                    <title>Amba Connect</title>
+                    <meta name="description" content="Votre espace" />
+                                        <meta name="viewport" content="width=device-width, initial-scale=0.8, minimum-scale=0.8, maximum-scale=0.8, user-scalable=no">
+    </head>  
+
+    
+    <body class="full-h">
+
+        
+        <div id="editor" class="hidden">
+                <div id="editor-form">
+                        <div id="panel-editor">
+                        <span id="close-editor" class="material-symbols-outlined">cancel</span>
+                        </div>
+                        <h1>Mode Editeur</h1>
+                                <div id="editor-form-display"></div>
+                </div>
+        </div>
+
+     {% include 'customer-area/blocks/header.html.twig' %}
+
+       <!-- 
+
+                    DISCONNECT BUTTON   
+
+        <form id="disconnection" method="POST">
+                <input type="hidden" name="disconnection" value="1" />
+                <input type=  
+                "submit" value="Disconnect">
+
+
+        </form> -->
+
+        <main class="full-h">
+
+           <!--     <a href="{{ path('cuid_home') }}"><nav class="return-button" >Retourner sur le site web</nav></a>  -->
+
+          <div id="customer-area-infos">
+
+          {#
+
+                        <ul id="service-menu">
+
+                            <li><img class="logo" src="/build/media/image/icons/osiris.png" /></li>
+                            <li class="menulink sider" data-side="home">Accueil</li>
+                            <li class="menulink sider" data-side="aboutus">A propos</li>
+                            <li class="menulink sider" data-side="services">Services</li>
+                            <li class="menulink sider" data-side="visa">Visa</li>
+                            <li class="menulink sider" data-side="register">Actes consulaires</li>
+                            <li class="menulink sider" data-side="passport">Passeport</li>
+                            <li class="menulink sider" data-side="faq">FAQ</li>
+                            <a href="./connexion"><li class="menulink">Se connecter</li></a>
+                              
+                        </ul>
+
+            #}
+
+                                    
+                                    <section id="home" class="flexible side">
+
+                                    <div class="image hiddenformobile" style="height: 600px; background-image:url('./cuid/media/image/07-04-2024/ambaconnect_7651051053.jpg')"></div>
+                                    
+                                    <div class="content central-text">
+                                    <img class="logo" src="/cuid/media/image/ambaconnect.png"/><br><br>
+                                    <h1>Bienvenu sur AmbaConnect, <br>votre système de démarche consulaire en ligne</h1>
+
+                                        <p>Que souhaitez-vous faire aujourd'hui ?</p>
+
+                                        <a href="{{ path('cuid_document', { 'pagename': 'register' }) }}"><button>S'enregistrer</button></a>
+                                        <a href="{{ path('cuid_document', { 'pagename': 'visa' }) }}"><button>Demander un visa</button></a><br><br>
+
+                                    </div>                       
+                                    
+                                    </section>
+
+                                    <section id="aboutus" class="flexible side">
+                                            
+                                            <div class="content central-text">
+                                            <h2>
+                                                Amba Connect est un ensemble de système de traitement automatisée pour vos demandes administratives et consulaires. Afin de facilité le processus de votre demande.                    
+                                            </h2>
+
+                                                <p>Grâce à votre espace personnel sur notre plateforme, gagnez du temps et faites toutes vos démarches en ligne en toute facilité depuis chez vous et bénéficiez d’un accompagnement en temps réel.</p>
+                                                <a href="{{ path('cuid_connection') }}"><button>Se connecter à votre espace</button></a>
+                                            </div> 
+
+                                            <div class="image hiddenformobile" style="height: 600px; background-image:url('./cuid/media/image/07-04-2024/passport-2714675_2074051041.jpg')"></div>                      
+                                    
+                                    </section>
+
+
+
+
+                                    <section id="services" class="side flexible">
+                                            
+                                            <div class="content central-text">
+                                            <h2>
+                                               Nos services                    
+                                            </h2>
+
+                                                <p>Grâce à votre espace personnel sur notre plateforme, gagnez du temps et faites toutes vos démarches en ligne en toute facilité depuis chez vous et bénéficiez d’un accompagnement en temps réel.</p>
+                                                
+
+                                        <cards class="flexible organizer">
+                                            <a href="{{ path('cuid_customer_area_my_documents') }}"><div class="card">
+                                     
+                                                <div class="card-content"><h3>Demander d'acte consulaire</h3></div>
+                                            </div></a>
+
+                                            <a href="{{ path('cuid_document', { 'pagename': 'checking' }) }}"><div class="card">
+                                          
+                                                <div class="card-content"><h3>Vérifier l'authenticité d'un acte consulaire</h3></div>
+                                            </div></a>
+
+                                           <a href="{{ path('cuid_document', { 'pagename': 'register' }) }}"> <div class="card">
+                                       
+                                                <div class="card-content"><h3>S'enregistrer si vous n' avez pas de compte sur Amba connect</h3></div>
+                                            </div>
+                                        </cards></a>
+
+                                        <cards class="flexible organizer">
+                                           <a href="{{ path('cuid_document', { 'pagename': 'passport' }) }}"> <div class="card">
+                                         
+                                                <div class="card-content"><h3>Suivre et payer un passeport CEMAC</h3></div>
+                                            </div></a>
+
+                                            <a href="{{ path('cuid_document', { 'pagename': 'visa' }) }}"> <div class="card">
+                                           
+                                                <div class="card-content"><h3>Demander et payer un visa</h3></div>
+                                            </div>
+
+                                            <a href="{{ path('cuid_document', { 'pagename': 'visa-tracking' }) }}"> <div class="card">
+                                             
+                                                <div class="card-content"><h3>Suivre sa demande de visa</h3></div>
+                                            </div></a>
+                                        </cards>
+
+
+
+                                            </div> 
+                 
+                                    
+                                    </section>
+
+                                     <section id="faq" class="side">
+                                            <div class="central-text">
+                                             <h2>
+                                               F.A.Q                   
+                                            </h2>
+                                        {% include 'faq.html.twig' %}
+                                            </div>
+                                     </section>
+
+
+                                    <section id="visa" class="side hidden flexible">
+                                            <div class="content central-text">
+                                             <h2>
+                                               Demande de Visa                  
+                                            </h2>
+                                        {% include 'forms/visa.html.twig' %}
+                                            </div>
+                                     </section>
+
+                                    <section id="register" class="side hidden flexible">
+                                            <div class="content central-text">
+                                             <h2>
+                                               Enregistrement                  
+                                            </h2>
+                                        {% include 'forms/register.html.twig' %}
+                                            </div>
+                                     </section>
+
+
+                                    <section id="passport" class="side hidden flexible">
+                                            <div class="content central-text">
+                                             <h2>
+                                               passeport                 
+                                            </h2>
+                                        {% include 'forms/passport.html.twig' %}
+                                            </div>
+                                     </section>
+
+
+                        </div>
+
+
+
+
+
+                <footer>
+                     {% include 'customer-area/blocks/footer.html.twig' %}
+                </footer>
+        </main>
+
+
+
+    </body>
+
+    
+</html>
+
+      

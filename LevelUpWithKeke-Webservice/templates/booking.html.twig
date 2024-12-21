@@ -1,0 +1,51 @@
+
+<div id='popup'>
+<h2>Rendez-vous : {{booking.code}}</h2>
+
+        <h3>Information général</h3>
+            <ul>
+                <li>Prénom : {{booking.customer.firstname}}</li>
+                <li>Nom: {{booking.customer.surname}}</li>
+                <li>Adresse : {{booking.location}}</li>
+                <li>Date et heure: {{booking.bookingDate|date("d/m/Y h:i:s")}}</li>
+                <li> Motif : {{booking.subject}} </li>
+            </ul>
+
+        <br><br><h3>Commentaire : </h3>
+
+        <p>{{booking.comment}}</p>
+
+                <button id="close-popup">Fermer</button>
+</div>
+
+
+    <script>
+
+        $("#popup").removeClass("hidden");
+        $("#popup").addClass("showing");
+
+
+        $("#close-popup").click(function(){
+
+            $("#popup").removeClass("showing");
+            $("#popup").addClass("hidden");
+
+        });
+
+                /*
+
+                setTimeout(function() {
+
+            $("#popup").removeClass("showing");
+
+                    },2000);
+
+
+            setTimeout(function() {
+
+            $("#popup").addClass("hidden");
+
+                    },3000);  
+                    
+                    */
+    </script>

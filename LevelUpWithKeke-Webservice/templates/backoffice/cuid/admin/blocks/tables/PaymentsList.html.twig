@@ -1,0 +1,49 @@
+    <div id="list-payments" >
+    <div class="flexible">
+
+        {% for payment in payments %}
+
+
+        <div id="payment-{{payment.id}}" class="image-card">
+
+            <div class="image" style="background-image:url({{payment.backgroundImage}})">
+            <h2>{{payment.name}}</h2>
+
+            
+            </div>
+
+            <div class="info">
+                <h2>paiement sécurisé par carte bancaire :</h2>
+                <ul>
+                    <li>
+                    <p> {{payment.description}}</p>
+                    
+                     </li>
+
+                    
+                    
+                    {#
+                    <li>
+
+                        {% if payment.activated == 1 %}
+                        Activé
+                        {% else %}
+                        Desactivé
+                        {% endif %}
+                    </li>
+                    #}
+
+
+                    <li>
+                    
+                    <a target="blank" href="{{payment.link}}"><button>Aller sur mon compte {{payment.logo}}</button></a>
+                    
+                    </li>
+                </ul>
+            
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+    </div>

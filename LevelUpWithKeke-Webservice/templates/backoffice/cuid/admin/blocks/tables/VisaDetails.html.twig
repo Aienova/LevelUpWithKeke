@@ -1,0 +1,40 @@
+
+        
+        <h2>Détails de la demande de Visa</h2>
+
+<ul id="details-list">
+    <li><strong>Nom :</strong> {{ service.person.surname }}</li>
+    <li><strong>Prénom :</strong> {{ service.person.firstname }}</li>
+    <li><strong>Statut matrimonial :</strong> {{ service.person.maritalStatus.frName }}</li>
+    <li><strong>Sexe :</strong> {{ service.person.gender.frName }}</li>
+    <li><strong>Nom de jeune fille :</strong> {{ service.person.maidenname }}</li>
+    <li><strong>Date de naissance :</strong> {{ service.person.birthdate|date("d/m/Y") }}</li>
+    <li><strong>Pays de naissance :</strong> {{ service.person.birthCountry.name }}</li>
+    <li><strong>Lieu de naissance :</strong> {{ service.person.birthplace }}</li>
+    <li><strong>Nationalité d'origine :</strong> {{ service.person.origin.name }}</li>
+    <li><strong>Nationalité actuelle :</strong> {{ service.person.nationality.name }}</li>
+    <li><strong>Adresse :</strong> {{ service.customer.mainLocation }}</li>
+    <li><strong>Telephone :</strong> {{ service.customer.telephone }}</li>
+    <li><strong>Profession :</strong> {{ service.person.profession }}</li>
+    <li><strong>Numéro de passeport :</strong> {{ service.passport.numberId }}</li>
+    <li><strong>Depuis quand vivez-vous à cette adresse :</strong> {{ service.person.residenceAdressDate|date("d/m/Y") }}</li>
+    <li><strong>Pays de résidence :</strong> {{ service.person.residenceCountry.name }}</li>
+{#
+
+    <li><strong>Lieu de naissance :</strong> {{ service.person.birthplace }}</li>
+
+    <li><strong>Genre :</strong> {{ service.person.gender.FRname }}</li>
+
+#}
+
+    <li><strong>Lieu de délivrance du passeport :</strong> {{ service.passport.deliveryPlace }}</li>
+    <li><strong>Autorité de délivrance du passeport :</strong> {{ service.passport.deliveryAutority }}</li>
+    <li><strong>Date d'obtention de la nationalité :</strong> {{ service.person.deliveryDate|date("d/m/Y") }}</li> 
+    <li><strong>Date d'expiration du passeport :</strong> {{ service.passport.expirationDate|date("d/m/Y") }}</li>
+    <li><strong>Date d'extension du passeport :</strong> {{ service.passport.extensionDate|date("d/m/Y") }}</li> 
+    <li><strong>Type de Visa :</strong> {{ service.visa.visaType.frName }}</li>  
+    <li><strong>Motif de voyage :</strong> {{ service.visa.travelReason.FRname }}</li>
+    <li><strong>Adresse au Congo :</strong> {{ service.visa.congoAddress }}</li>
+    <li><strong>Date exacte d'arrivée au Congo :</strong> {{ service.visa.congoArrivalDate|date("d/m/Y") }}</li> 
+
+</ul>

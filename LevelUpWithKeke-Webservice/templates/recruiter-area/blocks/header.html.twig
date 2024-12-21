@@ -1,0 +1,31 @@
+
+            {% extends "assets.twig" %}
+        
+        {% block asset %}
+        <header>
+
+        <img class="logo invert" src="{{ asset(logoAsset) }}"/>
+
+        <ul id="menu">
+            <a href="{{ path('cuid_recruiter_area_home') }}"><li>Accueil</li></a>
+           <a href="{{ path('cuid_recruiter_area_job_offers') }}"><li>Offres d'emplois</li></a> 
+          <a href="{{ path('cuid_recruiter_area_company') }}"><li>Votre entreprise</li></a> 
+          <a href="{{ path('cuid_recruiter_area_applications') }}"><li>Vos candidatures</li></a> 
+          <a href="{{ path('cuid_recruiter_area_candidates') }}"><li>Rechercher des candidats</li></a> 
+          <a href="{{ path('cuid_recruiter_area_wage_simulator') }}"><li>Estimateur de salaire</li></a> 
+            <a href="{{ path('cuid_home') }}"><li>Retour sur le site web</li></a> 
+        </ul>
+
+        <div id="bottom-header">
+        <img id="aienova-logo" class="invert" src="{{ asset(aienovaLogoAsset) }}"/>
+        <br><span>Nothing to Something</span>
+        </div>
+
+        </header>
+
+        <div id="tablet-button" class="open-button"><span class="material-symbols-outlined">menu</span></div>
+        <div id="smartphone-button"><span class="material-symbols-outlined">menu</span></div>
+
+        {% endblock %}
+
+

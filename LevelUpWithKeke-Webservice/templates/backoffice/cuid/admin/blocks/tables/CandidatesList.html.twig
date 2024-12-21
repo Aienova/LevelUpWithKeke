@@ -1,0 +1,48 @@
+    <div id="list-candidates" >
+    <div >
+
+        {% if candidates is not empty %}
+        
+        {% for candidate in candidates %}
+
+                                   
+                                <div id="candidate-{{candidate.id}}" class="black-limpid">
+                                
+                                
+                                <div class="white-text marger-bottom" style="height:300px;">
+                                    <div class="flexible">
+                                        <ul class="padder-medium">
+                                            <li><h2>{{candidate.firstname}} {{candidate.surname}}</h2></li>
+                                            <li><strong>E-mail :</strong> {{candidate.email}}</li>
+                                            <li><strong>Telephone :</strong> {{candidate.telephone}}</li>
+
+                                            <li><br><a href="{{candidate.cv.link}}"><button>Télécharger son CV</button></a> </li>       
+                                        </ul>
+
+                                                <div class="column">
+                                                <h3>Description :</h3>
+
+                                                <div class="lecture" style="height:220px">
+
+                                                <p>
+                                                    {{candidate.motivation}}
+                                                </p>
+
+                                                </div>
+
+                                                </div>
+                                    
+                                        </div>    
+                                    </div>
+                                    </div>
+
+
+        {% endfor %}
+        {% else %}
+        <h2 class="central-text" style="margin-top:50px;">Vous n'avez aucune candidatures à ce poste pour le moment</h2>
+
+
+
+        {% endif %}
+    </div>
+    </div>

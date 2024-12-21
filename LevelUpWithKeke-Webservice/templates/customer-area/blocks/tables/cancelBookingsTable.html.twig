@@ -1,0 +1,35 @@
+<table id="table-resa3" class="table-resa hidden">
+    <thead>
+        <tr>
+             <th>Code</th>
+            <th>Date et heure</th>
+            <th>Adresse</th>
+            <th>Etat</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% if  cancelBookings is defined %}
+        {% if cancelBookings is not empty  %}
+        {% for cancelBooking in cancelBookings %}
+
+        <tr>
+            <td>{{cancelBooking.code}}</td>
+            <td>{{cancelBooking.bookingDate|date("d/m/Y h:i:s")}}</td>
+            <td>{{cancelBooking.location}}</td>
+            <td><span class="red-text">Annulé</span></td>
+            <td><span data-action="/booking/{{cancelBooking.id}}" class="material-symbols-outlined decision-button">visibility</span></td>
+  
+        </tr>
+
+        {% endfor %}
+        {% else %}
+                <tr><td colspan="7">Aucun rendez-vous enregistré</td></tr>
+        {% endif %}
+        {% else %}
+                <tr><td colspan="7">Aucun rendez-vous enregistré</td></tr>
+        {% endif %}
+
+    </tbody>
+</table>

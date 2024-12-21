@@ -1,0 +1,98 @@
+
+
+{% block searchengine %}
+
+    <div id="the-search-engine">
+                
+
+            {{ form_start(form) }}
+            {{ form_row(form.title) }}
+            {{ form_row(form.contract_type) }}
+            {% include '/forms/searchInputs/searchCity.html.twig' %}
+            {{ form_row(form.wage) }}
+            {{ form_row(form.submit) }}
+            {{ form_end(form) }}
+            <br><br>
+                <div id="reset"><a onClick="window.location.reload();"><button>Afficher tous les résultats</button></a></div>
+
+            <p>{{jobforsearch}}</p>
+        {% if jobOffers is not empty %}
+            <ul id="jobOfferList">
+
+            {% for jobOffer in jobOffers %}
+
+                    <li id="job-offer-{{jobOffer.id}}" class="search-item flexible">
+                    
+                    <div id="identity" class="item flexible">
+                    <img class="thumbnail" src="/build/media/image/photos/job/{{jobOffer.job.name}}.png">
+                    <ul class="info-item-list"> 
+                        <li><h2 class="company-title">{{ jobOffer.company.name }}</h2></li>
+                        <li><h3>{{jobOffer.title}}</h3></li>
+                        <li>Métier : {{ jobOffer.job.FRname }}</li>
+                        <li>Niveau d'étude : {{ jobOffer.licence.FRname }}</li>
+                        <li>Localisation : {{ jobOffer.location }}</li>
+                        <li>Type de Contrat : {{ jobOffer.contract.FRname }}</li>
+                        <li>Date de début : {{ jobOffer.startDate|date("m/d/Y") }}</li>
+                        <li>Rémunération : {{ jobOffer.wage }}{{ jobOffer.wageCurrency }}{{ jobOffer.wageType }}</li>
+                        <li><a href="{{ path('cuid_job_offer',{id: jobOffer.id})}}"><button>Consulter l'offre complète</button></a></li>                   
+                    </ul>
+                    </div>
+
+                    <div id="description" class="item">
+
+                                    <h3>Description du poste :</h3>
+
+                                    <p>{{jobOffer.description}}</p>
+
+                                    <h3>Missions :</h3>
+
+                                    <ul>
+                                    {% if jobOffer.allmissions is not empty %}
+                                    {% for mission in jobOffer.allmissions %}
+
+                                    <li>{{mission.description}}</li>
+
+                                    {% endfor %}
+                                    {% else %}
+                                    <li>Aucune Missions spécifiés</li>
+                                    {% endif %}
+                                    </ul>
+
+                            </div>
+
+                    <div id="compatibility">
+                           <h3>Nombres total de candidature</h3>
+                            <strong class="percent">{{jobOffer.nbCandidates}}</strong>
+                    </div>
+
+
+                    </li>
+
+
+            {% endfor %}</ul>{% else %}<h2>Aucun résultat pour cette   recherche</h2>{% endif %}
+            </div>
+        
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+            <script>
+                        $('#the-search-engine form').submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    url: '/search-engine-job-offers',
+                    type: 'post',
+                    data:$('#the-search-engine form').serialize(),
+                    success: function(data) {
+                        $('#search-engine').html(data);
+                       },
+                       error: function() {
+                        $('search-engine').text('Erreur au niveau des résultats de recherches');
+                       }
+                });
+            });
+
+            </script>
+
+
+{% endblock %}
+
+             

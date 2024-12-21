@@ -1,0 +1,95 @@
+        <style>
+        /* Style for the select dropdown */
+        .input-select {
+            width: 300px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Style for the input field */
+        .input-field {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+        }
+
+        /* Style for the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            width: 100%;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        /* Style for individual dropdown items */
+        .dropdown-item {
+            padding: 8px;
+            cursor: pointer;
+            background-color:white;
+        }
+
+        /* Style for highlighting selected item */
+        .dropdown-item:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+    
+    
+    
+    <div class="input-select">
+        <!-- Input field -->
+        <label>Ville</label><br>
+        <input type="text" name="your-city" id="inputField" class="input-field" oninput="filterOptions()" placeholder="ex : Paris">
+
+        <!-- Dropdown content -->
+        <div id="dropdownContent" class="dropdown-content">
+
+            {% for city in cities %}
+
+            <div class="dropdown-item" onclick="selectOption('{{city.name}}')">{{city.name}}</div>
+
+            {% endfor %}
+   
+        </div>
+    </div>
+
+    <script>
+        function filterOptions() {
+            var input, filter, dropdown, items, item, i, txtValue;
+            input = document.getElementById('inputField');
+            filter = input.value.toUpperCase();
+            dropdown = document.getElementById('dropdownContent');
+            items = dropdown.getElementsByClassName('dropdown-item');
+
+            for (i = 0; i < items.length; i++) {
+                item = items[i];
+                txtValue = item.textContent || item.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+
+            dropdown.style.display = 'block'; // Show the dropdown
+        }
+
+        function selectOption(value) {
+            document.getElementById('inputField').value = value;
+            document.getElementById('dropdownContent').style.display = 'none'; // Hide the dropdown after selection
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.input-field')) {
+                var dropdown = document.getElementById('dropdownContent');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+        }
+    </script>

@@ -1,0 +1,364 @@
+[20-Dec-2023 18:00:22 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/public/index.php/" (from "https://digit-photo.1-ted.com/")" at RouterListener.php line 127
+[20-Dec-2023 18:00:22 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/public/index.php/" (from "http://digit-photo.1-ted.com/")" at RouterListener.php line 127
+[20-Dec-2023 18:00:22 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/public/index.php/" (from "https://www.digit-photo.1-ted.com/")" at RouterListener.php line 127
+[20-Dec-2023 18:00:22 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/public/index.php/" (from "http://www.digit-photo.1-ted.com/")" at RouterListener.php line 127
+[20-Dec-2023 18:21:04 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/public/index.php/" (from "http://digit-photo.1-ted.com/")" at RouterListener.php line 127
+[20-Dec-2023 20:17:33 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/public/index.php/" (from "https://digit-photo.1-ted.com/")" at RouterListener.php line 127
+[20-Dec-2023 21:01:18 Europe/Paris] [info] Matched route "oneted_home".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelControllerArguments".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+[20-Dec-2023 21:01:18 Europe/Paris] [info] Matched route "_wdt".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelControllerArguments".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+[20-Dec-2023 21:01:18 Europe/Paris] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+[20-Dec-2023 21:02:04 Europe/Paris] [info] Matched route "oneted_home".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelControllerArguments".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+[20-Dec-2023 21:02:04 Europe/Paris] [info] Matched route "_wdt".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelControllerArguments".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:04 Europe/Paris] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+[20-Dec-2023 21:02:35 Europe/Paris] [info] Matched route "oneted_home".
+[20-Dec-2023 21:02:35 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+[20-Dec-2023 21:02:35 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+[20-Dec-2023 21:02:35 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+[20-Dec-2023 21:02:35 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+[20-Dec-2023 21:02:35 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+[20-Dec-2023 21:02:35 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+[20-Dec-2023 21:02:35 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+[20-Dec-2023 21:02:35 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+[20-Dec-2023 21:02:35 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+[20-Dec-2023 21:02:35 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelControllerArguments".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+[20-Dec-2023 21:02:36 Europe/Paris] [info] Matched route "_wdt".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelControllerArguments".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:36 Europe/Paris] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+[20-Dec-2023 21:02:43 Europe/Paris] [info] Matched route "oneted_home".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelControllerArguments".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+[20-Dec-2023 21:02:43 Europe/Paris] [info] Matched route "_wdt".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelControllerArguments".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:43 Europe/Paris] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+[20-Dec-2023 21:02:55 Europe/Paris] [info] Matched route "oneted_home".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelControllerArguments".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+[20-Dec-2023 21:02:55 Europe/Paris] [info] Matched route "_wdt".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\DebugHandlersListener::configure".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ValidateRequestListener::onKernelRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::setDefaultLocale".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector::onKernelController".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.controller" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelController".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelControllerArguments".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.controller_arguments" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::onControllerArguments".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\DataCollector\RequestDataCollector::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\CacheAttributeListener::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ErrorListener::removeCspHeader".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\DisallowRobotsIndexingListener::onResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\SessionListener::onKernelResponse".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\RouterListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\WebpackEncoreBundle\EventListener\ResetAssetsEventListener::resetAssets".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.finish_request" to listener "Symfony\Component\HttpKernel\EventListener\LocaleAwareListener::onKernelFinishRequest".
+[20-Dec-2023 21:02:55 Europe/Paris] [debug] Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate".
+[20-Dec-2023 21:03:20 Europe/Paris] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/PDO/MySQL/Driver.php:34
+Stack trace:
+#0 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/PDO/MySQL/Driver.php(34): PDO->__construct()
+#1 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(377): Doctrine\DBAL\Driver\PDO\MySQL\Driver->connect()
+#2 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(452): Doctrine\DBAL\Connection->connect()
+#3 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(410): Doctrine\DBAL\Connection->getDatabasePlatformVersion()
+#4 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(317): Doctrine\DBAL\Connection->detectDatabasePlatform()
+#5 /home/c2248065c/public_html/digit-photo/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(831): Doctrine\DBAL\Connection->getDatabasePlatform()
+#6 /home/c2248065c/public_html/digit-photo/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(615): Doctrine\ORM\Mapping\ClassMetadataFactory->getTargetPlatform()
+#7 /home/c2248065c/public_html/digit-photo/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(146): Doctrine\ORM\Mapping\ClassMetadataFactory->completeIdGeneratorMapping()
+#8 /home/c2248065c/public_html/digit-photo/vendor/doctrine/doctrine-bundle/Mapping/ClassMetadataFactory.php(18): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata()
+#9 /home/c2248065c/public_html/digit-photo/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\Bundle\DoctrineBundle\Mapping\ClassMetadataFactory->doLoadMetadata()
+#10 /home/c2248065c/public_html/digit-photo/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(207): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->loadMetadata()
+#11 /home/c2248065c/public_html/digit-photo/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(96): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getMetadataFor()
+#12 /home/c2248065c/public_html/digit-photo/vendor/doctrine/doctrine-bundle/CacheWarmer/DoctrineMetadataCacheWarmer.php(48): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#13 /home/c2248065c/public_html/digit-photo/vendor/symfony/framework-bundle/CacheWarmer/AbstractPhpFileCacheWarmer.php(46): Doctrine\Bundle\DoctrineBundle\CacheWarmer\DoctrineMetadataCacheWarmer->doWarmUp()
+#14 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php(99): Symfony\Bundle\FrameworkBundle\CacheWarmer\AbstractPhpFileCacheWarmer->warmUp()
+#15 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/Kernel.php(545): Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate->warmUp()
+#16 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/Kernel.php(757): Symfony\Component\HttpKernel\Kernel->initializeContainer()
+#17 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/Kernel.php(185): Symfony\Component\HttpKernel\Kernel->preBoot()
+#18 /home/c2248065c/public_html/digit-photo/vendor/symfony/runtime/Runner/Symfony/HttpKernelRunner.php(35): Symfony\Component\HttpKernel\Kernel->handle()
+#19 /home/c2248065c/public_html/digit-photo/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\HttpKernelRunner->run()
+#20 /home/c2248065c/public_html/digit-photo/public/index.php(5): require_once('/home/c2248065c...')
+#21 {main}
+
+Next Doctrine\DBAL\Driver\PDO\Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/PDO/Exception.php:28
+Stack trace:
+#0 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/PDO/MySQL/Driver.php(40): Doctrine\DBAL\Driver\PDO\Exception::new()
+#1 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(377): Doctrine\DBAL\Driver\PDO\MySQL\Driver->connect()
+#2 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(452): Doctrine\DBAL\Connection->connect()
+#3 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(410): Doctrine\DBAL\Connection->getDatabasePlatformVersion()
+#4 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(317): Doctrine\DBAL\Connection->detectDatabasePlatform()
+#5 /home/c2248065c/public_html/digit-photo/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(831): Doctrine\DBAL\Connection->getDatabasePlatform()
+#6 /home/c2248065c/public_html/digit-photo/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(615): Doctrine\ORM\Mapping\ClassMetadataFactory->getTargetPlatform()
+#7 /home/c2248065c/public_html/digit-photo/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(146): Doctrine\ORM\Mapping\ClassMetadataFactory->completeIdGeneratorMapping()
+#8 /home/c2248065c/public_html/digit-photo/vendor/doctrine/doctrine-bundle/Mapping/ClassMetadataFactory.php(18): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata()
+#9 /home/c2248065c/public_html/digit-photo/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\Bundle\DoctrineBundle\Mapping\ClassMetadataFactory->doLoadMetadata()
+#10 /home/c2248065c/public_html/digit-photo/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(207): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->loadMetadata()
+#11 /home/c2248065c/public_html/digit-photo/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(96): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getMetadataFor()
+#12 /home/c2248065c/public_html/digit-photo/vendor/doctrine/doctrine-bundle/CacheWarmer/DoctrineMetadataCacheWarmer.php(48): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#13 /home/c2248065c/public_html/digit-photo/vendor/symfony/framework-bundle/CacheWarmer/AbstractPhpFileCacheWarmer.php(46): Doctrine\Bundle\DoctrineBundle\CacheWarmer\DoctrineMetadataCacheWarmer->doWarmUp()
+#14 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php(99): Symfony\Bundle\FrameworkBundle\CacheWarmer\AbstractPhpFileCacheWarmer->warmUp()
+#15 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/Kernel.php(545): Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate->warmUp()
+#16 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/Kernel.php(757): Symfony\Component\HttpKernel\Kernel->initializeContainer()
+#17 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/Kernel.php(185): Symfony\Component\HttpKernel\Kernel->preBoot()
+#18 /home/c2248065c/public_html/digit-photo/vendor/symfony/runtime/Runner/Symfony/HttpKernelRunner.php(35): Symfony\Component\HttpKernel\Kernel->handle()
+#19 /home/c2248065c/public_html/digit-photo/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\HttpKernelRunner->run()
+#20 /home/c2248065c/public_html/digit-photo/public/index.php(5): require_once('/home/c2248065c...')
+#21 {main}
+
+Next Doctrine\DBAL\Exception\ConnectionException: An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php:101
+Stack trace:
+#0 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(1938): Doctrine\DBAL\Driver\API\MySQL\ExceptionConverter->convert()
+#1 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(1886): Doctrine\DBAL\Connection->handleDriverException()
+#2 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(379): Doctrine\DBAL\Connection->convertException()
+#3 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(452): Doctrine\DBAL\Connection->connect()
+#4 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(410): Doctrine\DBAL\Connection->getDatabasePlatformVersion()
+#5 /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Connection.php(317): Doctrine\DBAL\Connection->detectDatabasePlatform()
+#6 /home/c2248065c/public_html/digit-photo/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(831): Doctrine\DBAL\Connection->getDatabasePlatform()
+#7 /home/c2248065c/public_html/digit-photo/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(615): Doctrine\ORM\Mapping\ClassMetadataFactory->getTargetPlatform()
+#8 /home/c2248065c/public_html/digit-photo/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(146): Doctrine\ORM\Mapping\ClassMetadataFactory->completeIdGeneratorMapping()
+#9 /home/c2248065c/public_html/digit-photo/vendor/doctrine/doctrine-bundle/Mapping/ClassMetadataFactory.php(18): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata()
+#10 /home/c2248065c/public_html/digit-photo/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\Bundle\DoctrineBundle\Mapping\ClassMetadataFactory->doLoadMetadata()
+#11 /home/c2248065c/public_html/digit-photo/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(207): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->loadMetadata()
+#12 /home/c2248065c/public_html/digit-photo/vendor/doctrine/persistence/src/Persistence/Mapping/AbstractClassMetadataFactory.php(96): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getMetadataFor()
+#13 /home/c2248065c/public_html/digit-photo/vendor/doctrine/doctrine-bundle/CacheWarmer/DoctrineMetadataCacheWarmer.php(48): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#14 /home/c2248065c/public_html/digit-photo/vendor/symfony/framework-bundle/CacheWarmer/AbstractPhpFileCacheWarmer.php(46): Doctrine\Bundle\DoctrineBundle\CacheWarmer\DoctrineMetadataCacheWarmer->doWarmUp()
+#15 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php(99): Symfony\Bundle\FrameworkBundle\CacheWarmer\AbstractPhpFileCacheWarmer->warmUp()
+#16 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/Kernel.php(545): Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate->warmUp()
+#17 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/Kernel.php(757): Symfony\Component\HttpKernel\Kernel->initializeContainer()
+#18 /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/Kernel.php(185): Symfony\Component\HttpKernel\Kernel->preBoot()
+#19 /home/c2248065c/public_html/digit-photo/vendor/symfony/runtime/Runner/Symfony/HttpKernelRunner.php(35): Symfony\Component\HttpKernel\Kernel->handle()
+#20 /home/c2248065c/public_html/digit-photo/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\HttpKernelRunner->run()
+#21 /home/c2248065c/public_html/digit-photo/public/index.php(5): require_once('/home/c2248065c...')
+#22 {main}
+  thrown in /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php on line 101
+[20-Dec-2023 21:04:17 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/favicon.ico" (from "https://digit-photo.1-ted.com/")" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[20-Dec-2023 21:12:48 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/favicon.ico" (from "https://digit-photo.1-ted.com/")" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[20-Dec-2023 21:15:38 Europe/Paris] [critical] Uncaught PHP Exception Twig\Error\RuntimeError: "An exception has been thrown during the rendering of a template ("Could not find the entrypoints file from Webpack: the file "/home/c2248065c/public_html/digit-photo/public/build/entrypoints.json" does not exist.")." at /home/c2248065c/public_html/digit-photo/templates/base.html.twig line 9
+[20-Dec-2023 21:16:48 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[20-Dec-2023 21:16:59 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[20-Dec-2023 21:17:01 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[20-Dec-2023 21:17:56 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[20-Dec-2023 21:18:20 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[20-Dec-2023 21:18:22 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[20-Dec-2023 21:19:38 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[21-Dec-2023 00:22:25 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[21-Dec-2023 00:22:31 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[21-Dec-2023 07:03:11 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/favicon.ico"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[21-Dec-2023 07:09:49 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://www.digit-photo.1-ted.com/favicon.ico"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[21-Dec-2023 09:07:37 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://www.digit-photo.1-ted.com/favicon.ico"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[21-Dec-2023 09:36:18 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://www.digit-photo.1-ted.com/favicon.ico"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[21-Dec-2023 09:37:40 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/favicon.ico" (from "https://digit-photo.1-ted.com/")" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[21-Dec-2023 09:37:41 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[21-Dec-2023 09:38:02 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[21-Dec-2023 09:38:32 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[21-Dec-2023 09:38:48 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[21-Dec-2023 09:38:49 Europe/Paris] [critical] Uncaught PHP Exception Doctrine\DBAL\Exception\ConnectionException: "An exception occurred in the driver: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)" at /home/c2248065c/public_html/digit-photo/vendor/doctrine/dbal/src/Driver/API/MySQL/ExceptionConverter.php line 101
+[21-Dec-2023 09:48:34 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://www.digit-photo.1-ted.com/favicon.ico"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[21-Dec-2023 13:10:06 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://www.digit-photo.1-ted.com/favicon.ico"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[21-Dec-2023 14:17:32 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://digit-photo.1-ted.com/favicon.ico"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[21-Dec-2023 15:33:06 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/favicon.ico"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[21-Dec-2023 15:40:41 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/favicon.ico"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[21-Dec-2023 18:09:17 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET http://digit-photo.1-ted.com/favicon.ico"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[22-Dec-2023 20:25:58 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com//ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[22-Dec-2023 20:26:02 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://www.digit-photo.1-ted.com//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[24-Dec-2023 18:27:37 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://digit-photo.1-ted.com/dist/js/bootstrap.bundle.min.js"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127
+[24-Dec-2023 18:28:40 Europe/Paris] [error] Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\NotFoundHttpException: "No route found for "GET https://www.digit-photo.1-ted.com//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"" at /home/c2248065c/public_html/digit-photo/vendor/symfony/http-kernel/EventListener/RouterListener.php line 127

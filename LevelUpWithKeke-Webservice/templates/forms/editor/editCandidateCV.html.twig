@@ -1,0 +1,44 @@
+                                       
+                                        
+                                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                        
+                                        <form id="yourCv" method="POST" data-candidateid="{{candidate.id}}" enctype="multipart/form-data">
+                                            
+                                            <h3>Modifer vos informations personnelles</h3>
+
+                                            <div id="uploaderUnique">{% include '/forms/uploadUniqueDocument.html.twig' %}</div>
+                                        <input type="hidden" name="editor" value="Votre cv a été modifié" />
+                                        <div id="form-validation"><input type="submit" name="editor" value="Modifier"/></div>
+                                        
+                                        </form>
+
+                                            <script>
+                                                        $('#yourCv').submit(function(e){
+
+
+                                                            e.preventDefault();
+
+                                                            var id = $('#yourCv').data("candidateid");
+                                                            
+                                                        // Create FormData object
+                                                        var formData = new FormData(this);
+
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    url: '/edit-candidate-cv/'+id,
+                                                    type: 'POST',
+                                                    data: formData,
+                                                    processData: false,  // Important! Don't process the files
+                                                    contentType: false,  // Important! Set contentType to false
+
+                                                    success: function(response) {
+                                                        $('#editor-form-display').html(response);
+                                                        location.reload();
+                                                    },
+                                                    error: function() {
+                                                        $('#editor-form-display').text('Erreur au niveau des résultats de recherches');
+                                                    }
+                                                });
+                                            });
+
+                                            </script>  
