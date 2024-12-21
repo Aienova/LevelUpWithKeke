@@ -1,0 +1,31 @@
+[{
+    "mode": "multi",
+    "count": "0",
+    "maxcount": "3",
+    "json_name": "socials",
+    "id": "1",
+    "name": "Facebook",
+    "link": "https:\/\/www.facebook.com\/profile.php?id=61557707872538",
+    "visibility": "1"
+},{
+    "mode": "multi",
+    "count": "1",
+    "maxcount": "3",
+    "json_name": "socials",
+    "id": "7",
+    "name": "Instagram",
+    "link": "https:\/\/www.instagram.com\/glowydent\/",
+    "visibility": "1"
+},{
+    "mode": "multi",
+    "count": "2",
+    "maxcount": "3",
+    "json_name": "socials",
+    "id": "8",
+    "name": "Linkedin",
+    "socialMediaType": {
+        "__isInitialized__": "1"
+    },
+    "link": "https:\/\/www.linkedin.com\/in\/glowydent-professional-8279392bb\/",
+    "visibility": "1"
+}]

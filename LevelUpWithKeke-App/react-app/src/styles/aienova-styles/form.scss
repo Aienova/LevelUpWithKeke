@@ -1,0 +1,540 @@
+
+
+
+.left-input {
+    margin-right: 5px;
+}
+
+
+.right-input {
+    margin-left: 5px;
+}
+
+::placeholder {
+    color: grey;
+
+  }
+
+  #candidate-form {
+    padding: 10px;
+    background-color: #eebb25;
+
+    input[type=submit]{
+
+        background-color: black;
+
+
+    }
+}
+
+  form#filter-search {
+    padding: 10px;
+    margin: 10px;
+    background-color: black;
+    width: 310px;
+
+        select{
+
+            margin-top:5px;
+            margin-bottom:5px;
+
+        }
+
+        input{
+            margin-bottom:5px;
+        }
+}
+
+  form{
+
+
+    nav {
+        background-color: #47474b;
+        color: white;
+        padding: 20px;
+        border: solid 2px white;
+        cursor: pointer;
+        width: fit-content;
+        margin-top: 15px;
+        border-radius: 40px;
+    }
+
+    ul {
+        margin: 0px;
+        padding: 1px;
+        /* width: 80%; */
+
+        li{
+
+            list-style: none;
+            margin-top: 10px;
+
+
+            textarea{
+
+                margin-top:30px;
+            }
+
+ 
+        }
+    }
+    
+  }
+
+  .lister{
+
+    background-color: black;
+    padding:10px;
+
+  }
+  
+
+  #addform-fixed {
+    position: fixed;
+    right: 0px;
+    background-color: #585151;
+    padding: 18px;
+    top: 45px;
+}
+
+#contact-form{
+
+    width: 60em;
+    margin: auto;
+
+    h4 {
+        font-size: 2em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .padder {
+        padding: 40px;
+    }
+
+
+
+
+}
+
+#customer-infos{
+
+    .label{
+
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+
+
+}
+
+
+div#pro-infos {
+    padding: 3em;
+    background-color: #F3EFE3;
+    width:40%;
+
+        ul{
+
+            padding:0px;
+        }
+}
+
+div#pro-photo {
+    width: 15em;
+    height: 23em;
+    background-color: red;
+    border-radius: 8em;
+    background-image: url(https://127.0.0.1:8000/cuid/media/image/08-19-2024/Ketsia_1_7135075647.png);
+    background-size: contain;
+    margin:auto;
+
+
+}
+
+
+input[type=text] {
+    width: 100%;
+    height: 3.5em;
+    padding-left: 5px;
+    background-color: #D9D9D9;
+    color: black;
+    border: none;
+    border-bottom: solid 2px white;
+}
+
+select {
+    width: 100%;
+    height: 30px;
+    background-color:#D9D9D9;
+    color:black;
+    border: none;
+    border-bottom: solid 2px white;
+}
+
+
+input[type=password] {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    color:black;
+    border: none;
+    border-bottom: solid 2px white;
+}
+
+
+#uploader-multi {
+
+    padding: 20px;
+    border: 4px dotted white;
+    text-align: center;
+
+    input{
+
+        width: fit-content;
+        text-align: center;
+        padding-left: 40%;
+        padding-right: 40%;
+        margin-top: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    input[type=submit] {
+        background-color: #030304;
+        cursor: pointer;
+    }
+
+
+    input[type=submit]:hover {
+        background-color: rgb(255, 255, 255);
+        cursor: pointer;
+    }
+}
+
+.step div {
+    margin-top: 10px;
+}
+
+#form-settings{
+
+    width: 100%;
+    background-color: #0000004f;
+    overflow-y: scroll;
+
+    #form-settings-fields{
+
+        padding:20px;
+
+    }
+
+    .form-field{
+
+        overflow: hidden;
+        background-color: black;
+    }
+
+    #form-settings-new-field {
+        padding: 20px;
+        background-color: #3d7099;
+        overflow-y: hidden;
+
+        input{
+            margin-top:10px;
+        }
+    }
+
+     #form-settings-new-step{
+        padding: 20px;
+        background-color: rgb(223, 22, 22);
+        overflow-y: hidden;
+
+    }
+
+    form{
+        padding: 20px;
+        background-color: #1e26bc4f;
+        margin-bottom:20px;
+    }
+}
+
+    #menu-top-setting {
+        padding: 15px;
+        background-color: #8b2222;
+    }
+
+        .menu-item{
+
+            overflow: hidden !important;
+
+        }
+
+        .submenu-item {
+            margin-left: 100px;
+            overflow: hidden !important;
+            background-color: #de3b3b !important;
+        }
+
+        div#previewBannerImage {
+            width: 100%;
+            height: 360px;
+            background-size: cover;
+        }
+
+div#text-editor-block {
+    background-color: grey;
+    padding: 10px;
+    height: 200px;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+}
+
+
+#form-creator {
+    padding: 20px;
+    width: 100%;
+
+    form{
+
+        padding: 20px;
+        background-color: #0000004f;
+        overflow-y: scroll;
+    }
+
+    #form-menu{
+
+        margin-bottom:15px;
+
+        nav{
+
+            background-color: black;
+            padding:15px;
+            margin-right:5px;
+        }
+    }
+
+    
+    
+}
+
+#navForm nav {
+    font-size: 15px;
+    text-align: center;
+    background-color: #ffffff00;
+    border: none;
+    border-bottom: solid 5px black;
+    border-radius: 0px;
+    padding: 10px;
+    margin: 5px;
+    color: black;
+    margin-bottom: 30px;
+
+
+}
+
+
+.verify-error {
+    border: solid red!important;
+}
+
+
+#navForm .selected {
+    background-color: #ebc84a !important;
+}
+
+
+#form-render {
+    background-color: #ffffffb5;
+    width: 100%;
+    color:black;
+    padding:15px;
+}
+
+
+#media-gallery {
+    border: solid 2px white;
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    height: 250px;
+    overflow-y: scroll;
+    background-color: #000000ab;
+
+    .media-thumbnail {
+        width: 200px;
+        height: 150px;
+        margin-bottom:15px;
+        background-size: cover;        
+    }
+
+    .media-block {
+        padding: 15px;
+    }
+}
+
+
+textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    background-color:#D9D9D9;
+    color:black;
+
+    
+}
+
+object{
+
+    input{
+
+        margin-right:20px;
+    }
+
+
+}
+
+input[type=submit] {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border: solid 2px white;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+button {
+    background-color: #f39849;
+    color: white;
+    padding: 20px;
+    border: solid 1px #f39849;
+    cursor: pointer;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 20px;
+}
+
+span.subscribe-button {
+    padding: 5px;
+    background-color: #c91863;
+    color:white;
+    text-decoration: none;
+    border-radius: 15px;
+    }
+    
+
+.labeline {
+    padding: 2px;
+    background-color: black;
+}
+
+
+button:hover {
+    border: none;
+    background-color: #c19c4c!important;
+    color: black;
+}
+
+#visa-form{
+
+    input[type=submit] {
+
+        background-color: green;
+        font-size: 17px;
+        color:white;
+    }
+
+    input[type=submit]:hover{
+
+
+        color:black!important;
+    }
+
+
+}
+
+
+form#searchinput {
+    width: 30%;
+    margin-left: auto;
+}
+
+
+
+input[type=submit]:hover {
+    border: none;
+    background-color: #c19c4c;
+    color: black;
+}
+
+
+#booking-form{
+
+    background-color:black;
+    width:396px;
+    color:white;
+
+
+    .padder{
+
+        padding:10px
+    }
+
+    input{
+
+        margin-top:15px;
+        margin-bottom:15px;
+
+    }
+}
+
+#notarize-form{
+
+    background-color:black;
+    width:396px;
+    padding:20px;
+    color:white;
+
+    input{
+
+        margin-top:15px;
+        margin-bottom:15px;
+
+    }
+
+    textarea {
+        min-width: 366px !important;
+    }
+}
+
+
+form#visa-form {
+    background-color: #fbf3d6;
+    padding: 30px;
+
+    input{
+
+        background-color: #a9a9ae;
+        padding:10px;
+        color:black;
+    }
+    
+    select{
+
+        background-color: #a9a9ae;
+        /* padding: 10px; */
+        height: 45px;
+        width: 100%;
+
+    }
+}
+
+
+#searchinput-submit {
+    width: 60px;
+    height: 100%;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+

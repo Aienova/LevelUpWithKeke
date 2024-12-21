@@ -1,0 +1,11 @@
+{
+    "mode": "unique",
+    "json_name": "page_mes-ateliers",
+    "id": "47",
+    "name": "mes-ateliers",
+    "visibility": "1",
+    "title": "Mes ateliers",
+    "description": "Ateliers",
+    "author": "Aienova Company",
+    "content": "<div><br><\/div>"
+}

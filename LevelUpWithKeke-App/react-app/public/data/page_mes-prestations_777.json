@@ -1,0 +1,11 @@
+{
+    "mode": "unique",
+    "json_name": "page_mes-prestations",
+    "id": "39",
+    "name": "mes-prestations",
+    "visibility": "1",
+    "title": "Mes prestations",
+    "description": "Glowydent, fond\u00e9e en 2023 par Odilia Ewengu\u00e9, se distingue par une offre compl\u00e8te de services d\u00e9di\u00e9s \u00e0 la beaut\u00e9 et au bien-\u00eatre",
+    "author": "Aienova Company",
+    "content": "<h1>Les prestations \u00e0 la carte <\/h1>\r\n\r\n\r\n<div class=\"flexible\">\r\n<div class=\"central-content\">De\u0301couvrez comment sublimer votre style et re\u0301ve\u0301ler votre confiance inte\u0301rieure avec mes services personnalise\u0301s de conseille\u0300re en image. Que vous cherchiez a\u0300 affirmer votre identite\u0301, a\u0300 mettre en valeur votre apparence professionnelle ou a\u0300 vous sentir mieux dans votre peau, votre che\u0300re Ketsia est la\u0300 pour vous guider.\r\n\r\nDe la colorime\u0301trie a\u0300 la morphologie, en passant par le tri de garde-robe et le shopping accompagne\u0301, chaque prestation est conc\u0327ue pour re\u0301pondre a\u0300 vos besoins uniques et vous aider a\u0300 exprimer la meilleure version de vous. \r\nExplorez mes services a\u0300 la carte et commencez votre voyage vers une image qui vous ressemble vraiment.<\/div>\r\n\r\n<img height=\"250\" src=\"https:\/\/127.0.0.1:8000\/cuid\/media\/image\/09-03-2024\/Group83_4381105358.png\">\r\n\r\n<\/div>"
+}

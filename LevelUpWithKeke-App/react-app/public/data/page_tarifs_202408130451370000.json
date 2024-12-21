@@ -1,0 +1,11 @@
+{
+    "mode": "unique",
+    "json_name": "page_tarifs",
+    "id": "40",
+    "name": "tarifs",
+    "visibility": "1",
+    "title": "tarifs",
+    "description": "Les tarifs",
+    "author": "Aienova Company",
+    "content": "<div><h2>Nos tarifs<\/h2><\/div><div>Mes prix ne sont pas n\u00e9gociable<\/div>"
+}

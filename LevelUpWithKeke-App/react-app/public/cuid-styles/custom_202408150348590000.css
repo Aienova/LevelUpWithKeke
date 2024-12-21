@@ -1,0 +1,57 @@
+
+
+
+                @import url('https://127.0.0.1:8000/cuid/font.scss');
+
+
+            .primary-color{
+
+                background-color:#ffffff;
+            
+            }
+
+
+            .secondary-color{
+
+                background-color:#d93f91;
+            
+            }
+
+
+            .third-color{
+
+                background-color:#e2ddc5;
+            
+            }
+
+
+            header{
+
+                background-color:#353134;
+            
+            }
+
+            h1,h2,h3{
+
+            font-family:Alatsi;
+            font-weight:bold;
+
+            }
+
+            body{
+
+            background-image:url(https://127.0.0.1:8000/cuid/media/image/08-07-2024/paris-4119828_1280_7802024704.jpg);
+            background-repeat:no-repeat;
+            font-family:Roboto;
+            font-weight:normal;
+            background-size: cover;
+            }
+
+            
+            footer{
+
+                background-color:#0a0a0b;
+            
+            }
+            
+            

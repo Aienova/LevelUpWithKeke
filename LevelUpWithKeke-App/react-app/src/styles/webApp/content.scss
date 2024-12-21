@@ -1,0 +1,589 @@
+
+#the-page{
+
+    padding-bottom: 0px!important;
+}
+
+
+.pastille{
+
+    position: absolute;
+    top:0px;
+    left:0px;
+    margin:10px;
+}
+
+.test-title{
+
+    top: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+
+}
+
+.choices-test {
+    width: 100%;
+    height: 20em;
+    background-color: #ffffff;
+    gap: 0px;
+
+    .colored{
+
+        background-color: green;
+    }
+}
+
+#banner-test {
+    background-image: url(https://127.0.0.1:8000/cuid/media/image/09-11-2024/pattern_9764032339.png);
+    width: 100%;
+    height: 20em;
+    background-size: contain;
+    margin-bottom: 3em;
+}
+
+.testing{
+
+    padding-top: 0px!important;
+    background-color: #F3EFE3;
+
+
+    .primary-color{
+
+        background-color: #80808000 !important;
+    }
+
+}
+
+section{
+
+    h1, h2 {
+        font-size: 4em;
+        /* width: 8em; */
+        margin: auto;
+        text-align: center;
+        /* color: white; */
+        padding-top: 2em;
+        padding-bottom: 1em;
+    }
+}
+
+#page-test-content{
+
+    margin-bottom:2em;
+
+    h1{
+
+        padding-bottom: 0px;
+        margin-bottom:0px;
+    }
+
+    h4{
+
+        font-size: 1.5em;
+        padding-top: 0px;
+        text-transform: uppercase;
+    }
+}
+
+#style-test{
+
+    padding-top: 5em;
+    padding-bottom: 5em;
+    background-color: #dddad4;
+    color:black;
+
+    h2{
+
+        font-size: 2em;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin: inherit;
+    }
+
+
+    button{
+
+        margin-left:1em;
+        font-size: 1em;
+    }
+}
+
+div#interest {
+    background-color: #F3EFE3;
+
+    h2{
+
+        font-size: 2em;
+        width:50%;
+        margin:auto;
+    }
+}
+
+.orange-title {
+    color: orange;
+    font-size: 2em;
+}
+
+#lessons {
+
+    width: 100%;
+    margin-top: 5em;
+    background-color: #F3EFE3;
+
+    .padder {
+        padding: 2em;
+    }
+
+    ul{
+
+        padding:0px;
+        margin:0px;
+    }
+
+    h3{
+
+        font-size: 3em;
+
+    }
+
+
+}
+
+#the-page{
+
+    #services{
+
+        background-image: none!important;
+    }
+
+    .central-content{
+
+        width:65%;
+    }
+}
+
+#app-content {
+    
+    min-height: var(--screen-height);
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding-top: 4em;
+
+    #banner {
+        width: 100%;
+        background-color: #e91e6340;
+
+        #bannerBottom {
+            background-color: black;
+            margin-top: auto;
+            /* height: 2em; */
+            text-align: center;
+            color: white;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+
+
+        #slide{
+
+            padding-top: 5em;
+            padding: 3em;
+            height: 38em;
+            background-size: cover;
+            background-position: center;
+            transition-duration: 2s;
+
+            .bannerInfo {
+                width: 100%;
+
+            }
+
+            #bookingNow{
+
+                padding-right:3em;
+                text-align: left;
+            }
+            
+
+
+            .logo {
+                height: 25em;
+                
+            }
+
+            h1 {
+                width: 8em;
+                font-size: 4em;
+                transition-duration: 2s;
+            }
+
+
+            h2 {
+                font-size: 50px;
+                color: white;
+                margin:0px;
+                transition-duration: 2s;
+            }
+
+        }
+    }
+
+
+    #space-banner{
+
+        width:100%;
+        height:10em;
+    }
+
+    #simple-banner {
+
+        width: 100%;
+        height: 36em !important;
+        background-color: #ffd6ee;
+        background-image: url(https://127.0.0.1:8000/cuid/media/image/09-07-2024/unsplash_jMlig2nx1-Y_3502051608.png);
+        background-size: cover;
+        background-position: center;
+        transition-duration: 1s;
+        animation-duration: 1s;
+
+        #bigtitle{
+
+            width: 100%;
+            height: 100%; 
+            
+
+            .padder{
+
+                padding:5em;
+
+                h1{
+
+                    color: white;
+                    font-size: 50px;
+                }
+            }
+            
+            /* Assurez-vous que le conteneur a une hauteur définie */
+
+        }
+    }
+    
+
+    #nothing-to-something {
+
+        
+
+        width: 100%;
+        margin: auto;
+        position: relative;
+        z-index:11111111;
+        min-height: 45em;
+
+
+        section{
+
+            padding-bottom: 7em;
+        }
+        
+    }
+}
+
+
+#advices{
+
+    width:100%;
+
+    .advice{
+
+            margin-bottom: 2em;
+
+
+        .image{
+
+            height:20em;
+        }
+    }
+
+    .description{
+
+
+        background-color: #F7F8FA;
+    }
+    
+
+}
+
+
+
+#advertising{
+
+    width:50%;
+
+    .image {
+        height: 30em;
+        margin-bottom:2em;
+    }
+    
+}
+
+#newsletter-infos{
+
+
+    form{
+
+        width:fit-content;
+        margin:auto;
+
+        input {
+            width: fit-content;
+            font-size: 15px;
+            width: 52%;
+            margin: 1em;
+            border-radius: 3em;
+            background-color:#F3EFE3;
+        }
+
+        input[type=submit] {
+            font-size: 19px;
+            width: 11em;
+            background-color: #00000000;
+            color: black;
+            border: solid;
+        }
+
+        input[type=submit]:hover {
+
+            background-color: black;
+            color:white;
+
+        }
+    }
+
+    
+}
+
+
+
+#lesson-events {
+    width: 40%;
+    margin: auto;
+
+
+.lesson{
+
+
+    background-color: #F3EFE3;
+    border-radius: 1em;
+
+    .title{
+
+        background-color: black;
+        height: 5em;
+        color: #F3EFE3;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+
+        .padder{
+
+            padding:3em;
+    
+    
+        }
+
+    }
+
+
+    .description{
+
+
+
+        text-align: center;
+        
+
+        .padder {
+            padding: 1em;
+        }
+
+    }
+}
+
+}
+
+
+#workshops {
+    width: 60%;
+    margin: auto;
+
+
+.workshop{
+
+
+
+    background-color: #F3EFE3;
+    border-radius: 1em;
+
+
+
+
+    .title{
+
+        background-color: black;
+        height: 7em;
+        color: #F3EFE3;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+
+        .padder{
+
+            padding:3em;
+    
+    
+        }
+
+    }
+
+
+    .description{
+
+        
+
+        .padder {
+            padding: 1em;
+        }
+
+    }
+}
+
+}
+
+#services {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 7em;
+    background-image: linear-gradient(178deg, #fec3d7, #fcc6d9);
+    color: black;
+
+
+    button{
+
+        background-color: #8360be;
+    }
+
+
+    .image {
+        background-color: blue;
+        width: 100%;
+        background-size: cover;
+        height: 30em;
+        margin: auto;
+    }
+
+
+}
+
+
+#important-infos {
+    padding-top: 13em;
+    padding-bottom:13em!important;
+    background-color: #F3EFE3;
+
+    .padder{
+
+        padding:3em;
+    }
+}
+
+
+#testimonials{
+
+    background-color: #F29848;
+
+    .image {
+        background-color: blue;
+        width: 20em;
+        background-size: cover;
+        height: 30em;
+    }
+
+    .notice{
+
+        text-align: left;
+        
+    }
+}
+
+
+
+#prices {
+
+    padding-top: 7em;
+    margin: auto;
+    background-image: linear-gradient(178deg, #ffffffa1, #ffffff9e);
+
+
+}
+
+
+#aboutus{
+
+
+        padding-bottom: 0em !important;
+
+
+        .flexible{
+
+            width:60%;
+            margin:auto;
+        }
+
+
+    .content{
+
+        color:white;
+
+        .column{
+
+            margin-right:2em;
+        }
+
+        min-height: 40em;
+    }
+
+    .transitioner{
+
+        transition-duration:1s;
+        transition-delay: 0.3s;
+    }
+
+
+
+    .image{
+
+        background-image: url(https://127.0.0.1:8000/build/images/recruiter.99f4c3c5.jpg);
+    }
+
+}
+
+
+#booking-info {
+    width: 48%;
+}
+
+#bookings {
+    width: 48em;
+    margin: auto;
+}
+
+#map{
+
+    img{
+
+        width:100%;
+    }
+
+}
+

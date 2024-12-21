@@ -1,0 +1,11 @@
+{
+    "mode": "unique",
+    "json_name": "page_mes-ateliers",
+    "id": "47",
+    "name": "mes-ateliers",
+    "visibility": "1",
+    "title": "Mes ateliers",
+    "description": "Ateliers",
+    "author": "Aienova Company",
+    "content": "\r\n<div class=\"central-content\">\r\n<h1>Mes ateliers<\/h1>\r\n<div>Je suis ravie de vous annoncer une s\u00e9rie d'ateliers exclusifs tout au long de l'ann\u00e9e pour vous aider \u00e0 r\u00e9v\u00e9ler votre plein potentiel et \u00e0 affirmer votre style personnel. \r\n\r\nQue vous cherchiez \u00e0 revitaliser votre garde-robe, \u00e0 affiner votre pr\u00e9sentation professionnelle ou \u00e0 d\u00e9couvrir les couleurs qui vous mettent le mieux en valeur, ces ateliers sont faits pour vous !<\/div>\r\n<\/div>"
+}

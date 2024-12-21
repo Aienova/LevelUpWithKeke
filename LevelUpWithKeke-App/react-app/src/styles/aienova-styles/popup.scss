@@ -1,0 +1,70 @@
+
+.test-closed,.closed{
+
+    z-index: -111111111111111!important;
+    opacity:0!important;
+
+}
+
+
+#popup {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 111111111111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #737373ad;
+
+    .leashed{
+
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    .transitioner{
+
+        transition-duration: 0.7s;
+        transition-delay: 0.2s;
+    }
+
+
+    
+    
+
+    .popup {
+
+        width: 41em;
+        background-color: #F3EFE3;
+        color: white;
+        text-align: center;
+        border-radius: 2em;
+
+        h3{
+
+            font-size: 2.3em;
+            color:black;
+        }
+
+        .padder{
+
+            padding:2em;
+        }
+
+        
+
+
+        button{
+
+            margin-bottom:1em;
+            padding: 14px;
+            font-size: 1.3em;
+            background-color: black;
+            border: solid 1px black;
+        }
+    }
+}

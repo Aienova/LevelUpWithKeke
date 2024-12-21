@@ -1,0 +1,17 @@
+{
+    "mode": "unique",
+    "count": "0",
+    "maxcount": "1",
+    "json_name": "performance",
+    "id": "22",
+    "name": "Colorim\u00e9trie",
+    "totaltime": "120",
+    "price": "60.00",
+    "symbol": "https:\/\/127.0.0.1:8000\/https:\/\/127.0.0.1:8000\/cuid\/media\/image\/08-10-2024\/aboutus_4685110757.jpg",
+    "description": "Consultation - Bilan d\u2019image - Test de style\r\nColorim\u00e9trie : quelle est ta palette de couleur ? ",
+    "content": "<div><br><\/div>",
+    "tag": "colorim-etrie",
+    "logo": {
+        "__isInitialized__": "0"
+    }
+}

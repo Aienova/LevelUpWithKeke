@@ -1,0 +1,82 @@
+.accordion,.accordion * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.accordion {
+    overflow: hidden;
+    background: #ffffff;
+    border-top: 1px solid #acacac;
+    width: 70%;
+    margin: auto;
+    margin-bottom : 50px;
+
+}
+
+.accordion-section {
+    border-bottom: 1px solid #acacac
+}
+
+.accordion-section-title {
+    width: 100%;
+    padding: 15px 5px;
+    display: inline-block;
+    position: relative;
+    background: black;
+    color: white;
+    transition: all linear 0.15s
+}
+
+.accordion-section-title:focus {
+
+    background: blue;
+    color: white;
+}
+
+.accordion-section-title .plus,.accordion-section-title .minus {
+    position: absolute;
+    right: 0;
+    width: 10px
+}
+
+.accordion-section-title .plus {
+    display: inline-block;
+    float: right
+}
+
+.accordion-section-title .minus {
+    display: none
+}
+
+.accordion-section-title.active {
+    color: white;
+}
+
+.accordion-section-title.active .minus {
+    display: inline-block;
+    float: right
+}
+
+.accordion-section-title.active .plus {
+    display: none
+}
+
+.accordion-section-title.active,.accordion-section-title:hover {
+    text-decoration: none
+}
+
+.accordion-section-content {
+    padding: 15px 5px;
+    background-color: #f1e8c7;
+    display: none;
+}
+
+.accordion-section-content p {
+    margin-top: 0
+}
+
+.accordion-section-content#accordion-3 p {
+    margin-bottom: 2px;
+    line-height: 1.2
+}

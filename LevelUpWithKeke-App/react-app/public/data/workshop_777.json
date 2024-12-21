@@ -1,0 +1,86 @@
+[{
+    "mode": "multi",
+    "count": "0",
+    "maxcount": "5",
+    "json_name": "workshop",
+    "id": "12",
+    "name": "d-ecryptez-votre-style",
+    "visibility": "1",
+    "title": "D\u00e9cryptez votre Style",
+    "description": "D\u00e9couvrez les bases de votre style personnel et apprenez \u00e0 choisir des tenues qui refl\u00e8tent votre personnalit\u00e9 et vos objectifs.\r\n",
+    "author": "Aienova Company",
+    "content": "<div><br><\/div>",
+    "image": "\/cuid\/media\/image\/09-03-2024\/talons_3615022841.png",
+    "statement": "0",
+    "category": {
+        "__isInitialized__": "1"
+    }
+},{
+    "mode": "multi",
+    "count": "1",
+    "maxcount": "5",
+    "json_name": "workshop",
+    "id": "13",
+    "name": "couleurs-et-harmonie",
+    "visibility": "1",
+    "title": "Couleurs et Harmonie",
+    "description": "Apprenez \u00e0 identifier les couleurs qui vous illuminent et comment les int\u00e9grer dans votre quotidien pour un look toujours harmonieux\r\n",
+    "author": "Aienova Company",
+    "content": "<div><br><\/div>",
+    "image": "\/cuid\/media\/image\/09-03-2024\/complete_9687022841.png",
+    "statement": "0",
+    "category": {
+        "__isInitialized__": "1"
+    }
+},{
+    "mode": "multi",
+    "count": "2",
+    "maxcount": "5",
+    "json_name": "workshop",
+    "id": "14",
+    "name": "garde-robe-capsule",
+    "visibility": "1",
+    "title": "Garde-Robe Capsule",
+    "description": "Simplifiez votre vie avec une garde-robe minimaliste mais versatile. Apprenez \u00e0 cr\u00e9er des tenues vari\u00e9es avec des pi\u00e8ces essentielles.\r\n\r\n",
+    "author": "Aienova Company",
+    "content": "<div><br><\/div>",
+    "image": "\/cuid\/media\/image\/09-03-2024\/atelier-pro_0659022708.png",
+    "statement": "0",
+    "category": {
+        "__isInitialized__": "1"
+    }
+},{
+    "mode": "multi",
+    "count": "3",
+    "maxcount": "5",
+    "json_name": "workshop",
+    "id": "15",
+    "name": "impact-professionnel",
+    "visibility": "1",
+    "title": "Impact Professionnel",
+    "description": "D\u00e9couvrez les bases de votre style personnel et apprenez \u00e0 choisir des tenues qui refl\u00e8tent votre personnalit\u00e9 et vos objectifs.\r\n\r\n\r\n\r\n\r\n\r\n",
+    "author": "Aienova Company",
+    "content": "<div><br><\/div>",
+    "image": "\/cuid\/media\/image\/09-03-2024\/atelier-pro_0659022708.png",
+    "statement": "0",
+    "category": {
+        "__isInitialized__": "1"
+    }
+},{
+    "mode": "multi",
+    "count": "4",
+    "maxcount": "5",
+    "json_name": "workshop",
+    "id": "16",
+    "name": "maquillage-sur-mesure",
+    "visibility": "1",
+    "title": "Maquillage sur Mesure",
+    "description": "Ma\u00eetrisez les techniques de maquillage qui mettent en valeur vos traits et apprenez \u00e0 adapter votre look selon les occasions. \r\n\r\n\r\n",
+    "author": "Aienova Company",
+    "content": "<div><br><\/div>",
+    "image": "\/cuid\/media\/image\/09-03-2024\/complete_9687022841.png",
+    "statement": "0",
+    "category": {
+        "__isInitialized__": "1"
+    }
+}]

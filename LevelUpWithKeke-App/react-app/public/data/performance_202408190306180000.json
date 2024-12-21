@@ -1,0 +1,97 @@
+[{
+    "mode": "multi",
+    "count": "0",
+    "maxcount": "6",
+    "json_name": "performance",
+    "id": "22",
+    "name": "Colorim\u00e9trie",
+    "totaltime": "120",
+    "price": "60.00",
+    "symbol": "https:\/\/127.0.0.1:8000\/cuid\/media\/image\/08-10-2024\/aboutus_4685110757.jpg",
+    "description": "Consultation - Bilan d\u2019image - Test de style\r\nColorim\u00e9trie : quelle est ta palette de couleur ? ",
+    "content": "<div><br><\/div>",
+    "tag": "colorim-etrie",
+    "logo": {
+        "__isInitialized__": "1"
+    }
+},{
+    "mode": "multi",
+    "count": "1",
+    "maxcount": "6",
+    "json_name": "performance",
+    "id": "23",
+    "name": "Morphologie",
+    "totaltime": "120",
+    "price": "60.00",
+    "symbol": "https:\/\/127.0.0.1:8000\/\/cuid\/media\/image\/08-19-2024\/Ketsia 1_7135075647.png",
+    "description": "Consultation - Bilan d\u2019image - Test de style\r\nMorphologie visage et corps",
+    "content": "<div><br><\/div>",
+    "tag": "morphologie",
+    "logo": {
+        "__isInitialized__": "1"
+    }
+},{
+    "mode": "multi",
+    "count": "2",
+    "maxcount": "6",
+    "json_name": "performance",
+    "id": "24",
+    "name": "Auto-maquillage",
+    "totaltime": "120",
+    "price": "55.00",
+    "symbol": "https:\/\/127.0.0.1:8000\/cuid\/media\/image\/08-10-2024\/aboutus_4685110757.jpg",
+    "description": "Consultation - Bilan d\u2019image - Test de style\r\nAuto - maquillage \u00e9tapes par \u00e9tapes pour un teint parfait chaque matin !",
+    "content": "<div><br><\/div>",
+    "tag": "auto-maquillage",
+    "logo": {
+        "__isInitialized__": "1"
+    }
+},{
+    "mode": "multi",
+    "count": "3",
+    "maxcount": "6",
+    "json_name": "performance",
+    "id": "25",
+    "name": "Tri Dresing",
+    "totaltime": "120",
+    "price": "75.00",
+    "symbol": "https:\/\/127.0.0.1:8000\/cuid\/media\/image\/08-10-2024\/aboutus_4685110757.jpg",
+    "description": "Pour un dressing propre, dans lequel on s\u2019y retrouve !",
+    "content": "<div><br><\/div>",
+    "tag": "tri-dresing",
+    "logo": {
+        "__isInitialized__": "1"
+    }
+},{
+    "mode": "multi",
+    "count": "4",
+    "maxcount": "6",
+    "json_name": "performance",
+    "id": "26",
+    "name": "Personnal Shopper ",
+    "totaltime": "420",
+    "price": "150.00",
+    "symbol": "https:\/\/127.0.0.1:8000\/cuid\/media\/image\/08-10-2024\/aboutus_4685110757.jpg",
+    "description": "Allons faire les boutiques ensemble et trouves la tenue id\u00e9ale  pour un \u00e9v\u00e8nement sp\u00e9cial ! (soir\u00e9e, rendez-vous galant, mariage et bien plus ...)",
+    "content": "<div><br><\/div>",
+    "tag": "personnal-shopper-",
+    "logo": {
+        "__isInitialized__": "1"
+    }
+},{
+    "mode": "multi",
+    "count": "5",
+    "maxcount": "6",
+    "json_name": "performance",
+    "id": "27",
+    "name": "D\u00e9finition du style",
+    "totaltime": "90",
+    "price": "60",
+    "symbol": "https:\/\/127.0.0.1:8000\/https:\/\/127.0.0.1:8000\/cuid\/media\/image\/08-10-2024\/aboutus_4685110757.jpg",
+    "description": "Test de style + planche de style personnalise\u0301e",
+    "content": "<div><br><\/div>",
+    "tag": "d-efinition-du-style",
+    "logo": {
+        "__isInitialized__": "1"
+    }
+}]

@@ -1,0 +1,34 @@
+[{
+    "mode": "multi",
+    "count": "0",
+    "maxcount": "3",
+    "json_name": "testimonials",
+    "id": "1",
+    "name": "Marine - 29 ans",
+    "rate": "5",
+    "comment": "Je suis ravi de mon expe\u0301rience avec Ketsia. Son expertise m'a vraiment aide\u0301 a\u0300 mettre en valeur mon apparence et a\u0300 gagner en confiance. Ses compe\u0301tences, son professionnalisme et son approche personnalise\u0301e sont parfaite, elle m\u2019a aider a avoir le de\u0301clic qu\u2019il me manquait. Je la recommande vivement a\u0300 tous ceux qui cherchent a\u0300 ame\u0301liorer leur image et leur estime de soi. Un grand merci pour cette expe\u0301rience formidable et pour ton implication !",
+    "beforePicture": "https:\/\/127.0.0.1:8000\/cuid\/media\/image\/09-01-2024\/photo-avant_3296064136.png",
+    "afterPicture": "https:\/\/127.0.0.1:8000\/cuid\/media\/image\/09-01-2024\/photo-apres_0591064136.png"
+},{
+    "mode": "multi",
+    "count": "1",
+    "maxcount": "3",
+    "json_name": "testimonials",
+    "id": "2",
+    "name": "Elsa - 34 ans",
+    "rate": "5",
+    "comment": "J\u2019ai adore\u0301 le concept c\u0327a m\u2019a permis d\u2019en de\u0301couvrir pas mal sur ma colorime\u0301trie j\u2019ai pu de\u0301couvrir qu\u2019elle saison chromatique et quel palette de couleurs me correspond le mieux.Sans parler de la gentillesse l\u2019accueil du personnage franchement c\u2019e\u0301tait top tre\u0300s souriant on sent a\u0300 l\u2019aise. Merci beaucoup Level Up With Keke",
+    "beforePicture": "https:\/\/127.0.0.1:8000\/cuid\/media\/image\/09-01-2024\/photo-avant_3296064136.png",
+    "afterPicture": "https:\/\/127.0.0.1:8000\/cuid\/media\/image\/09-01-2024\/photo-apres_0591064136.png"
+},{
+    "mode": "multi",
+    "count": "2",
+    "maxcount": "3",
+    "json_name": "testimonials",
+    "id": "3",
+    "name": "Myriam - 31 ans",
+    "rate": "5",
+    "comment": "Tr\u00e8s inte\u0301ressant, super bon moment",
+    "beforePicture": "https:\/\/127.0.0.1:8000\/cuid\/media\/image\/09-01-2024\/photo-avant_3296064136.png",
+    "afterPicture": "https:\/\/127.0.0.1:8000\/cuid\/media\/image\/09-01-2024\/photo-apres_0591064136.png"
+}]

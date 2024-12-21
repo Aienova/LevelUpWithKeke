@@ -1,0 +1,10 @@
+{
+    "json_name": "page_services",
+    "id": "39",
+    "name": "services",
+    "visibility": "1",
+    "title": "Services",
+    "description": "Nos services",
+    "author": "Aienova Company",
+    "content": "<div><b><h2>Les diff\u00e9rents services<\/h2><\/b><\/div>"
+}

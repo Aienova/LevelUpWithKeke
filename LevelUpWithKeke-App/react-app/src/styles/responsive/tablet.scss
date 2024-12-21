@@ -1,0 +1,218 @@
+
+
+@media (max-width: 1281px) {
+
+
+
+    .square{
+
+        h2{
+
+            font-size: 16px!important; 
+        }
+    }
+
+    #banner-slider img {
+        width: 100%;
+    }
+
+    div#promotion {
+        width: 77%!important; 
+        margin: auto;
+    }
+
+
+    div#description {
+        display: none;
+    }
+
+    #search-engine-companies{
+
+
+        div#description {
+            display: none;
+        }
+
+
+    }
+
+ 
+    main {
+        padding-left: 0px!important; 
+    }
+
+    header{
+        transition-duration: 1s;
+    }
+
+    #main-title {
+
+        padding-top: 10%!important; 
+
+    }
+
+    #fonctionnal {
+        padding: 20px!important; 
+        margin-bottom: 100px;
+    }
+
+    #partners {
+        padding-bottom: 100px;
+    }
+
+    #tablet-button{
+        display: block!important;
+        transition-duration: 1s;
+      }
+
+      .open-menu {
+        left: 0px;
+    }
+
+    .close-button {
+        left: 169px;
+    }
+
+    .open-button {
+        left: 0px;
+    }
+
+    .thumbnail {
+        display: none;
+    }
+
+    .asset-logo {
+        height: 60px;
+    }
+
+
+    
+
+
+}
+
+@media (max-width: 1200px) {
+
+    #menu li{
+
+        display:none;
+    }
+
+    .tabletblock{
+
+        display:block!important;
+
+    }
+
+    .circle {
+
+        width: 6em;
+        height: 6em;
+
+        img{
+
+            height: 38%;
+        }
+
+        .price {
+            font-size: 22px;
+
+        }
+    }
+
+    #menu{
+
+        width:100%;
+    }
+
+    #burger-menu {
+        display: block !important;
+        margin-left: auto;
+        width: fit-content!important;
+        padding-top: 1.3em;
+    }
+
+    #desktop-menu {
+        display: none !important;
+
+    }
+
+    #square-menu {
+
+
+        .left-side {
+    
+            margin-right: 0px!important;
+            width: 80%;
+        }
+    
+    
+        .right-side {
+            width: 80%;
+            margin-left: 0px!important;
+    
+            
+        }
+
+    }
+    
+
+}
+
+
+
+@media (max-width: 1000px) {
+
+
+    #top-bar{
+
+        .navName{
+
+            display:none
+        }
+
+
+    }
+
+
+
+form#searchinput {
+    width: 50%;
+}
+
+}
+
+@media (max-width: 800px) {
+
+
+    #partners {
+        padding-bottom: 100px;
+    }
+
+    form#searchinput {
+        width: 70%;
+    }
+
+    #card img {
+
+        display: none;
+    }
+
+    
+    #banner{
+        background-position-y: 0px!important;
+
+    }
+
+
+    form#searchinput {
+        width: 70%;
+    }
+
+    #searchbar{
+
+        width:fit-content;
+    }
+
+
+}

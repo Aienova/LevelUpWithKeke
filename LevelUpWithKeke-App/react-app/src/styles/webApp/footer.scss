@@ -1,0 +1,73 @@
+footer{
+
+
+
+
+    background-color: black;
+    /* height: 300px; */
+
+    position: relative;
+    color:white;
+    padding-bottom: 2em;
+
+    #trust-us{
+
+        font-size: 4em;
+        width:7em;
+    }
+
+    .inliner{
+
+        margin-right:10px;
+    }
+
+    #company-infos-footer {
+        background-color: #91D0D6;
+    }
+
+    #footer-menu{
+
+        margin:0px;
+        padding:0px;
+        gap: 0px;
+        height: 100%;
+
+        li{
+
+            width:100%;
+            height: 100%;
+            text-align: center;
+            background-color: red;
+            color: black;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    }
+
+
+    .organizer,.column{
+
+        width:100%;
+    }
+
+    a{
+
+    color:white;
+
+    }
+
+    #logo-company-footer {
+        height: 6em;
+    }
+
+    .logo-mini{
+
+        transform: translateY(10px);
+    }
+
+
+
+
+}

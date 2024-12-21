@@ -1,0 +1,49 @@
+[{
+    "mode": "multi",
+    "count": "0",
+    "maxcount": "4",
+    "json_name": "socials",
+    "id": "7",
+    "name": "Instagram",
+    "socialMediaType": {
+        "__isInitialized__": "1"
+    },
+    "link": "https:\/\/www.instagram.com\/glowydent\/",
+    "visibility": "1"
+},{
+    "mode": "multi",
+    "count": "1",
+    "maxcount": "4",
+    "json_name": "socials",
+    "id": "8",
+    "name": "Linkedin",
+    "socialMediaType": {
+        "__isInitialized__": "1"
+    },
+    "link": "https:\/\/www.linkedin.com\/in\/glowydent-professional-8279392bb\/",
+    "visibility": "1"
+},{
+    "mode": "multi",
+    "count": "2",
+    "maxcount": "4",
+    "json_name": "socials",
+    "id": "10",
+    "name": "TikTok",
+    "socialMediaType": {
+        "__isInitialized__": "1"
+    },
+    "link": "https:\/\/sofifa.com\/league\/31",
+    "visibility": "1"
+},{
+    "mode": "multi",
+    "count": "3",
+    "maxcount": "4",
+    "json_name": "socials",
+    "id": "11",
+    "name": "Pinterest",
+    "socialMediaType": {
+        "__isInitialized__": "1"
+    },
+    "link": "https:\/\/sofifa.com\/league\/31",
+    "visibility": "1"
+}]

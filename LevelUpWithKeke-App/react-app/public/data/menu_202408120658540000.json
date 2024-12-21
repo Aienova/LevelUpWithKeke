@@ -1,0 +1,11 @@
+{
+    "json_name": "menu",
+    "id": "30",
+    "title": "Tarifs",
+    "url": "\/page\/tarifs",
+    "position": "1",
+    "page": {
+        "__isInitialized__": "0"
+    },
+    "topmenu": "1"
+}

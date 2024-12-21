@@ -1,0 +1,22 @@
+{
+    "mode": "unique",
+    "count": "0",
+    "maxcount": "1",
+    "json_name": "graphics",
+    "id": "1",
+    "fontTitle": "Cormorant",
+    "fontText": "Roboto",
+    "fontTitleWeight": "bolder",
+    "fontTextWeight": "normal",
+    "primaryColor": "#ffffff",
+    "secondaryColor": "#659c1c",
+    "thirdColor": "#e2ddc5",
+    "backgroundImage": "https:\/\/127.0.0.1:8000\/cuid\/media\/image\/05-05-2024\/background-default.333d16b8_8432042931.jpg",
+    "backgroundRepeat": "1",
+    "activated": "1",
+    "section": {
+        "__isInitialized__": "0"
+    },
+    "headerColor": "#ffffff",
+    "footerColor": "#20232e"
+}

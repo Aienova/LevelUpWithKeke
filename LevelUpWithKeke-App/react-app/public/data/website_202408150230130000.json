@@ -1,0 +1,25 @@
+{
+    "mode": "unique",
+    "count": "0",
+    "maxcount": "1",
+    "json_name": "website",
+    "id": "1",
+    "owner": "Odilia Ewengu\u00e9",
+    "activity": "0",
+    "country": "1",
+    "link": "https:\/\/127.0.0.1:8000\/",
+    "domain": "ambacongo.de",
+    "email": "contact@ambacongo.de",
+    "telephone": "06 99 07 30 11",
+    "location": "Wallstrasse 69, 10179 Berlin",
+    "companyId": "565656562562",
+    "homepage": {
+        "__isInitialized__": "1"
+    },
+    "logo": {
+        "__isInitialized__": "1"
+    },
+    "companyName": "Glowydent",
+    "vat": "20",
+    "cuidlink": "https:\/\/127.0.0.1:8000\/"
+}

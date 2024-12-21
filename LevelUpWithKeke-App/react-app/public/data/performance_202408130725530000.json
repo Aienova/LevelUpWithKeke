@@ -1,0 +1,58 @@
+[{
+    "mode": "multi",
+    "count": "0",
+    "maxcount": "5",
+    "json_name": "performance",
+    "id": "1",
+    "name": "Blanchiment",
+    "totaltime": "120",
+    "price": "150.00",
+    "symbol": "https:\/\/glowydent.1-ted.com\/build\/media\/image\/icons\/service1.png",
+    "tag": "blanchiment"
+},{
+    "mode": "multi",
+    "count": "1",
+    "maxcount": "5",
+    "json_name": "performance",
+    "id": "2",
+    "name": "Manicure",
+    "totaltime": "120",
+    "price": "150.00",
+    "symbol": "https:\/\/glowydent.1-ted.com\/build\/media\/image\/icons\/service2.png",
+    "tag": "manicure"
+},{
+    "mode": "multi",
+    "count": "2",
+    "maxcount": "5",
+    "json_name": "performance",
+    "id": "3",
+    "name": "Maquillage",
+    "totaltime": "120",
+    "price": "150.00",
+    "symbol": "https:\/\/glowydent.1-ted.com\/build\/media\/image\/icons\/service3.png",
+    "tag": "maquillage"
+},{
+    "mode": "multi",
+    "count": "3",
+    "maxcount": "5",
+    "json_name": "performance",
+    "id": "4",
+    "name": "Massage",
+    "totaltime": "120",
+    "price": "150.00",
+    "symbol": "https:\/\/glowydent.1-ted.com\/build\/media\/image\/icons\/service4.png",
+    "tag": "massage"
+},{
+    "mode": "multi",
+    "count": "4",
+    "maxcount": "5",
+    "json_name": "performance",
+    "id": "16",
+    "name": "Shopping",
+    "totaltime": "15",
+    "price": "54",
+    "symbol": "\/cuid\/media\/image\/07-26-2024\/glowydent_2170020849.png",
+    "description": "Shop",
+    "content": "<div>TEST TEST TEST TEST<\/div>",
+    "tag": "shopping"
+}]

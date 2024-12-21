@@ -1,0 +1,12 @@
+@import "styles/aienova-styles/aienova-shortcode.scss";
+@import "styles/aienova-styles/form.scss";
+@import "styles/aienova-styles/popup.scss";
+@import "styles/aienova-styles/faq.scss";
+@import "styles/aienova-styles/animations.scss";
+@import "styles/aienova-styles/slider.scss";
+@import "styles/responsive/desktop.scss";
+@import "styles/responsive/smartphone.scss";
+@import "styles/responsive/tablet.scss";
+@import "styles/webApp/header.scss";
+@import "styles/webApp/footer.scss";
+@import "styles/webApp/content.scss";

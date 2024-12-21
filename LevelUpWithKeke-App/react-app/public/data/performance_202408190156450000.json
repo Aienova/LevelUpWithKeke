@@ -1,0 +1,29 @@
+[{
+    "mode": "multi",
+    "count": "0",
+    "maxcount": "2",
+    "json_name": "performance",
+    "id": "3",
+    "name": "Maquillage",
+    "totaltime": "120",
+    "price": "150.00",
+    "symbol": "https:\/\/glowydent.1-ted.com\/build\/media\/image\/icons\/service3.png",
+    "tag": "maquillage",
+    "logo": {
+        "__isInitialized__": "0"
+    }
+},{
+    "mode": "multi",
+    "count": "1",
+    "maxcount": "2",
+    "json_name": "performance",
+    "id": "4",
+    "name": "Massage",
+    "totaltime": "120",
+    "price": "150.00",
+    "symbol": "https:\/\/glowydent.1-ted.com\/build\/media\/image\/icons\/service4.png",
+    "tag": "massage",
+    "logo": {
+        "__isInitialized__": "0"
+    }
+}]

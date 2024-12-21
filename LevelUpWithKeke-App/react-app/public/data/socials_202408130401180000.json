@@ -1,0 +1,49 @@
+[{
+    "mode": "multi",
+    "count": "0",
+    "maxcount": "4",
+    "json_name": "socials",
+    "id": "1",
+    "name": "Facebook",
+    "socialMediaType": {
+        "__isInitialized__": "1"
+    },
+    "link": "https:\/\/www.facebook.com\/profile.php?id=61551694221055",
+    "visibility": "1"
+},{
+    "mode": "multi",
+    "count": "1",
+    "maxcount": "4",
+    "json_name": "socials",
+    "id": "7",
+    "name": "Instagram",
+    "socialMediaType": {
+        "__isInitialized__": "1"
+    },
+    "link": "https:\/\/www.instagram.com\/ambassadecongo\/",
+    "visibility": "1"
+},{
+    "mode": "multi",
+    "count": "2",
+    "maxcount": "4",
+    "json_name": "socials",
+    "id": "8",
+    "name": "Linkedin",
+    "socialMediaType": {
+        "__isInitialized__": "1"
+    },
+    "link": "https:\/\/www.linkedin.com\/company\/amabassade-du-congo-en-allemagne\/?viewAsMember=true",
+    "visibility": "1"
+},{
+    "mode": "multi",
+    "count": "3",
+    "maxcount": "4",
+    "json_name": "socials",
+    "id": "9",
+    "name": "Twitter",
+    "socialMediaType": {
+        "__isInitialized__": "1"
+    },
+    "link": "https:\/\/www.linkedin.com\/company\/amabassade-du-congo-en-allemagne\/?viewAsMember=true",
+    "visibility": "1"
+}]

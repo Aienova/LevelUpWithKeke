@@ -1,0 +1,56 @@
+
+
+
+                @import url('https://127.0.0.1:8000/cuid/font.scss');
+
+
+            .primary-color{
+
+                background-color:#fde3f8;
+            
+            }
+
+
+            .secondary-color{
+
+                background-color:#d93f91;
+            
+            }
+
+
+            .third-color{
+
+                background-color:#e2ddc5;
+            
+            }
+
+
+            header{
+
+                background-color:#f1dfef;
+            
+            }
+
+            h1,h2,h3{
+
+            font-family:Cormorant;
+            font-weight:bolder;
+
+            }
+
+            body{
+
+            background-image:url(https://127.0.0.1:8000/cuid/media/image/05-05-2024/background-default.333d16b8_8432042931.jpg);
+            background-repeat:repeat;
+            font-family:Roboto;
+            font-weight:normal;
+            }
+
+            
+            footer{
+
+                background-color:#262c40;
+            
+            }
+            
+            
